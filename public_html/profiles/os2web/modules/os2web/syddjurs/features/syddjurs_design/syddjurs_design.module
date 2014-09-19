@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Syddjurs - Design feature.
+ */
+
+include_once 'syddjurs_design.features.inc';

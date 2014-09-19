@@ -1,0 +1,23 @@
+name = OS2Web Dagsorden Højre Indhold
+core = 7.x
+package = OS2Web - Struktur
+php = 5.2.4
+version = 7.x-1.10
+project = OS2Web
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = os2web_indholdstyper
+dependencies[] = os2web_kontaktblok
+dependencies[] = panels_mini
+features[context][] = hoejre_blokke_ved_dagsordener
+features[ctools][] = context:context:3
+features[ctools][] = panels_mini:panels_default:1
+features[features_api][] = api:1
+features[panels_mini][] = hoejre_blokke_ved_dagsordener
+timestamp = 1353326099
+
+;Added by OS2Web 2013-05-30
+project=OS2Web
+version=1.11
+timestamp=1369904058
+

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+require_once('os2web_portal_politik_og_planer.features.inc');

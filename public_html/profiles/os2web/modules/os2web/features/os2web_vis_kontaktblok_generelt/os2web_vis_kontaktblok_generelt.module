@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the os2web_vis_kontaktblok_generelt feature.
+ */
+
+include_once 'os2web_vis_kontaktblok_generelt.features.inc';

@@ -1,0 +1,23 @@
+name = OS2Web CMStheme Delta
+core = 7.x
+package = OS2Web - CMS Theme
+php = 5.2.4
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = delta
+dependencies[] = os2web_indholdstyper
+dependencies[] = os2web_meeting_views
+dependencies[] = os2web_sektionssider
+features[context][] = forside
+features[context][] = hide_second_sidebar
+features[ctools][] = context:context:3
+features[ctools][] = delta:delta:3
+features[delta][] = os2web_cmstheme_forside
+features[delta][] = os2web_theme_uden_h_jre_sidebar
+features[features_api][] = api:1
+
+;Added by OS2Web 2013-05-30
+project=OS2Web
+version=1.11
+timestamp=1369904058
+

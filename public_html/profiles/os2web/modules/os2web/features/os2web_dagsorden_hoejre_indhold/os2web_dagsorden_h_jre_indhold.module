@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OS2Web Dagsorden Højre Indhold feature.
+ */
+
+include_once 'os2web_dagsorden_h_jre_indhold.features.inc';

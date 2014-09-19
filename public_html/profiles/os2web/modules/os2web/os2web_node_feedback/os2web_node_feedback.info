@@ -1,0 +1,25 @@
+name = OS2Web - Node feedback
+description = Aktiver en feedback form på hjemmesiden.
+core = 7.x
+package = Features
+php = 5.2.4
+version = 7.x-1.10
+project = os2web_node_feedback
+dependencies[] = features
+dependencies[] = feedback
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[field][] = feedback-feedback-field_feedback_email
+features[field][] = feedback-feedback-field_feedback_navn
+features[user_permission][] = access feedback form
+features[user_permission][] = administer feedback
+features[user_permission][] = view feedback messages
+features[variable][] = feedback_excluded_paths
+features[variable][] = field_bundle_settings_feedback__feedback
+
+;Added by OS2Web 2013-05-30
+project=OS2Web
+version=1.11
+timestamp=1369904058
+

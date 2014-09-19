@@ -1,0 +1,24 @@
+name = Syddjurs - Design
+core = 7.x
+package = Features
+php = 5.2.4
+version = 7.x-1.0
+project = syddjurs_design
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = fontyourface
+dependencies[] = strongarm
+dependencies[] = typekit_api
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[fontyourface][] = Myriad Pro Bold
+features[fontyourface][] = Myriad Pro Light
+features[fontyourface][] = Myriad Pro Regular
+features[variable][] = theme_cmstheme_settings
+features[variable][] = typekit_api_token
+
+;Added by OS2Web 2013-05-30
+project=OS2Web
+version=1.11
+timestamp=1369904058
+

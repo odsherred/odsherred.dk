@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OS2web Planer i Høring feature.
+ */
+
+include_once 'os2web_planer_i_h_ring.features.inc';

@@ -1,0 +1,10 @@
+logs
+sessions
+tmp
+site
+
+sites
+apache-solr-3.5.0
+drupal-7.15
+drupal-7.22
+os2web-deploy
