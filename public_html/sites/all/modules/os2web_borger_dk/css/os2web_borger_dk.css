@@ -1,0 +1,36 @@
+div.microArticle h2 {
+  /*background-image: url('../images/foldOut.png');
+  background-position: 98% 0;
+  background-repeat: no-repeat;*/
+  border: none;
+  width: 90%;
+}
+
+div.microArticle {
+  position: relative;
+  border-top: 1px solid #ddd;
+}
+
+a.gplus {
+  background-image: url(../images/foldOut.png);
+  width: 23px;
+  height: 23px;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+a.gminus {
+  background-image: url(../images/foldIn.png);
+  width: 23px;
+  height: 23px;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
