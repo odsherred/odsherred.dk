@@ -124,8 +124,9 @@ ul.os2web_menus-container .megamenu-panel {
 	height: 41px;}
 
 .megamenu-panel .grid-3.panel-region-kol1 .inside,
+.megamenu-panel .grid-3.panel-region-kol3 .inside,
 .menu-minipanels .grid-3.panel-region-kol1 .inside {
-padding: 10px 5px 10px 15px;
+  padding: 10px 5px 10px 15px;
 }
 .megamenu-panel .view-spotbox-megadd, .megamenu-panel .pane-tagadelic-view,
 .menu-minipanels .view-spotbox-megadd, .menu-minipanels .pane-tagadelic-view  { display: none}
