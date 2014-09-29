@@ -28,7 +28,7 @@ jQuery(document).ready(function () {
 	jQuery('.vis-andre-sites a').toggle();
       });
 
-/*      var width = jQuery(window).width();
+      var width = jQuery(window).width();
       if (width < 740) {
         jQuery('.panel-region-middle-top').prependTo('.panel-display.container-9.panel-node');
       }
@@ -43,7 +43,7 @@ jQuery(document).ready(function () {
       };
       jQuery(window).resize(resize);
       resize();
-*/
+
 
 });
 
