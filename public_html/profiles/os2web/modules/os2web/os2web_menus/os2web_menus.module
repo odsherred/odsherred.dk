@@ -1,0 +1,280 @@
+<?php
+/**
+ * @file
+ * OS2Web Menus Module - accesible megamenus
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function os2web_menus_menu() {
+  $items = array();
+
+  $items['admin/config/os2web_menus'] = array(
+    'title' => 'OS2Web accesible menus',
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+    'access arguments' => array('administer site configuration'),
+  );
+
+  $items['admin/config/os2web_menus/settings'] = array(
+    'title' => 'Menu settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2web_menus_general_settings_form'),
+    'access callback' => TRUE,
+  );
+
+  $items['admin/config/os2web_menus/items'] = array(
+    'title' => 'Menu items',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2web_menus_items_settings_form'),
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+/**
+ * Callback generating the settings form.
+ */
+function os2web_menus_general_settings_form() {
+  $form = array();
+
+  $form['os2web_menus_title_tag'] = array(
+    '#title' => t('Menu title tag'),
+    '#type' => 'select',
+    '#options' => drupal_map_assoc(array('h1', 'h2', 'h3', 'h4', 'h5', 'span')),
+    '#default_value' => variable_get('os2web_menus_title_tag', 'h3'),
+  );
+
+  $form['os2web_menus_toggle_view'] = array(
+    '#title' => t('Show toggle link'),
+    '#type' => 'checkbox',
+    '#default_value' => variable_get('os2web_menus_toggle_view', TRUE),
+  );
+
+  $form['os2web_menus_toggle_content'] = array(
+    '#title' => t('Content of toggle link'),
+    '#type' => 'textfield',
+    '#default_value' => variable_get('os2web_menus_toggle_content', '+/-'),
+  );
+
+  $form['os2web_menus_use_default_js'] = array(
+    '#title' => t('Use the default javascript for open/closing the menu.'),
+    '#description' => t('If not using the default javascript handler, be sure to create your own from your theme. You can copy and alter the default from the os2web_menus.js file in the module directory.'),
+    '#type' => 'checkbox',
+    '#default_value' => variable_get('os2web_menus_use_default_js', TRUE),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Callback generating the item settings form.
+ */
+function os2web_menus_items_settings_form() {
+
+  $megamenu_settings = variable_get('os2web_menus_settings', array());
+  $mini_panels = panels_mini_load_all();
+
+  $mini_panel_options = array('none' => t('None'));
+  foreach ($mini_panels as $mini_panel) {
+    $mini_panel_options[$mini_panel->name] = $mini_panel->admin_title;
+  }
+
+  $form = array();
+
+  foreach ($megamenu_settings as $key => $menu_settings) {
+    $form[$key] = array(
+      '#type' => 'fieldset',
+    );
+
+    $form[$key]['title-' . $key] = array(
+      '#title' => t('Link title'),
+      '#type' => 'textfield',
+      '#default_value' => $menu_settings['title'],
+      '#required' => TRUE,
+    );
+
+    $form[$key]['link-' . $key] = array(
+      '#title' => t('Link href'),
+      '#type' => 'textfield',
+      '#default_value' => $menu_settings['link'],
+    );
+
+    $form[$key]['minipanel-' . $key] = array(
+      '#title' => t('Minipanel'),
+      '#type' => 'select',
+      '#options' => $mini_panel_options,
+      '#default_value' => $menu_settings['minipanel'],
+    );
+
+    $form[$key]['remove-' . $key] = array(
+      '#title' => t('Remove'),
+      '#type' => 'checkbox',
+    );
+  }
+
+  if (empty($megamenu_settings)) {
+    $form['empty'] = array(
+      '#markup' => '<div>' . t('You have not yet added menu items. Add one using the Add item button.') . '</div>',
+    );
+  }
+  $form['add'] = array(
+    '#type' => 'submit',
+    '#value' => t('Add item'),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save configuration'),
+  );
+
+  return $form;
+}
+
+/**
+ * Implements hook_FORM_ID_submit().
+ */
+function os2web_menus_items_settings_form_submit($form, &$form_state) {
+  $megamenu_settings = variable_get('os2web_menus_settings', array());
+  if ($form_state['values']['add'] == $form_state['values']['op']) {
+    $megamenu_settings[] = array('title' => '', 'link' => '', 'minipanel' => '');
+    variable_set('os2web_menus_settings', $megamenu_settings);
+  }
+
+  foreach ($form_state['values'] as $key => $value) {
+    $setting = explode('-', $key);
+
+    switch ($setting[0]) {
+      case 'title':
+        $megamenu_settings[$setting[1]]['title'] = $value;
+        break;
+
+      case 'link':
+        $megamenu_settings[$setting[1]]['link'] = $value;
+        break;
+
+      case 'minipanel':
+        $megamenu_settings[$setting[1]]['minipanel'] = $value;
+        break;
+
+      case 'remove':
+        if ($value) {
+          unset($megamenu_settings[$setting[1]]);
+        }
+        break;
+    }
+  }
+
+  variable_set('os2web_menus_settings', $megamenu_settings);
+  drupal_set_message(t('Configurations has been saved'));
+}
+
+/**
+ * Implements hook_permissions().
+ */
+function os2web_menus_permissions() {
+
+}
+
+/**
+ * Implements hook_init().
+ */
+function os2web_menus_init() {
+  if (variable_get('os2web_menus_use_default_js', TRUE)) {
+    drupal_add_js(drupal_get_path('module', 'os2web_menus') . '/js/os2web_menus.js', 'file');
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function os2web_menus_block_info() {
+  $blocks = array();
+
+  $blocks['os2web_menus'] = array(
+    'info' => 'OS2Web menus',
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function os2web_menus_block_view($delta) {
+  $block = array();
+
+  switch ($delta) {
+    case 'os2web_menus':
+      $content = '<ul class="os2web_menus-container">';
+      $megamenu_settings = variable_get('os2web_menus_settings', array());
+
+      $active_trail = menu_get_active_trail();
+      $active_trail_paths = array();
+
+      foreach ($active_trail as $trail) {
+        $active_trail_paths[] = drupal_get_path_alias($trail['href']);
+      }
+
+      $i = 0;
+      $len = count($megamenu_settings);
+
+      foreach ($megamenu_settings as $menu) {
+
+        if (empty($menu['title'])) {
+          continue;
+        }
+        $pos = '';
+
+        if ($i == 0) {
+          $pos = 'first';
+        }
+
+        if ($i == $len - 1) {
+          $pos = 'last';
+        }
+
+        if ($menu['minipanel'] === 'none') {
+          $mini_panel = NULL;
+          $menu['minipanel'] = '';
+        }
+        else {
+          $mini_panel = panels_mini_block_view($menu['minipanel']);
+        }
+        $tag = variable_get('os2web_menus_title_tag', 'h3');
+
+        $link_class = in_array(drupal_get_path_alias($menu['link']), $active_trail_paths) ? 'active' : '';
+
+        if (variable_get('os2web_menus_toggle_view', TRUE) && $mini_panel) {
+          $toggle_content = variable_get('os2web_menus_toggle_content', '+/-');
+          $title = '<' . $tag . '>' .
+                   l($menu['title'], $menu['link'], array('attributes' => array('class' => array($link_class)))) .
+                   '</' . $tag . '><a href="#" class="js-megamenu-toggle">' .
+                   $toggle_content . '</a>';
+        }
+        elseif ($mini_panel) {
+          $title = '<' . $tag . '><a href="#" class="js-megamenu-toggle ' . $link_class . '">' .
+                   $menu['title'] . '</a></' . $tag . '>';
+        }
+        else {
+          $title = '<' . $tag . '>' . l($menu['title'], $menu['link'], array('attributes' => array('class' => array($link_class)))) . '</' . $tag . '>';
+        }
+
+        $mini_panel_content = ($mini_panel !== NULL) ? '<div class="megamenu-panel" style="display:none">' . $mini_panel['content'] . '</div>' : '';
+
+        $content .= '<li class="megamenu ' . $menu['minipanel'] . ' ' . $pos . '">' . $title .
+                     $mini_panel_content .
+                    '</li>';
+        $i++;
+      }
+      $content .= '</ul>';
+      $block['subject'] = '';
+      $block['content'] = $content;
+      break;
+  }
+
+  return $block;
+}
