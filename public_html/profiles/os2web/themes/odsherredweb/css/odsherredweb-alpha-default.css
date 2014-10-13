@@ -2897,3 +2897,9 @@ ul.searchcloud li a {
 #sliding-popup .popup-content #popup-text { width: 51%;}
 #sliding-popup .popup-content #popup-buttons { width: 39%; padding-top: 35px; padding-right: 10px;}
 
+.bg-white { 
+	padding: 15px;
+	background-color: #FFF;
+}
+
+.bg-white .item-list .pager { margin-bottom: 20px; clear: both ; padding-bottom: 5px; padding-top: 10px}
