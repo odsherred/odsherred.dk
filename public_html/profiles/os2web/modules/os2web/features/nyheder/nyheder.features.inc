@@ -7,20 +7,19 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function nyheder_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function nyheder_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
-  list($module, $api) = func_get_args();
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "quicktabs" && $api == "quicktabs") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -29,8 +28,8 @@ function nyheder_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function nyheder_views_api() {
-  return array("version" => "3.0");
+function nyheder_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**
@@ -53,10 +52,10 @@ function nyheder_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '610',
-          'height' => '256',
+          'width' => 610,
+          'height' => 256,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -75,10 +74,10 @@ function nyheder_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '290',
-          'height' => '196',
+          'width' => 290,
+          'height' => 196,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -97,10 +96,10 @@ function nyheder_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '290',
-          'height' => '120',
+          'width' => 290,
+          'height' => 120,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -119,10 +118,10 @@ function nyheder_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '110',
-          'height' => '97',
+          'width' => 110,
+          'height' => 97,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
