@@ -41,9 +41,11 @@ function nyheder_quicktabs_default_quicktabs() {
       'type' => 'block',
     ),
   );
-  $quicktabs->renderer = 'quicktabs';
+  $quicktabs->renderer = 'ui_tabs';
   $quicktabs->style = 'nostyle';
-  $quicktabs->options = array();
+  $quicktabs->options = array(
+    'history' => 0,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
