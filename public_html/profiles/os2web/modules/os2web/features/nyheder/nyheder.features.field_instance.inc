@@ -70,57 +70,6 @@ function nyheder_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_additional_info'
-  $field_instances['node-news-field_additional_info'] = array(
-    'bundle' => 'news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Hvis du har yderligere information, links eller fakta som er unikke for denne side, kan det tilføjes i dette felt. Indholdet vises i højre kolonne sammen med siden.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_additional_info',
-    'label' => 'Unikt indhold',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 4,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 35,
-    ),
-  );
-
   // Exported field_instance: 'node-news-field_editortags'
   $field_instances['node-news-field_editortags'] = array(
     'bundle' => 'news',
@@ -597,110 +546,6 @@ function nyheder_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_related'
-  $field_instances['node-news-field_related'] = array(
-    'bundle' => 'news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'rss' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_related',
-    'label' => 'Unikke relaterede links',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'node_reference',
-      'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'node_reference_autocomplete',
-      'weight' => 36,
-    ),
-  );
-
-  // Exported field_instance: 'node-news-field_related_tema'
-  $field_instances['node-news-field_related_tema'] = array(
-    'bundle' => 'news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_related_tema',
-    'label' => 'Unikke relaterede temaer',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'node_reference',
-      'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'node_reference_autocomplete',
-      'weight' => 37,
-    ),
-  );
-
   // Exported field_instance: 'node-news-field_resume_long'
   $field_instances['node-news-field_resume_long'] = array(
     'bundle' => 'news',
@@ -949,58 +794,6 @@ function nyheder_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_source_id'
-  $field_instances['node-news-field_source_id'] = array(
-    'bundle' => 'news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_source_id',
-    'label' => 'Source ID',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 34,
-    ),
-  );
-
   // Exported field_instance: 'node-news-field_termref_kle'
   $field_instances['node-news-field_termref_kle'] = array(
     'bundle' => 'news',
@@ -1180,7 +973,6 @@ function nyheder_field_default_field_instances() {
   t('Egenavne / stednavne');
   t('Filer');
   t('Forfrem til');
-  t('Hvis du har yderligere information, links eller fakta som er unikke for denne side, kan det tilføjes i dette felt. Indholdet vises i højre kolonne sammen med siden.');
   t('Indhold');
   t('KL Emneord');
   t('Kan bruges for flere typer indhold. Ved nyheder, så vises nyheden ikke efter denne dato. Ved Udbud og Høringer er det den dato denne slutter.');
@@ -1190,13 +982,9 @@ function nyheder_field_default_field_instances() {
   t('Primære billede');
   t('Resume (maks 2 linier!)');
   t('Skjul relaterede links');
-  t('Source ID');
   t('Stikord');
   t('Type');
   t('Udløbsdato');
-  t('Unikke relaterede links');
-  t('Unikke relaterede temaer');
-  t('Unikt indhold');
 
   return $field_instances;
 }
