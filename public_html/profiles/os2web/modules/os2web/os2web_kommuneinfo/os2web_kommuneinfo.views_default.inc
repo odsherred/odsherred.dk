@@ -119,15 +119,11 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid_1']['id'] = 'field_newstype_tid_1';
   $handler->display->display_options['filters']['field_newstype_tid_1']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid_1']['field'] = 'field_newstype_tid';
+  $handler->display->display_options['filters']['field_newstype_tid_1']['operator'] = 'not';
   $handler->display->display_options['filters']['field_newstype_tid_1']['value'] = array(
-    26193 => '26193',
-    26192 => '26192',
-    25752 => '25752',
-    26191 => '26191',
-    25757 => '25757',
-    26195 => '26195',
-    26194 => '26194',
-    25755 => '25755',
+    25756 => '25756',
+    26197 => '26197',
+    25753 => '25753',
   );
   $handler->display->display_options['filters']['field_newstype_tid_1']['group'] = 1;
   $handler->display->display_options['filters']['field_newstype_tid_1']['type'] = 'select';
@@ -137,12 +133,15 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['value'] = array(
-    25752 => '25752',
-    26014 => '26014',
-    26013 => '26013',
-    26015 => '26015',
-    25757 => '25757',
+    26198 => '26198',
     25755 => '25755',
+    26194 => '26194',
+    26195 => '26195',
+    26192 => '26192',
+    25752 => '25752',
+    26191 => '26191',
+    26193 => '26193',
+    25757 => '25757',
   );
   $handler->display->display_options['filters']['field_newstype_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_newstype_tid']['exposed'] = TRUE;
@@ -163,7 +162,7 @@ function os2web_kommuneinfo_views_default_views() {
     11 => 0,
     15 => 0,
   );
-  $handler->display->display_options['filters']['field_newstype_tid']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_newstype_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
   /* Filterkriterie: Indhold: Portalkategori (field_site_structure) */
