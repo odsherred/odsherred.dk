@@ -39,6 +39,33 @@ function nyheder_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'field_additional_info'
+  $field_bases['field_additional_info'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_additional_info',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_editortags'
   $field_bases['field_editortags'] = array(
     'active' => 1,
@@ -201,6 +228,36 @@ function nyheder_field_default_field_bases() {
     'type' => 'datetime',
   );
 
+  // Exported field_base: 'field_nyheder_publiceringsdato'
+  $field_bases['field_nyheder_publiceringsdato'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_nyheder_publiceringsdato',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'date',
+    'settings' => array(
+      'cache_count' => 4,
+      'cache_enabled' => 0,
+      'granularity' => array(
+        'day' => 'day',
+        'hour' => 'hour',
+        'minute' => 'minute',
+        'month' => 'month',
+        'second' => 0,
+        'year' => 'year',
+      ),
+      'timezone_db' => 'UTC',
+      'todate' => '',
+      'tz_handling' => 'site',
+    ),
+    'translatable' => 0,
+    'type' => 'datetime',
+  );
+
   // Exported field_base: 'field_organization'
   $field_bases['field_organization'] = array(
     'active' => 1,
@@ -305,36 +362,6 @@ function nyheder_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_publiceringsdato'
-  $field_bases['field_publiceringsdato'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_publiceringsdato',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'date',
-    'settings' => array(
-      'cache_count' => 4,
-      'cache_enabled' => 0,
-      'granularity' => array(
-        'day' => 'day',
-        'hour' => 'hour',
-        'minute' => 'minute',
-        'month' => 'month',
-        'second' => 0,
-        'year' => 'year',
-      ),
-      'timezone_db' => '',
-      'todate' => '',
-      'tz_handling' => 'none',
-    ),
-    'translatable' => 0,
-    'type' => 'datetime',
   );
 
   // Exported field_base: 'field_related'
