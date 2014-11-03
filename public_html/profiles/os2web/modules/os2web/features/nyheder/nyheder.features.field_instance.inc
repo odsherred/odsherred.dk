@@ -66,7 +66,7 @@ function nyheder_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -1,
+      'weight' => 0,
     ),
   );
 
@@ -195,7 +195,7 @@ function nyheder_field_default_field_instances() {
         'resolution' => '690x237',
       ),
       'type' => 'imagefield_crop_widget',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -441,7 +441,7 @@ function nyheder_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 41,
+      'weight' => 42,
     ),
   );
 
@@ -546,6 +546,71 @@ function nyheder_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-news-field_publiceringsdato'
+  $field_instances['node-news-field_publiceringsdato'] = array(
+    'bundle' => 'news',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 21,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_publiceringsdato',
+    'label' => 'Publiceringsdato',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 30,
+        'input_format' => 'Y-m-d H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-10:+1',
+      ),
+      'type' => 'date_popup',
+      'weight' => -3,
+    ),
+  );
+
   // Exported field_instance: 'node-news-field_resume_long'
   $field_instances['node-news-field_resume_long'] = array(
     'bundle' => 'news',
@@ -601,7 +666,7 @@ function nyheder_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -2,
+      'weight' => -1,
     ),
   );
 
@@ -735,7 +800,7 @@ function nyheder_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => -3,
+      'weight' => -2,
     ),
   );
 
@@ -894,7 +959,7 @@ function nyheder_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 40,
+      'weight' => 41,
     ),
   );
 
@@ -980,6 +1045,7 @@ function nyheder_field_default_field_instances() {
   t('Politik');
   t('Portalkategori');
   t('Primære billede');
+  t('Publiceringsdato');
   t('Resume (maks 2 linier!)');
   t('Skjul relaterede links');
   t('Stikord');
