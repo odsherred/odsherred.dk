@@ -121,9 +121,8 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid_1']['field'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid_1']['operator'] = 'not';
   $handler->display->display_options['filters']['field_newstype_tid_1']['value'] = array(
-    25756 => '25756',
-    26197 => '26197',
     25753 => '25753',
+    25769 => '25769',
   );
   $handler->display->display_options['filters']['field_newstype_tid_1']['group'] = 1;
   $handler->display->display_options['filters']['field_newstype_tid_1']['type'] = 'select';
@@ -133,14 +132,19 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['value'] = array(
-    26198 => '26198',
-    25755 => '25755',
-    26194 => '26194',
-    26195 => '26195',
-    26192 => '26192',
-    25752 => '25752',
-    26191 => '26191',
+    26202 => '26202',
+    26196 => '26196',
+    26201 => '26201',
+    26203 => '26203',
+    26197 => '26197',
     26193 => '26193',
+    26200 => '26200',
+    26195 => '26195',
+    26198 => '26198',
+    26199 => '26199',
+    25752 => '25752',
+    26194 => '26194',
+    25755 => '25755',
     25757 => '25757',
   );
   $handler->display->display_options['filters']['field_newstype_tid']['group'] = 1;
@@ -162,6 +166,7 @@ function os2web_kommuneinfo_views_default_views() {
     11 => 0,
     15 => 0,
   );
+  $handler->display->display_options['filters']['field_newstype_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_newstype_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
@@ -287,6 +292,80 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid_1']['vocabulary'] = 'nyhedstype';
   $handler->display->display_options['path'] = 'kommunekalender';
+
+  /* Display: Høringer */
+  $handler = $view->new_display('page', 'Høringer', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Kommuneinformation - Høringer - Side';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  /* Filterkriterie: Indhold: Type (field_newstype) */
+  $handler->display->display_options['filters']['field_newstype_tid_1']['id'] = 'field_newstype_tid_1';
+  $handler->display->display_options['filters']['field_newstype_tid_1']['table'] = 'field_data_field_newstype';
+  $handler->display->display_options['filters']['field_newstype_tid_1']['field'] = 'field_newstype_tid';
+  $handler->display->display_options['filters']['field_newstype_tid_1']['value'] = array(
+    26193 => '26193',
+    26200 => '26200',
+    26195 => '26195',
+    26198 => '26198',
+    26199 => '26199',
+    25752 => '25752',
+  );
+  $handler->display->display_options['filters']['field_newstype_tid_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_newstype_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_newstype_tid_1']['vocabulary'] = 'nyhedstype';
+  /* Filterkriterie: Indhold: Portalkategori (field_site_structure) */
+  $handler->display->display_options['filters']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
+  $handler->display->display_options['filters']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
+  $handler->display->display_options['filters']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
+  $handler->display->display_options['filters']['field_site_structure_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator_id'] = 'field_site_structure_tid_op';
+  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['label'] = 'Kategori';
+  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator'] = 'field_site_structure_tid_op';
+  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['identifier'] = 'field_site_structure_tid';
+  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+    3 => 0,
+    5 => 0,
+    8 => 0,
+    12 => 0,
+    11 => 0,
+    15 => 0,
+  );
+  $handler->display->display_options['filters']['field_site_structure_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_site_structure_tid']['vocabulary'] = 'site_struktur';
+  $handler->display->display_options['filters']['field_site_structure_tid']['hierarchy'] = 1;
+  $handler->display->display_options['path'] = 'kommuneinformationer/hoeringer';
   $translatables['kommuneinformation'] = array(
     t('Master'),
     t('Kommuneinformation'),
@@ -311,6 +390,8 @@ function os2web_kommuneinfo_views_default_views() {
     t('Page'),
     t('Block'),
     t('Kalender'),
+    t('Høringer'),
+    t('Kommuneinformation - Høringer - Side'),
   );
   $export['kommuneinformation'] = $view;
 
