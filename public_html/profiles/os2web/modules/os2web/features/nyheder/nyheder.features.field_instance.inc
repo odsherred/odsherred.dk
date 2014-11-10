@@ -448,7 +448,8 @@ function nyheder_field_default_field_instances() {
   $field_instances['node-news-field_nyheder_publiceringsdato'] = array(
     'bundle' => 'news',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Typisk når denne oprettes. Men kan være anderledes hvis der er publiceret andet sted end Odsherred.dk først.
+Må ikke rettes, er juridisk gældende.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -487,7 +488,7 @@ function nyheder_field_default_field_instances() {
     'label' => 'Publiceringsdato',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -1259,6 +1260,8 @@ function nyheder_field_default_field_instances() {
   t('Source ID');
   t('Stikord');
   t('Type');
+  t('Typisk når denne oprettes. Men kan være anderledes hvis der er publiceret andet sted end Odsherred.dk først.
+Må ikke rettes, er juridisk gældende.');
   t('Udløbsdato');
   t('Unikke relaterede links');
   t('Unikke relaterede temaer');
