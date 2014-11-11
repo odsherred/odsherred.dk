@@ -735,14 +735,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/kommuneinformationer?field_newstype_tid=25752">Se alle/tidligere høringer</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/kommuneinformationer/hoeringer">Se alle/tidligere høringer</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   /* Opførsel ved ingen resultater: Global: Tekstområde */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Ingen høringer. <a href="/kommuneinformationer?field_newstype_tid=25752">Se tidligere høringer</a>';
+  $handler->display->display_options['empty']['area']['content'] = 'Ingen høringer. <a href="/kommuneinformationer/hoeringer">Se tidligere høringer</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Forbindelse: Indhold: Type (field_newstype) */
   $handler->display->display_options['relationships']['field_newstype_tid']['id'] = 'field_newstype_tid';
@@ -1030,8 +1030,8 @@ function nyheder_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('<a href="/kommuneinformationer?field_newstype_tid=25752">Se alle/tidligere høringer</a>'),
-    t('Ingen høringer. <a href="/kommuneinformationer?field_newstype_tid=25752">Se tidligere høringer</a>'),
+    t('<a href="/kommuneinformationer/hoeringer">Se alle/tidligere høringer</a>'),
+    t('Ingen høringer. <a href="/kommuneinformationer/hoeringer">Se tidligere høringer</a>'),
     t('term fra field_newstype'),
     t('Page'),
     t('Type (field_newstype)'),
@@ -1082,7 +1082,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Ingen møder';
+  $handler->display->display_options['empty']['area']['content'] = 'Der er ingen planlagte møder. <a href="/kommuneinformationer/moeder">Gå til arkiv.</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Forbindelse: Indhold: Type (field_newstype) */
   $handler->display->display_options['relationships']['field_newstype_tid']['id'] = 'field_newstype_tid';
@@ -1357,7 +1357,7 @@ function nyheder_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('Ingen møder'),
+    t('Der er ingen planlagte møder. <a href="/kommuneinformationer/moeder">Gå til arkiv.</a>'),
     t('term fra field_newstype'),
     t('Page'),
     t('Type (field_newstype)'),
@@ -1608,7 +1608,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Ingen udbud.';
+  $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle udbud. <a href="/kommuneinformationer/udbud" title="Alle udbud">Se aktuelle udbud her.</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Forbindelse: Indhold: Type (field_newstype) */
   $handler->display->display_options['relationships']['field_newstype_tid']['id'] = 'field_newstype_tid';
@@ -1818,7 +1818,7 @@ function nyheder_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('Ingen udbud.'),
+    t('Der er ingen aktuelle udbud. <a href="/kommuneinformationer/udbud" title="Alle udbud">Se aktuelle udbud her.</a>'),
     t('term fra field_newstype'),
     t('[title] ([field_udloebsdato])'),
     t('Page'),
