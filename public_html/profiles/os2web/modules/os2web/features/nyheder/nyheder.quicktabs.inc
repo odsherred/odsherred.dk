@@ -27,9 +27,9 @@ function nyheder_quicktabs_default_quicktabs() {
       'type' => 'block',
     ),
     1 => array(
-      'bid' => 'views_delta_kommuneinformation-block_4',
+      'bid' => 'views_delta_kommuneinformation-block_2',
       'hide_title' => 1,
-      'title' => 'Mødeaktiviteter',
+      'title' => 'Afgørelser',
       'weight' => '-99',
       'type' => 'block',
     ),
@@ -41,9 +41,9 @@ function nyheder_quicktabs_default_quicktabs() {
       'type' => 'block',
     ),
     3 => array(
-      'bid' => 'views_delta_kommuneinformation-block_2',
+      'bid' => 'views_delta_kommuneinformation-block_4',
       'hide_title' => 1,
-      'title' => 'Afgørelser',
+      'title' => 'Møder',
       'weight' => '-97',
       'type' => 'block',
     ),
@@ -58,7 +58,7 @@ function nyheder_quicktabs_default_quicktabs() {
   // Included for use with string extractors like potx.
   t('Afgørelser');
   t('Høringer');
-  t('Mødeaktiviteter');
+  t('Møder');
   t('Udbud');
   t('news page tabs');
 
