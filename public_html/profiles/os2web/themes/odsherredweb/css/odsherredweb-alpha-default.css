@@ -2907,6 +2907,8 @@ ul.searchcloud li a {
 /*#quicktabs-nyheder .item-list ul { position: relative}
 #quicktabs-nyheder .item-list ul li { float: none; position: relative;}*/
 
+.ui-tabs .ui-tabs-panel { padding: 0 0}
+
 .pane-quicktabs-nyheder { padding: 0}
 
 .pane-quicktabs-nyheder h3.pane-title { padding: 20px 15px 0;}
@@ -2986,13 +2988,23 @@ ul.searchcloud li a {
   margin: 0 10px;
   padding: 23px 0 17px;
 }
+
+#quicktabs-nyheder .view-kommuneinformation .views-row {
+  padding: 0 0 0;
+}
+
+#quicktabs-nyheder .view-kommuneinformation .titel a { font-size: 14px; color: #3e3e3e;  text-decoration: none;}
+
+#quicktabs-nyheder .view-kommuneinformation .date-display-single { font-size: 12px;}
+
 #quicktabs-nyheder .views-row-last {
   border: none;
 }
 
 #quicktabs-nyheder .views-field-title a {
   font-weight: 300;
-  font-size: 13px;
+  font-size: 14px;
+  color: #3e3e3e;
 }
 #quicktabs-nyheder .views-field-title a:hover {
   color: #3174a3;
@@ -3008,3 +3020,4 @@ ul.searchcloud li a {
 
 #quicktabs-nyheder h4 a { color: #3e3e3e; text-decoration: none;font-weight: bold}
 #quicktabs-nyheder h4 a:hover {color: #407DAA}
+
