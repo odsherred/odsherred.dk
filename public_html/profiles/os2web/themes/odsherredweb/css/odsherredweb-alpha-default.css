@@ -2925,6 +2925,10 @@ ul.searchcloud li a {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
+  background: transparent;
+  width: auto;
+  float: none;
+  display: block;
 }
 
 #quicktabs-nyheder .item-list ul li,
@@ -2936,6 +2940,7 @@ ul.searchcloud li a {
     box-shadow: none;
   display: block;
   float: none;
+
 }
 
 #quicktabs-nyheder .item-list ul li.active a,
@@ -2951,6 +2956,7 @@ ul.searchcloud li a {
   text-decoration: none;
   padding: 0 0 5px 10px;
   margin: 0;
+  width: 200px;
 }
 
 #quicktabs-nyheder ul li.active {
@@ -2995,7 +3001,7 @@ ul.searchcloud li a {
 
 #quicktabs-nyheder .view-kommuneinformation .titel a { font-size: 14px; color: #3e3e3e;  text-decoration: none;}
 
-#quicktabs-nyheder .view-kommuneinformation .date-display-single { font-size: 12px;}
+#quicktabs-nyheder .view-kommuneinformation .date-display-single { font-size: }
 
 #quicktabs-nyheder .views-row-last {
   border: none;
