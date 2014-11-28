@@ -826,7 +826,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Der er inden publicerede planlagte møder.';
+  $handler->display->display_options['empty']['area']['content'] = 'Der er inden planlagte møder i denne kategori.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Dato */
@@ -1407,7 +1407,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_udloebsdato_1']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_udloebsdato_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_udloebsdato_1']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1534,7 +1534,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_udloebsdato']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_udloebsdato']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1662,7 +1662,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_udloebsdato_1']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_udloebsdato_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_udloebsdato_1']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1776,6 +1776,17 @@ Tilbudsfrist: [field_udloebsdato]</p>';
 <p><a href="/kommuneinformationer/moeder" title="Tidligere møder">Se tidligere møder</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Dato */
+  $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
+  $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
+  $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
+  $handler->display->display_options['fields']['field_newstypedato']['settings'] = array(
+    'format_type' => 'dag_og_maaned',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1791,11 +1802,16 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Indhold: Dato */
-  $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
-  $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
-  $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
-  $handler->display->display_options['fields']['field_newstypedato']['settings'] = array(
-    'format_type' => 'long',
+  $handler->display->display_options['fields']['field_newstypedato_1']['id'] = 'field_newstypedato_1';
+  $handler->display->display_options['fields']['field_newstypedato_1']['table'] = 'field_data_field_newstypedato';
+  $handler->display->display_options['fields']['field_newstypedato_1']['field'] = 'field_newstypedato';
+  $handler->display->display_options['fields']['field_newstypedato_1']['label'] = '';
+  $handler->display->display_options['fields']['field_newstypedato_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_newstypedato_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_newstypedato_1']['alter']['text'] = '[field_newstypedato_1-value]';
+  $handler->display->display_options['fields']['field_newstypedato_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_newstypedato_1']['settings'] = array(
+    'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1899,7 +1915,7 @@ Klagefrist: [field_udloebsdato]</p>'),
 Tilbudsfrist: [field_udloebsdato]</p>'),
     t('Møder'),
     t('Kommuneinformation - Møder - Side'),
-    t('Der er inden publicerede planlagte møder.'),
+    t('Der er inden planlagte møder i denne kategori.'),
     t('<p class="indrykket">[field_resume_long]</p>
 <p class="indrykket lilletekst">Pubiceret: [field_nyheder_publiceringsdato] </p>'),
     t('Tidligere udbud'),
@@ -1945,6 +1961,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('<a class="setidligere" href="/kommuneinformationer/moeder">Se tidligere møder</a>'),
     t('<p>Der er ingen aktuelle møder.</p>
 <p><a href="/kommuneinformationer/moeder" title="Tidligere møder">Se tidligere møder</a>'),
+    t('[field_newstypedato_1-value]'),
     t('<p class="indrykket">[field_newstype]: [field_resume_long]</p>
 <p class="indrykket  lilletekst"><i>Mødestart: [field_dato_1]</i></p>'),
   );
