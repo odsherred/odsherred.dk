@@ -978,7 +978,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Tidligere udbud';
-  $handler->display->display_options['header']['area']['content'] = 'Tidligere udbud';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Tidligere udbud</h2>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Titel */
@@ -1067,7 +1067,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Tidligere afgørelser';
-  $handler->display->display_options['header']['area']['content'] = 'Tidligere afgørelser';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Tidligere afgørelser</h2>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Titel */
@@ -1678,10 +1678,8 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'span';
-  $handler->display->display_options['fields']['title']['element_class'] = 'titel';
+  $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Felt: Indhold: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
@@ -1708,9 +1706,11 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
+  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
   $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_resume_long]</p>
 <p class="indrykket  lilletekst"><i>Tilbudsfrist: [field_udloebsdato_1]</i></p>';
+  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1799,6 +1799,8 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Felt: Indhold: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
@@ -1926,8 +1928,10 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('<p class="indrykket">[field_resume_long]</p>
 <p class="indrykket lilletekst">Pubiceret: [field_nyheder_publiceringsdato] </p>'),
     t('Tidligere udbud'),
+    t('<h2>Tidligere udbud</h2>'),
     t('Udløbsdato'),
     t('Tidligere afgørelser'),
+    t('<h2>Tidligere afgørelser</h2>'),
     t('Tidligere møder'),
     t('<h2>Afholdte møder</h2>'),
     t('Tidligere høringer'),
@@ -1958,7 +1962,6 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('<a class="setidligere" href="/kommuneinformationer/udbud">Se tidligere udbud</a>'),
     t('<p>Der er ingen aktuelle udbud.</p>
 <p><a href="/kommuneinformationer/udbud" title="Tidligere udbud">Se tidligere udbud</a>'),
-    t('Resume - lang overskrift'),
     t('<p class="indrykket">[field_newstype]: [field_resume_long]</p>
 <p class="indrykket  lilletekst"><i>Tilbudsfrist: [field_udloebsdato_1]</i></p>'),
     t('Nyheder - Blok - Møder'),
