@@ -55,6 +55,9 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle udbud i denne kategori.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -312,7 +315,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle publicerede høringer';
+  $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle høringer.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Udløbsdato */
@@ -1780,6 +1783,8 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
+  $handler->display->display_options['fields']['field_newstypedato']['label'] = '';
+  $handler->display->display_options['fields']['field_newstypedato']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstypedato']['settings'] = array(
     'format_type' => 'dag_og_maaned',
     'fromto' => 'both',
@@ -1799,6 +1804,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
+  $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Indhold: Dato */
@@ -1824,7 +1830,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['label'] = '';
   $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_resume_long]</p>
-<p class="indrykket  lilletekst"><i>Mødestart: [field_dato_1]</i></p>';
+<p class="indrykket  lilletekst"><i>Mødestart: [field_newstypedato_1]</i></p>';
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: Indhold: Har taksonomiterm ID (med dybde) */
@@ -1882,6 +1888,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
+    t('Der er ingen aktuelle udbud i denne kategori.'),
     t('Dato'),
     t('Svarfrist'),
     t('Type'),
@@ -1892,7 +1899,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     t('Publish on'),
     t('Høringer'),
     t('Kommuneinformation - Høringer - Side'),
-    t('Der er ingen aktuelle publicerede høringer'),
+    t('Der er ingen aktuelle høringer.'),
     t('[field_site_structure] - [field_newstype] '),
     t('Publiceringsdato'),
     t('<p class="indrykket">[field_resume_long]</p>
@@ -1963,7 +1970,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
 <p><a href="/kommuneinformationer/moeder" title="Tidligere møder">Se tidligere møder</a>'),
     t('[field_newstypedato_1-value]'),
     t('<p class="indrykket">[field_newstype]: [field_resume_long]</p>
-<p class="indrykket  lilletekst"><i>Mødestart: [field_dato_1]</i></p>'),
+<p class="indrykket  lilletekst"><i>Mødestart: [field_newstypedato_1]</i></p>'),
   );
   $export['kommuneinformation'] = $view;
 
