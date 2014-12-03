@@ -27,8 +27,8 @@ function odsherred_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1418380336',
-        'last_entity_id' => '895721',
+        'last_changed' => '1414763696',
+        'last_entity_id' => '895645',
       ),
       'redirect' => array(
         'last_changed' => 0,
@@ -59,8 +59,8 @@ function odsherred_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1418382604,
-    'apachesolr_last_optimize' => 1418371201,
+    'apachesolr_index_updated' => 1414764629,
+    'apachesolr_last_optimize' => 1414681201,
     'apachesolr_read_only' => '0',
     'apachesolr_search_changed_boost' => '0:0',
     'apachesolr_search_comment_boost' => '0:0',
