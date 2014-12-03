@@ -1,8 +1,7 @@
 name = OS2Web Design
 core = 7.x
 package = OS2Web - Struktur
-php = 5.2.4
-version = 7.x-1.10
+version = 7.x-1.12
 project = os2web_design
 dependencies[] = bg_image
 dependencies[] = bg_image_ui
@@ -13,6 +12,8 @@ dependencies[] = features
 dependencies[] = image
 dependencies[] = lightbox2
 dependencies[] = media
+dependencies[] = node
+dependencies[] = nyheder
 dependencies[] = scheduler
 dependencies[] = strongarm
 datestamp = 1338117520
@@ -24,8 +25,8 @@ features[delta][] = hide_second_sidebar
 features[delta][] = indholdsredigering
 features[delta][] = portalforside
 features[delta][] = standard
-features[features_api][] = api:1
-features[field][] = node-baggrund-field_side_baggrungsbillede
+features[features_api][] = api:2
+features[field_instance][] = node-baggrund-field_side_baggrungsbillede
 features[node][] = baggrund
 features[user_permission][] = administer background image
 features[user_permission][] = administer delta
@@ -50,10 +51,4 @@ features[variable][] = scheduler_publish_touch_baggrund
 features[variable][] = scheduler_unpublish_enable_baggrund
 features[variable][] = scheduler_unpublish_required_baggrund
 features[variable][] = scheduler_unpublish_revision_baggrund
-timestamp = 1353326099
-
-;Added by OS2Web 2013-05-30
-project=OS2Web
-version=1.11
-timestamp=1369904058
-
+timestamp = 1369904058
