@@ -19,7 +19,12 @@ function os2web_webform_downloads_field_group_info() {
   $field_group->bundle = 'webform';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
-  $field_group->data = '';
+  $field_group->data = array(
+    'label' => '',
+    'weight' => '0',
+    'children' => array(),
+    'format_type' => 'fieldset',
+  );
   $export['group_taksonomi|node|webform|form'] = $field_group;
 
   return $export;
