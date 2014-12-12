@@ -147,9 +147,9 @@ function nyheder_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Undskriv',
+      'admin_title' => 'Udskriv',
       'title' => '',
-      'body' => '<a href="/print/%node:nid" target="_blank" title="Undskriv">Udskriv</a>
+      'body' => '<a href="/print/%node:nid" target="_blank" title="Udskriv">Udskriv</a>
 <a href="/indhold/nyhedsbreve" title="Abonner" class="abonnerlink">Abonner</a>',
       'format' => 'php_code',
       'substitute' => 1,
