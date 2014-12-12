@@ -2,7 +2,7 @@
 
 
 <div class="topborgerdk">
-<div class="node-print"><a href="/print/<?php print $node->nid; ?>" target="_blank" title="Undskriv">Udskriv</a></div>
+<div class="node-print"><a href="/print/<?php print $node->nid; ?>" target="_blank" title="Udskriv">Udskriv</a></div>
 <?php print render($region['preface_first']); ?>
 </div>
 
