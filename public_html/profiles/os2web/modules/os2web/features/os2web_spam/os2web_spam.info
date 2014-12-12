@@ -1,6 +1,7 @@
 name = OS2web - Spam
 core = 7.x
 package = OS2Web
+php = 5.2.4
 version = 7.x-1.0
 project = os2web_spam
 dependencies[] = ctools

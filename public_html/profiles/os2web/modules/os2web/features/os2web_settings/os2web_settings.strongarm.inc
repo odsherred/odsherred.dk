@@ -14,7 +14,7 @@ function os2web_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cache_lifetime';
-  $strongarm->value = '0';
+  $strongarm->value = '900';
   $export['cache_lifetime'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -606,7 +606,7 @@ example.org';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_transliterate';
-  $strongarm->value = FALSE;
+  $strongarm->value = 1;
   $export['pathauto_transliterate'] = $strongarm;
 
   $strongarm = new stdClass();

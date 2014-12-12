@@ -2,8 +2,8 @@ name = odsherred_search
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0
-project = odsherred_search
+version = 1.11
+project = OS2Web
 dependencies[] = apachesolr_search
 dependencies[] = context
 dependencies[] = ctools
@@ -35,9 +35,4 @@ features[variable][] = apachesolr_last_optimize
 features[variable][] = apachesolr_search_default_search_page
 features[variable][] = apachesolr_search_mlt_blocks
 features[variable][] = apachesolr_set_nodeapi_messages
-
-;Added by OS2Web 2013-05-30
-project=OS2Web
-version=1.11
-timestamp=1369904058
-
+timestamp = 1369904058

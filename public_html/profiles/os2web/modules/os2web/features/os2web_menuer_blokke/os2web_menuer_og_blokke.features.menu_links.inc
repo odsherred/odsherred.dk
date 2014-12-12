@@ -23,15 +23,20 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
           'target' => 'custom',
           'target_custom' => '.region-menu',
           'type' => 'absolute',
+          'container' => '',
           'corner' => array(
             'target' => 'bottomLeft',
             'tooltip' => 'topLeft',
           ),
+          'adjust' => array(
+            'x' => '0',
+            'y' => '0',
+          ),
         ),
         'show' => array(
-          'delay' => '200',
+          'delay' => '0',
           'when' => array(
-            'event' => 'mouseover',
+            'event' => 'click',
           ),
           'effect' => array(
             'type' => 'false',
@@ -39,13 +44,14 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
           ),
         ),
         'hide' => array(
-          'delay' => '30',
+          'delay' => '500',
           'effect' => array(
             'type' => 'false',
             'length' => '0',
           ),
         ),
         'style' => array(
+          'tip' => 'none',
           'name' => 'cmstheme',
           'width' => array(
             'min' => '940',
@@ -56,7 +62,6 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
             'color' => '#fff',
             'radius' => '0',
           ),
-          'tip' => 'none',
         ),
         'mlid' => '782',
       ),
@@ -84,15 +89,20 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
           'target' => 'custom',
           'target_custom' => '.region-menu',
           'type' => 'absolute',
+          'container' => '',
           'corner' => array(
             'target' => 'bottomLeft',
             'tooltip' => 'topLeft',
           ),
+          'adjust' => array(
+            'x' => '0',
+            'y' => '0',
+          ),
         ),
         'show' => array(
-          'delay' => '200',
+          'delay' => '0',
           'when' => array(
-            'event' => 'mouseover',
+            'event' => 'click',
           ),
           'effect' => array(
             'type' => 'false',
@@ -100,13 +110,14 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
           ),
         ),
         'hide' => array(
-          'delay' => '0',
+          'delay' => '500',
           'effect' => array(
             'type' => 'false',
             'length' => '0',
           ),
         ),
         'style' => array(
+          'tip' => 'none',
           'name' => 'cmstheme',
           'width' => array(
             'min' => '940',
@@ -117,7 +128,6 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
             'color' => '#fff',
             'radius' => '0',
           ),
-          'tip' => 'none',
         ),
         'mlid' => '783',
       ),
@@ -145,15 +155,20 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
           'target' => 'custom',
           'target_custom' => '.region-menu',
           'type' => 'absolute',
+          'container' => '',
           'corner' => array(
             'target' => 'bottomLeft',
             'tooltip' => 'topLeft',
           ),
+          'adjust' => array(
+            'x' => '0',
+            'y' => '0',
+          ),
         ),
         'show' => array(
-          'delay' => '200',
+          'delay' => '0',
           'when' => array(
-            'event' => 'mouseover',
+            'event' => 'click',
           ),
           'effect' => array(
             'type' => 'false',
@@ -161,13 +176,14 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
           ),
         ),
         'hide' => array(
-          'delay' => '0',
+          'delay' => '500',
           'effect' => array(
             'type' => 'false',
             'length' => '0',
           ),
         ),
         'style' => array(
+          'tip' => 'none',
           'name' => 'cmstheme',
           'width' => array(
             'min' => '940',
@@ -178,7 +194,6 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
             'color' => '#fff',
             'radius' => '0',
           ),
-          'tip' => 'none',
         ),
         'mlid' => '784',
       ),
@@ -198,7 +213,7 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
     'menu_name' => 'menu-erhverv-genveje',
     'link_path' => 'nyheder',
     'router_path' => 'nyheder',
-    'link_title' => 'Nyheder og presse',
+    'link_title' => 'Nyheder',
     'options' => array(
       'minipanel' => '',
       'attributes' => array(
@@ -208,9 +223,9 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
     'module' => 'menu',
     'hidden' => '0',
     'external' => '0',
-    'has_children' => '0',
+    'has_children' => '1',
     'expanded' => '0',
-    'weight' => '-49',
+    'weight' => '-46',
   );
   // Exported menu link: menu-indholdsmenu:taxonomy/term/4
   $menu_links['menu-indholdsmenu:taxonomy/term/4'] = array(
@@ -227,7 +242,7 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
     'module' => 'menu',
     'hidden' => '0',
     'external' => '0',
-    'has_children' => '1',
+    'has_children' => '0',
     'expanded' => '0',
     'weight' => '1',
   );
@@ -249,25 +264,6 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
     'has_children' => '1',
     'expanded' => '0',
     'weight' => '4',
-  );
-  // Exported menu link: menu-indholdsmenu:taxonomy/term/6
-  $menu_links['menu-indholdsmenu:taxonomy/term/6'] = array(
-    'menu_name' => 'menu-indholdsmenu',
-    'link_path' => 'taxonomy/term/6',
-    'router_path' => 'taxonomy/term/%',
-    'link_title' => 'Politik',
-    'options' => array(
-      'minipanel' => '',
-      'attributes' => array(
-        'title' => 'Se alle punkter under Politik & planer',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '1',
-    'expanded' => '0',
-    'weight' => '5',
   );
   // Exported menu link: menu-top-menu:http://www.adgangforalle.dk/
   $menu_links['menu-top-menu:http://www.adgangforalle.dk/'] = array(
@@ -340,7 +336,7 @@ function os2web_menuer_og_blokke_menu_default_menu_links() {
   t('Log out');
   t('Log ud');
   t('Læs højt');
-  t('Nyheder og presse');
+  t('Nyheder');
   t('Politik');
   t('User account');
 

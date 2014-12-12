@@ -200,6 +200,7 @@ function os2web_settings_user_default_permissions() {
       1 => 'Editor',
       2 => 'Kommunikation',
       3 => 'Webmaster',
+      4 => 'Webredaktør',
     ),
     'module' => 'node',
   );

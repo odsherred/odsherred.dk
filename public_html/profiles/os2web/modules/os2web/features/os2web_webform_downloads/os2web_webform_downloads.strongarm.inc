@@ -14,7 +14,7 @@ function os2web_webform_downloads_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_webform';
-  $strongarm->value = 'edit-workflow';
+  $strongarm->value = 'edit-menu';
   $export['additional_settings__active_tab_webform'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -100,10 +100,16 @@ function os2web_webform_downloads_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '5',
+        ),
+        'metatags' => array(
+          'weight' => '13',
+        ),
+        'redirect' => array(
+          'weight' => '12',
         ),
       ),
       'display' => array(
@@ -130,7 +136,11 @@ function os2web_webform_downloads_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_webform';
   $strongarm->value = array(
-    0 => 'menu-indholdsmenu',
+    0 => 'menu-indhold',
+    1 => 'menu-erhverv',
+    2 => 'menu-indholdsmenu',
+    3 => 'menu-om-ballerup',
+    4 => 'menu-politik',
   );
   $export['menu_options_webform'] = $strongarm;
 

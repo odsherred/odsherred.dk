@@ -2,8 +2,8 @@ name = Borgerdk visning
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0
-project = borgerdk_visning
+version = 1.11
+project = OS2Web
 dependencies[] = ctools
 dependencies[] = image
 dependencies[] = page_manager
@@ -11,9 +11,4 @@ features[ctools][] = page_manager:pages_default:1
 features[features_api][] = api:1
 features[image][] = borger_dk_image
 features[page_manager_handlers][] = node_view_panel_context_8
-
-;Added by OS2Web 2013-05-30
-project=OS2Web
-version=1.11
-timestamp=1369904058
-
+timestamp = 1369904058

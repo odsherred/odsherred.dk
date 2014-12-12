@@ -3,8 +3,8 @@ description = Download af filer vha. webforms
 core = 7.x
 package = OS2Web - Struktur
 php = 5.2.4
-version = 7.x-1.10
-project = os2web_webform_downloads
+version = 1.11
+project = OS2Web
 dependencies[] = borger_dk_integration
 dependencies[] = features
 dependencies[] = field_group
@@ -20,6 +20,7 @@ features[field][] = node-webform-field_editortags
 features[field][] = node-webform-field_organization
 features[field][] = node-webform-field_resume_long
 features[field][] = node-webform-field_site_structure
+features[field][] = node-webform-field_tekst_efter_formular
 features[field][] = node-webform-field_termref_kle
 features[field][] = node-webform-field_termref_sofd
 features[field][] = node-webform-field_termref_sted
@@ -75,10 +76,4 @@ features[variable][] = webform_search_index
 features[variable][] = webform_submission_access_control
 features[variable][] = webform_use_cookies
 features[variable][] = workbench_access_node_type_webform
-timestamp = 1353326099
-
-;Added by OS2Web 2013-05-30
-project=OS2Web
-version=1.11
-timestamp=1369904058
-
+timestamp = 1369904058
