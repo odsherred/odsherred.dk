@@ -25,7 +25,7 @@ function os2web_menuer_og_blokke_menu_default_menu_custom() {
   // Exported menu: menu-indholdsmenu.
   $menus['menu-indholdsmenu'] = array(
     'menu_name' => 'menu-indholdsmenu',
-    'title' => 'Indholdsmenu',
+    'title' => 'Politik menu fejl ',
     'description' => '',
   );
   // Exported menu: user-menu.
@@ -37,8 +37,8 @@ function os2web_menuer_og_blokke_menu_default_menu_custom() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Din kommune');
-  t('Indholdsmenu');
   t('Main menu');
+  t('Politik menu fejl ');
   t('Spørgsmål om din kommune');
   t('The <em>Main</em> menu is used on many sites to show the major sections of the site, often in a top navigation bar.');
   t('The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.');

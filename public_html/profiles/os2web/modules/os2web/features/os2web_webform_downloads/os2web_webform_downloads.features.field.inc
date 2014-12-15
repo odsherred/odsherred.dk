@@ -41,7 +41,13 @@ function os2web_webform_downloads_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'webform',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'summary' => '',
+          'value' => '',
+          'format' => 'filtered_html',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -67,11 +73,53 @@ function os2web_webform_downloads_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'body',
-      'label' => 'Indhold inden formularen',
+      'label' => 'Tekst inden formular',
       'required' => 0,
       'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'blokindhold' => 'blokindhold',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'full_html_iframe' => 0,
+            'php_code' => 0,
+            'plain_text' => 'plain_text',
+            'raw' => 0,
+            'standard' => 'standard',
+          ),
+          'allowed_formats_toggle' => 1,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'blokindhold' => array(
+                'weight' => '-7',
+              ),
+              'filtered_html' => array(
+                'weight' => '-10',
+              ),
+              'full_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html_iframe' => array(
+                'weight' => '0',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-8',
+              ),
+              'raw' => array(
+                'weight' => '0',
+              ),
+              'standard' => array(
+                'weight' => '0',
+              ),
+            ),
+          ),
+        ),
         'display_summary' => 0,
-        'text_processing' => '0',
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -82,7 +130,7 @@ function os2web_webform_downloads_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -132,7 +180,7 @@ function os2web_webform_downloads_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '6',
+          'weight' => '9',
         ),
         'related_block' => array(
           'label' => 'above',
@@ -163,7 +211,7 @@ function os2web_webform_downloads_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '12',
+        'weight' => '11',
       ),
     ),
   );
@@ -213,7 +261,7 @@ function os2web_webform_downloads_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '6',
         ),
         'related_block' => array(
           'label' => 'above',
@@ -244,7 +292,7 @@ function os2web_webform_downloads_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '10',
+        'weight' => '9',
       ),
     ),
   );
@@ -284,9 +332,10 @@ function os2web_webform_downloads_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '7',
+          'type' => 'text_default',
+          'weight' => '2',
         ),
         'related_block' => array(
           'label' => 'above',
@@ -303,11 +352,53 @@ function os2web_webform_downloads_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_resume_long',
-      'label' => 'Resume',
+      'label' => 'Introtekst',
       'required' => 0,
       'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'blokindhold' => 'blokindhold',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'full_html_iframe' => 'full_html_iframe',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+            'raw' => 'raw',
+            'standard' => 'standard',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'blokindhold' => array(
+                'weight' => '-7',
+              ),
+              'filtered_html' => array(
+                'weight' => '-10',
+              ),
+              'full_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html_iframe' => array(
+                'weight' => '0',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-8',
+              ),
+              'raw' => array(
+                'weight' => '0',
+              ),
+              'standard' => array(
+                'weight' => '0',
+              ),
+            ),
+          ),
+        ),
         'display_summary' => 0,
-        'text_processing' => '1',
+        'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -318,7 +409,7 @@ function os2web_webform_downloads_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -369,7 +460,7 @@ function os2web_webform_downloads_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '1',
+          'weight' => '3',
         ),
         'related_block' => array(
           'label' => 'above',
@@ -398,7 +489,130 @@ function os2web_webform_downloads_field_default_fields() {
           'content_taxonomy_opt_groups' => FALSE,
         ),
         'type' => 'options_select',
-        'weight' => '7',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-webform-field_tekst_efter_formular'.
+  $fields['node-webform-field_tekst_efter_formular'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_tekst_efter_formular',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'webform',
+      'default_value' => array(
+        0 => array(
+          'value' => '',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 11,
+        ),
+        'related_block' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_tekst_efter_formular',
+      'label' => 'Tekst efter formular',
+      'required' => 0,
+      'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'blokindhold' => 0,
+            'filtered_html' => 'filtered_html',
+            'full_html' => 0,
+            'full_html_iframe' => 0,
+            'php_code' => 0,
+            'plain_text' => 0,
+            'raw' => 0,
+            'standard' => 0,
+          ),
+          'allowed_formats_toggle' => 1,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'blokindhold' => array(
+                'weight' => '-7',
+              ),
+              'filtered_html' => array(
+                'weight' => '-10',
+              ),
+              'full_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html_iframe' => array(
+                'weight' => '0',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-8',
+              ),
+              'raw' => array(
+                'weight' => '0',
+              ),
+              'standard' => array(
+                'weight' => '0',
+              ),
+            ),
+          ),
+        ),
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '15',
       ),
     ),
   );
@@ -448,7 +662,7 @@ function os2web_webform_downloads_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '2',
+          'weight' => '4',
         ),
         'related_block' => array(
           'label' => 'above',
@@ -479,7 +693,7 @@ function os2web_webform_downloads_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '8',
+        'weight' => '7',
       ),
     ),
   );
@@ -529,7 +743,7 @@ function os2web_webform_downloads_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '7',
         ),
         'related_block' => array(
           'label' => 'above',
@@ -560,7 +774,7 @@ function os2web_webform_downloads_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '11',
+        'weight' => '10',
       ),
     ),
   );
@@ -610,7 +824,7 @@ function os2web_webform_downloads_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '8',
         ),
         'related_block' => array(
           'label' => 'above',
@@ -641,7 +855,7 @@ function os2web_webform_downloads_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '9',
+        'weight' => '8',
       ),
     ),
   );
@@ -686,7 +900,7 @@ function os2web_webform_downloads_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '5',
         ),
         'related_block' => array(
           'label' => 'above',
@@ -735,7 +949,7 @@ function os2web_webform_downloads_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -743,13 +957,14 @@ function os2web_webform_downloads_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Egenavne / stednavne');
-  t('Indhold inden formularen');
+  t('Introtekst');
   t('KLE');
   t('Organisation');
   t('Portalkategori');
-  t('Resume');
   t('Stikord');
   t('Søgeord SOFD');
+  t('Tekst efter formular');
+  t('Tekst inden formular');
   t('Webform attachment');
 
   return $fields;

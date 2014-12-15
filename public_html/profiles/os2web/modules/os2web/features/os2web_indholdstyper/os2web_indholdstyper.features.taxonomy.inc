@@ -21,7 +21,7 @@ function os2web_indholdstyper_taxonomy_default_vocabularies() {
       'name' => 'Nyhedstype',
       'machine_name' => 'nyhedstype',
       'description' => '',
-      'hierarchy' => '0',
+      'hierarchy' => '1',
       'module' => 'taxonomy',
       'weight' => '0',
     ),

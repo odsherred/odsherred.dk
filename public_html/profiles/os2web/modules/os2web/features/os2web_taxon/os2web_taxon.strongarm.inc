@@ -42,7 +42,7 @@ function os2web_taxon_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'taxon_taxonomy_not_selected_image';
-  $strongarm->value = '/profiles/os2web/modules/os2web/taxon_taxonomy/images/not_selected_png';
+  $strongarm->value = '/profiles/os2web/modules/os2web/taxon_taxonomy/images/not_selected.png';
   $export['taxon_taxonomy_not_selected_image'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -56,21 +56,21 @@ function os2web_taxon_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'taxon_taxonomy_selected_image';
-  $strongarm->value = '/profiles/os2web/modules/os2web/taxon_taxonomy/images/selected_png';
+  $strongarm->value = '/profiles/os2web/modules/os2web/taxon_taxonomy/images/selected.png';
   $export['taxon_taxonomy_selected_image'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'taxon_taxonomy_taxonomy_name';
-  $strongarm->value = 'kle-syddjurs_lookup.json';
+  $strongarm->value = '/var/www/taxon.odsherred.dk/public_html/taxon/system/taxonomies/kle_lookup.json';
   $export['taxon_taxonomy_taxonomy_name'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'taxon_taxonomy_taxon_url';
-  $strongarm->value = 'odsherred.bellcom.dk/Taxon/web-service/taxon-ws.php';
+  $strongarm->value = 'http://taxon.odsherred.dk:8080/taxon/web-service/taxon-ws.php';
   $export['taxon_taxonomy_taxon_url'] = $strongarm;
 
   $strongarm = new stdClass();

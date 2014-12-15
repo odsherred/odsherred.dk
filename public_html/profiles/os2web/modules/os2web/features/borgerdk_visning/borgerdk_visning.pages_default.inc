@@ -106,7 +106,7 @@ function borgerdk_visning_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Udskriv',
       'title' => '',
-      'body' => '<a href="/print/%node:nid" target="_blank" title="Undskriv">Udskriv</a>',
+      'body' => '<a href="/print/%node:nid" target="_blank" title="Udskriv">Udskriv</a>',
       'format' => 'php_code',
       'substitute' => 1,
     );

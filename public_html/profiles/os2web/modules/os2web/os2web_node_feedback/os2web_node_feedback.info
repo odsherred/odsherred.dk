@@ -3,8 +3,8 @@ description = Aktiver en feedback form på hjemmesiden.
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.10
-project = os2web_node_feedback
+version = 1.11
+project = OS2Web
 dependencies[] = features
 dependencies[] = feedback
 dependencies[] = strongarm
@@ -17,9 +17,4 @@ features[user_permission][] = administer feedback
 features[user_permission][] = view feedback messages
 features[variable][] = feedback_excluded_paths
 features[variable][] = field_bundle_settings_feedback__feedback
-
-;Added by OS2Web 2013-05-30
-project=OS2Web
-version=1.11
-timestamp=1369904058
-
+timestamp = 1369904058

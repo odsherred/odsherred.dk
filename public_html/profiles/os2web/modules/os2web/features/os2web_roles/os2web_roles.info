@@ -3,8 +3,8 @@ description = Feature containing os2web roles
 core = 7.x
 package = OS2Web - Brugere
 php = 5.2.4
-version = 7.x-1.10
-project = os2web_roles
+version = 1.11
+project = OS2Web
 dependencies[] = features
 dependencies[] = file_entity
 dependencies[] = image
@@ -23,10 +23,4 @@ features[user_role][] = Editor
 features[user_role][] = Kommunikation
 features[user_role][] = Student
 features[user_role][] = Webmaster
-timestamp = 1353326099
-
-;Added by OS2Web 2013-05-30
-project=OS2Web
-version=1.11
-timestamp=1369904058
-
+timestamp = 1369904058

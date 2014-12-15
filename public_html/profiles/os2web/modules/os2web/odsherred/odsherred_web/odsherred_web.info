@@ -2,8 +2,8 @@ name = Odsherred Web
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.3
-project = odsherred_web
+version = 1.11
+project = OS2Web
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = delta
@@ -77,9 +77,4 @@ features[variable][] = site_map_show_rss_links
 features[variable][] = site_map_show_vocabularies
 features[variable][] = site_map_term_threshold
 features[views_view][] = spotbox_megadd
-
-;Added by OS2Web 2013-05-30
-project=OS2Web
-version=1.11
-timestamp=1369904058
-
+timestamp = 1369904058

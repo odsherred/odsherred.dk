@@ -25,7 +25,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
     'css_id' => '',
-    'css' => '',
+    'css' => '.block.block-webform {background-image:url(/profiles/os2web/themes/odsherredweb/css/img/c-bg.png); padding: 15px;}',
     'contexts' => array(),
     'relationships' => array(
       2 => array(
@@ -104,9 +104,9 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Undskriv',
+      'admin_title' => 'Udskriv',
       'title' => '',
-      'body' => '<a href="/print/%node:nid" target="_blank" title="Undskriv">Udskriv</a>',
+      'body' => '<a href="/print/%node:nid" target="_blank" title="Udskriv">Udskriv</a>',
       'format' => 'php_code',
       'substitute' => 1,
     );
@@ -187,7 +187,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'image_style' => '',
+        'image_style' => '316x237',
         'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',
@@ -683,9 +683,9 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Undskriv',
+      'admin_title' => 'Udskriv',
       'title' => '',
-      'body' => '<a href="/print/%node:nid" target="_blank" title="Undskriv">Udskriv</a>',
+      'body' => '<a href="/print/%node:nid" target="_blank" title="Udskriv">Udskriv</a>',
       'format' => 'php_code',
       'substitute' => 1,
     );

@@ -3,8 +3,8 @@ description = Forside og Portalforside Paneler
 core = 7.x
 package = OS2Web - Struktur
 php = 5.2.4
-version = 7.x-1.19
-project = os2web_grund_paneler
+version = 1.11
+project = OS2Web
 dependencies[] = ctools
 dependencies[] = delta
 dependencies[] = features
@@ -67,10 +67,4 @@ features[views_view][] = redaktoer_info
 features[views_view][] = rotating_image_view
 features[views_view][] = selvbetjening
 features[views_view][] = sitestuktur
-timestamp = 1353326099
-
-;Added by OS2Web 2013-05-30
-project=OS2Web
-version=1.11
-timestamp=1369904058
-
+timestamp = 1369904058
