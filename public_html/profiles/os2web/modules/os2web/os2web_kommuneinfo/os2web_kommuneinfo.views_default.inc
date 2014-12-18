@@ -1001,7 +1001,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1106,7 +1106,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1299,7 +1299,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['label'] = 'Svarfrist';
   $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
