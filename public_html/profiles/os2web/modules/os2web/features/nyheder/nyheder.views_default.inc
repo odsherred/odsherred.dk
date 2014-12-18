@@ -1692,6 +1692,8 @@ function nyheder_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['value'] = array(
+    26202 => '26202',
+    26203 => '26203',
     25755 => '25755',
   );
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
