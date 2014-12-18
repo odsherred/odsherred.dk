@@ -397,7 +397,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['fields']['field_resume_long']['label'] = '';
   $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_resume_long]</p>
-<p class="indrykket lilletekst">Pubiceret: [field_nyheder_publiceringsdato] <br>
+<p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['element_type'] = '0';
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
@@ -568,7 +568,7 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['label'] = '';
   $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_resume_long]</p>
-<p class="indrykket lilletekst">Pubiceret: [field_nyheder_publiceringsdato] <br>
+<p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
@@ -737,7 +737,7 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['label'] = '';
   $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_resume_long]</p>
-<p class="indrykket lilletekst">Pubiceret: [field_nyheder_publiceringsdato] <br>
+<p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
@@ -910,7 +910,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['label'] = '';
   $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_resume_long]</p>
-<p class="indrykket lilletekst">Pubiceret: [field_nyheder_publiceringsdato] </p>';
+<p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] </p>';
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
@@ -1914,7 +1914,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     t('[field_site_structure] - [field_newstype] '),
     t('Publiceringsdato'),
     t('<p class="indrykket">[field_resume_long]</p>
-<p class="indrykket lilletekst">Pubiceret: [field_nyheder_publiceringsdato] <br>
+<p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Svarfrist: [field_udloebsdato]</p>'),
     t('Alle'),
     t('Afgørelser'),
@@ -1922,20 +1922,20 @@ Svarfrist: [field_udloebsdato]</p>'),
     t('Der er ingen aktuelle afgørelser i denne kategori.'),
     t('Klagefrist'),
     t('<p class="indrykket">[field_resume_long]</p>
-<p class="indrykket lilletekst">Pubiceret: [field_nyheder_publiceringsdato] <br>
+<p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Klagefrist: [field_udloebsdato]</p>'),
     t('Udbud'),
     t('Kommuneinformation - Udbud - Side'),
     t('<h1>Udbud</h1>'),
     t('[field_site_structure] - [field_newstype]'),
     t('<p class="indrykket">[field_resume_long]</p>
-<p class="indrykket lilletekst">Pubiceret: [field_nyheder_publiceringsdato] <br>
+<p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Tilbudsfrist: [field_udloebsdato]</p>'),
     t('Møder'),
     t('Kommuneinformation - Møder - Side'),
     t('Der er inden planlagte møder i denne kategori.'),
     t('<p class="indrykket">[field_resume_long]</p>
-<p class="indrykket lilletekst">Pubiceret: [field_nyheder_publiceringsdato] </p>'),
+<p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] </p>'),
     t('Tidligere udbud'),
     t('<h2>Tidligere udbud</h2>'),
     t('Udløbsdato'),
