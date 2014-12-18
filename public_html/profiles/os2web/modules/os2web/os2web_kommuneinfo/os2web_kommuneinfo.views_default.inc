@@ -858,6 +858,19 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Felt: Indhold: Publiceringsdato */
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['field'] = 'field_nyheder_publiceringsdato';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['label'] = '';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['settings'] = array(
+    'format_type' => 'kommuneinfolang',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Felt: Indhold: Dato */
   $handler->display->display_options['fields']['field_newstypedato_1']['id'] = 'field_newstypedato_1';
   $handler->display->display_options['fields']['field_newstypedato_1']['table'] = 'field_data_field_newstypedato';
