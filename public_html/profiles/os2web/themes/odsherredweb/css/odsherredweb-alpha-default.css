@@ -2991,7 +2991,7 @@ ul.searchcloud li a {
 
 #quicktabs-nyheder .views-row  {
   border-bottom: 1px dotted #acacac;
-  margin: 0 10px;
+  margin: 0 0;
   padding: 23px 0 17px;
 }
 
@@ -3019,7 +3019,7 @@ ul.searchcloud li a {
   min-height: 20px;
 }
 
-#quicktabs-nyheder .date-display-single { float: left; width: 25px; padding: 0 20px 10px 10px; font-size: 14px; text-transform: capitalize}
+#quicktabs-nyheder .date-display-single { float: left; width: 20px; padding: 0 20px 0px 0px; font-size: 14px; text-transform: capitalize}
 
 #quicktabs-nyheder .lilletekst .date-display-single { float: none; font-size: 9px; padding: 0; width: auto;}
 
