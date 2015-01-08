@@ -1095,29 +1095,13 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
-  $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Scheduler: Publish on */
-  $handler->display->display_options['fields']['publish_on']['id'] = 'publish_on';
-  $handler->display->display_options['fields']['publish_on']['table'] = 'scheduler';
-  $handler->display->display_options['fields']['publish_on']['field'] = 'publish_on';
-  $handler->display->display_options['fields']['publish_on']['date_format'] = 'long';
-  /* Felt: Indhold: Dato */
-  $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
-  $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
-  $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
-  $handler->display->display_options['fields']['field_newstypedato']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Felt: Indhold: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['label'] = '- Klagefrist';
   $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
     'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
@@ -1125,13 +1109,6 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Type */
-  $handler->display->display_options['fields']['field_newstype_1']['id'] = 'field_newstype_1';
-  $handler->display->display_options['fields']['field_newstype_1']['table'] = 'field_data_field_newstype';
-  $handler->display->display_options['fields']['field_newstype_1']['field'] = 'field_newstype';
-  $handler->display->display_options['fields']['field_newstype_1']['label'] = '';
-  $handler->display->display_options['fields']['field_newstype_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_newstype_1']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: Indhold: Har taksonomiterm ID (med dybde) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
@@ -1211,11 +1188,6 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Scheduler: Publish on */
-  $handler->display->display_options['fields']['publish_on']['id'] = 'publish_on';
-  $handler->display->display_options['fields']['publish_on']['table'] = 'scheduler';
-  $handler->display->display_options['fields']['publish_on']['field'] = 'publish_on';
-  $handler->display->display_options['fields']['publish_on']['date_format'] = 'long';
   /* Felt: Indhold: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
@@ -1941,6 +1913,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('Udløbsdato'),
     t('Tidligere afgørelser'),
     t('<h2>Tidligere afgørelser</h2>'),
+    t('- Klagefrist'),
     t('Tidligere møder'),
     t('<h2>Afholdte møder</h2>'),
     t('Tidligere høringer'),
