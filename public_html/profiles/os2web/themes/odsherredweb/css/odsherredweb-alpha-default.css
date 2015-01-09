@@ -2118,7 +2118,8 @@ list-style: none;
 .node-type-news #region-sidebar-first h2.block-title,
 .din-kommune #region-sidebar-first h2.block-title,
 .node-type-news #region-sidebar-first h3.block-title,
-.din-kommune #region-sidebar-first h3.block-title {
+.din-kommune #region-sidebar-first h3.block-title,
+.block-menu-kommuneinformationer h2.block-title {
   color: #FFF;
   background: url(img/news-node-sidebar-bg.png);
   padding: 3px 15px 7px;
@@ -3048,4 +3049,3 @@ text-transform: capitalize;}
   
 .view-kommuneinformation  .view-filters { padding-bottom: 20px;}
 
-.block-menu-kommuneinformationer h2.block-title {display: none;}
