@@ -1093,8 +1093,9 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
+  $handler->display->display_options['fields']['field_newstypedato']['label'] = '- Dato';
   $handler->display->display_options['fields']['field_newstypedato']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1183,7 +1184,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
-  $handler->display->display_options['fields']['field_udloebsdato']['label'] = 'Svarfrist';
+  $handler->display->display_options['fields']['field_udloebsdato']['label'] = '- Svarfrist';
   $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
     'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
@@ -1817,6 +1818,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('- Klagefrist'),
     t('Tidligere møder'),
     t('<h2>Afholdte møder</h2>'),
+    t('- Dato'),
     t('Tidligere høringer'),
     t('<h2>Tidligere høringer</h2>'),
     t('Nyheder - Blok - Høringer'),
