@@ -436,31 +436,6 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Indhold: Portalkategori (field_site_structure) */
-  $handler->display->display_options['filters']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
-  $handler->display->display_options['filters']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator_id'] = 'field_site_structure_tid_op';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['label'] = 'Kategori';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator'] = 'field_site_structure_tid_op';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['identifier'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    6 => 0,
-    4 => 0,
-    7 => 0,
-    3 => 0,
-    5 => 0,
-    8 => 0,
-    12 => 0,
-    11 => 0,
-    15 => 0,
-  );
-  $handler->display->display_options['filters']['field_site_structure_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_site_structure_tid']['vocabulary'] = 'site_struktur';
-  $handler->display->display_options['filters']['field_site_structure_tid']['hierarchy'] = 1;
   /* Filterkriterie: Indhold: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
@@ -607,31 +582,6 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Indhold: Portalkategori (field_site_structure) */
-  $handler->display->display_options['filters']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
-  $handler->display->display_options['filters']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator_id'] = 'field_site_structure_tid_op';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['label'] = 'Kategori';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator'] = 'field_site_structure_tid_op';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['identifier'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    6 => 0,
-    4 => 0,
-    7 => 0,
-    3 => 0,
-    5 => 0,
-    8 => 0,
-    12 => 0,
-    11 => 0,
-    15 => 0,
-  );
-  $handler->display->display_options['filters']['field_site_structure_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_site_structure_tid']['vocabulary'] = 'site_struktur';
-  $handler->display->display_options['filters']['field_site_structure_tid']['hierarchy'] = 1;
   /* Filterkriterie: Indhold: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
@@ -779,31 +729,6 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['field_newstype_tid_1']['group'] = 1;
   $handler->display->display_options['filters']['field_newstype_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid_1']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Indhold: Portalkategori (field_site_structure) */
-  $handler->display->display_options['filters']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
-  $handler->display->display_options['filters']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator_id'] = 'field_site_structure_tid_op';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['label'] = 'Kategori';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator'] = 'field_site_structure_tid_op';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['identifier'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    6 => 0,
-    4 => 0,
-    7 => 0,
-    3 => 0,
-    5 => 0,
-    8 => 0,
-    12 => 0,
-    11 => 0,
-    15 => 0,
-  );
-  $handler->display->display_options['filters']['field_site_structure_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_site_structure_tid']['vocabulary'] = 'site_struktur';
-  $handler->display->display_options['filters']['field_site_structure_tid']['hierarchy'] = 1;
   /* Filterkriterie: Indhold: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
@@ -949,31 +874,6 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Indhold: Portalkategori (field_site_structure) */
-  $handler->display->display_options['filters']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
-  $handler->display->display_options['filters']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator_id'] = 'field_site_structure_tid_op';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['label'] = 'Kategori';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator'] = 'field_site_structure_tid_op';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['identifier'] = 'kategori';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    6 => 0,
-    4 => 0,
-    7 => 0,
-    3 => 0,
-    5 => 0,
-    8 => 0,
-    12 => 0,
-    11 => 0,
-    15 => 0,
-  );
-  $handler->display->display_options['filters']['field_site_structure_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_site_structure_tid']['vocabulary'] = 'site_struktur';
-  $handler->display->display_options['filters']['field_site_structure_tid']['hierarchy'] = 1;
   /* Filterkriterie: Indhold: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
