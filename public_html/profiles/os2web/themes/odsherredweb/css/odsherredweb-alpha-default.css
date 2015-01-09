@@ -3042,6 +3042,7 @@ font-size: 14px;
 text-transform: capitalize;}
 
 .view-kommuneinformation .attachment-after, .view-kommuneinformation .newstypelist { clear: both;}
+.view-kommuneinformation .attachment-after { margin-top: 30px;}
 .view-kommuneinformation .newstypelist { border-bottom: 1px solid #333; padding-bottom: 5px; margin-bottom: 10px;}
 .view-kommuneinformation .attachment .newstypelist { border-bottom: none; padding-bottom: 5px; margin-bottom: 0px;}
   
