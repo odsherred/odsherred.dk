@@ -3046,3 +3046,5 @@ text-transform: capitalize;}
 .view-kommuneinformation .attachment .newstypelist { border-bottom: none; padding-bottom: 5px; margin-bottom: 0px;}
   
 .view-kommuneinformation  .view-filters { padding-bottom: 20px;}
+
+.block-menu-kommuneinformationer h2.block-title {display: none;}
