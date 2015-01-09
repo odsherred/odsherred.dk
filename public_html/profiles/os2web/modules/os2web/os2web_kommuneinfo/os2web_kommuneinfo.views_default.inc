@@ -863,6 +863,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['field'] = 'field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['label'] = '';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['settings'] = array(
     'format_type' => 'kommuneinfolang',
@@ -1006,13 +1007,13 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
-  $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Indhold: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['label'] = '- Svarfrist';
   $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
     'format_type' => 'kommuneinfolang',
     'fromto' => 'both',
@@ -1910,7 +1911,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] </p>'),
     t('Tidligere udbud'),
     t('<h2>Tidligere udbud</h2>'),
-    t('Udløbsdato'),
+    t('- Svarfrist'),
     t('Tidligere afgørelser'),
     t('<h2>Tidligere afgørelser</h2>'),
     t('- Klagefrist'),
