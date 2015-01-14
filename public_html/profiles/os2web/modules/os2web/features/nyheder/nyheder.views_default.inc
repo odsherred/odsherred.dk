@@ -1087,7 +1087,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Der er ingen planlagte møder. <a href="/kommuneinformationer/moeder">Gå til arkiv.</a>';
+  $handler->display->display_options['empty']['area']['content'] = 'Der er ingen planlagte møder. <a href="/kommuneinformationer/moeder">Se tidligere møder</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Forbindelse: Indhold: Type (field_newstype) */
   $handler->display->display_options['relationships']['field_newstype_tid']['id'] = 'field_newstype_tid';
@@ -1144,6 +1144,8 @@ function nyheder_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['value'] = array(
+    26202 => '26202',
+    26203 => '26203',
     25757 => '25757',
   );
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
@@ -1362,7 +1364,7 @@ function nyheder_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('Der er ingen planlagte møder. <a href="/kommuneinformationer/moeder">Gå til arkiv.</a>'),
+    t('Der er ingen planlagte møder. <a href="/kommuneinformationer/moeder">Se tidligere møder</a>'),
     t('term fra field_newstype'),
     t('Page'),
     t('Type (field_newstype)'),
