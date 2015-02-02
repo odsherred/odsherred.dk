@@ -6,5 +6,5 @@ dependencies[] = varnish
 
 files [] = varnish_clear.module
 files [] = varnish_clear.admin.inc
-configure = admin/config/development/varnish/varnish_clear
+configure = admin/config/development/varnish_clear
 
