@@ -2040,7 +2040,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
-  $handler->display->display_options['path'] = 'rss-feeds.xml';
+  $handler->display->display_options['path'] = 'nyheder/rss.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 'default',
     'page' => 'page',
