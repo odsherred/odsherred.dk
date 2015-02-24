@@ -275,7 +275,7 @@ function os2web_indholdstyper_field_group_info() {
   $field_group->parent_name = 'group_indstillinger';
   $field_group->data = array(
     'label' => 'Skjult',
-    'weight' => '52',
+    'weight' => '51',
     'children' => array(
       0 => 'field_additional_info',
       1 => 'field_related',
@@ -496,7 +496,8 @@ function os2web_indholdstyper_field_group_info() {
       2 => 'field_resume_long',
       3 => 'field_site_structure',
       4 => 'field_newstype',
-      5 => 'title',
+      5 => 'field_skjul_paa_infoskaerme',
+      6 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

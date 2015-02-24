@@ -534,7 +534,7 @@ function os2web_indholdstyper_strongarm() {
           'weight' => '0',
         ),
         'redirect' => array(
-          'weight' => '51',
+          'weight' => '50',
         ),
         'metatags' => array(
           'weight' => '40',
