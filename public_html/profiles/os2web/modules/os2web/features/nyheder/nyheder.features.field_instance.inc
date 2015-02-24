@@ -969,7 +969,7 @@ Må ikke rettes, er juridisk gældende.',
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Kun aktuelt hvis der vælges Nyhed som type. Andre typer vises ikke på infoskærme.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1305,6 +1305,7 @@ Må ikke rettes, er juridisk gældende.',
   t('Indhold');
   t('KL Emneord');
   t('Kan bruges for flere typer indhold. Ved nyheder, så vises nyheden ikke efter denne dato. Ved Udbud og Høringer er det den dato denne slutter.');
+  t('Kun aktuelt hvis der vælges Nyhed som type. Andre typer vises ikke på infoskærme.');
   t('Organistation');
   t('Politik');
   t('Portalkategori');
