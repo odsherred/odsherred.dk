@@ -66,7 +66,7 @@ function nyheder_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 0,
     ),
   );
 
@@ -246,7 +246,7 @@ function nyheder_field_default_field_instances() {
         'resolution' => '690x237',
       ),
       'type' => 'imagefield_crop_widget',
-      'weight' => 3,
+      'weight' => 1,
     ),
   );
 
@@ -822,7 +822,7 @@ Må ikke rettes, er juridisk gældende.',
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => -1,
     ),
   );
 
@@ -956,7 +956,62 @@ Må ikke rettes, er juridisk gældende.',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 0,
+      'weight' => -2,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_skjul_paa_infoskaerme'
+  $field_instances['node-news-field_skjul_paa_infoskaerme'] = array(
+    'bundle' => 'news',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 22,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_skjul_paa_infoskaerme',
+    'label' => 'Skjul på infoskærme',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => -3,
     ),
   );
 
@@ -1167,7 +1222,7 @@ Må ikke rettes, er juridisk gældende.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 41,
+      'weight' => 40,
     ),
   );
 
@@ -1256,6 +1311,7 @@ Må ikke rettes, er juridisk gældende.',
   t('Primære billede');
   t('Publiceringsdato');
   t('Resume (maks 2 linier!)');
+  t('Skjul på infoskærme');
   t('Skjul relaterede links');
   t('Source ID');
   t('Stikord');
