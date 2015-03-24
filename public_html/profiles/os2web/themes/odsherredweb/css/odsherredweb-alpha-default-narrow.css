@@ -118,7 +118,7 @@ ul.os2web_menus-container .megamenu-panel {
 	background-position: 0px 0px;
 	}
 .front #search-block-form input[type="text"] {
-	width: 320px}
+	width: 320px !important}
 	
 .region-menu {
 	height: 41px;}
