@@ -1198,7 +1198,11 @@ function odsherred_web_default_panels_mini() {
     $pane->subtype = 'spotbox_megadd-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '893829',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,

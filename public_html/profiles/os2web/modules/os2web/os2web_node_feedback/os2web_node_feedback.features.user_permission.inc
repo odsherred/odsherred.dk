@@ -10,37 +10,37 @@
 function os2web_node_feedback_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: access feedback form.
+  // Exported permission: 'access feedback form'.
   $permissions['access feedback form'] = array(
     'name' => 'access feedback form',
     'roles' => array(
-      0 => 'Administrator',
-      1 => 'Editor',
-      2 => 'Webmaster',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      'Administrator' => 'Administrator',
+      'Editor' => 'Editor',
+      'Webmaster' => 'Webmaster',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'feedback',
   );
 
-  // Exported permission: administer feedback.
+  // Exported permission: 'administer feedback'.
   $permissions['administer feedback'] = array(
     'name' => 'administer feedback',
     'roles' => array(
-      0 => 'Administrator',
-      1 => 'Editor',
-      2 => 'Webmaster',
+      'Administrator' => 'Administrator',
+      'Editor' => 'Editor',
+      'Webmaster' => 'Webmaster',
     ),
     'module' => 'feedback',
   );
 
-  // Exported permission: view feedback messages.
+  // Exported permission: 'view feedback messages'.
   $permissions['view feedback messages'] = array(
     'name' => 'view feedback messages',
     'roles' => array(
-      0 => 'Administrator',
-      1 => 'Editor',
-      2 => 'Webmaster',
+      'Administrator' => 'Administrator',
+      'Editor' => 'Editor',
+      'Webmaster' => 'Webmaster',
     ),
     'module' => 'feedback',
   );

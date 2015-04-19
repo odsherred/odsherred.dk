@@ -7,32 +7,25 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function odsherred_web_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function odsherred_web_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
-  list($module, $api) = func_get_args();
   if ($module == "delta" && $api == "delta") {
     return array("version" => "3");
   }
-  list($module, $api) = func_get_args();
   if ($module == "linkit" && $api == "linkit_profiles") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "panels_mini" && $api == "panels_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "quicktabs" && $api == "quicktabs") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -41,8 +34,8 @@ function odsherred_web_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function odsherred_web_views_api() {
-  return array("version" => "3.0");
+function odsherred_web_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**
@@ -65,10 +58,10 @@ function odsherred_web_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '181',
-          'height' => '128',
+          'width' => 181,
+          'height' => 128,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -87,10 +80,10 @@ function odsherred_web_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '240',
-          'height' => '150',
+          'width' => 240,
+          'height' => 150,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -109,10 +102,10 @@ function odsherred_web_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '316',
-          'height' => '243',
+          'width' => 316,
+          'height' => 243,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -131,10 +124,10 @@ function odsherred_web_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '316',
-          'height' => '237',
+          'width' => 316,
+          'height' => 237,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -153,10 +146,10 @@ function odsherred_web_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '316',
-          'height' => '299',
+          'width' => 316,
+          'height' => 299,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -175,10 +168,10 @@ function odsherred_web_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '80',
-          'height' => '60',
+          'width' => 80,
+          'height' => 60,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -197,11 +190,11 @@ function odsherred_web_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '1600',
+          'width' => 1600,
           'height' => '',
           'upscale' => 1,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -220,10 +213,10 @@ function odsherred_web_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '220',
-          'height' => '130',
+          'width' => 220,
+          'height' => 130,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );

@@ -2,15 +2,16 @@ name = OS2Web Roller
 description = Feature containing os2web roles
 core = 7.x
 package = OS2Web - Brugere
-php = 5.2.4
-version = 7.x-1.10
+version = 7.x-1.12
 project = os2web_roles
 dependencies[] = features
 dependencies[] = file_entity
+dependencies[] = filter
 dependencies[] = image
+dependencies[] = node
 dependencies[] = os2web_settings
 datestamp = 1338117520
-features[features_api][] = api:1
+features[features_api][] = api:2
 features[user_permission][] = administer content types
 features[user_permission][] = administer filters
 features[user_permission][] = administer image styles
@@ -23,10 +24,4 @@ features[user_role][] = Editor
 features[user_role][] = Kommunikation
 features[user_role][] = Student
 features[user_role][] = Webmaster
-timestamp = 1353326099
-
-;Added by OS2Web 2013-05-30
-project=OS2Web
-version=1.11
-timestamp=1369904058
-
+timestamp = 1369904058

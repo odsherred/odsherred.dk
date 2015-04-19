@@ -5,30 +5,32 @@
  
  #zone-footer .pane-menu-block-8, #zone-footer .pane-menu-block-9, #zone-footer .pane-menu-block-10, #zone-footer .pane-selvbetjening { width: 160px !important;}
  
- ul#main-menu { 
+ul.os2web_menus-container,
+ul#main-menu { 
 	margin: 0;
 	padding: 0;
 	}
-	
+ul.os2web_menus-container li.megamenu,
 ul#main-menu li { 
 	margin-left: 10px;
-	margin-right: 10px;	
+	margin-right: 10px;
 	display: block; 
 	float: left;
 	width: 220px;
 	padding: 0;}
-
+ul.os2web_menus-container li.megamenu.first,
 ul#main-menu li.first {
 	margin-left: 0;
 	padding-left: 0; 
 	}
-	
+
+ul.os2web_menus-container li.megamenu.last,
 ul#main-menu li.last {
 	margin-right: 0;
 	padding-right: 0;
 	}
-
-ul#main-menu li a {  
+ul.os2web_menus-container li h3 a,
+ul#main-menu li a {
 	display: block; 
 	font-size: 15px; 
 	color: #FFF; 
@@ -36,11 +38,30 @@ ul#main-menu li a {
 	padding: 16px 16px 16px 50px;
 	background-repeat: no-repeat;
 	}
- 
+ul.os2web_menus-container li h3 a,
+ul.os2web_menus-container li h3 a:hover,
+ul.os2web_menus-container li h3 a:visited,
 ul#main-menu li.menu-782 a, ul#main-menu li.menu-783 a, ul#main-menu li.menu-784 a  {
 	background-size: 100%;
 }
-
+ul.os2web_menus-container li.odsherred_erhverv .megamenu-panel {
+  left: -240px;
+}
+ul.os2web_menus-container li.odsherred_politik .megamenu-panel {
+  left: -480px;
+}
+#page_1 ul.os2web_menus-container li a.js-megamenu-toggle,
+#page_1 ul.os2web_menus-container li a.js-megamenu-toggle:hover {
+  top: 15px;
+  right: 14px;
+}
+ul.os2web_menus-container .megamenu-panel {
+  left: 0px;
+  display: block;
+  top: 45px;
+  width: 700px;
+  overflow: hidden;
+}
 .node-type-contentpage .field-slideshow-slide { width: 510px;}
 
 
@@ -102,17 +123,18 @@ ul#main-menu li.menu-782 a, ul#main-menu li.menu-783 a, ul#main-menu li.menu-784
 .region-menu {
 	height: 41px;}
 
-
+.megamenu-panel .grid-3.panel-region-kol1 .inside,
+.megamenu-panel .grid-3.panel-region-kol3 .inside,
 .menu-minipanels .grid-3.panel-region-kol1 .inside {
-padding: 10px 5px 10px 15px;
+  padding: 10px 5px 10px 15px;
 }
-
+.megamenu-panel .view-spotbox-megadd, .megamenu-panel .pane-tagadelic-view,
 .menu-minipanels .view-spotbox-megadd, .menu-minipanels .pane-tagadelic-view  { display: none}
 
 #mini-panel-odsherred_erhverv .inner-wrapper, #mini-panel-odsherred_borger .inner-wrapper, #mini-panel-odsherred_politik .inner-wrapper {
 	width: 690px;
 }
-
+.megamenu-panel .panel-region-kol1, .megamenu-panel .panel-region-kol4,
 .menu-minipanels .panel-region-kol1, .menu-minipanels .panel-region-kol4 {
 	width: 202px !important
 }
@@ -122,9 +144,11 @@ padding: 10px 5px 10px 15px;
 	display: block; }
 	
 .responsive-layout-narrow .megamini .block-inner ul li { font-size: 10px; line-height: 10px; margin-bottom: 2px;}
- .menu-minipanels .panel-region-kol3 {
+.megamenu-panel .panel-region-kol3,
+.menu-minipanels .panel-region-kol3 {
 	width: 245px !important
 }
+.megamenu-panel .panel-region-kol2,
 .menu-minipanels .panel-region-kol2 { display: none} 
 .responsive-layout-narrow #toolbar { display: none; }
 /* Skjulte menupunkter*/
@@ -167,5 +191,3 @@ aside#region-sidebar-first.grid-3.region.region-sidebar-first { overflow: hidden
 .spotbox .text a{
   font-size: 0.9em;
 }
-
-.page-node .field-name-field-alternativt-billede img { max-width: 316px}
