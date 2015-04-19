@@ -383,6 +383,15 @@ function os2web_indholdstyper_strongarm() {
         'fmenu' => array(
           'weight' => '7',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '13',
+        ),
       ),
     ),
   );
@@ -506,7 +515,7 @@ function os2web_indholdstyper_strongarm() {
         'custom_settings' => FALSE,
       ),
       'rss' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_index' => array(
         'custom_settings' => FALSE,
@@ -528,13 +537,19 @@ function os2web_indholdstyper_strongarm() {
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '47',
+          'weight' => '51',
         ),
         'workbench_access' => array(
           'weight' => '0',
         ),
         'redirect' => array(
-          'weight' => '51',
+          'weight' => '52',
+        ),
+        'metatags' => array(
+          'weight' => '2',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '5',
         ),
       ),
     ),
@@ -707,7 +722,7 @@ function os2web_indholdstyper_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_contentpage';
-  $strongarm->value = 'menu-indholdsmenu:0';
+  $strongarm->value = 'menu-indhold:0';
   $export['menu_parent_contentpage'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -809,6 +824,7 @@ function os2web_indholdstyper_strongarm() {
   $strongarm->name = 'node_options_news';
   $strongarm->value = array(
     0 => 'promote',
+    1 => 'revision',
   );
   $export['node_options_news'] = $strongarm;
 

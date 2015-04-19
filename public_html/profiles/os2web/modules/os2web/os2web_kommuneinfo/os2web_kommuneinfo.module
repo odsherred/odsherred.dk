@@ -1,0 +1,91 @@
+<?php
+/**
+ * @file
+ * Code for the OS2web Kommuneinfo feature.
+ */
+
+include_once 'os2web_kommuneinfo.features.inc';
+
+function os2web_kommuneinfo_form_alter(&$form, &$form_state, $form_id) {
+  $form['revision_information']['#access'] = user_access('view revisions');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function os2web_kommuneinfo_form_news_node_form_alter(&$form, $form_state, $form_id) {
+  $node = $form_state['node'];
+
+  if (!user_access('administer all news type')) {
+    foreach ($form['field_newstype'][LANGUAGE_NONE]['#options'] as $tid => $term) {
+      if (!user_access('administer news type-' . $tid) && $tid != '_none') {
+        $form['field_newstype']['#ids_to_disable'][$tid] = $tid;
+      }
+    }
+    $form['field_newstype']['#post_render'] = array('os2web_kommuneinfo_disable_select_options');
+  }
+
+  $vocabulary = taxonomy_vocabulary_machine_name_load('forfrem_til');
+  $terms = taxonomy_get_tree($vocabulary->vid, 0, 1);
+  $first_term = reset($terms);
+  $options = array();
+
+  if (!user_access('promote to all the place')) {
+    foreach ($terms as $tid => $term) {
+      if (user_access('promote to-' . $term->tid)) {
+        $options[$term->tid] = $term->name;
+      }
+    }
+    $form['field_promoteto']['und']['#options'] = $options;
+  }
+}
+
+/**
+ * Disable options in select list.
+ */
+function os2web_kommuneinfo_disable_select_options($rendered, $element) {
+  if (empty($element['#ids_to_disable']) === TRUE) {
+    return $rendered;
+  }
+
+  $search = array();
+  $replace = array();
+  foreach ($element['#ids_to_disable'] as $id) {
+    $search[] = '<option value="' . $id . '">';
+    $replace[] = '<option value="' . $id . '" disabled="disabled">';
+  }
+  $rendered = str_replace($search, $replace, $rendered);
+
+  return $rendered;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function os2web_kommuneinfo_permission() {
+  $vocabulary = taxonomy_vocabulary_machine_name_load('nyhedstype');
+  $terms = taxonomy_get_tree($vocabulary->vid, 0, 2);
+
+  // A news all types administration permission.
+  $permissions['administer all news type'] = array('title' => t('Opret alle nyhedstyper'));
+
+  // Foreach news type term, there is a permission.
+  foreach ($terms as $tid => $term) {
+    $permissions['administer news type-' . $term->tid] = array(
+      'title' => t('Opret ') . $term->name . t(' nyhedstype'),
+    );
+  }
+  $vocabulary = taxonomy_vocabulary_machine_name_load('forfrem_til');
+  $terms = taxonomy_get_tree($vocabulary->vid, 0, 1);
+
+  // A admin permission to promote news to all the place.
+  $permissions['promote to all the place'] = array('title' => t('Forfrem til alt'));
+
+  // Foreach promoting place, there is a permission.
+  foreach ($terms as $tid => $term) {
+    $permissions['promote to-' . $term->tid] = array(
+      'title' => t('Forfrem til ') . $term->name,
+    );
+  }
+  return $permissions;
+}

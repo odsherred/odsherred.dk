@@ -14,13 +14,13 @@ function os2web_indholdstyper_filter_default_formats() {
   $formats['blokindhold'] = array(
     'format' => 'blokindhold',
     'name' => 'Blokindhold',
-    'cache' => '1',
-    'status' => '1',
-    'weight' => '-7',
+    'cache' => 1,
+    'status' => 1,
+    'weight' => -7,
     'filters' => array(
       'filter_html' => array(
-        'weight' => '-10',
-        'status' => '1',
+        'weight' => -10,
+        'status' => 1,
         'settings' => array(
           'allowed_html' => '<a> <em> <strong> <ul> <ol> <li> <dl> <dt> <dd> <span> <div> <b> <br> <table> <tr> <td>',
           'filter_html_help' => 1,
@@ -28,20 +28,20 @@ function os2web_indholdstyper_filter_default_formats() {
         ),
       ),
       'filter_url' => array(
-        'weight' => '0',
-        'status' => '1',
+        'weight' => 0,
+        'status' => 1,
         'settings' => array(
-          'filter_url_length' => '60',
+          'filter_url_length' => 60,
         ),
       ),
       'media_filter' => array(
-        'weight' => '2',
-        'status' => '1',
+        'weight' => 2,
+        'status' => 1,
         'settings' => array(),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => '10',
-        'status' => '1',
+        'weight' => 10,
+        'status' => 1,
         'settings' => array(),
       ),
     ),

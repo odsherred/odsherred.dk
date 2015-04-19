@@ -14,29 +14,28 @@ function odsherred_create_content_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'disable_messages_enable';
-  $strongarm->value = 1;
+  $strongarm->value = '1';
   $export['disable_messages_enable'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'disable_messages_filter_by_page';
-  $strongarm->value = '1';
+  $strongarm->value = 0;
   $export['disable_messages_filter_by_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'disable_messages_ignore_case';
-  $strongarm->value = 1;
+  $strongarm->value = '1';
   $export['disable_messages_ignore_case'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'disable_messages_page_filter_paths';
-  $strongarm->value = 'node/*/edit
-node/add/*';
+  $strongarm->value = '';
   $export['disable_messages_page_filter_paths'] = $strongarm;
 
   return $export;

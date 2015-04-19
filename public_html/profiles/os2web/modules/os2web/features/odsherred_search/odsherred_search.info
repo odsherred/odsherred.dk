@@ -1,8 +1,7 @@
 name = odsherred_search
 core = 7.x
 package = Features
-php = 5.2.4
-version = 7.x-1.0
+version = 7.x-1.12
 project = odsherred_search
 dependencies[] = apachesolr_search
 dependencies[] = context
@@ -25,7 +24,7 @@ features[facetapi][] = apachesolr@localhost::im_field_site_structure
 features[facetapi][] = apachesolr@localhost::is_field_newstype
 features[facetapi][] = apachesolr@localhost::is_field_site_structure
 features[facetapi][] = apachesolr@localhost::ss_field_sitestruktur
-features[features_api][] = api:1
+features[features_api][] = api:2
 features[variable][] = apachesolr_cron_limit
 features[variable][] = apachesolr_default_environment
 features[variable][] = apachesolr_failure
@@ -35,9 +34,4 @@ features[variable][] = apachesolr_last_optimize
 features[variable][] = apachesolr_search_default_search_page
 features[variable][] = apachesolr_search_mlt_blocks
 features[variable][] = apachesolr_set_nodeapi_messages
-
-;Added by OS2Web 2013-05-30
-project=OS2Web
-version=1.11
-timestamp=1369904058
-
+timestamp = 1369904058

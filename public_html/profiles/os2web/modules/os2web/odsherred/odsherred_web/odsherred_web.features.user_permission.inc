@@ -10,11 +10,11 @@
 function odsherred_web_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: use text format standard.
+  // Exported permission: 'use text format standard'.
   $permissions['use text format standard'] = array(
     'name' => 'use text format standard',
     'roles' => array(
-      0 => 'authenticated user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'filter',
   );

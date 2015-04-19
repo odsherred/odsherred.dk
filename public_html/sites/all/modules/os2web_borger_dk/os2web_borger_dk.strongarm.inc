@@ -52,6 +52,12 @@ function os2web_borger_dk_strongarm() {
         'path' => array(
           'weight' => '13',
         ),
+        'metatags' => array(
+          'weight' => '18',
+        ),
+        'redirect' => array(
+          'weight' => '17',
+        ),
       ),
       'display' => array(),
     ),
