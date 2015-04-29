@@ -7,24 +7,19 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function os2web_grund_paneler_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function os2web_grund_paneler_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "delta" && $api == "delta") {
     return array("version" => "3");
   }
-  list($module, $api) = func_get_args();
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "panels" && $api == "layouts") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "panels_mini" && $api == "panels_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -33,8 +28,8 @@ function os2web_grund_paneler_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function os2web_grund_paneler_views_api() {
-  return array("version" => "3.0");
+function os2web_grund_paneler_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**
@@ -57,10 +52,10 @@ function os2web_grund_paneler_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '455',
-          'height' => '265',
+          'width' => 455,
+          'height' => 265,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );

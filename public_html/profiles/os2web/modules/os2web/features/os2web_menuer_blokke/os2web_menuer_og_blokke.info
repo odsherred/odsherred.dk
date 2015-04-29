@@ -1,7 +1,6 @@
 name = OS2Web Menuer og Blokke
 core = 7.x
 package = OS2Web - Struktur
-php = 5.2.4
 version = 7.x-1.12
 project = os2web_menuer_og_blokke
 dependencies[] = block
@@ -18,7 +17,7 @@ datestamp = 1338117520
 features[context][] = os2web_diverse
 features[ctools][] = context:context:3
 features[ctools][] = views:views_default:3.0
-features[features_api][] = api:1
+features[features_api][] = api:2
 features[menu_custom][] = main-menu
 features[menu_custom][] = menu-erhverv-genveje
 features[menu_custom][] = menu-indholdsmenu
