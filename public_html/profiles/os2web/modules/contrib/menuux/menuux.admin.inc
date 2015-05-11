@@ -371,7 +371,7 @@ function theme_menuux_menu($variables, $level = 0) {
     }
     $below = $has_below && !isset($link['active']) ? theme_menuux_menu(array('menu' => $link['below']), $level + 1) : '';
     $title = isset($link['active']) ?
-      '<div class="form-item"><input class="form-text" id="fmenu-link-input" type="text" size="60" maxlength="255" value="' . $link['title'] . '"/></div>' :
+      '<div class="form-item"><input id="fmenu-link-input" type="text" size="60" maxlength="255" value="' . $link['title'] . '"/></div>' :
       '<span class="fmenu-link-title">' . (isset($link['title']) ? $link['title'] : '') . '</span>';
     $output .= $title . '</div>' . $below;
     $output .= '</li>';
