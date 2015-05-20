@@ -61,7 +61,7 @@ function menuux_menu() {
 /**
  * Implementation of hook_nodeapi
  */
-function menuux_node_validate(&$node) {
+function menuux_node_validate($node) {
   if (isset($node->fmenu)) {
     module_load_include('inc', 'menuux', 'menuux.admin');
     menuux_node_form_validate($node);
@@ -71,7 +71,7 @@ function menuux_node_validate(&$node) {
 /**
  * Implementation of hook_node_update
  */
-function menuux_node_update(&$node) {
+function menuux_node_update($node) {
   if (isset($node->fmenu)) {
     module_load_include('inc', 'menuux', 'menuux.admin');
     menuux_node_form_submit($node);
@@ -81,7 +81,7 @@ function menuux_node_update(&$node) {
 /**
  * Implementation of hook_node_insert
  */
-function menuux_node_insert(&$node) {
+function menuux_node_insert($node) {
   if (isset($node->fmenu)) {
     module_load_include('inc', 'menuux', 'menuux.admin');
     menuux_node_form_submit($node);
@@ -91,7 +91,7 @@ function menuux_node_insert(&$node) {
 /**
  * Implementation of hook_node_prepare
  */
-function menuux_node_prepare(&$node) {
+function menuux_node_prepare($node) {
   if (isset($node->menu)) {
     $node->fmenu = array();
     if ($node->menu['mlid'] > 0) {
