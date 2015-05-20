@@ -114,7 +114,7 @@ function menuux_node_form_alter(&$form, &$form_state) {
  * @param object $node
  *  The node object for the node beeing edited/created
  */
-function menuux_node_form_validate(&$node) {
+function menuux_node_form_validate($node) {
   $illegal = FALSE;
   if ($node->fmenu['related_link']) {
     if (empty($node->fmenu['link_title'])) {
@@ -150,7 +150,7 @@ function menuux_node_form_validate(&$node) {
  * @param object $node
  *  The node beeing inserted/updated
  */
-function menuux_node_form_submit(&$node) {
+function menuux_node_form_submit($node) {
   if (!empty($node->fmenu['mlid']) && $node->fmenu['menu_name'] == '0') {
     menu_link_delete($node->fmenu['mlid']);
     return;
