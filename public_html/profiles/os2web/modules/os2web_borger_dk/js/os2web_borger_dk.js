@@ -8,18 +8,34 @@
         var path = $(this).css("background-image");
         if (style == 'none') {
           $("div." + myid).show("500");
-          path = path.replace('foldOut', 'foldIn');
-          $(this).css({
-            'background-image' : path,
-          });
+          var alink = $(this).parent().find("a.gplus");
+          alink.addClass('gminus');
+          alink.removeClass('gplus');
         }
         else {
           $("div." + myid).hide("500");
-          path = path.replace('foldIn', 'foldOut');
-          $(this).css({
-            'background-image' : path,
-          });
+          var alink = $(this).parent().find("a.gminus");
+          alink.addClass('gplus');
+          alink.removeClass('gminus');
         }
+      });
+    // borger.dk articles
+      $(".microArticle a.gplus").click(function() {
+        var article = $(this).parent().find('h2');
+        var myid = article.attr('id');
+        var style = $('div.' + myid).css('display');
+        var path = $(this).css("background-image");
+        if (style == 'none') {
+          $("div." + myid).show("500");
+          $(this).addClass('gminus');
+          $(this).removeClass('gplus');
+        }
+        else {
+          $("div." + myid).hide("500");
+          $(this).addClass('gplus');
+          $(this).removeClass('gminus');
+        }
+        return false;
       });
     }
   }

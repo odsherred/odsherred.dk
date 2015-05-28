@@ -114,7 +114,7 @@ function menuux_node_form_alter(&$form, &$form_state) {
  * @param object $node
  *  The node object for the node beeing edited/created
  */
-function menuux_node_form_validate(&$node) {
+function menuux_node_form_validate($node) {
   $illegal = FALSE;
   if ($node->fmenu['related_link']) {
     if (empty($node->fmenu['link_title'])) {
@@ -150,7 +150,7 @@ function menuux_node_form_validate(&$node) {
  * @param object $node
  *  The node beeing inserted/updated
  */
-function menuux_node_form_submit(&$node) {
+function menuux_node_form_submit($node) {
   if (!empty($node->fmenu['mlid']) && $node->fmenu['menu_name'] == '0') {
     menu_link_delete($node->fmenu['mlid']);
     return;
@@ -371,7 +371,7 @@ function theme_menuux_menu($variables, $level = 0) {
     }
     $below = $has_below && !isset($link['active']) ? theme_menuux_menu(array('menu' => $link['below']), $level + 1) : '';
     $title = isset($link['active']) ?
-      '<div class="form-item"><input class="form-text" id="fmenu-link-input" type="text" size="60" maxlength="255" value="' . $link['title'] . '"/></div>' :
+      '<div class="form-item"><input id="fmenu-link-input" type="text" size="60" maxlength="255" value="' . $link['title'] . '"/></div>' :
       '<span class="fmenu-link-title">' . (isset($link['title']) ? $link['title'] : '') . '</span>';
     $output .= $title . '</div>' . $below;
     $output .= '</li>';
