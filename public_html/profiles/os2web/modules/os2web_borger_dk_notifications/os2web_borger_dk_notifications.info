@@ -1,0 +1,3 @@
+name = OS2Web borgerdk notificatins
+descriptions = Send notification to node author when article is updated.
+core = 7.x
