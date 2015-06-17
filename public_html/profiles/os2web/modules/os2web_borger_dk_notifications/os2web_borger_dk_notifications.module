@@ -28,7 +28,7 @@ function os2web_borger_dk_notifications_form_alter(&$form, &$form_state, $form_i
  * Implements hook_node_update().
  */
 function os2web_borger_dk_notifications_node_update($node) {
-  if (variable_get('os2web_borger_dk_notifications_send', FALSE)) {
+  if (variable_get('os2web_borger_dk_notifications_send', FALSE) && is_object($node) && $node->type == 'os2web_borger_dk_article') {
     $account = user_load($node->uid);
     $mail = $account->mail;
 
