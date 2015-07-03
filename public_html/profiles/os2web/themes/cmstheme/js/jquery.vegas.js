@@ -384,7 +384,7 @@
         } else if ( options.align == 'right' ) {
             properties[ 'right' ] = 0;
         } else {
-            properties[ 'left' ] = ( ww - newWidth ) / 2 ;
+            properties[ 'left' ] = 0;
         }
 
         $img.css( properties );
