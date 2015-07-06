@@ -3029,7 +3029,7 @@ ul.searchcloud li a {
 
 #quicktabs-nyheder h4 { margin-bottom: 0; }
 
-#quicktabs-nyheder h4 a { color: #3e3e3e; text-decoration: none;font-weight: bold}
+#quicktabs-nyheder h4 a { color: #3e3e3e; text-decoration: none;font-weight: normal}
 #quicktabs-nyheder h4 a:hover {color: #407DAA}
 
 .indrykket { margin-left: 55px; margin-bottom: 5px; font-family: }
