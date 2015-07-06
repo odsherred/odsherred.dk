@@ -19,24 +19,7 @@ function nyheder_field_group_info() {
   $field_group->bundle = 'news';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_news_tabs';
-  $field_group->data = array(
-    'label' => 'Dato',
-    'weight' => '2',
-    'children' => array(
-      0 => 'field_newstypedato',
-      1 => 'field_udloebsdato',
-      2 => 'field_nyheder_publiceringsdato',
-    ),
-    'format_type' => 'htab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
-        'required_fields' => 1,
-      ),
-    ),
-  );
+  $field_group->data = '';
   $export['group_dato|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
@@ -48,23 +31,7 @@ function nyheder_field_group_info() {
   $field_group->bundle = 'news';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'News',
-    'weight' => '0',
-    'children' => array(
-      0 => 'group_indstillinger',
-      1 => 'group_taksonomi',
-      2 => 'group_tekst',
-      3 => 'group_dato',
-    ),
-    'format_type' => 'htabs',
-    'format_settings' => array(
-      'formatter' => '',
-      'instance_settings' => array(
-        'classes' => '',
-      ),
-    ),
-  );
+  $field_group->data = '';
   $export['group_news_tabs|node|news|form'] = $field_group;
 
   return $export;
