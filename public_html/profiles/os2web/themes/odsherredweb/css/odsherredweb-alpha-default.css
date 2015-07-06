@@ -1995,7 +1995,7 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
 }
 #quicktabs-nyheder .item-list ul li {
   margin: 3px 0 0 0;
-  padding: 8px 15px 5px;
+  padding: 8px 17px 5px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   background: #d9d9d9;
@@ -2915,7 +2915,7 @@ ul.searchcloud li a {
 
 .pane-quicktabs-nyheder { padding: 0}
 
-.pane-quicktabs-nyheder h3.pane-title { padding: 20px 15px 0;}
+.pane-quicktabs-nyheder h3.pane-title { padding: 20px 17px 0;}
 .pane-quicktabs-nyheder .toggle-panel {display: none}
 
 #quicktabs-nyheder {
@@ -2958,7 +2958,7 @@ ul.searchcloud li a {
   color: #FFF;
   font-size: 12px;
   text-decoration: none;
-  padding: 0 0 5px 10px;
+  padding: 0 0 5px 15px;
   margin: 0;
   width: 200px;
 }
@@ -2985,7 +2985,7 @@ ul.searchcloud li a {
   border: none;
   margin: 0;
   background: transparent;
-  padding-left: 15px;
+  padding-left: 17px;
   padding-bottom: 15px
 }
 
