@@ -275,7 +275,7 @@ function os2web_indholdstyper_field_group_info() {
   $field_group->parent_name = 'group_indstillinger';
   $field_group->data = array(
     'label' => 'Skjult',
-    'weight' => '52',
+    'weight' => '53',
     'children' => array(
       0 => 'field_additional_info',
       1 => 'field_related',
@@ -333,15 +333,14 @@ function os2web_indholdstyper_field_group_info() {
   $field_group->parent_name = 'group_news_tabs';
   $field_group->data = array(
     'label' => 'Indstillinger',
-    'weight' => '4',
+    'weight' => '7',
     'children' => array(
       0 => 'field_promoteto',
       1 => 'field_side_baggrungsbillede',
-      2 => 'field_mediafile',
-      3 => 'field_skjul_relaterede_links',
-      4 => 'path',
-      5 => 'redirect',
-      6 => 'group_hidden',
+      2 => 'field_skjul_relaterede_links',
+      3 => 'path',
+      4 => 'redirect',
+      5 => 'group_hidden',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -355,6 +354,36 @@ function os2web_indholdstyper_field_group_info() {
     ),
   );
   $export['group_indstillinger|node|news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_news_tabs|node|news|form';
+  $field_group->group_name = 'group_news_tabs';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Nyhed',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_dato',
+      1 => 'group_indstillinger',
+      2 => 'group_taksonomi',
+      3 => 'group_tekst',
+      4 => 'group_billeder',
+      5 => 'group_bilag',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'label' => 'Nyhed',
+      'instance_settings' => array(
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_news_tabs|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -429,7 +458,7 @@ function os2web_indholdstyper_field_group_info() {
   $field_group->parent_name = 'group_news_tabs';
   $field_group->data = array(
     'label' => 'Emneord',
-    'weight' => '3',
+    'weight' => '6',
     'children' => array(
       0 => 'field_termref_kle',
       1 => 'field_organization',
@@ -461,14 +490,13 @@ function os2web_indholdstyper_field_group_info() {
   $field_group->parent_name = 'group_news_tabs';
   $field_group->data = array(
     'label' => 'Tekst',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'body',
-      1 => 'field_lead_image',
-      2 => 'field_resume_long',
-      3 => 'field_site_structure',
-      4 => 'field_newstype',
-      5 => 'title',
+      1 => 'field_resume_long',
+      2 => 'field_site_structure',
+      3 => 'field_newstype',
+      4 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

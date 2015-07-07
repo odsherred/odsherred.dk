@@ -169,7 +169,7 @@ function nyheder_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 44,
+      'weight' => 53,
     ),
   );
 
@@ -440,7 +440,7 @@ function nyheder_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => -2,
+      'weight' => 3,
     ),
   );
 
@@ -506,7 +506,7 @@ Må ikke rettes, er juridisk gældende.',
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => -3,
+      'weight' => 2,
     ),
   );
 
@@ -558,7 +558,7 @@ Må ikke rettes, er juridisk gældende.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 42,
+      'weight' => 51,
     ),
   );
 
@@ -611,7 +611,7 @@ Må ikke rettes, er juridisk gældende.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 43,
+      'weight' => 52,
     ),
   );
 
@@ -659,7 +659,7 @@ Må ikke rettes, er juridisk gældende.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 44,
+      'weight' => 49,
     ),
   );
 
@@ -906,7 +906,7 @@ Må ikke rettes, er juridisk gældende.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 45,
+      'weight' => 50,
     ),
   );
 
@@ -1115,7 +1115,7 @@ Må ikke rettes, er juridisk gældende.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 39,
+      'weight' => 49,
     ),
   );
 
@@ -1167,7 +1167,7 @@ Må ikke rettes, er juridisk gældende.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 41,
+      'weight' => 50,
     ),
   );
 
@@ -1233,7 +1233,7 @@ Må ikke rettes, er juridisk gældende.',
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => -1,
+      'weight' => 4,
     ),
   );
 
