@@ -16,4 +16,5 @@ features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[menu_custom][] = menu-kommuneinformationer
 features[variable][] = date_format_kommuneinfolang
+features[variable][] = date_format_odsherredtid
 features[views_view][] = kommuneinformation

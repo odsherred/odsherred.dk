@@ -75,6 +75,7 @@ features[field_group][] = group_hidden|node|galleri|form
 features[field_group][] = group_hidden|node|news|form
 features[field_group][] = group_indholdsside|node|contentpage|form
 features[field_group][] = group_indstillinger|node|news|form
+features[field_group][] = group_news_tabs|node|news|form
 features[field_group][] = group_taksonomi|node|galleri|form
 features[field_group][] = group_taksonomi|node|iframe_selvbetjeningsl_sning_mm|form
 features[field_group][] = group_taksonomi|node|news|form
