@@ -26,6 +26,7 @@ function os2web_settings_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Kommunikation' => 'Kommunikation',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
@@ -38,6 +39,8 @@ function os2web_settings_user_default_permissions() {
     'name' => 'add media from remote sources',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'Kommuneinformation' => 'Kommuneinformation',
+      'Opret nyheder' => 'Opret nyheder',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
     ),
@@ -76,6 +79,8 @@ function os2web_settings_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
+      'Kommuneinformation' => 'Kommuneinformation',
+      'Opret nyheder' => 'Opret nyheder',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'node',
@@ -170,6 +175,7 @@ function os2web_settings_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'node',
@@ -198,6 +204,7 @@ function os2web_settings_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Kommunikation' => 'Kommunikation',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
@@ -267,6 +274,8 @@ function os2web_settings_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
       'Erhverv' => 'Erhverv',
+      'Kommuneinformation' => 'Kommuneinformation',
+      'Opret nyheder' => 'Opret nyheder',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'node',
@@ -284,6 +293,7 @@ function os2web_settings_user_default_permissions() {
     'name' => 'import media',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
     ),
@@ -295,6 +305,7 @@ function os2web_settings_user_default_permissions() {
     'name' => 'revert revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
     ),
@@ -386,6 +397,7 @@ function os2web_settings_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
     ),

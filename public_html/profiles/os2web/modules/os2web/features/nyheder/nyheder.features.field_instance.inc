@@ -169,7 +169,7 @@ function nyheder_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 53,
+      'weight' => 54,
     ),
   );
 
@@ -440,7 +440,7 @@ function nyheder_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 7,
     ),
   );
 
@@ -506,7 +506,7 @@ Må ikke rettes, er juridisk gældende.',
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 38,
     ),
   );
 
@@ -611,7 +611,7 @@ Må ikke rettes, er juridisk gældende.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 52,
+      'weight' => 53,
     ),
   );
 
@@ -1233,7 +1233,7 @@ Må ikke rettes, er juridisk gældende.',
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 4,
+      'weight' => 8,
     ),
   );
 

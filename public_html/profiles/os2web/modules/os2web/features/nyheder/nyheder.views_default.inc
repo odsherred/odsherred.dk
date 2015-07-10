@@ -40,16 +40,16 @@ function nyheder_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'tid-[tid] tid-[tid_1] gradient';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Forbindelse: Indhold: Portalkategori (field_site_structure) */
+  /* Relationship: Content: Portalkategori (field_site_structure) */
   $handler->display->display_options['relationships']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
   $handler->display->display_options['relationships']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['relationships']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
-  /* Forbindelse: Ord i ordforråd: Overordnet term */
+  /* Relationship: Taxonomy term: Parent term */
   $handler->display->display_options['relationships']['parent']['id'] = 'parent';
   $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
   $handler->display->display_options['relationships']['parent']['field'] = 'parent';
   $handler->display->display_options['relationships']['parent']['relationship'] = 'field_site_structure_tid';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -58,7 +58,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
   $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
@@ -67,7 +67,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid_1']['separator'] = '';
-  /* Felt: Indhold: Primære billede */
+  /* Field: Content: Primære billede */
   $handler->display->display_options['fields']['field_lead_image']['id'] = 'field_lead_image';
   $handler->display->display_options['fields']['field_lead_image']['table'] = 'field_data_field_lead_image';
   $handler->display->display_options['fields']['field_lead_image']['field'] = 'field_lead_image';
@@ -80,14 +80,14 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['fields']['field_lead_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_lead_image']['delta_offset'] = '0';
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -95,24 +95,24 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '130';
   $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  /* Sorteringskriterie: Indhold: Klæbrig */
+  /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -120,7 +120,7 @@ function nyheder_views_default_views() {
     'news' => 'news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -147,7 +147,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -157,7 +157,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid']['alter']['text'] = 'term-[tid]';
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
   $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
@@ -166,7 +166,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid_1']['separator'] = '';
-  /* Felt: Indhold: Primære billede */
+  /* Field: Content: Primære billede */
   $handler->display->display_options['fields']['field_lead_image']['id'] = 'field_lead_image';
   $handler->display->display_options['fields']['field_lead_image']['table'] = 'field_data_field_lead_image';
   $handler->display->display_options['fields']['field_lead_image']['field'] = 'field_lead_image';
@@ -179,14 +179,14 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['fields']['field_lead_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_lead_image']['delta_offset'] = '0';
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -219,7 +219,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -228,7 +228,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
   $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
@@ -236,7 +236,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['label'] = '';
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Primære billede */
+  /* Field: Content: Primære billede */
   $handler->display->display_options['fields']['field_lead_image']['id'] = 'field_lead_image';
   $handler->display->display_options['fields']['field_lead_image']['table'] = 'field_data_field_lead_image';
   $handler->display->display_options['fields']['field_lead_image']['field'] = 'field_lead_image';
@@ -249,14 +249,14 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['fields']['field_lead_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_lead_image']['delta_offset'] = '0';
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -283,7 +283,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -292,7 +292,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
   $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
@@ -301,7 +301,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid_1']['separator'] = '';
-  /* Felt: Indhold: Primære billede */
+  /* Field: Content: Primære billede */
   $handler->display->display_options['fields']['field_lead_image']['id'] = 'field_lead_image';
   $handler->display->display_options['fields']['field_lead_image']['table'] = 'field_data_field_lead_image';
   $handler->display->display_options['fields']['field_lead_image']['field'] = 'field_lead_image';
@@ -314,14 +314,14 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['fields']['field_lead_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_lead_image']['delta_offset'] = '0';
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -342,13 +342,13 @@ function nyheder_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '7';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Unfiltered text */
+  /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['content'] = 'Mest læste nyheder';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Opdateringsdato */
+  /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
@@ -357,7 +357,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed']['date_format'] = 'custom';
   $handler->display->display_options['fields']['changed']['custom_date_format'] = 'd.';
-  /* Felt: Indhold: Opdateringsdato */
+  /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed_1']['id'] = 'changed_1';
   $handler->display->display_options['fields']['changed_1']['table'] = 'node';
   $handler->display->display_options['fields']['changed_1']['field'] = 'changed';
@@ -369,7 +369,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed_1']['date_format'] = 'custom';
   $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M.';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -378,7 +378,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
   $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
@@ -387,7 +387,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid_1']['separator'] = '';
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -395,7 +395,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '30';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -410,7 +410,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['css_class'] = 'quicktab-1';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Opdateringsdato */
+  /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
@@ -419,7 +419,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed']['date_format'] = 'custom';
   $handler->display->display_options['fields']['changed']['custom_date_format'] = 'd.';
-  /* Felt: Indhold: Opdateringsdato */
+  /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed_1']['id'] = 'changed_1';
   $handler->display->display_options['fields']['changed_1']['table'] = 'node';
   $handler->display->display_options['fields']['changed_1']['field'] = 'changed';
@@ -431,7 +431,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed_1']['date_format'] = 'custom';
   $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M.';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -440,7 +440,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
   $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
@@ -449,14 +449,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid_1']['separator'] = '';
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -467,14 +467,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -482,7 +482,7 @@ function nyheder_views_default_views() {
     'news' => 'news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -499,7 +499,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['css_class'] = 'quicktab-2';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Opdateringsdato */
+  /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
@@ -508,7 +508,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed']['date_format'] = 'custom';
   $handler->display->display_options['fields']['changed']['custom_date_format'] = 'd.';
-  /* Felt: Indhold: Opdateringsdato */
+  /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed_1']['id'] = 'changed_1';
   $handler->display->display_options['fields']['changed_1']['table'] = 'node';
   $handler->display->display_options['fields']['changed_1']['field'] = 'changed';
@@ -520,7 +520,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed_1']['date_format'] = 'custom';
   $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M.';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -529,7 +529,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
   $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
@@ -538,14 +538,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid_1']['separator'] = '';
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -556,14 +556,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -571,7 +571,7 @@ function nyheder_views_default_views() {
     'news' => 'news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -587,7 +587,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['css_class'] = 'quicktab-3';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Opdateringsdato */
+  /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
@@ -596,7 +596,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed']['date_format'] = 'custom';
   $handler->display->display_options['fields']['changed']['custom_date_format'] = 'd.';
-  /* Felt: Indhold: Opdateringsdato */
+  /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed_1']['id'] = 'changed_1';
   $handler->display->display_options['fields']['changed_1']['table'] = 'node';
   $handler->display->display_options['fields']['changed_1']['field'] = 'changed';
@@ -608,7 +608,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed_1']['date_format'] = 'custom';
   $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M.';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -617,7 +617,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Felt: Ord i ordforråd: Term ID */
+  /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
   $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
@@ -626,14 +626,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid_1']['separator'] = '';
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -644,14 +644,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -659,7 +659,7 @@ function nyheder_views_default_views() {
     'news' => 'news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -676,10 +676,11 @@ function nyheder_views_default_views() {
     t('Sortér efter'),
     t('Stigende'),
     t('Faldende'),
-    t('term fra field_site_structure'),
-    t('Overordnet element'),
+    t('term from field_site_structure'),
+    t('Parent'),
     t('.'),
     t('list 1 top'),
+    t('more'),
     t('term-[tid]'),
     t('View panes'),
     t('list 2 left'),
@@ -731,32 +732,32 @@ function nyheder_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['separator'] = '|';
-  /* Sidefod: Global: Tekstområde */
+  /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<a href="/kommuneinformationer/hoeringer">Se alle/tidligere høringer</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
-  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Ingen høringer. <a href="/kommuneinformationer/hoeringer">Se tidligere høringer</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Forbindelse: Indhold: Type (field_newstype) */
+  /* Relationship: Content: Type (field_newstype) */
   $handler->display->display_options['relationships']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['relationships']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['relationships']['field_newstype_tid']['field'] = 'field_newstype_tid';
   $handler->display->display_options['relationships']['field_newstype_tid']['required'] = TRUE;
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -769,32 +770,32 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['label'] = '';
   $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  /* Sorteringskriterie: Indhold: Dato (field_newstypedato) */
+  /* Sort criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['sorts']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['sorts']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['sorts']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -809,21 +810,21 @@ function nyheder_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -836,7 +837,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['expose']['identifier'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Indhold: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -848,14 +849,14 @@ function nyheder_views_default_views() {
   $handler = $view->new_display('panel_pane', 'MegaDD', 'panel_pane_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -869,7 +870,7 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -882,7 +883,7 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
@@ -890,28 +891,28 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sorteringskriterie: Indhold: Udløbsdato (field_udloebsdato) */
+  /* Sort criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['sorts']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['sorts']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['sorts']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -925,7 +926,7 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Indhold: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
@@ -935,7 +936,7 @@ function nyheder_views_default_views() {
   /* Display: Blok */
   $handler = $view->new_display('block', 'Blok', 'block_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -949,7 +950,7 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -962,7 +963,7 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -972,14 +973,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['label'] = '';
   $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -990,21 +991,21 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_resume_long']['type'] = 'text_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -1013,7 +1014,7 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Indhold: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
@@ -1037,8 +1038,9 @@ function nyheder_views_default_views() {
     t('sidste »'),
     t('<a href="/kommuneinformationer/hoeringer">Se alle/tidligere høringer</a>'),
     t('Ingen høringer. <a href="/kommuneinformationer/hoeringer">Se tidligere høringer</a>'),
-    t('term fra field_newstype'),
+    t('term from field_newstype'),
     t('Page'),
+    t('more'),
     t('Type (field_newstype)'),
     t('MegaDD'),
     t('View panes'),
@@ -1082,26 +1084,26 @@ function nyheder_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['separator'] = '|';
-  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen planlagte møder. <a href="/kommuneinformationer/moeder">Se tidligere møder</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Forbindelse: Indhold: Type (field_newstype) */
+  /* Relationship: Content: Type (field_newstype) */
   $handler->display->display_options['relationships']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['relationships']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['relationships']['field_newstype_tid']['field'] = 'field_newstype_tid';
   $handler->display->display_options['relationships']['field_newstype_tid']['required'] = TRUE;
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1114,32 +1116,32 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['label'] = '';
   $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  /* Sorteringskriterie: Indhold: Dato (field_newstypedato) */
+  /* Sort criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['sorts']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['sorts']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['sorts']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -1150,7 +1152,7 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Indhold: Portalkategori (field_site_structure) */
+  /* Filter criterion: Content: Portalkategori (field_site_structure) */
   $handler->display->display_options['filters']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
   $handler->display->display_options['filters']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['filters']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
@@ -1159,7 +1161,7 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['filters']['field_site_structure_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_site_structure_tid']['vocabulary'] = 'site_struktur';
-  /* Filterkriterie: Indhold: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -1171,21 +1173,21 @@ function nyheder_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -1198,7 +1200,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['expose']['identifier'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Indhold: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -1210,14 +1212,14 @@ function nyheder_views_default_views() {
   $handler = $view->new_display('panel_pane', 'MegaDD', 'panel_pane_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1230,7 +1232,7 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
@@ -1251,7 +1253,7 @@ function nyheder_views_default_views() {
   /* Display: Blok */
   $handler = $view->new_display('block', 'Blok', 'block_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1264,7 +1266,7 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1274,14 +1276,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['label'] = '';
   $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -1294,7 +1296,7 @@ function nyheder_views_default_views() {
   $handler = $view->new_display('panel_pane', 'MegaDD2', 'panel_pane_2');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato_1']['id'] = 'field_newstypedato_1';
   $handler->display->display_options['fields']['field_newstypedato_1']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato_1']['field'] = 'field_newstypedato';
@@ -1308,7 +1310,7 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1324,14 +1326,14 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
@@ -1365,8 +1367,9 @@ function nyheder_views_default_views() {
     t('næste ›'),
     t('sidste »'),
     t('Der er ingen planlagte møder. <a href="/kommuneinformationer/moeder">Se tidligere møder</a>'),
-    t('term fra field_newstype'),
+    t('term from field_newstype'),
     t('Page'),
+    t('more'),
     t('Type (field_newstype)'),
     t('MegaDD'),
     t('View panes'),
@@ -1413,26 +1416,26 @@ function nyheder_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['separator'] = '|';
-  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Der er i øjeblikket ingen nyheder.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Forbindelse: Indhold: Type (field_newstype) */
+  /* Relationship: Content: Type (field_newstype) */
   $handler->display->display_options['relationships']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['relationships']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['relationships']['field_newstype_tid']['field'] = 'field_newstype_tid';
   $handler->display->display_options['relationships']['field_newstype_tid']['required'] = TRUE;
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1445,32 +1448,32 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['label'] = '';
   $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  /* Sorteringskriterie: Indhold: Dato (field_newstypedato) */
+  /* Sort criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['sorts']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['sorts']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['sorts']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -1479,7 +1482,7 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Indhold: Portalkategori (field_site_structure) */
+  /* Filter criterion: Content: Portalkategori (field_site_structure) */
   $handler->display->display_options['filters']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
   $handler->display->display_options['filters']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['filters']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
@@ -1495,21 +1498,21 @@ function nyheder_views_default_views() {
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -1522,7 +1525,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['expose']['identifier'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Indhold: Oprettelsesdato */
+  /* Filter criterion: Content: Post date */
   $handler->display->display_options['filters']['created']['id'] = 'created';
   $handler->display->display_options['filters']['created']['table'] = 'node';
   $handler->display->display_options['filters']['created']['field'] = 'created';
@@ -1565,8 +1568,9 @@ function nyheder_views_default_views() {
     t('næste ›'),
     t('sidste »'),
     t('Der er i øjeblikket ingen nyheder.'),
-    t('term fra field_newstype'),
+    t('term from field_newstype'),
     t('Page'),
+    t('more'),
     t('Type (field_newstype)'),
     t('Oprettelsesdato'),
     t('MegaDD'),
@@ -1610,19 +1614,19 @@ function nyheder_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['separator'] = '|';
-  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle udbud. <a href="/kommuneinformationer/udbud" title="Alle udbud">Se aktuelle udbud her.</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Forbindelse: Indhold: Type (field_newstype) */
+  /* Relationship: Content: Type (field_newstype) */
   $handler->display->display_options['relationships']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['relationships']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['relationships']['field_newstype_tid']['field'] = 'field_newstype_tid';
   $handler->display->display_options['relationships']['field_newstype_tid']['required'] = TRUE;
-  /* Felt: Indhold: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -1640,7 +1644,7 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1650,7 +1654,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1664,32 +1668,32 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['label'] = '';
   $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  /* Sorteringskriterie: Indhold: Udløbsdato (field_udloebsdato) */
+  /* Sort criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['sorts']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['sorts']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['sorts']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -1700,7 +1704,7 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Indhold: Portalkategori (field_site_structure) */
+  /* Filter criterion: Content: Portalkategori (field_site_structure) */
   $handler->display->display_options['filters']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
   $handler->display->display_options['filters']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['filters']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
@@ -1709,7 +1713,7 @@ function nyheder_views_default_views() {
   );
   $handler->display->display_options['filters']['field_site_structure_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_site_structure_tid']['vocabulary'] = 'site_struktur';
-  /* Filterkriterie: Indhold: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
@@ -1721,21 +1725,21 @@ function nyheder_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterie: Indhold: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -1748,7 +1752,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['expose']['identifier'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Indhold: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -1773,7 +1777,7 @@ function nyheder_views_default_views() {
   /* Display: Blok */
   $handler = $view->new_display('block', 'Blok', 'block_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1786,7 +1790,20 @@ function nyheder_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Udløbsdato */
+  $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['label'] = '';
+  $handler->display->display_options['fields']['field_udloebsdato']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
+    'format_type' => 'dag_og_maaned',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1796,14 +1813,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['label'] = '';
   $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -1828,9 +1845,10 @@ function nyheder_views_default_views() {
     t('næste ›'),
     t('sidste »'),
     t('Der er ingen aktuelle udbud. <a href="/kommuneinformationer/udbud" title="Alle udbud">Se aktuelle udbud her.</a>'),
-    t('term fra field_newstype'),
+    t('term from field_newstype'),
     t('[title] ([field_udloebsdato])'),
     t('Page'),
+    t('more'),
     t('Type (field_newstype)'),
     t('MegaDD'),
     t('View panes'),
@@ -1875,26 +1893,26 @@ function nyheder_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1938,6 +1956,7 @@ function nyheder_views_default_views() {
     t('næste ›'),
     t('sidste »'),
     t('Page'),
+    t('more'),
     t('Block'),
     t('Jobs fra Ofir.dk:'),
   );
