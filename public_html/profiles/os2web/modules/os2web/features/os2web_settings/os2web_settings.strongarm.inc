@@ -14,7 +14,7 @@ function os2web_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cache_lifetime';
-  $strongarm->value = '900';
+  $strongarm->value = '0';
   $export['cache_lifetime'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -35,7 +35,7 @@ function os2web_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_medium';
-  $strongarm->value = 'd. M Y H.i';
+  $strongarm->value = 'j. F Y - H.i';
   $export['date_format_medium'] = $strongarm;
 
   $strongarm = new stdClass();

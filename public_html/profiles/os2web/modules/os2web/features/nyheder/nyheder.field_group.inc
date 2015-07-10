@@ -25,7 +25,7 @@ function nyheder_field_group_info() {
     'children' => array(
       0 => 'field_newstypedato',
       1 => 'field_udloebsdato',
-      2 => 'field_nyheder_publiceringsdato',
+      2 => 'scheduler_settings',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
