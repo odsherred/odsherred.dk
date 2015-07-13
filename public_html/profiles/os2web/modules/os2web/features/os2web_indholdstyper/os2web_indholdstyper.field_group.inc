@@ -193,7 +193,8 @@ function os2web_indholdstyper_field_group_info() {
       4 => 'field_skjul_relaterede_links',
       5 => 'field_alternativt_billede',
       6 => 'field_contentpage_media',
-      7 => 'group_hidden',
+      7 => 'scheduler_settings',
+      8 => 'group_hidden',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -218,7 +219,7 @@ function os2web_indholdstyper_field_group_info() {
   $field_group->parent_name = 'group_gruppe3';
   $field_group->data = array(
     'label' => 'Skjult',
-    'weight' => '13',
+    'weight' => '14',
     'children' => array(
       0 => 'field_source_id',
       1 => 'field_site_structure',
@@ -281,6 +282,7 @@ function os2web_indholdstyper_field_group_info() {
       1 => 'field_related',
       2 => 'field_related_tema',
       3 => 'field_source_id',
+      4 => 'field_nyheder_publiceringsdato',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

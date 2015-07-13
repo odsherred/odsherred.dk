@@ -554,7 +554,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-contentpage-field_node_reference_kontaktblok'
+  // Exported field_instance:
+  // 'node-contentpage-field_node_reference_kontaktblok'
   $field_instances['node-contentpage-field_node_reference_kontaktblok'] = array(
     'bundle' => 'contentpage',
     'default_value' => NULL,
@@ -1867,7 +1868,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-iframe_selvbetjeningsl_sning_mm-field_editortags'
+  // Exported field_instance:
+  // 'node-iframe_selvbetjeningsl_sning_mm-field_editortags'
   $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_editortags'] = array(
     'bundle' => 'iframe_selvbetjeningsl_sning_mm',
     'default_value' => NULL,
@@ -1915,7 +1917,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-iframe_selvbetjeningsl_sning_mm-field_iframe_url'
+  // Exported field_instance:
+  // 'node-iframe_selvbetjeningsl_sning_mm-field_iframe_url'
   $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_iframe_url'] = array(
     'bundle' => 'iframe_selvbetjeningsl_sning_mm',
     'default_value' => NULL,
@@ -1964,7 +1967,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-iframe_selvbetjeningsl_sning_mm-field_organization'
+  // Exported field_instance:
+  // 'node-iframe_selvbetjeningsl_sning_mm-field_organization'
   $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_organization'] = array(
     'bundle' => 'iframe_selvbetjeningsl_sning_mm',
     'default_value' => NULL,
@@ -2012,7 +2016,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-iframe_selvbetjeningsl_sning_mm-field_politics'
+  // Exported field_instance:
+  // 'node-iframe_selvbetjeningsl_sning_mm-field_politics'
   $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_politics'] = array(
     'bundle' => 'iframe_selvbetjeningsl_sning_mm',
     'default_value' => NULL,
@@ -2060,7 +2065,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-iframe_selvbetjeningsl_sning_mm-field_source_id'
+  // Exported field_instance:
+  // 'node-iframe_selvbetjeningsl_sning_mm-field_source_id'
   $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_source_id'] = array(
     'bundle' => 'iframe_selvbetjeningsl_sning_mm',
     'default_value' => NULL,
@@ -2106,7 +2112,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-iframe_selvbetjeningsl_sning_mm-field_termref_kle'
+  // Exported field_instance:
+  // 'node-iframe_selvbetjeningsl_sning_mm-field_termref_kle'
   $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_termref_kle'] = array(
     'bundle' => 'iframe_selvbetjeningsl_sning_mm',
     'default_value' => NULL,
@@ -2154,7 +2161,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-iframe_selvbetjeningsl_sning_mm-field_termref_sted'
+  // Exported field_instance:
+  // 'node-iframe_selvbetjeningsl_sning_mm-field_termref_sted'
   $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_termref_sted'] = array(
     'bundle' => 'iframe_selvbetjeningsl_sning_mm',
     'default_value' => NULL,
@@ -3135,7 +3143,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-selvbetjeningslinks-field_selvbetjening_direkte'
+  // Exported field_instance:
+  // 'node-selvbetjeningslinks-field_selvbetjening_direkte'
   $field_instances['node-selvbetjeningslinks-field_selvbetjening_direkte'] = array(
     'bundle' => 'selvbetjeningslinks',
     'default_value' => NULL,
@@ -3181,7 +3190,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-selvbetjeningslinks-field_selvbetjeningslink_type'
+  // Exported field_instance:
+  // 'node-selvbetjeningslinks-field_selvbetjeningslink_type'
   $field_instances['node-selvbetjeningslinks-field_selvbetjeningslink_type'] = array(
     'bundle' => 'selvbetjeningslinks',
     'default_value' => array(
@@ -3357,7 +3367,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-site_struktur-field_attached_node_fokus'
+  // Exported field_instance:
+  // 'taxonomy_term-site_struktur-field_attached_node_fokus'
   $field_instances['taxonomy_term-site_struktur-field_attached_node_fokus'] = array(
     'bundle' => 'site_struktur',
     'default_value' => NULL,
