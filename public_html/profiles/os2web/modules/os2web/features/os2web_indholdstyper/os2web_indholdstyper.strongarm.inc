@@ -383,6 +383,15 @@ function os2web_indholdstyper_strongarm() {
         'fmenu' => array(
           'weight' => '7',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '13',
+        ),
       ),
     ),
   );
@@ -537,7 +546,10 @@ function os2web_indholdstyper_strongarm() {
           'weight' => '52',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '2',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '5',
         ),
       ),
     ),

@@ -250,5 +250,4 @@ features[variable][] = node_submitted_news
 features[variable][] = node_submitted_rotating_image
 features[variable][] = node_submitted_selvbetjeningslinks
 features_exclude[field_base][field_billede] = field_billede
-features_exclude[field_group][group_news_tabs|node|news|form] = group_news_tabs|node|news|form
 timestamp = 1369904058
