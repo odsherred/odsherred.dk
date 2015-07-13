@@ -1,5 +1,5 @@
 name = 'Odsherred Website design'
-description = 'Lavet af Bellcom, Franz Skaaning'
+description = 'Lavet af Bellcom'
 core = '7.x'
 engine = 'phptemplate'
 screenshot = 'screenshot.png'
