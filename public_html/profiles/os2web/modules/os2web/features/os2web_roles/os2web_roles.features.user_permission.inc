@@ -66,7 +66,9 @@ function os2web_roles_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Kommunikation' => 'Kommunikation',
+      'Opret nyheder' => 'Opret nyheder',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
     ),
@@ -79,6 +81,7 @@ function os2web_roles_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Kommunikation' => 'Kommunikation',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
