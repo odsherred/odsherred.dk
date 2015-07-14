@@ -40,7 +40,7 @@ function os2web_andre_sites_og_subsites_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Overskrift: Global: Tekstområde */
+  /* Overskrift: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -48,14 +48,14 @@ function os2web_andre_sites_og_subsites_views_default_views() {
 Lige fra Børnehaven Raketten til Brandvæsnet i Odsherred. Find en helt bestemt 
 hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige områder herunder.';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  /* Felt: Ordforråd: Internt navn */
+  /* Felt: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['fields']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['fields']['machine_name']['field'] = 'machine_name';
   $handler->display->display_options['fields']['machine_name']['label'] = '';
   $handler->display->display_options['fields']['machine_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
-  /* Felt: Ord i ordforråd: Navn */
+  /* Felt: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -66,7 +66,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['convert_spaces'] = TRUE;
-  /* Felt: Felt: Subsite banner */
+  /* Felt: Field: Subsite banner */
   $handler->display->display_options['fields']['field_subsite_banner']['id'] = 'field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['table'] = 'field_data_field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['field'] = 'field_subsite_banner';
@@ -81,14 +81,14 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_subsite_banner']['delta_offset'] = '0';
-  /* Filterkriterie: Ordforråd: Internt navn */
+  /* Filterkriterie: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'site_struktur' => 'site_struktur',
   );
-  /* Filterkriterie: Ord i ordforråd: Is subsite (field_is_subsite) */
+  /* Filterkriterie: Taxonomy term: Is subsite (field_is_subsite) */
   $handler->display->display_options['filters']['field_is_subsite_value']['id'] = 'field_is_subsite_value';
   $handler->display->display_options['filters']['field_is_subsite_value']['table'] = 'field_data_field_is_subsite';
   $handler->display->display_options['filters']['field_is_subsite_value']['field'] = 'field_is_subsite_value';
@@ -109,21 +109,21 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Ord i ordforråd: Navn */
+  /* Felt: Taxonomy term: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
   $handler->display->display_options['fields']['name_1']['label'] = '';
   $handler->display->display_options['fields']['name_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
-  /* Felt: Ordforråd: Internt navn */
+  /* Felt: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['fields']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['fields']['machine_name']['field'] = 'machine_name';
   $handler->display->display_options['fields']['machine_name']['label'] = '';
   $handler->display->display_options['fields']['machine_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
-  /* Felt: Ord i ordforråd: Navn */
+  /* Felt: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -134,7 +134,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['convert_spaces'] = TRUE;
-  /* Felt: Felt: Subsite banner */
+  /* Felt: Field: Subsite banner */
   $handler->display->display_options['fields']['field_subsite_banner']['id'] = 'field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['table'] = 'field_data_field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['field'] = 'field_subsite_banner';
@@ -149,7 +149,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_subsite_banner']['delta_offset'] = '0';
-  /* Felt: Ord i ordforråd: Beskrivelse af term */
+  /* Felt: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['description']['field'] = 'description';
@@ -182,7 +182,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Ord i ordforråd: Navn */
+  /* Felt: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -207,14 +207,14 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Ordforråd: Internt navn */
+  /* Felt: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['fields']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['fields']['machine_name']['field'] = 'machine_name';
   $handler->display->display_options['fields']['machine_name']['label'] = '';
   $handler->display->display_options['fields']['machine_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
-  /* Felt: Ord i ordforråd: Navn */
+  /* Felt: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -227,7 +227,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['convert_spaces'] = TRUE;
-  /* Felt: Ord i ordforråd: Navn */
+  /* Felt: Taxonomy term: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
@@ -250,20 +250,20 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: View-område */
+  /* Overskrift: Global: View area */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'subsites_og_sites:block_2';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Ordforråd: Internt navn */
+  /* Felt: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['fields']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['fields']['machine_name']['field'] = 'machine_name';
   $handler->display->display_options['fields']['machine_name']['label'] = '';
   $handler->display->display_options['fields']['machine_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
-  /* Felt: Ord i ordforråd: Navn */
+  /* Felt: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -274,7 +274,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['convert_spaces'] = TRUE;
-  /* Felt: Ord i ordforråd: Navn */
+  /* Felt: Taxonomy term: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
@@ -282,7 +282,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['name_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['name_1']['alter']['path'] = 'subsites-og-sites/[name]';
   $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
-  /* Felt: Global: Tilpasset tekst */
+  /* Felt: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -308,6 +308,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
 Lige fra Børnehaven Raketten til Brandvæsnet i Odsherred. Find en helt bestemt 
 hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige områder herunder.'),
     t('Page'),
+    t('more'),
     t('<div class="border"><a href="/subsites-og-sites/[name]">GOGOGO</a></div>
 <h3><a href="/subsites-og-sites/[name]">[name_1]</a></h3>
 <div class="tekst"><a href="/subsites-og-sites/[name]">[description]</a></div>'),
@@ -346,7 +347,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Felt: Indhold: Titel */
+  /* Felt: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -356,7 +357,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Felt: Felt: Subsite banner */
+  /* Felt: Field: Subsite banner */
   $handler->display->display_options['fields']['field_subsite_banner']['id'] = 'field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['table'] = 'field_data_field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['field'] = 'field_subsite_banner';
@@ -367,19 +368,19 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
     'image_style' => 'grid-3',
     'image_link' => '',
   );
-  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  /* Sorteringskriterie: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filterkriterie: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filterkriterie: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -400,6 +401,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
     t('Stigende'),
     t('Faldende'),
     t('Page'),
+    t('more'),
   );
   $export['andre_sider_liste'] = $view;
 
@@ -433,14 +435,14 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  /* Opførsel ved ingen resultater: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Ingen sites';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Felt: Indhold: URL */
+  /* Felt: Content: URL */
   $handler->display->display_options['fields']['field_url']['id'] = 'field_url';
   $handler->display->display_options['fields']['field_url']['table'] = 'field_data_field_url';
   $handler->display->display_options['fields']['field_url']['field'] = 'field_url';
@@ -448,7 +450,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['field_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_url']['type'] = 'text_plain';
-  /* Felt: Indhold: Titel */
+  /* Felt: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -458,7 +460,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Felt: Felt: Subsite banner */
+  /* Felt: Field: Subsite banner */
   $handler->display->display_options['fields']['field_subsite_banner']['id'] = 'field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['table'] = 'field_data_field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['field'] = 'field_subsite_banner';
@@ -477,7 +479,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   );
   $handler->display->display_options['fields']['field_subsite_banner']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_subsite_banner']['delta_offset'] = '0';
-  /* Felt: Indhold: Redigér-link */
+  /* Felt: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -485,7 +487,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Rediger';
-  /* Felt: Global: Kontekstuelle links */
+  /* Felt: Global: Contextual Links */
   $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
   $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
   $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
@@ -497,12 +499,12 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
     'edit_node' => 'edit_node',
     'field_subsite_banner' => 0,
   );
-  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  /* Sorteringskriterie: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Kontekstuelt filter: Indhold: Har taksonomiterm ID (med dybde) */
+  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -526,14 +528,14 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['transform'] = TRUE;
   $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['fail'] = 'empty';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '4';
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filterkriterie: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filterkriterie: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -560,6 +562,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
     t('Alle'),
     t('%1'),
     t('Page'),
+    t('more'),
   );
   $export['subsites'] = $view;
 
@@ -592,14 +595,14 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['style_options']['row_class'] = 'grid-3 subsite';
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  /* Opførsel ved ingen resultater: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Ingen sites';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Felt: Indhold: URL */
+  /* Felt: Content: URL */
   $handler->display->display_options['fields']['field_url']['id'] = 'field_url';
   $handler->display->display_options['fields']['field_url']['table'] = 'field_data_field_url';
   $handler->display->display_options['fields']['field_url']['field'] = 'field_url';
@@ -607,7 +610,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['field_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_url']['type'] = 'text_plain';
-  /* Felt: Indhold: Titel */
+  /* Felt: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -617,7 +620,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Felt: Felt: Subsite banner */
+  /* Felt: Field: Subsite banner */
   $handler->display->display_options['fields']['field_subsite_banner']['id'] = 'field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['table'] = 'field_data_field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['field'] = 'field_subsite_banner';
@@ -636,7 +639,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   );
   $handler->display->display_options['fields']['field_subsite_banner']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_subsite_banner']['delta_offset'] = '0';
-  /* Felt: Indhold: Redigér-link */
+  /* Felt: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -644,7 +647,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Rediger';
-  /* Felt: Global: Kontekstuelle links */
+  /* Felt: Global: Contextual Links */
   $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
   $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
   $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
@@ -656,7 +659,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
     'edit_node' => 'edit_node',
     'field_subsite_banner' => 0,
   );
-  /* Felt: Indhold: Titel */
+  /* Felt: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
@@ -665,11 +668,11 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['title_1']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
-  /* Sorteringskriterie: Indhold: Titel */
+  /* Sorteringskriterie: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Kontekstuelt filter: Indhold: Har taksonomiterm ID (med dybde) */
+  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -695,14 +698,14 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['transform'] = TRUE;
   $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['fail'] = 'empty';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '4';
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filterkriterie: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filterkriterie: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -730,7 +733,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: URL */
+  /* Felt: Content: URL */
   $handler->display->display_options['fields']['field_url']['id'] = 'field_url';
   $handler->display->display_options['fields']['field_url']['table'] = 'field_data_field_url';
   $handler->display->display_options['fields']['field_url']['field'] = 'field_url';
@@ -738,7 +741,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['field_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_url']['type'] = 'text_plain';
-  /* Felt: Indhold: Titel */
+  /* Felt: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -748,7 +751,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Felt: Felt: Subsite banner */
+  /* Felt: Field: Subsite banner */
   $handler->display->display_options['fields']['field_subsite_banner']['id'] = 'field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['table'] = 'field_data_field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['field'] = 'field_subsite_banner';
@@ -767,7 +770,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   );
   $handler->display->display_options['fields']['field_subsite_banner']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_subsite_banner']['delta_offset'] = '0';
-  /* Felt: Indhold: Redigér-link */
+  /* Felt: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -775,7 +778,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Rediger';
-  /* Felt: Global: Kontekstuelle links */
+  /* Felt: Global: Contextual Links */
   $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
   $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
   $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
@@ -787,7 +790,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
     'edit_node' => 'edit_node',
     'field_subsite_banner' => 0,
   );
-  /* Felt: Indhold: Titel */
+  /* Felt: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
@@ -799,7 +802,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['title_1']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
-  /* Felt: Indhold: Alle taksonomitermer */
+  /* Felt: Content: All taxonomy terms */
   $handler->display->display_options['fields']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['fields']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['fields']['term_node_tid']['field'] = 'term_node_tid';
@@ -831,7 +834,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   /* Display: Blok */
   $handler = $view->new_display('block', 'Blok', 'block_1');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Indhold: Har taksonomiterm ID (med dybde) */
+  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -875,13 +878,13 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: View-område */
+  /* Overskrift: Global: View area */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'andre_sider:block_1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: URL */
+  /* Felt: Content: URL */
   $handler->display->display_options['fields']['field_url']['id'] = 'field_url';
   $handler->display->display_options['fields']['field_url']['table'] = 'field_data_field_url';
   $handler->display->display_options['fields']['field_url']['field'] = 'field_url';
@@ -889,7 +892,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['field_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_url']['type'] = 'text_plain';
-  /* Felt: Indhold: Titel */
+  /* Felt: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -899,7 +902,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Felt: Indhold: Titel */
+  /* Felt: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
@@ -928,7 +931,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: URL */
+  /* Felt: Content: URL */
   $handler->display->display_options['fields']['field_url']['id'] = 'field_url';
   $handler->display->display_options['fields']['field_url']['table'] = 'field_data_field_url';
   $handler->display->display_options['fields']['field_url']['field'] = 'field_url';
@@ -936,7 +939,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['field_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_url']['type'] = 'text_plain';
-  /* Felt: Indhold: Titel */
+  /* Felt: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -946,7 +949,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Felt: Felt: Subsite banner */
+  /* Felt: Field: Subsite banner */
   $handler->display->display_options['fields']['field_subsite_banner']['id'] = 'field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['table'] = 'field_data_field_subsite_banner';
   $handler->display->display_options['fields']['field_subsite_banner']['field'] = 'field_subsite_banner';
@@ -965,7 +968,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   );
   $handler->display->display_options['fields']['field_subsite_banner']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_subsite_banner']['delta_offset'] = '0';
-  /* Felt: Indhold: Titel */
+  /* Felt: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
@@ -975,7 +978,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
   $handler->display->display_options['fields']['title_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Indhold: Har taksonomiterm ID (med dybde) */
+  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -1016,6 +1019,7 @@ hjemmeside med søgningen i toppen, eller få en oversigt over de forskellige om
     t('Alle'),
     t('%1'),
     t('Page'),
+    t('more'),
     t('[title_1]'),
     t('Blok'),
     t('Bilag'),

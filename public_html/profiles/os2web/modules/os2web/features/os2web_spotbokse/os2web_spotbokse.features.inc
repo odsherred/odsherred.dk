@@ -34,16 +34,8 @@ function os2web_spotbokse_image_default_styles() {
 
   // Exported image style: spotbox-300.
   $styles['spotbox-300'] = array(
-    'name' => 'spotbox-300',
     'effects' => array(
       16 => array(
-        'label' => 'Skalér og beskær',
-        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 300,
@@ -56,16 +48,8 @@ function os2web_spotbokse_image_default_styles() {
 
   // Exported image style: spotbox-tall.
   $styles['spotbox-tall'] = array(
-    'name' => 'spotbox-tall',
     'effects' => array(
       1 => array(
-        'label' => 'Beskær',
-        'help' => 'Beskæring fjerner dele af billedet for at give det de angivne dimensioner.',
-        'effect callback' => 'image_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_crop_form',
-        'summary theme' => 'image_crop_summary',
-        'module' => 'image',
         'name' => 'image_crop',
         'data' => array(
           'width' => 230,
@@ -79,16 +63,8 @@ function os2web_spotbokse_image_default_styles() {
 
   // Exported image style: spotbox5.
   $styles['spotbox5'] = array(
-    'name' => 'spotbox5',
     'effects' => array(
       1 => array(
-        'label' => 'Skalér og beskær',
-        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 290,
@@ -101,16 +77,8 @@ function os2web_spotbokse_image_default_styles() {
 
   // Exported image style: spotbox_portal.
   $styles['spotbox_portal'] = array(
-    'name' => 'spotbox_portal',
     'effects' => array(
       1 => array(
-        'label' => 'Skalér og beskær',
-        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 210,
@@ -123,16 +91,8 @@ function os2web_spotbokse_image_default_styles() {
 
   // Exported image style: spotbox_portal_uden_links.
   $styles['spotbox_portal_uden_links'] = array(
-    'name' => 'spotbox_portal_uden_links',
     'effects' => array(
       2 => array(
-        'label' => 'Skalér og beskær',
-        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 210,
@@ -145,16 +105,8 @@ function os2web_spotbokse_image_default_styles() {
 
   // Exported image style: spotbox_right.
   $styles['spotbox_right'] = array(
-    'name' => 'spotbox_right',
     'effects' => array(
       7 => array(
-        'label' => 'Skalér',
-        'help' => 'Skalering bevarer billedets højde-bredde-forhold. Hvis kun den ene dimension angives vil den anden blive beregnet.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 230,
@@ -164,13 +116,6 @@ function os2web_spotbokse_image_default_styles() {
         'weight' => 1,
       ),
       9 => array(
-        'label' => 'Beskær',
-        'help' => 'Beskæring fjerner dele af billedet for at give det de angivne dimensioner.',
-        'effect callback' => 'image_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_crop_form',
-        'summary theme' => 'image_crop_summary',
-        'module' => 'image',
         'name' => 'image_crop',
         'data' => array(
           'width' => 230,
@@ -184,16 +129,8 @@ function os2web_spotbokse_image_default_styles() {
 
   // Exported image style: video_forside.
   $styles['video_forside'] = array(
-    'name' => 'video_forside',
     'effects' => array(
       8 => array(
-        'label' => 'Skalér',
-        'help' => 'Skalering bevarer billedets højde-bredde-forhold. Hvis kun den ene dimension angives vil den anden blive beregnet.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 310,
@@ -203,13 +140,6 @@ function os2web_spotbokse_image_default_styles() {
         'weight' => 1,
       ),
       10 => array(
-        'label' => 'Beskær',
-        'help' => 'Beskæring fjerner dele af billedet for at give det de angivne dimensioner.',
-        'effect callback' => 'image_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_crop_form',
-        'summary theme' => 'image_crop_summary',
-        'module' => 'image',
         'name' => 'image_crop',
         'data' => array(
           'width' => 310,

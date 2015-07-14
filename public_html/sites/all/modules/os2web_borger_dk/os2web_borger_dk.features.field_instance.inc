@@ -217,7 +217,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_borgerurl'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_borgerurl'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_borgerurl'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => NULL,
@@ -300,7 +301,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_byline'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_byline'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_byline'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => NULL,
@@ -384,7 +386,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_formterm'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_formterm'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_formterm'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => NULL,
@@ -430,7 +433,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_header'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_header'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_header'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => array(
@@ -519,7 +523,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_legislati'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_legislati'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_legislati'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => array(
@@ -608,7 +613,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_pagetitle'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_pagetitle'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_pagetitle'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => NULL,
@@ -691,7 +697,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_post_text'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_post_text'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_post_text'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => array(
@@ -779,7 +786,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_pre_text'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_pre_text'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_pre_text'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => array(
@@ -868,7 +876,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_recommend'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_recommend'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_recommend'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => array(
@@ -957,7 +966,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_selfservi'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_selfservi'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_selfservi'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => array(
@@ -1046,7 +1056,8 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_borger_dk_article-field_os2web_borger_dk_shortlist'
+  // Exported field_instance:
+  // 'node-os2web_borger_dk_article-field_os2web_borger_dk_shortlist'
   $field_instances['node-os2web_borger_dk_article-field_os2web_borger_dk_shortlist'] = array(
     'bundle' => 'os2web_borger_dk_article',
     'default_value' => array(

@@ -15,6 +15,7 @@ function os2web_borger_dk_user_default_permissions() {
     'name' => 'create os2web_borger_dk_article content',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
@@ -32,6 +33,7 @@ function os2web_borger_dk_user_default_permissions() {
     'name' => 'delete own os2web_borger_dk_article content',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Kommunikation' => 'Kommunikation',
       'Webredaktør' => 'Webredaktør',
     ),
@@ -50,6 +52,7 @@ function os2web_borger_dk_user_default_permissions() {
     'name' => 'edit own os2web_borger_dk_article content',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'Kommuneinformation' => 'Kommuneinformation',
       'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
