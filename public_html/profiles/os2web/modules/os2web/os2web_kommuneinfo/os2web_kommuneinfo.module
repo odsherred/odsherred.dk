@@ -5,3 +5,48 @@
  */
 
 include_once 'os2web_kommuneinfo.features.inc';
+
+
+/**
+ * Vocabularies we manage access for.
+ */
+function os2web_kommuneinfo_manage_vocabularies() {
+  // This array holds the taxonomy vocabulary names on the vocabularies
+  // we want to manage access for.
+  return array(
+    'nyhedstype' => array(
+      'title' => 'Brug nyhedstype: ',
+      'perm' => 'use newstype-',
+      'field' => 'field_newstype',
+    ),
+    'forfrem_til' => array(
+      'title' => 'Forfrem til: ',
+      'perm' => 'promote to-',
+      'field' => 'field_promoteto',
+    ),
+  );
+}
+
+/**
+ * Implements hook_permission().
+ */
+function os2web_kommuneinfo_permission() {
+  $vocabularies = ktc_content_types_manage_vocabularies();
+
+  foreach ($vocabularies as $vocabulary_name => $data) {
+    $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_name);
+    $terms = taxonomy_get_tree($vocabulary->vid, 0, 1);
+
+    $permissions[$data['perm'] . 'all'] = array(
+      'title' => $data['title'] . 'Alle',
+    );
+
+    foreach ($terms as $key => $term) {
+      $permissions[$data['perm'] . $term->tid] = array(
+        'title' => $data['title'] . $term->name,
+      );
+    }
+  }
+
+  return $permissions;
+}
