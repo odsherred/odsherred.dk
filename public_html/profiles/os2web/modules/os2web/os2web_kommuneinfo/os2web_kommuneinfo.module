@@ -56,12 +56,12 @@ function os2web_kommuneinfo_permission() {
   $terms = taxonomy_get_tree($vocabulary->vid, 0, 2);
 
   // A news all types administration permission.
-  $permissions['administer all news type'] = array('title' => t('Administer alle nyhedstyper'));
+  $permissions['administer all news type'] = array('title' => t('Opret alle nyhedstyper'));
 
   // Foreach news type term, there is a permission.
   foreach ($terms as $tid => $term) {
     $permissions['administer news type-' . $term->tid] = array(
-      'title' => t('Administer ') . $term->name . t(' nyhedstype'),
+      'title' => t('Opret ') . $term->name . t(' nyhedstype'),
     );
   }
   $vocabulary = taxonomy_vocabulary_machine_name_load('forfrem_til');
