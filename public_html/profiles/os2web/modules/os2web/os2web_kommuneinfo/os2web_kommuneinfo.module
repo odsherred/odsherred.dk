@@ -14,7 +14,7 @@ function os2web_kommuneinfo_form_news_node_form_alter(&$form, $form_state, $form
   $node = $form_state['node'];
 
   $vocabulary = taxonomy_vocabulary_machine_name_load('nyhedstype');
-  $terms = taxonomy_get_tree($vocabulary->vid, 0, -1);
+  $terms = taxonomy_get_tree($vocabulary->vid, 0, 0);
   $first_term = reset($terms);
   $options = array();
 
@@ -34,7 +34,7 @@ function os2web_kommuneinfo_form_news_node_form_alter(&$form, $form_state, $form
   }
 
   $vocabulary = taxonomy_vocabulary_machine_name_load('forfrem_til');
-  $terms = taxonomy_get_tree($vocabulary->vid, 0, -1);
+  $terms = taxonomy_get_tree($vocabulary->vid, 0, 0);
   $first_term = reset($terms);
   $options = array();
 
@@ -53,7 +53,7 @@ function os2web_kommuneinfo_form_news_node_form_alter(&$form, $form_state, $form
  */
 function os2web_kommuneinfo_permission() {
   $vocabulary = taxonomy_vocabulary_machine_name_load('nyhedstype');
-  $terms = taxonomy_get_tree($vocabulary->vid, 0, -1);
+  $terms = taxonomy_get_tree($vocabulary->vid, 0, 0);
 
   // A news all types administration permission.
   $permissions['administer all news type'] = array('title' => t('Administer alle nyhedstyper'));
@@ -65,7 +65,7 @@ function os2web_kommuneinfo_permission() {
     );
   }
   $vocabulary = taxonomy_vocabulary_machine_name_load('forfrem_til');
-  $terms = taxonomy_get_tree($vocabulary->vid, 0, -1);
+  $terms = taxonomy_get_tree($vocabulary->vid, 0, 0);
 
   // A admin permission to promote news to all the place.
   $permissions['promote to all the place'] = array('title' => t('Forfrem til alt'));
