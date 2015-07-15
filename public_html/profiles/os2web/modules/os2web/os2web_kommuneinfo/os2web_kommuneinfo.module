@@ -6,6 +6,9 @@
 
 include_once 'os2web_kommuneinfo.features.inc';
 
+function os2web_kommuneinfo_form_alter(&$form, &$form_state, $form_id) {
+  $form['revision_information']['#access'] = user_access('view revisions');
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
