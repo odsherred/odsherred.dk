@@ -31,7 +31,7 @@ function os2web_kommuneinfo_manage_vocabularies() {
  * Implements hook_permission().
  */
 function os2web_kommuneinfo_permission() {
-  $vocabularies = ktc_content_types_manage_vocabularies();
+  $vocabularies = os2web_kommuneinfo_manage_vocabularies();
 
   foreach ($vocabularies as $vocabulary_name => $data) {
     $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_name);
