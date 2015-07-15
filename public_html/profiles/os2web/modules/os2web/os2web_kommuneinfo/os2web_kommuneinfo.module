@@ -10,7 +10,7 @@ include_once 'os2web_kommuneinfo.features.inc';
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function os2web_kommuneinfo_form_os2web_base_news_node_form_alter(&$form, $form_state, $form_id) {
+function os2web_kommuneinfo_form_news_node_form_alter(&$form, $form_state, $form_id) {
   $node = $form_state['node'];
 
   $vocabulary = taxonomy_vocabulary_machine_name_load('nyhedstype');
