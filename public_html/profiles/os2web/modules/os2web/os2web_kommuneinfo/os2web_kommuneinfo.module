@@ -61,10 +61,10 @@ function os2web_kommuneinfo_permission() {
   // Foreach news type term, there is a permission.
   foreach ($terms as $tid => $term) {
     $permissions['administer news type-' . $term->tid] = array(
-      'title' => t('Administer ') . $term->name . t('Nyhedstype'),
+      'title' => t('Administer ') . $term->name . t(' nyhedstype'),
     );
   }
-  $vocabulary = taxonomy_vocabulary_machine_name_load('os2web_base_tax_promoteto');
+  $vocabulary = taxonomy_vocabulary_machine_name_load('forfrem_til');
   $terms = taxonomy_get_tree($vocabulary->vid, 0, 1);
 
   // A admin permission to promote news to all the place.
