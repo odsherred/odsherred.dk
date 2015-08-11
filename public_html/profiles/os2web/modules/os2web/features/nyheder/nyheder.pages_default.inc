@@ -371,110 +371,6 @@ function nyheder_default_page_manager_handlers() {
     $display->panels['stack1'][7] = 'new-8';
     $pane = new stdClass();
     $pane->pid = 'new-9';
-    $pane->panel = 'stack1';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_newstypedato';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'entity_field_value:node:news:field_newstype',
-          'settings' => array(
-            'field_newstype' => array(
-              'und' => array(
-                0 => array(
-                  'tid' => '25753',
-                ),
-              ),
-            ),
-            'field_newstype_tid' => '25753',
-          ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => TRUE,
-        ),
-      ),
-    );
-    $pane->configuration = array(
-      'label' => 'inline',
-      'formatter' => 'date_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'format_type' => 'odsherredtid',
-        'multiple_number' => '',
-        'multiple_from' => '',
-        'multiple_to' => '',
-        'fromto' => 'both',
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => 'Svarfrist',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 8;
-    $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['stack1'][8] = 'new-9';
-    $pane = new stdClass();
-    $pane->pid = 'new-10';
-    $pane->panel = 'stack1';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_udloebsdato';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'entity_field_value:node:news:field_newstype',
-          'settings' => array(
-            'field_newstype' => array(
-              'und' => array(
-                0 => array(
-                  'tid' => '25753',
-                ),
-              ),
-            ),
-            'field_newstype_tid' => '25753',
-          ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => TRUE,
-        ),
-      ),
-    );
-    $pane->configuration = array(
-      'label' => 'inline',
-      'formatter' => 'date_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'format_type' => 'odsherredtid',
-        'multiple_number' => '',
-        'multiple_from' => '',
-        'multiple_to' => '',
-        'fromto' => 'both',
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 9;
-    $pane->locks = array();
-    $display->content['new-10'] = $pane;
-    $display->panels['stack1'][9] = 'new-10';
-    $pane = new stdClass();
-    $pane->pid = 'new-11';
     $pane->panel = 'stack2';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_mediafile';
@@ -499,10 +395,10 @@ function nyheder_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-11'] = $pane;
-    $display->panels['stack2'][0] = 'new-11';
+    $display->content['new-9'] = $pane;
+    $display->panels['stack2'][0] = 'new-9';
     $pane = new stdClass();
-    $pane->pid = 'new-12';
+    $pane->pid = 'new-10';
     $pane->panel = 'stack2';
     $pane->type = 'views_panes';
     $pane->subtype = 'kle_lonks_boks-panel_pane_1';
@@ -528,8 +424,8 @@ function nyheder_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-12'] = $pane;
-    $display->panels['stack2'][1] = 'new-12';
+    $display->content['new-10'] = $pane;
+    $display->panels['stack2'][1] = 'new-10';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-4';
   $handler->conf['display'] = $display;
@@ -762,7 +658,7 @@ function nyheder_default_page_manager_pages() {
       'admin_title' => '',
       'title' => '',
       'body' => '<div class="header">Nyheder og presse
-	<div class="relative-container">
+	<!-- <div class="relative-container">
 		<div class="filter-container">
 			<ul class="facetapi-date-range facetapi-facet-changed facetapi-processed" id="facetapi-facet-apachesolrlocalhost-block-changed">
 			<li><span class="facet-date-label">Sorter efter:</span></li>
@@ -782,7 +678,7 @@ function nyheder_default_page_manager_pages() {
 			<li class="leaf last"><a href="/search/news/?f[0]=ds_changed%3Apast_year" rel="nofollow">Sidste år</a></li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
 </div>',
       'format' => 'php_code',
       'substitute' => TRUE,

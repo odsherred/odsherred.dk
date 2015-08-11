@@ -368,7 +368,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed_1']['element_label_type'] = '0';
   $handler->display->display_options['fields']['changed_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed_1']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M.';
+  $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M';
   /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
@@ -403,6 +403,22 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '65';
   $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
+  /* Sort criterion: Content statistics: Views today */
+  $handler->display->display_options['sorts']['daycount']['id'] = 'daycount';
+  $handler->display->display_options['sorts']['daycount']['table'] = 'node_counter';
+  $handler->display->display_options['sorts']['daycount']['field'] = 'daycount';
+  $handler->display->display_options['sorts']['daycount']['order'] = 'DESC';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
 
   /* Display: Høringer */
   $handler = $view->new_display('block', 'Høringer', 'block_1');
