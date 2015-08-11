@@ -13,12 +13,12 @@ function os2web_kommuneinfo_menu_default_menu_custom() {
   // Exported menu: menu-kommuneinformationer.
   $menus['menu-kommuneinformationer'] = array(
     'menu_name' => 'menu-kommuneinformationer',
-    'title' => 'Kommuneinformationer',
+    'title' => 'Kommuneinformation',
     'description' => '',
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Kommuneinformationer');
+  t('Kommuneinformation');
 
 
   return $menus;
