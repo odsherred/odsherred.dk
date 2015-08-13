@@ -5,6 +5,436 @@
  */
 
 /**
+ * Implements hook_default_page_manager_handlers().
+ */
+function nyheder_default_page_manager_handlers() {
+  $export = array();
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view_panel_context_7';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -25;
+  $handler->conf = array(
+    'title' => 'Nyheder',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(
+      2 => array(
+        'identifier' => 'Flere termer fra indholdselement',
+        'keyword' => 'terms',
+        'name' => 'terms_from_node',
+        'vocabulary' => array(
+          'kle' => 'kle',
+          'site_struktur' => 0,
+          'acadremmcomittee' => 0,
+          'egennavne_stednavne' => 0,
+          'organisation' => 0,
+          'politik' => 0,
+          'portalkategori' => 0,
+          'redaktoertags' => 0,
+          'sidevisning' => 0,
+          'forfrem_til' => 0,
+          'committee' => 0,
+          'lokation' => 0,
+          'meetin_status' => 0,
+          'tags' => 0,
+          'user_position' => 0,
+          'media_folders' => 0,
+          'nyhedstype' => 0,
+        ),
+        'concatenator' => '+',
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+      3 => array(
+        'identifier' => 'Ord i ordforråd from Indholdselement (on Indholdselement: Portalkategori [field_site_structure])',
+        'keyword' => 'site_structure',
+        'name' => 'entity_from_field:field_site_structure-node-taxonomy_term',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+      5 => array(
+        'identifier' => 'Overordnet term',
+        'keyword' => 'parent_term',
+        'name' => 'term_parent',
+        'type' => 'top',
+        'context' => 'relationship_entity_from_field:field_site_structure-node-taxonomy_term_1',
+        'id' => 1,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'news' => 'news',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'odsherred_3stack';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => NULL,
+      'right_top' => NULL,
+      'right_middle' => NULL,
+      'right_bottom' => NULL,
+      'lead' => NULL,
+      'middle_top' => NULL,
+      'middle_center' => NULL,
+      'middle_right' => NULL,
+      'stack1' => NULL,
+      'stack2' => NULL,
+      'stack3' => NULL,
+      'stack4' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-1';
+    $pane->panel = 'stack1';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<p>Oprettet&nbsp;%node:changed af&nbsp;%node:author</p>',
+      'format' => 'filtered_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'node-date',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-1'] = $pane;
+    $display->panels['stack1'][0] = 'new-1';
+    $pane = new stdClass();
+    $pane->pid = 'new-2';
+    $pane->panel = 'stack1';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Undskriv',
+      'title' => '',
+      'body' => '<a href="/print/%node:nid" target="_blank" title="Undskriv">Udskriv</a>
+<a href="/indhold/nyhedsbreve" title="Abonner" class="abonnerlink">Abonner</a>',
+      'format' => 'php_code',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'float-right del-udskriv',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-2'] = $pane;
+    $display->panels['stack1'][1] = 'new-2';
+    $pane = new stdClass();
+    $pane->pid = 'new-3';
+    $pane->panel = 'stack1';
+    $pane->type = 'block';
+    $pane->subtype = 'addtoany-addtoany_button';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'float-right del-udskriv',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-3'] = $pane;
+    $display->panels['stack1'][2] = 'new-3';
+    $pane = new stdClass();
+    $pane->pid = 'new-4';
+    $pane->panel = 'stack1';
+    $pane->type = 'node_title';
+    $pane->subtype = 'node_title';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'link' => 0,
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'sidetitel %parent_term:tid',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $display->content['new-4'] = $pane;
+    $display->panels['stack1'][3] = 'new-4';
+    $pane = new stdClass();
+    $pane->pid = 'new-5';
+    $pane->panel = 'stack1';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_lead_image';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'slideshow',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'slideshow_image_style' => 'indholdsside',
+        'slideshow_link' => '',
+        'slideshow_caption' => '',
+        'slideshow_caption_link' => '',
+        'slideshow_fx' => 'fade',
+        'slideshow_speed' => '1000',
+        'slideshow_timeout' => '4000',
+        'slideshow_order' => '',
+        'slideshow_controls' => 0,
+        'slideshow_controls_pause' => 0,
+        'slideshow_controls_position' => 'after',
+        'slideshow_pause' => 0,
+        'slideshow_start_on_hover' => 0,
+        'slideshow_pager' => '',
+        'slideshow_pager_position' => 'after',
+        'slideshow_pager_image_style' => '',
+        'slideshow_carousel_image_style' => '',
+        'slideshow_carousel_visible' => '3',
+        'slideshow_carousel_scroll' => '1',
+        'slideshow_carousel_speed' => '500',
+        'slideshow_carousel_vertical' => 0,
+        'slideshow_carousel_circular' => 0,
+        'slideshow_carousel_follow' => 0,
+        'slideshow_carousel_skin' => '',
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'no-padding nyhedsbillede',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['stack1'][4] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'stack1';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_resume_long';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'node-body',
+    );
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $display->content['new-6'] = $pane;
+    $display->panels['stack1'][5] = 'new-6';
+    $pane = new stdClass();
+    $pane->pid = 'new-7';
+    $pane->panel = 'stack1';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'node-body',
+    );
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $display->content['new-7'] = $pane;
+    $display->panels['stack1'][6] = 'new-7';
+    $pane = new stdClass();
+    $pane->pid = 'new-8';
+    $pane->panel = 'stack1';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_nyheder_publiceringsdato';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'inline',
+      'formatter' => 'date_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'format_type' => 'odsherredtid',
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_to' => '',
+        'fromto' => 'both',
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $display->content['new-8'] = $pane;
+    $display->panels['stack1'][7] = 'new-8';
+    $pane = new stdClass();
+    $pane->pid = 'new-9';
+    $pane->panel = 'stack2';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_mediafile';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'file_default',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-9'] = $pane;
+    $display->panels['stack2'][0] = 'new-9';
+    $pane = new stdClass();
+    $pane->pid = 'new-10';
+    $pane->panel = 'stack2';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'kle_lonks_boks-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '%node:nid',
+        'tid' => '%terms:tids',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Relaterede sider... ',
+      'context' => array(
+        0 => 'relationship_terms_from_node_1',
+        1 => 'argument_entity_id:node_1',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-10'] = $pane;
+    $display->panels['stack2'][1] = 'new-10';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-4';
+  $handler->conf['display'] = $display;
+  $export['node_view_panel_context_7'] = $handler;
+
+  return $export;
+}
+
+/**
  * Implements hook_default_page_manager_pages().
  */
 function nyheder_default_page_manager_pages() {
