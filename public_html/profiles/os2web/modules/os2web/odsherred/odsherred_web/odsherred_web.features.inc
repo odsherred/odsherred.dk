@@ -56,6 +56,7 @@ function odsherred_web_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => '181_128',
   );
 
   // Exported image style: 240_150.
@@ -70,6 +71,7 @@ function odsherred_web_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => '240_150',
   );
 
   // Exported image style: 316_243.
@@ -84,6 +86,7 @@ function odsherred_web_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => '316_243',
   );
 
   // Exported image style: 316x237.
@@ -98,6 +101,7 @@ function odsherred_web_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => '316x237',
   );
 
   // Exported image style: 316x299.
@@ -112,6 +116,7 @@ function odsherred_web_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => '316x299',
   );
 
   // Exported image style: 80_60.
@@ -126,6 +131,7 @@ function odsherred_web_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => '80_60',
   );
 
   // Exported image style: fullscreen.
@@ -141,6 +147,7 @@ function odsherred_web_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'fullscreen',
   );
 
   // Exported image style: grid-3.
@@ -155,6 +162,7 @@ function odsherred_web_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'grid-3',
   );
 
   return $styles;

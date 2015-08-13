@@ -1847,11 +1847,10 @@ return $field==1?true:false;';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Node: Published at */
+  /* Felt: Broken/missing handler */
   $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
   $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
-  $handler->display->display_options['fields']['published_at']['date_format'] = 'odsherredtid';
   /* Felt: Scheduler: Publish countdown */
   $handler->display->display_options['fields']['publish_countdown']['id'] = 'publish_countdown';
   $handler->display->display_options['fields']['publish_countdown']['table'] = 'scheduler';
@@ -1912,7 +1911,7 @@ return $field==1?true:false;';
     t('Oprettelsesdato'),
     t('Opdateringsdato'),
     t('Publiceringsdato'),
-    t('Published at'),
+    t('Broken handler publication_date.published_at'),
     t('Publish countdown'),
     t('Udgivelsestidspunkt'),
     t('Unpublish countdown'),

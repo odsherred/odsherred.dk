@@ -233,42 +233,6 @@ function borger_dk_integration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'taxonomy_term-site_struktur-field_node_reference_kontaktblok'
-  $field_instances['taxonomy_term-site_struktur-field_node_reference_kontaktblok'] = array(
-    'bundle' => 'site_struktur',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'node_reference',
-        'settings' => array(),
-        'type' => 'node_reference_default',
-        'weight' => 6,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_node_reference_kontaktblok',
-    'label' => 'Kontaktblok',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'node_reference',
-      'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'node_reference_autocomplete',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'taxonomy_term-site_struktur-field_subsite_banner'
   $field_instances['taxonomy_term-site_struktur-field_subsite_banner'] = array(
     'bundle' => 'site_struktur',
@@ -385,7 +349,6 @@ function borger_dk_integration_field_default_field_instances() {
   t('Body');
   t('Indsæt et permalink fra borger.dk som fx. https://www.borger.dk/_layouts/BorgerDK/Permalink/permalink.aspx?PageId=d39cefc9-3368-46e4-ba28-272468660&KommuneId=151');
   t('Is subsite');
-  t('Kontaktblok');
   t('Permalink fra Borger.dk');
   t('Relateret tema');
   t('Subsite banner');

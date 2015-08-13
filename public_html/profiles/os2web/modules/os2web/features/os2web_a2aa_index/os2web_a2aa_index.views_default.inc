@@ -35,14 +35,14 @@ function os2web_a2aa_index_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<a href="/a-aa-index">Alle</a> - <a href="/a-aa-index/a">A</a> - <a href="/a-aa-index/b">B</a> - <a href="/a-aa-index/c,d">CD</a> - <a href="/a-aa-index/e">E</a> - <a href="/a-aa-index/f">F</a> - <a href="/a-aa-index/g">G</a> - <a href="/a-aa-index/h">H</a> - <a href="/a-aa-index/i">I</a> - <a href="/a-aa-index/j">J</a> - <a href="/a-aa-index/k">K</a> - <a href="/a-aa-index/l">L</a> - <a href="/a-aa-index/m">M</a> - <a href="/a-aa-index/n">N</a> - <a href="/a-aa-index/o">O</a> - <a href="/a-aa-index/p">P</a> - <a href="/a-aa-index/q,r">QR</a> - <a href="/a-aa-index/s">S</a> - <a href="/a-aa-index/t">T</a> - <a href="/a-aa-index/u,v,w">UVW</a> - <a href="/a-aa-index/x,y,z,æ,ø,å">XYZÆØÅ</a>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -50,11 +50,11 @@ function os2web_a2aa_index_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Sorteringskriterie: Content: Title */
+  /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Kontekstuelt filter: Content: Title */
+  /* Contextual filter: Content: Title */
   $handler->display->display_options['arguments']['title']['id'] = 'title';
   $handler->display->display_options['arguments']['title']['table'] = 'node';
   $handler->display->display_options['arguments']['title']['field'] = 'title';
@@ -69,14 +69,14 @@ function os2web_a2aa_index_views_default_views() {
   $handler->display->display_options['arguments']['title']['limit'] = '1';
   $handler->display->display_options['arguments']['title']['case'] = 'upper';
   $handler->display->display_options['arguments']['title']['break_phrase'] = TRUE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';

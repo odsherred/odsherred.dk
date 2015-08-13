@@ -27,7 +27,6 @@ features[field_instance][] = node-borger_dk_permalink-field_borger_permalink
 features[field_instance][] = node-borger_dk_permalink-field_related_tema
 features[field_instance][] = node-borger_dk_permalink-field_site_structure
 features[field_instance][] = taxonomy_term-site_struktur-field_is_subsite
-features[field_instance][] = taxonomy_term-site_struktur-field_node_reference_kontaktblok
 features[field_instance][] = taxonomy_term-site_struktur-field_subsite_banner
 features[field_instance][] = taxonomy_term-site_struktur-field_subsite_logo
 features[node][] = borger_dk_permalink

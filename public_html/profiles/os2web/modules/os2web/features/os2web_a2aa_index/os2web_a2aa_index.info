@@ -1,7 +1,7 @@
 name = OS2Web - A-Å index
 core = 7.x
 package = Features
-version = 1.11
+version = 7.x-1.0
 project = OS2Web
 dependencies[] = ctools
 dependencies[] = views

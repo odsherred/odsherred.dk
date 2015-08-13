@@ -50,6 +50,7 @@ function nyheder_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'news_page_1_top',
   );
 
   // Exported image style: news_page_2_left.
@@ -64,6 +65,7 @@ function nyheder_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'news_page_2_left',
   );
 
   // Exported image style: news_page_3_right.
@@ -78,6 +80,7 @@ function nyheder_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'news_page_3_right',
   );
 
   // Exported image style: news_page_8_bottom.
@@ -92,6 +95,7 @@ function nyheder_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'news_page_8_bottom',
   );
 
   return $styles;
