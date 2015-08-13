@@ -68,6 +68,8 @@ function os2web_roles_user_default_permissions() {
       'Editor' => 'Editor',
       'Kommuneinformation' => 'Kommuneinformation',
       'Kommunikation' => 'Kommunikation',
+      'Opret afgørelser' => 'Opret afgørelser',
+      'Opret høringer' => 'Opret høringer',
       'Opret nyheder' => 'Opret nyheder',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',

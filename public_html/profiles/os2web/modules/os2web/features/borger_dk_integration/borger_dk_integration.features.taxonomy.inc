@@ -13,9 +13,9 @@ function borger_dk_integration_taxonomy_default_vocabularies() {
       'name' => 'Overordnet placering og sitestruktur',
       'machine_name' => 'site_struktur',
       'description' => 'Vælg de steder i hjemmesidens overordnede struktur hvor indholdet skal publiceres.',
-      'hierarchy' => '1',
+      'hierarchy' => 1,
       'module' => 'taxonomy',
-      'weight' => '-10',
+      'weight' => -10,
     ),
   );
 }
