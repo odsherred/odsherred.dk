@@ -13,8 +13,8 @@ function odsherred_search_apachesolr_environments() {
   $environment = new stdClass();
   $environment->api_version = 1;
   $environment->env_id = 'localhost';
-  $environment->name = 'odsherreddk';
-  $environment->url = 'http://localhost:8983/solr/odsherreddk';
+  $environment->name = 'Odsherred Preprod Solr';
+  $environment->url = 'http://localhost:8983/solr/notfound';
   $environment->service_class = '';
   $environment->conf = array(
     'apachesolr_index_last' => array(
@@ -27,8 +27,8 @@ function odsherred_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1414763696',
-        'last_entity_id' => '895645',
+        'last_changed' => '1429701646',
+        'last_entity_id' => '895904',
       ),
       'redirect' => array(
         'last_changed' => 0,
@@ -59,9 +59,9 @@ function odsherred_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1414764629,
-    'apachesolr_last_optimize' => 1414681201,
-    'apachesolr_read_only' => '0',
+    'apachesolr_index_updated' => 1429768801,
+    'apachesolr_last_optimize' => 1429711201,
+    'apachesolr_read_only' => '1',
     'apachesolr_search_changed_boost' => '0:0',
     'apachesolr_search_comment_boost' => '0:0',
     'apachesolr_search_date_boost' => '4:200.0',
