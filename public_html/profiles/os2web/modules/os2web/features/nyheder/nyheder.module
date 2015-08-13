@@ -1,10 +1,8 @@
 <?php
 /**
  * @file
- * Code for the Nyheder feature.
+ * Drupal needs this blank file.
  */
-
-include_once 'nyheder.features.inc';
 
 
 /**

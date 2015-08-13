@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * nyheder.features.inc
- */
 
 /**
  * Implements hook_ctools_plugin_api().
