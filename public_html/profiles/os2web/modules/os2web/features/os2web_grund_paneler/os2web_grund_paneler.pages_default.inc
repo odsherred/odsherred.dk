@@ -104,9 +104,9 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Udskriv',
+      'admin_title' => 'Undskriv',
       'title' => '',
-      'body' => '<a href="/print/%node:nid" target="_blank" title="Udskriv">Udskriv</a>',
+      'body' => '<a href="/print/%node:nid" target="_blank" title="Undskriv">Udskriv</a>',
       'format' => 'php_code',
       'substitute' => 1,
     );
@@ -683,9 +683,9 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Udskriv',
+      'admin_title' => 'Undskriv',
       'title' => '',
-      'body' => '<a href="/print/%node:nid" target="_blank" title="Udskriv">Udskriv</a>',
+      'body' => '<a href="/print/%node:nid" target="_blank" title="Undskriv">Udskriv</a>',
       'format' => 'php_code',
       'substitute' => 1,
     );
