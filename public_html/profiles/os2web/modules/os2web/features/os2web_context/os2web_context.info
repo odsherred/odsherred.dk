@@ -26,7 +26,6 @@ dependencies[] = os2web_case_field
 dependencies[] = os2web_doc_field
 dependencies[] = os2web_indholdstyper
 dependencies[] = os2web_sektionssider
-dependencies[] = os2web_webform_downloads
 dependencies[] = panels_mini
 dependencies[] = search
 dependencies[] = strongarm

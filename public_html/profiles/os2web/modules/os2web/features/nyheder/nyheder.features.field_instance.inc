@@ -66,58 +66,7 @@ function nyheder_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-news-field_additional_info'
-  $field_instances['node-news-field_additional_info'] = array(
-    'bundle' => 'news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Hvis du har yderligere information, links eller fakta som er unikke for denne side, kan det tilføjes i dette felt. Indholdet vises i højre kolonne sammen med siden.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_additional_info',
-    'label' => 'Unikt indhold',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 4,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 35,
+      'weight' => 4,
     ),
   );
 
@@ -169,7 +118,7 @@ function nyheder_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 54,
+      'weight' => 15,
     ),
   );
 
@@ -373,7 +322,7 @@ function nyheder_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => -4,
+      'weight' => 1,
     ),
   );
 
@@ -440,73 +389,7 @@ function nyheder_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-news-field_nyheder_publiceringsdato'
-  $field_instances['node-news-field_nyheder_publiceringsdato'] = array(
-    'bundle' => 'news',
-    'deleted' => 0,
-    'description' => 'Typisk når denne oprettes. Men kan være anderledes hvis der er publiceret andet sted end Odsherred.dk først.
-Må ikke rettes, er juridisk gældende.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 21,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_nyheder_publiceringsdato',
-    'label' => 'Publiceringsdato',
-    'required' => 0,
-    'settings' => array(
-      'default_value' => 'blank',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'increment' => 15,
-        'input_format' => 'Y-m-d H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
-      ),
-      'type' => 'date_popup',
-      'weight' => 38,
+      'weight' => 1,
     ),
   );
 
@@ -558,7 +441,7 @@ Må ikke rettes, er juridisk gældende.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 51,
+      'weight' => 13,
     ),
   );
 
@@ -611,7 +494,7 @@ Må ikke rettes, er juridisk gældende.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 53,
+      'weight' => 14,
     ),
   );
 
@@ -659,111 +542,7 @@ Må ikke rettes, er juridisk gældende.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 49,
-    ),
-  );
-
-  // Exported field_instance: 'node-news-field_related'
-  $field_instances['node-news-field_related'] = array(
-    'bundle' => 'news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'rss' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_related',
-    'label' => 'Unikke relaterede links',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'node_reference',
-      'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'node_reference_autocomplete',
-      'weight' => 36,
-    ),
-  );
-
-  // Exported field_instance: 'node-news-field_related_tema'
-  $field_instances['node-news-field_related_tema'] = array(
-    'bundle' => 'news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_related_tema',
-    'label' => 'Unikke relaterede temaer',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'node_reference',
-      'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'node_reference_autocomplete',
-      'weight' => 37,
+      'weight' => 14,
     ),
   );
 
@@ -822,7 +601,7 @@ Må ikke rettes, er juridisk gældende.',
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -906,7 +685,7 @@ Må ikke rettes, er juridisk gældende.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 50,
+      'weight' => 15,
     ),
   );
 
@@ -956,7 +735,7 @@ Må ikke rettes, er juridisk gældende.',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 0,
+      'weight' => 2,
     ),
   );
 
@@ -1011,59 +790,7 @@ Må ikke rettes, er juridisk gældende.',
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 48,
-    ),
-  );
-
-  // Exported field_instance: 'node-news-field_source_id'
-  $field_instances['node-news-field_source_id'] = array(
-    'bundle' => 'news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_source_id',
-    'label' => 'Source ID',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 34,
+      'weight' => 13,
     ),
   );
 
@@ -1115,7 +842,7 @@ Må ikke rettes, er juridisk gældende.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 49,
+      'weight' => 11,
     ),
   );
 
@@ -1167,7 +894,7 @@ Må ikke rettes, er juridisk gældende.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 50,
+      'weight' => 12,
     ),
   );
 
@@ -1233,7 +960,7 @@ Må ikke rettes, er juridisk gældende.',
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 8,
+      'weight' => 2,
     ),
   );
 
@@ -1246,7 +973,6 @@ Må ikke rettes, er juridisk gældende.',
   t('Egenavne / stednavne');
   t('Filer');
   t('Forfrem til');
-  t('Hvis du har yderligere information, links eller fakta som er unikke for denne side, kan det tilføjes i dette felt. Indholdet vises i højre kolonne sammen med siden.');
   t('Indhold');
   t('KL Emneord');
   t('Kan bruges for flere typer indhold. Ved nyheder, så vises nyheden ikke efter denne dato. Ved Udbud og Høringer er det den dato denne slutter.');
@@ -1254,18 +980,11 @@ Må ikke rettes, er juridisk gældende.',
   t('Politik');
   t('Portalkategori');
   t('Primære billede');
-  t('Publiceringsdato');
   t('Resume (maks 2 linier!)');
   t('Skjul relaterede links');
-  t('Source ID');
   t('Stikord');
   t('Type');
-  t('Typisk når denne oprettes. Men kan være anderledes hvis der er publiceret andet sted end Odsherred.dk først.
-Må ikke rettes, er juridisk gældende.');
   t('Udløbsdato');
-  t('Unikke relaterede links');
-  t('Unikke relaterede temaer');
-  t('Unikt indhold');
 
   return $field_instances;
 }
