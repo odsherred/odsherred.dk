@@ -1830,6 +1830,47 @@ return $field==1?true:false;';
   $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['fields']['timestamp']['label'] = 'Opdateringsdato';
   $handler->display->display_options['fields']['timestamp']['date_format'] = 'long';
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created_1']['id'] = 'created_1';
+  $handler->display->display_options['fields']['created_1']['table'] = 'node';
+  $handler->display->display_options['fields']['created_1']['field'] = 'created';
+  $handler->display->display_options['fields']['created_1']['label'] = 'Oprettelsesdato';
+  $handler->display->display_options['fields']['created_1']['date_format'] = 'odsherredtid';
+  /* Field: Content: Publiceringsdato */
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['field'] = 'field_nyheder_publiceringsdato';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['settings'] = array(
+    'format_type' => 'odsherredtid',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Node: Published at */
+  $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['date_format'] = 'odsherredtid';
+  /* Field: Scheduler: Publish countdown */
+  $handler->display->display_options['fields']['publish_countdown']['id'] = 'publish_countdown';
+  $handler->display->display_options['fields']['publish_countdown']['table'] = 'scheduler';
+  $handler->display->display_options['fields']['publish_countdown']['field'] = 'publish_countdown';
+  /* Field: Scheduler: Publish on */
+  $handler->display->display_options['fields']['publish_on']['id'] = 'publish_on';
+  $handler->display->display_options['fields']['publish_on']['table'] = 'scheduler';
+  $handler->display->display_options['fields']['publish_on']['field'] = 'publish_on';
+  $handler->display->display_options['fields']['publish_on']['label'] = 'Udgivelsestidspunkt';
+  $handler->display->display_options['fields']['publish_on']['date_format'] = 'odsherredtid';
+  /* Field: Scheduler: Unpublish countdown */
+  $handler->display->display_options['fields']['unpublish_countdown']['id'] = 'unpublish_countdown';
+  $handler->display->display_options['fields']['unpublish_countdown']['table'] = 'scheduler';
+  $handler->display->display_options['fields']['unpublish_countdown']['field'] = 'unpublish_countdown';
+  /* Field: Scheduler: Unpublish on */
+  $handler->display->display_options['fields']['unpublish_on']['id'] = 'unpublish_on';
+  $handler->display->display_options['fields']['unpublish_on']['table'] = 'scheduler';
+  $handler->display->display_options['fields']['unpublish_on']['field'] = 'unpublish_on';
+  $handler->display->display_options['fields']['unpublish_on']['date_format'] = 'odsherredtid';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -1870,6 +1911,12 @@ return $field==1?true:false;';
     t('Denne side er ikke synlig - Pubicer nu'),
     t('Oprettelsesdato'),
     t('Opdateringsdato'),
+    t('Publiceringsdato'),
+    t('Published at'),
+    t('Publish countdown'),
+    t('Udgivelsestidspunkt'),
+    t('Unpublish countdown'),
+    t('Unpublish on'),
     t('Alle'),
     t('Block'),
     t('more'),
