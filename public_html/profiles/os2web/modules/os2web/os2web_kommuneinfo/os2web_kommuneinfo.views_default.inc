@@ -326,11 +326,23 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle høringer.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Node: Published at */
+  $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['label'] = '';
+  $handler->display->display_options['fields']['published_at']['element_type'] = '0';
+  $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['published_at']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['published_at']['element_wrapper_class'] = 'stordato';
+  $handler->display->display_options['fields']['published_at']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['published_at']['date_format'] = 'dag_og_maaned';
   /* Felt: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato_1']['id'] = 'field_udloebsdato_1';
   $handler->display->display_options['fields']['field_udloebsdato_1']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato_1']['field'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato_1']['label'] = '';
+  $handler->display->display_options['fields']['field_udloebsdato_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_udloebsdato_1']['element_type'] = '0';
   $handler->display->display_options['fields']['field_udloebsdato_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_udloebsdato_1']['element_wrapper_type'] = 'div';
@@ -511,11 +523,23 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle afgørelser.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Node: Published at */
+  $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['label'] = '';
+  $handler->display->display_options['fields']['published_at']['element_type'] = '0';
+  $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['published_at']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['published_at']['element_wrapper_class'] = 'stordato';
+  $handler->display->display_options['fields']['published_at']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['published_at']['date_format'] = 'dag_og_maaned';
   /* Felt: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['label'] = '';
+  $handler->display->display_options['fields']['field_newstypedato']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstypedato']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstypedato']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_newstypedato']['element_wrapper_class'] = 'stordato';
@@ -682,11 +706,23 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h1>Aktuelle udbud</h1>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Node: Published at */
+  $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['label'] = '';
+  $handler->display->display_options['fields']['published_at']['element_type'] = '0';
+  $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['published_at']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['published_at']['element_wrapper_class'] = 'stordato';
+  $handler->display->display_options['fields']['published_at']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['published_at']['date_format'] = 'dag_og_maaned';
   /* Felt: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato_1']['id'] = 'field_udloebsdato_1';
   $handler->display->display_options['fields']['field_udloebsdato_1']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato_1']['field'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato_1']['label'] = '';
+  $handler->display->display_options['fields']['field_udloebsdato_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_udloebsdato_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_udloebsdato_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_udloebsdato_1']['element_wrapper_class'] = 'stordato';
@@ -749,23 +785,6 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_udloebsdato']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['field_udloebsdato']['element_wrapper_class'] = 'indrykket lilletekst';
   $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
-    'format_type' => 'odsherredtid',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Felt: Content: Publiceringsdato */
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato_1']['id'] = 'field_nyheder_publiceringsdato_1';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato_1']['table'] = 'field_data_field_nyheder_publiceringsdato';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato_1']['field'] = 'field_nyheder_publiceringsdato';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato_1']['label'] = 'Publiceriet';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato_1']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato_1']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato_1']['element_wrapper_class'] = 'indrykket lilletekst';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato_1']['settings'] = array(
     'format_type' => 'odsherredtid',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -930,24 +949,6 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
-  /* Felt: Content: Publiceringsdato */
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['field'] = 'field_nyheder_publiceringsdato';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['label'] = 'Publiceret:';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_wrapper_class'] = 'indrykket lilletekst';
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['settings'] = array(
-    'format_type' => 'medium',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Felt: Content: Indhold */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -2131,7 +2132,6 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('Der er ingen aktuelle møder.'),
     t('<p class="indrykket">[field_resume_long]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] </p>'),
-    t('Publiceret:'),
     t('Tidligere udbud'),
     t('<h2>Tidligere udbud</h2>'),
     t('- Tilbudsfrist'),
