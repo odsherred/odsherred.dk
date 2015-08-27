@@ -52,15 +52,11 @@ function menu_overview_form($form, &$form_state, $menu) {
   $sql = "
     SELECT m.load_functions, m.to_arg_functions, m.access_callback, m.access_arguments, m.page_callback, m.page_arguments, m.delivery_callback, m.title, m.title_callback, m.title_arguments, m.type, m.description, ml.*
     FROM {menu_links} ml LEFT JOIN {menu_router} m ON m.path = ml.router_path
-    WHERE ml.menu_name = :menu    
+    WHERE ml.menu_name = :menu
     ORDER BY p1 ASC, p2 ASC, p3 ASC, p4 ASC, p5 ASC, p6 ASC, p7 ASC, p8 ASC, p9 ASC";
   $result = db_query($sql, array(':menu' => $menu['menu_name']), array('fetch' => PDO::FETCH_ASSOC));
-    # backup WHERE ml.menu_name = :menu and external = 0 and depth IN ( 1, 2, 3, 4 )  
-  #print_r($result);
-  #print $menu['menu_name']; 
   $links = array();
   foreach ($result as $item) {
-   #print_r($item); 
     $links[] = $item;
   }
   $tree = menu_tree_data($links);
@@ -516,8 +512,7 @@ function menu_delete_menu_page($menu) {
   // System-defined menus may not be deleted.
   $system_menus = menu_list_system_menus();
   if (isset($system_menus[$menu['menu_name']])) {
-    drupal_access_denied();
-    return;
+    return MENU_ACCESS_DENIED;
   }
   return drupal_get_form('menu_delete_menu_confirm', $menu);
 }
@@ -626,8 +621,7 @@ function menu_item_delete_page($item) {
   // Links defined via hook_menu may not be deleted. Updated items are an
   // exception, as they can be broken.
   if ($item['module'] == 'system' && !$item['updated']) {
-    drupal_access_denied();
-    return;
+    return MENU_ACCESS_DENIED;
   }
   return drupal_get_form('menu_item_delete_form', $item);
 }
