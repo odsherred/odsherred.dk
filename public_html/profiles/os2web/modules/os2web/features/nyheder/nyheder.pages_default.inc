@@ -122,7 +122,7 @@ function nyheder_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<p>Oprettet&nbsp;%node:changed af&nbsp;%node:author</p>',
+      'body' => '<p>Oprettet&nbsp;%node:published af&nbsp;%node:author</p>',
       'format' => 'filtered_html',
       'substitute' => 1,
     );
