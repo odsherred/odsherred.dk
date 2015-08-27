@@ -1756,6 +1756,13 @@ return $field==1?true:false;';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['name']['label'] = '/';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: User: Navn og stilling */
+  $handler->display->display_options['fields']['field_navn_stilling']['id'] = 'field_navn_stilling';
+  $handler->display->display_options['fields']['field_navn_stilling']['table'] = 'field_data_field_navn_stilling';
+  $handler->display->display_options['fields']['field_navn_stilling']['field'] = 'field_navn_stilling';
+  $handler->display->display_options['fields']['field_navn_stilling']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_navn_stilling']['label'] = '';
+  $handler->display->display_options['fields']['field_navn_stilling']['element_label_colon'] = FALSE;
   /* Field: User: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
