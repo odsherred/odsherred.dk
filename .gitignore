@@ -2,10 +2,7 @@ logs
 sessions
 tmp
 site
-<<<<<<< HEAD
-=======
 production-to-test.sh
 production-to-preprod.sh
->>>>>>> 6419657... ignore scripts
 apache-solr-3.5.0
 public_html/sites/odsherred.dk.local
