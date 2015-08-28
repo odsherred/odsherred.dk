@@ -2911,7 +2911,7 @@ div.microArticle {
 }
 
 a.gplus {
-  background-image: url(img/foldOut.png);
+    background-image: url(/profiles/os2web/themes/odsherredweb/css/img/foldOut.png);
   width: 23px;
   height: 23px;
   font-size: 0;
@@ -2923,7 +2923,7 @@ a.gplus {
 }
 
 a.gminus {
-  background-image: url(img/foldIn.png);
+    background-image: url(/profiles/os2web/themes/odsherredweb/css/img/foldOut.png);
   width: 23px;
   height: 23px;
   font-size: 0;
