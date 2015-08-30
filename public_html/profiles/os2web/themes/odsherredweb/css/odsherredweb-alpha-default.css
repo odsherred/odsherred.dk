@@ -1783,6 +1783,8 @@ background: url('img/andresider-listebg.png');
   margin: 0;
   list-style: none;
 }
+.node-type-os2web-borger-dk-article .microArticle ul { margin-left: 0;}
+
 .node-type-os2web-borger-dk-article .microArticle ul li {
 	list-style: disc;
 }
