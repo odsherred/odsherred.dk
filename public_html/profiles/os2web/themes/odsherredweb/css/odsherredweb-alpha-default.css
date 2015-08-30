@@ -64,13 +64,18 @@ body.bluenwhite #page_1 #zone-content {
 	background-repeat: no-repeat;
 	}
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
 	letter-spacing: -0.05em;
 	font-weight: normal;
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	margin-bottom: 5px;
 	}
-
+h4, h5, h6 {
+	letter-spacing: normal;
+	font-weight: normal;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	margin-bottom: 5px;
+	}
 h1 {
 	font-size: 25px;
 	}
@@ -1951,10 +1956,12 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
   padding: 18px;
 }
 
-.most-read .view-header {
+.most-read .view-header,
+.view-kommuneinformation .view-header h3 {
   border-bottom: 1px dotted;
   margin: 0 0 15px;
   font-size: 17px;
+  font-weight: normal;
 }
 
 .date-container {
@@ -1993,7 +2000,7 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
 }
 #quicktabs-nyheder .item-list ul li {
   margin: 3px 0 0 0;
-  padding: 8px 15px 5px;
+  padding: 8px 17px 5px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   background: #d9d9d9;
@@ -2058,7 +2065,7 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
   min-height: 20px;
 }
 
-#quicktabs-nyheder .date-display-single { float: left; width: 25px; padding: 0 20px 10px 10px; font-size: 14px; text-transform: capitalize}
+#quicktabs-nyheder .date-display-single { float: left; width: 25px; padding: 0 20px 10px 10px; font-size: 14px}
 
 #quicktabs-nyheder h4 { margin-bottom: 0; }
 
@@ -2116,7 +2123,8 @@ list-style: none;
 .node-type-news #region-sidebar-first h2.block-title,
 .din-kommune #region-sidebar-first h2.block-title,
 .node-type-news #region-sidebar-first h3.block-title,
-.din-kommune #region-sidebar-first h3.block-title {
+.din-kommune #region-sidebar-first h3.block-title,
+.block-menu-kommuneinformationer h2.block-title {
   color: #FFF;
   background: url(img/news-node-sidebar-bg.png);
   padding: 3px 15px 7px;
@@ -2897,42 +2905,13 @@ ul.searchcloud li a {
 #sliding-popup .popup-content #popup-text { width: 51%;}
 #sliding-popup .popup-content #popup-buttons { width: 39%; padding-top: 35px; padding-right: 10px;}
 
-div.microArticle h2 {
-  /*background-image: url('../images/foldOut.png');
-  background-position: 98% 0;
-  background-repeat: no-repeat;*/
-  border: none;
-  width: 90%;
+.bg-white { 
+	padding: 15px;
+	background-color: #FFF;
 }
+.view-kommuneinformation.bg-white { padding: 18px;}
 
-div.microArticle {
-  position: relative;
-  border-top: 1px solid #ddd;
-}
-
-a.gplus {
-    background-image: url(/profiles/os2web/themes/odsherredweb/css/img/foldOut.png);
-  width: 23px;
-  height: 23px;
-  font-size: 0;
-  background-repeat: no-repeat;
-  background-position: 100% 0%;
-  position: absolute;
-  top: 10px;
-  right: 5px;
-}
-
-a.gminus {
-    background-image: url(/profiles/os2web/themes/odsherredweb/css/img/foldOut.png);
-  width: 23px;
-  height: 23px;
-  font-size: 0;
-  background-repeat: no-repeat;
-  background-position: 100% 0%;
-  position: absolute;
-  top: 10px;
-  right: 5px;
-}
+.bg-white .item-list .pager { margin-bottom: 20px; clear: both ; padding-bottom: 5px; padding-top: 10px}
 
 /*#quicktabs-nyheder .item-list ul { position: relative}
 #quicktabs-nyheder .item-list ul li { float: none; position: relative;}*/
@@ -3075,3 +3054,44 @@ a.gminus {
 .view-kommuneinformation .attachment .newstypelist { border-bottom: none; padding-bottom: 5px; margin-bottom: 0px;}
   
 .view-kommuneinformation  .view-filters { padding-bottom: 20px;}
+
+#sliding-popup .popup-content #popup-text { width: 51%;}
+#sliding-popup .popup-content #popup-buttons { width: 39%; padding-top: 35px; padding-right: 10px;}
+
+div.microArticle h2 {
+  /*background-image: url('../images/foldOut.png');
+  background-position: 98% 0;
+  background-repeat: no-repeat;*/
+  border: none;
+  width: 90%;
+}
+
+div.microArticle {
+  position: relative;
+  border-top: 1px solid #ddd;
+}
+
+a.gplus {
+  background-image: url(img/foldOut.png);
+  width: 23px;
+  height: 23px;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+a.gminus {
+  background-image: url(img/foldIn.png);
+  width: 23px;
+  height: 23px;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
