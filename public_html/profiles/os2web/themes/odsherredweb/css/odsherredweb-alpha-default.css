@@ -1788,6 +1788,7 @@ background: url('img/andresider-listebg.png');
 .node-type-os2web-borger-dk-article .microArticle ul li {
 	list-style: disc;
 }
+.field-name-field-os2web-borger-dk-selfservi li { margin-left: 0;}
 
 .node-type-os2web-borger-dk-article .pane-node-field-os2web-borger-dk-recommend,
 .node-type-os2web-borger-dk-article .pane-node-field-os2web-borger-dk-shortlist{
