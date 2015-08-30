@@ -1781,7 +1781,7 @@ background: url('img/andresider-listebg.png');
 
 .node-type-os2web-borger-dk-article ul li {
   margin: 0;
-  list-style: none;
+  list-style: disc;
 }
 
 .node-type-os2web-borger-dk-article .pane-node-field-os2web-borger-dk-recommend,
