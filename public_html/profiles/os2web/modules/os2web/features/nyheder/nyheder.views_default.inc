@@ -368,7 +368,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed_1']['element_label_type'] = '0';
   $handler->display->display_options['fields']['changed_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed_1']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M.';
+  $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M';
   /* Felt: Ord i ordforråd: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
@@ -430,7 +430,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed_1']['element_label_type'] = '0';
   $handler->display->display_options['fields']['changed_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed_1']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M.';
+  $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M';
   /* Felt: Ord i ordforråd: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
@@ -519,7 +519,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed_1']['element_label_type'] = '0';
   $handler->display->display_options['fields']['changed_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed_1']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M.';
+  $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M';
   /* Felt: Ord i ordforråd: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
@@ -607,7 +607,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['changed_1']['element_label_type'] = '0';
   $handler->display->display_options['fields']['changed_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed_1']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M.';
+  $handler->display->display_options['fields']['changed_1']['custom_date_format'] = 'M';
   /* Felt: Ord i ordforråd: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';

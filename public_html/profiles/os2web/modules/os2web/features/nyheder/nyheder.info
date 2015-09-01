@@ -108,4 +108,5 @@ features[views_view][] = nyheder_moedekalender
 features[views_view][] = nyheder_nyheder
 features[views_view][] = nyheder_udbud
 features[views_view][] = nyheds_lister
+features[views_view][] = publish_date
 timestamp = 1369904058
