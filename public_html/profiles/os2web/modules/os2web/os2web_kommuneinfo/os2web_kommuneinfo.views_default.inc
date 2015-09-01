@@ -397,7 +397,6 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['empty'] = '[body]';
   /* Field: Content: Publiceringsdato */
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
@@ -578,7 +577,6 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['empty'] = '[body]';
   /* Field: Content: Publiceringsdato */
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
@@ -2087,7 +2085,6 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     t('<p class="indrykket">[field_resume_long]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Svarfrist: [field_udloebsdato]</p>'),
-    t('[body]'),
     t('Publiceriet'),
     t('Alle'),
     t('Afgørelser'),
