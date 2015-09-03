@@ -1547,7 +1547,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<p>Der er ingen aktuelle afgørelser.</p>
-<p><a href="/kommuneinformationer/afgoerelser" title="Flere afgørelser">Se flere afgørelser</a>';
+<p><a href="/kommuneinformationer/afgoerelser" title="Flere afgørelser">Se tidligere afgørelser</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Node: Published at */
