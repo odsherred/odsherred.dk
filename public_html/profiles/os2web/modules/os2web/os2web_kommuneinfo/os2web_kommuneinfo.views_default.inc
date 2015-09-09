@@ -884,7 +884,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstypedato_1']['label'] = '';
   $handler->display->display_options['fields']['field_newstypedato_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstypedato_1']['settings'] = array(
-    'format_type' => 'kommuneinfolang',
+    'format_type' => 'odsherredtid',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1070,6 +1070,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Tidligere afgørelser';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<h2>Tidligere afgørelser</h2>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
