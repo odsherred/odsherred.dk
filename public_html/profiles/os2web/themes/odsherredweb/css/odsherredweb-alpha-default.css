@@ -3041,6 +3041,7 @@ ul.searchcloud li a {
 #quicktabs-nyheder .date-container .date { font-size: 14px}
 #quicktabs-nyheder .date-container .month { font-size: 12px;}
 
+#quicktabs-nyheder .lilletekst i { font-size: 9px;}
 #quicktabs-nyheder .lilletekst .date-display-single { float: none; font-size: 9px; padding: 0; width: auto;}
 
 #quicktabs-nyheder h4 { margin-bottom: 0; font-size: 14px; }
@@ -3049,7 +3050,7 @@ ul.searchcloud li a {
 #quicktabs-nyheder h4 a:hover {color: #407DAA}
 
 .indrykket { margin-left: 55px; margin-bottom: 5px; font-family: }
-#quicktabs-nyheder .view-kommuneinformation .indrykket { margin-left: 40px;}
+#quicktabs-nyheder .view-kommuneinformation .indrykket { margin-left: 40px; font-size: 12px;}
 .lilletekst { font-size: 9px; margin-bottom: 2px;}
 .a.setidligere { text-align: center; margin: 0 10px; display: block; padding-top: 10px; border-top: 1px solid #333; color: #333; font-size: 10px; text-decoration: none;}
 .view-kommuneinformation .stordato {float: left; width: 25px; padding: 0 20px 10px 10px; font-size: 12px; text-transform: capitalize;}
