@@ -678,6 +678,14 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<h1>Aktuelle udbud</h1>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Der er ingen tilgængelige udbud i arkivet.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Node: Published at */
   $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
@@ -2099,6 +2107,7 @@ Klagefrist: [field_udloebsdato]</p>'),
     t('Udbud'),
     t('Kommuneinformation - Udbud - Side'),
     t('<h1>Aktuelle udbud</h1>'),
+    t('Der er ingen tilgængelige udbud i arkivet.'),
     t('[field_site_structure] - [field_newstype]'),
     t('<p class="indrykket">[field_resume_long]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
@@ -2112,7 +2121,6 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] </p>'),
     t('Tidligere udbud'),
     t('<h2>Tidligere udbud</h2>'),
-    t('Der er ingen tilgængelige udbud i arkivet.'),
     t('- Tilbudsfrist'),
     t('Tidligere afgørelser'),
     t('<h2>Tidligere afgørelser</h2>'),
@@ -2145,7 +2153,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('Se flere afgørelser'),
     t('<a class="setidligere" href="/kommuneinformationer/afgoerelser">Se flere afgørelser</a>'),
     t('<p>Der er ingen aktuelle afgørelser.</p>
-<p><a href="/kommuneinformationer/afgoerelser" title="Flere afgørelser">Se flere afgørelser</a>'),
+<p><a href="/kommuneinformationer/afgoerelser" title="Flere afgørelser">Se tidligere afgørelser</a>'),
     t('<div class="date-container"><span class="date">[published_at]</span><span class="month">[published_at_1]</span></div>'),
     t('[field_udloebsdato-value]'),
     t('<p class="indrykket">[field_newstype]: [field_resume_long]</p>
