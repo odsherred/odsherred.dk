@@ -64,13 +64,18 @@ body.bluenwhite #page_1 #zone-content {
 	background-repeat: no-repeat;
 	}
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
 	letter-spacing: -0.05em;
 	font-weight: normal;
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	margin-bottom: 5px;
 	}
-
+h4, h5, h6 {
+	letter-spacing: normal;
+	font-weight: normal;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	margin-bottom: 5px;
+	}
 h1 {
 	font-size: 25px;
 	}
@@ -1778,6 +1783,14 @@ background: url('img/andresider-listebg.png');
   margin: 0;
   list-style: none;
 }
+.node-type-os2web-borger-dk-article .microArticle ul { margin-left: 0;}
+
+.node-type-os2web-borger-dk-article .microArticle ul li {
+	list-style: disc;
+}
+.field-name-field-os2web-borger-dk-selfservi li { margin-left: 0;}
+
+.node-type-os2web-borger-dk-article .meta.submitted {margin-left: 15px;}
 
 .node-type-os2web-borger-dk-article .pane-node-field-os2web-borger-dk-recommend,
 .node-type-os2web-borger-dk-article .pane-node-field-os2web-borger-dk-shortlist{
@@ -1951,10 +1964,12 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
   padding: 18px;
 }
 
-.most-read .view-header {
+.most-read .view-header,
+.view-kommuneinformation .view-header h3 {
   border-bottom: 1px dotted;
   margin: 0 0 15px;
   font-size: 17px;
+  font-weight: normal;
 }
 
 .date-container {
@@ -1993,7 +2008,7 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
 }
 #quicktabs-nyheder .item-list ul li {
   margin: 3px 0 0 0;
-  padding: 8px 15px 5px;
+  padding: 8px 17px 5px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   background: #d9d9d9;
@@ -2058,7 +2073,7 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
   min-height: 20px;
 }
 
-#quicktabs-nyheder .date-display-single { float: left; width: 25px; padding: 0 20px 10px 10px; font-size: 14px; text-transform: capitalize}
+#quicktabs-nyheder .date-display-single { float: left; width: 25px; padding: 0 20px 10px 10px; font-size: 14px}
 
 #quicktabs-nyheder h4 { margin-bottom: 0; }
 
@@ -2116,7 +2131,8 @@ list-style: none;
 .node-type-news #region-sidebar-first h2.block-title,
 .din-kommune #region-sidebar-first h2.block-title,
 .node-type-news #region-sidebar-first h3.block-title,
-.din-kommune #region-sidebar-first h3.block-title {
+.din-kommune #region-sidebar-first h3.block-title,
+.block-menu-kommuneinformationer h2.block-title {
   color: #FFF;
   background: url(img/news-node-sidebar-bg.png);
   padding: 3px 15px 7px;
@@ -2897,6 +2913,160 @@ ul.searchcloud li a {
 #sliding-popup .popup-content #popup-text { width: 51%;}
 #sliding-popup .popup-content #popup-buttons { width: 39%; padding-top: 35px; padding-right: 10px;}
 
+.bg-white { 
+	padding: 15px;
+	background-color: #FFF;
+}
+.view-kommuneinformation.bg-white { padding: 18px;}
+
+.bg-white .item-list .pager { margin-bottom: 20px; clear: both ; padding-bottom: 5px; padding-top: 10px}
+
+/*#quicktabs-nyheder .item-list ul { position: relative}
+#quicktabs-nyheder .item-list ul li { float: none; position: relative;}*/
+
+.ui-tabs .ui-tabs-panel { padding: 0 0}
+
+.pane-quicktabs-nyheder { padding: 0}
+
+.pane-quicktabs-nyheder h3.pane-title { padding: 20px 17px 0;}
+.pane-quicktabs-nyheder .toggle-panel {display: none}
+
+#quicktabs-nyheder {
+  padding:0 0 0 0;
+  background: transparent;
+  margin: 0 0 0 0;
+  border: none;
+}
+
+#quicktabs-nyheder .ui-corner-bottom {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: transparent;
+  width: auto;
+  float: none;
+  display: block;
+}
+
+#quicktabs-nyheder .item-list ul li,
+#quicktabs-nyheder.ui-tabs .ui-tabs-nav li {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  border: none;
+  background-color: transparent;
+    box-shadow: none;
+  display: block;
+  float: none;
+
+}
+
+#quicktabs-nyheder .item-list ul li.active a,
+#quicktabs-nyheder .ui-state-active a{
+  color: #FFF;
+  font-weight: bold;
+  background-image: url('img/dot-white.png');
+}
+#quicktabs-nyheder .item-list ul li a,
+#quicktabs-nyheder.ui-tabs .ui-tabs-nav li a{
+  color: #FFF;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 0 0 5px 15px;
+  margin: 0;
+  width: 200px;
+}
+
+#quicktabs-nyheder ul li.active {
+  background: transparent;
+  padding: 0 0 0 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+#quicktabs-nyheder ul li.first{
+  margin-right: 0;
+}
+
+#quicktabs-nyheder ul li.last {
+  margin-left: 0;
+}
+
+#quicktabs-nyheder .ui-tabs-panel { background-color: #FFF;}
+
+#quicktabs-nyheder ul {
+  height: auto;
+  border: none;
+  margin: 0;
+  background: transparent;
+  padding-left: 17px;
+  padding-bottom: 15px
+}
+
+#quicktabs-container-nyheder {
+  background: url('img/qt-gradient.png') repeat-x scroll 0 bottom #ededed;
+}
+
+#quicktabs-nyheder .views-row  {
+  border-bottom: 1px dotted #acacac;
+  margin: 0 0;
+  padding: 23px 0 17px;
+}
+
+#quicktabs-nyheder .view-kommuneinformation .views-row {
+  padding: 10px 0;
+}
+
+#quicktabs-nyheder .view-kommuneinformation .titel a { font-size: 14px; color: #3e3e3e;  text-decoration: none;}
+
+
+#quicktabs-nyheder .views-row-last {
+  border: none;
+}
+
+#quicktabs-nyheder .views-field-title a {
+  font-weight: 300;
+  font-size: 14px;
+  color: #3e3e3e;
+}
+#quicktabs-nyheder .views-field-title a:hover {
+  color: #3174a3;
+}
+#quicktabs-nyheder .views-field.views-field-field-resume-long {
+  margin: 0 0 0;
+  min-height: 20px;
+}
+
+#quicktabs-nyheder .date-display-single { float: left; width: 20px; padding: 0 20px 0px 0px; font-size: 12px;}
+#quicktabs-nyheder .date-display-single::first-line,
+#quicktabs-nyheder .date-container .date { font-size: 14px}
+#quicktabs-nyheder .date-container .month { font-size: 12px;}
+
+#quicktabs-nyheder .lilletekst i { font-size: 9px; line-height: 10px;}
+#quicktabs-nyheder .lilletekst .date-display-single { float: none; font-size: 9px; padding: 0; width: auto;}
+
+#quicktabs-nyheder h4 { margin-bottom: 0; font-size: 14px; }
+
+#quicktabs-nyheder h4 a { color: #3e3e3e; text-decoration: none;font-weight: normal}
+#quicktabs-nyheder h4 a:hover {color: #407DAA}
+
+.indrykket { margin-left: 55px; margin-bottom: 5px; font-family: }
+#quicktabs-nyheder .view-kommuneinformation .indrykket { margin-left: 40px; font-size: 12px;}
+.lilletekst { font-size: 9px; margin-bottom: 2px;}
+.a.setidligere { text-align: center; margin: 0 10px; display: block; padding-top: 10px; border-top: 1px solid #333; color: #333; font-size: 10px; text-decoration: none;}
+.view-kommuneinformation .stordato {float: left; width: 25px; padding: 0 20px 10px 10px; font-size: 12px; text-transform: capitalize;}
+
+.view-kommuneinformation .stordato::first-line { font-size: 14px}
+
+.view-kommuneinformation .attachment-after, .view-kommuneinformation .newstypelist { clear: both;}
+.view-kommuneinformation .attachment-after { margin-top: 30px;}
+.view-kommuneinformation .newstypelist { border-bottom: 1px solid #333; padding-bottom: 5px; margin-bottom: 10px;}
+.view-kommuneinformation .attachment .newstypelist { border-bottom: none; padding-bottom: 5px; margin-bottom: 0px;}
+  
+.view-kommuneinformation  .view-filters { padding-bottom: 20px;}
+
+#sliding-popup .popup-content #popup-text { width: 51%;}
+#sliding-popup .popup-content #popup-buttons { width: 39%; padding-top: 35px; padding-right: 10px;}
+
 div.microArticle h2 {
   /*background-image: url('../images/foldOut.png');
   background-position: 98% 0;
@@ -2933,3 +3103,4 @@ a.gminus {
   top: 10px;
   right: 5px;
 }
+

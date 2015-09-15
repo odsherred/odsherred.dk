@@ -383,6 +383,15 @@ function os2web_indholdstyper_strongarm() {
         'fmenu' => array(
           'weight' => '7',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '13',
+        ),
       ),
     ),
   );
@@ -528,13 +537,19 @@ function os2web_indholdstyper_strongarm() {
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '47',
+          'weight' => '51',
         ),
         'workbench_access' => array(
           'weight' => '0',
         ),
         'redirect' => array(
-          'weight' => '51',
+          'weight' => '52',
+        ),
+        'metatags' => array(
+          'weight' => '2',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '5',
         ),
       ),
     ),
