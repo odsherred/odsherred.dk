@@ -872,6 +872,12 @@ function os2web_borger_dk_microarticles_update_submit($form, &$form_state) {
     $node = node_load($nid, NULL, TRUE);
     $body = '';
     foreach ($article['kernetekst'] as $div => $content) {
+
+      // We do not want certain types of content in the body in the body
+      if (in_array($div, array('selvbetjeningslinks', 'lovgivning', 'kernetekst', 'anbefaler'))) {
+        continue;
+      }
+
       $body .= $content . "\n";
     }
     // Only update the body text.
@@ -1044,6 +1050,12 @@ function os2web_borger_dk_node_submit(&$node, $form, &$form_state) {
 
       $body = '';
       foreach ($article['kernetekst'] as $div => $content) {
+
+        // We do not want certain types of content in the body in the body
+        if (in_array($div, array('selvbetjeningslinks', 'lovgivning', 'kernetekst', 'anbefaler'))) {
+          continue;
+        }
+
         $body .= $content . "\n";
       }
 
@@ -1694,6 +1706,12 @@ function _os2web_borger_dk_create_borger_dk_meun_structure($item, $total, $menu_
               if (empty($article['Exceptions']) && empty($article['error'])) {
                 $body = '';
                 foreach ($article['kernetekst'] as $div => $content) {
+
+                  // We do not want certain types of content in the body in the body
+                  if (in_array($div, array('selvbetjeningslinks', 'lovgivning', 'kernetekst', 'anbefaler'))) {
+                    continue;
+                  }
+
                   $body .= $content . "\n";
                 }
 
@@ -1825,6 +1843,12 @@ function _os2web_borger_dk_import_supplement_article($value) {
   if (empty($article['Exceptions']) && empty($article['error'])) {
     $body = '';
     foreach ($article['kernetekst'] as $div => $content) {
+
+      // We do not want certain types of content in the body in the body
+      if (in_array($div, array('selvbetjeningslinks', 'lovgivning', 'kernetekst', 'anbefaler'))) {
+        continue;
+      }
+
       $body .= $content . "\n";
     }
 
@@ -2327,6 +2351,12 @@ function _os2web_borger_dk_update_node_content($nid, $article) {
 
   $body = '';
   foreach ($article['kernetekst'] as $div => $content) {
+
+    // We do not want certain types of content in the body in the body
+    if (in_array($div, array('selvbetjeningslinks', 'lovgivning', 'kernetekst', 'anbefaler'))) {
+      continue;
+    }
+
     $body .= $content . "\n";
   }
 
@@ -2762,6 +2792,37 @@ function _os2web_borger_dk_parse_borgerdk_article($article) {
   @$doc->loadHTML('<?xml encoding="UTF-8">' . $article->Content);
   $xml = simplexml_import_dom($doc);
 
+  $links_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='selvbetjeningslinks']");
+  $borgerdk_article['selvbetjeningslinks'] = _os2web_borger_dk_create_general_html($links_xml);
+
+  $lov_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='lovgivning']");
+  $borgerdk_article['lovgivning'] = _os2web_borger_dk_create_general_html($lov_xml);
+
+  $borgerdk_article['kernetekst'] = _os2web_borger_dk_create_kernetekst_html($doc);
+
+
+  $byline_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='byline']");
+  $byline = _os2web_borger_dk_create_general_html($byline_xml->div);
+  if (FALSE !== strpos($byline, '<div>Skrevet af')) {
+    $byline = trim($byline);
+    $new_byline = preg_replace("/<div>(Skrevet af .+?)<\/div>/i", "$1", $byline, 1);
+    if (0 < strlen($new_byline)) {
+      // We only overwrite the byline if we found some replacement text.
+      $byline = $new_byline;
+    }
+  }
+  $borgerdk_article['byline'] = $byline;
+
+  $anbefaler_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='anbefaler']");
+  $borgerdk_article['anbefaler'] = _os2web_borger_dk_create_general_html($anbefaler_xml);
+
+  $huskeliste_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='huskeliste']");
+  $borgerdk_article['huskeliste'] = _os2web_borger_dk_create_general_html($huskeliste_xml);
+
+  $lovgivning_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='lovgivning']");
+  $borgerdk_article['lovgivning'] = _os2web_borger_dk_create_general_html($lovgivning_xml);
+
+/*
   foreach ($xml->body->div as $div) {
     $div_id = $div->attributes()->id;
     switch ($div_id) {
@@ -2798,7 +2859,7 @@ function _os2web_borger_dk_parse_borgerdk_article($article) {
         $borgerdk_article['lovgivning'] = _os2web_borger_dk_create_general_html($div);
         break;
     }
-  }
+  }*/
 
   // yx@bellcom.dk: add 'faktaboks' case since Borger.dk updated,
   // some of selvbetjeningslinks contains ID as 'faktaboks'
@@ -2826,6 +2887,42 @@ function _os2web_borger_dk_parse_borgerdk_article($article) {
     $borgerdk_article['Exceptions'] = 1;
   }
   return $borgerdk_article;
+}
+
+/**
+ * Returns an XML object of the inner-HTML contained in the borger.dk XML response.
+ */
+function _os2web_borger_dk_get_xml_by_query($doc, $xpath_query) {
+  $html = '';
+  $xpath = new DOMXPath($doc);
+  $elements = $xpath->query($xpath_query);
+
+  if ($elements->length > 0) {
+
+    foreach ($elements as $element) {
+      $html .= $doc->saveHTMl($element);
+    }
+
+    // Test if more than one element was returned. This can happen, since sometimes there are
+    // several elements with the same ID in the borger.dk HTML.
+    if ($elements->length > 1) {
+      // Elements were continated. Log this to dblog.
+
+      watchdog('OS2Web Borger.dk', 'Dual id\'s in structure when using Xpath query "'. $xpath_query .'"" Elements were concatinated');
+    }
+  }
+  else {
+    // Noting returned by query. $html variable must contain an element in order for
+    // proceeding code not to error, so we fill in a dummy <span>
+    $html .= '<span></span>';
+  }
+
+  $new_dom = new DOMDocument('1.0', 'UTF-8');
+  $new_dom->strictErrorChecking = FALSE;
+  @$new_dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+  $xml = simplexml_import_dom($new_dom);
+  return $xml;
+
 }
 
 /**
@@ -2882,21 +2979,33 @@ function _os2web_borger_dk_parse_borgerdk_article_desc($article) {
 /**
  * Function _os2web_borger_dk_create_kernetekst_html().
  */
-function _os2web_borger_dk_create_kernetekst_html($xml) {
+function _os2web_borger_dk_create_kernetekst_html($doc) {
   // This function steps through the so called microArticle's
   // and converts plus concatenates each element as HTML.
+  $microarticles = _os2web_borger_dk_get_xml_by_query($doc, "//*[starts-with(@id, 'microArticle')]");
+
   $output = array();
   $counter = 1;
   $baseclass = 'mArticle';
-  foreach ($xml->div as $element) {
-    $div_attr = $element->attributes()->id;
+  foreach ($microarticles->body->div as $microarticle) {
+    $div_attr = $microarticle->attributes()->id;
     $search = '<div id="' . $div_attr . '">';
     $replace = '<div class="microArticle" id="' . $div_attr . '">';
-    $html = _os2web_borger_dk_create_html_from_xml($element, $search, $replace);
+    $html = _os2web_borger_dk_create_html_from_xml($microarticle, $search, $replace);
 
     // We replace the first <h2>-tag with <h2 class="mArticleX">.
     $pattern = '/<h2>/';
     $replacement = '<h2 class="mArticle" id="' . $baseclass . $counter . '">';
+    $html = preg_replace($pattern, $replacement, $html, 1);
+
+    // We replace the first <h3>-tag with <h2 class="mArticleX">.
+    $pattern = '/<h3>/';
+    $replacement = '<h2 class="mArticle" id="' . $baseclass . $counter . '">';
+    $html = preg_replace($pattern, $replacement, $html, 1);
+
+    // We replace the first </h3>-tag with </h2>.
+    $pattern = '/<\/h3>/';
+    $replacement = '</h2>';
     $html = preg_replace($pattern, $replacement, $html, 1);
 
     // And we replace the first <div>-tag with <div class="mArticleX">.

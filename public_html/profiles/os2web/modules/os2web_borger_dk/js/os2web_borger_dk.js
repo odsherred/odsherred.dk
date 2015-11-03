@@ -2,6 +2,10 @@
   Drupal.behaviors.os2web_borger_dk = {
     attach: function(context) {
       $("div.mArticle").hide();
+
+      // Remove any stray img tages (invalid img tags has been spotted in the returned data from borger.dk)
+      $(".microArticle img").remove();
+
       $(".microArticle h2.mArticle").click(function() {
         var myid = $(this).attr('id');
         var style = $('div.' + myid).css('display');
