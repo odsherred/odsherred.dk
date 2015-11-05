@@ -2792,16 +2792,16 @@ function _os2web_borger_dk_parse_borgerdk_article($article) {
   @$doc->loadHTML('<?xml encoding="UTF-8">' . $article->Content);
   $xml = simplexml_import_dom($doc);
 
-  $links_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='selvbetjeningslinks']");
+  $links_xml = _os2web_borger_dk_get_xml_by_query($xml, "//*[@id='selvbetjeningslinks']");
   $borgerdk_article['selvbetjeningslinks'] = _os2web_borger_dk_create_general_html($links_xml);
 
-  $lov_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='lovgivning']");
+  $lov_xml = _os2web_borger_dk_get_xml_by_query($xml, "//*[@id='lovgivning']");
   $borgerdk_article['lovgivning'] = _os2web_borger_dk_create_general_html($lov_xml);
 
-  $borgerdk_article['kernetekst'] = _os2web_borger_dk_create_kernetekst_html($doc);
+  $borgerdk_article['kernetekst'] = _os2web_borger_dk_create_kernetekst_html($xml);
 
 
-  $byline_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='byline']");
+  $byline_xml = _os2web_borger_dk_get_xml_by_query($xml, "//*[@id='byline']");
   $byline = _os2web_borger_dk_create_general_html($byline_xml->div);
   if (FALSE !== strpos($byline, '<div>Skrevet af')) {
     $byline = trim($byline);
@@ -2813,53 +2813,15 @@ function _os2web_borger_dk_parse_borgerdk_article($article) {
   }
   $borgerdk_article['byline'] = $byline;
 
-  $anbefaler_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='anbefaler']");
+  $anbefaler_xml = _os2web_borger_dk_get_xml_by_query($xml, "//*[@id='anbefaler']");
   $borgerdk_article['anbefaler'] = _os2web_borger_dk_create_general_html($anbefaler_xml);
 
-  $huskeliste_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='huskeliste']");
+  $huskeliste_xml = _os2web_borger_dk_get_xml_by_query($xml, "//*[@id='huskeliste']");
   $borgerdk_article['huskeliste'] = _os2web_borger_dk_create_general_html($huskeliste_xml);
 
-  $lovgivning_xml = _os2web_borger_dk_get_xml_by_query($doc, "//*[@id='lovgivning']");
+  $lovgivning_xml = _os2web_borger_dk_get_xml_by_query($xml, "//*[@id='lovgivning']");
   $borgerdk_article['lovgivning'] = _os2web_borger_dk_create_general_html($lovgivning_xml);
 
-/*
-  foreach ($xml->body->div as $div) {
-    $div_id = $div->attributes()->id;
-    switch ($div_id) {
-      case 'selvbetjeningslinks':
-        $borgerdk_article['selvbetjeningslinks'] = _os2web_borger_dk_create_general_html($div);
-        break;
-
-      case 'kernetekst':
-        $borgerdk_article['kernetekst'] = _os2web_borger_dk_create_kernetekst_html($div);
-        break;
-
-      case 'byline':
-        $byline = _os2web_borger_dk_create_general_html($div->div);
-        if (FALSE !== strpos($byline, '<div>Skrevet af')) {
-          $byline = trim($byline);
-          $new_byline = preg_replace("/<div>(Skrevet af .+?)<\/div>/i", "$1", $byline, 1);
-          if (0 < strlen($new_byline)) {
-            // We only overwrite the byline if we found some replacement text.
-            $byline = $new_byline;
-          }
-        }
-        $borgerdk_article['byline'] = $byline;
-        break;
-
-      case 'anbefaler':
-        $borgerdk_article['anbefaler'] = _os2web_borger_dk_create_general_html($div);
-        break;
-
-      case 'huskeliste':
-        $borgerdk_article['huskeliste'] = _os2web_borger_dk_create_general_html($div);
-        break;
-
-      case 'lovgivning':
-        $borgerdk_article['lovgivning'] = _os2web_borger_dk_create_general_html($div);
-        break;
-    }
-  }*/
 
   // yx@bellcom.dk: add 'faktaboks' case since Borger.dk updated,
   // some of selvbetjeningslinks contains ID as 'faktaboks'
@@ -2892,20 +2854,21 @@ function _os2web_borger_dk_parse_borgerdk_article($article) {
 /**
  * Returns an XML object of the inner-HTML contained in the borger.dk XML response.
  */
-function _os2web_borger_dk_get_xml_by_query($doc, $xpath_query) {
+function _os2web_borger_dk_get_xml_by_query($xml, $xpath_query) {
+
   $html = '';
-  $xpath = new DOMXPath($doc);
-  $elements = $xpath->query($xpath_query);
+  $item = $xml->xpath($xpath_query);
 
-  if ($elements->length > 0) {
+  if (count($item) > 0) {
 
-    foreach ($elements as $element) {
-      $html .= $doc->saveHTMl($element);
+    // Turn xpath query result into HTML
+    while(list(,$node) = each($item)) {
+      $html .= $node->asXML();
     }
 
     // Test if more than one element was returned. This can happen, since sometimes there are
     // several elements with the same ID in the borger.dk HTML.
-    if ($elements->length > 1) {
+    if (count($item) > 1) {
       // Elements were continated. Log this to dblog.
 
       watchdog('OS2Web Borger.dk', 'Dual id\'s in structure when using Xpath query "'. $xpath_query .'"" Elements were concatinated');
@@ -2922,7 +2885,6 @@ function _os2web_borger_dk_get_xml_by_query($doc, $xpath_query) {
   @$new_dom->loadHTML('<?xml encoding="UTF-8">' . $html);
   $xml = simplexml_import_dom($new_dom);
   return $xml;
-
 }
 
 /**
@@ -2979,10 +2941,10 @@ function _os2web_borger_dk_parse_borgerdk_article_desc($article) {
 /**
  * Function _os2web_borger_dk_create_kernetekst_html().
  */
-function _os2web_borger_dk_create_kernetekst_html($doc) {
+function _os2web_borger_dk_create_kernetekst_html($xml) {
   // This function steps through the so called microArticle's
   // and converts plus concatenates each element as HTML.
-  $microarticles = _os2web_borger_dk_get_xml_by_query($doc, "//*[starts-with(@id, 'microArticle')]");
+  $microarticles = _os2web_borger_dk_get_xml_by_query($xml, "//*[starts-with(@id, 'microArticle')]");
 
   $output = array();
   $counter = 1;
