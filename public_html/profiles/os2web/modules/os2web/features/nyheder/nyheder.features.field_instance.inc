@@ -184,7 +184,7 @@ function nyheder_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'medium-content',
+          'image_style' => 'indholdsside',
         ),
         'type' => 'image',
         'weight' => 0,
