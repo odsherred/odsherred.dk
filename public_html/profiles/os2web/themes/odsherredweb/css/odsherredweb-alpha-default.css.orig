@@ -1860,8 +1860,7 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
 }
 
 .news-page-list .gradient {
-  background: url('img/news-gradient.png');
-  background-position: bottom;
+  background: #fff url('img/news-gradient.png') no-repeat bottom;
 }
 
 .list-8-bottom {
