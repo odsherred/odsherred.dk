@@ -1816,7 +1816,7 @@ h2.mArticle {
 
 /*news-page -->>*/
 .news-page-list .views-row{
-  background: #FFF;
+  background-color: #FFF;
   padding: 5px;
   margin: 0 0 10px 0;
 }
@@ -1908,8 +1908,9 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
 }
 
 .news-page-list .gradient {
-  background: url('img/news-gradient.png');
+  background-image: url('img/news-gradient.png');
   background-position: bottom;
+	background-repeat: repeat-x;
 }
 
 .list-8-bottom {
