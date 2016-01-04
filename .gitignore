@@ -54,3 +54,9 @@ others
 d7
 d8
 wp
+
+# Old
+site
+production-to-test.sh
+production-to-preprod.sh
+apache-solr-3.5.0
