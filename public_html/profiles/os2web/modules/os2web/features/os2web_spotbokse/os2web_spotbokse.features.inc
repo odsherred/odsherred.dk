@@ -44,6 +44,7 @@ function os2web_spotbokse_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'spotbox-300',
   );
 
   // Exported image style: spotbox-tall.
@@ -59,6 +60,7 @@ function os2web_spotbokse_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'spotbox-tall',
   );
 
   // Exported image style: spotbox5.
@@ -73,6 +75,7 @@ function os2web_spotbokse_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'spotbox5',
   );
 
   // Exported image style: spotbox_portal.
@@ -87,6 +90,7 @@ function os2web_spotbokse_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'spotbox_portal',
   );
 
   // Exported image style: spotbox_portal_uden_links.
@@ -101,6 +105,7 @@ function os2web_spotbokse_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'spotbox_portal_uden_links',
   );
 
   // Exported image style: spotbox_right.
@@ -125,6 +130,7 @@ function os2web_spotbokse_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'spotbox_right',
   );
 
   // Exported image style: video_forside.
@@ -149,6 +155,7 @@ function os2web_spotbokse_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'video_forside',
   );
 
   return $styles;

@@ -21,14 +21,14 @@ function os2web_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_default_timezone';
-  $strongarm->value = 'Europe/Berlin';
+  $strongarm->value = 'Europe/Copenhagen';
   $export['date_default_timezone'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_first_day';
-  $strongarm->value = '1';
+  $strongarm->value = 1;
   $export['date_first_day'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -182,7 +182,7 @@ function os2web_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_cleanup_links_last';
-  $strongarm->value = 1337260201;
+  $strongarm->value = 1452096001;
   $export['linkchecker_cleanup_links_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -252,10 +252,20 @@ example.org';
     'tite_removal' => 'tite_removal',
     'filter_html' => 0,
     'media_filter' => 0,
-    'ds_code' => 0,
-    'float_filter' => 0,
+    'transliteration' => 0,
+    'lightbox_disable_iframe_filter' => 0,
+    'filter_2' => 0,
+    'htmlpurifier_basic' => 0,
+    'htmlpurifier_advanced' => 0,
+    'insertFrame_filter' => 0,
     'filter_url' => 0,
     'filter_htmlcorrector' => 0,
+    'lightbox2_gd_filter' => 0,
+    'lightbox2_filter' => 0,
+    'lightbox_iframe_filter' => 0,
+    'lightbox_modal_filter' => 0,
+    'lightbox_slideshow_filter' => 0,
+    'lightbox_video_filter' => 0,
     'php_code' => 0,
     'balk_custom_migrate' => 0,
     'filter_html_escape' => 0,
@@ -293,12 +303,16 @@ example.org';
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_scan_nodetypes';
   $strongarm->value = array(
+    'os2web_borger_dk_article' => 'os2web_borger_dk_article',
     'contentpage' => 'contentpage',
     'news' => 'news',
     'selvbetjeningslinks' => 'selvbetjeningslinks',
     'spotbox' => 'spotbox',
+    'subsites_og_sites' => 'subsites_og_sites',
+    'webform' => 'webform',
     'arp_case' => 0,
     'arp_document' => 0,
+    'andre_sider' => 0,
     'baggrund' => 0,
     'rotating_image' => 0,
     'borger_dk_permalink' => 0,
@@ -316,15 +330,17 @@ example.org';
     'local_plan' => 0,
     'media' => 0,
     'meeting' => 0,
+    'os2web_meeting_search_status' => 0,
     'ofir_job' => 0,
     'panel' => 0,
     'person' => 0,
+    'hoering' => 0,
     'politician' => 0,
+    'politikker' => 0,
     'referat' => 0,
     'sektionsside' => 0,
     'speaker_paper' => 0,
     'tema' => 0,
-    'webform' => 0,
     'iframe_selvbetjeningsl_sning_mm' => 0,
   );
   $export['linkchecker_scan_nodetypes'] = $strongarm;

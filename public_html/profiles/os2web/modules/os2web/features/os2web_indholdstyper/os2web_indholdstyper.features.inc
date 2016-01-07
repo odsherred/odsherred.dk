@@ -40,6 +40,7 @@ function os2web_indholdstyper_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'indholdsside',
   );
 
   // Exported image style: medium-content.
@@ -64,6 +65,7 @@ function os2web_indholdstyper_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'medium-content',
   );
 
   // Exported image style: news-cycle-medium.
@@ -78,6 +80,7 @@ function os2web_indholdstyper_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'news-cycle-medium',
   );
 
   // Exported image style: news-cycle-small.
@@ -92,6 +95,7 @@ function os2web_indholdstyper_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'news-cycle-small',
   );
 
   // Exported image style: news_big.
@@ -106,6 +110,7 @@ function os2web_indholdstyper_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'news_big',
   );
 
   // Exported image style: rotating_image.
@@ -120,6 +125,7 @@ function os2web_indholdstyper_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'rotating_image',
   );
 
   // Exported image style: rotating_image_small.
@@ -134,6 +140,7 @@ function os2web_indholdstyper_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'rotating_image_small',
   );
 
   return $styles;

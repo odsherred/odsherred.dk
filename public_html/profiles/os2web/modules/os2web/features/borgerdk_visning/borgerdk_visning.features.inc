@@ -31,6 +31,7 @@ function borgerdk_visning_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'borger_dk_image',
   );
 
   return $styles;
