@@ -270,3 +270,9 @@ a.overlayclass { display: table}
 .imagefield-crop-cropbox img {
     max-width: none;
 }
+
+/* Remove original styling on frontpage footer */
+#zone-footer-wrapper { background-image: none; border-top: 0; border-image: none; background-color: #00538F; padding: 6px 0; }
+.front #section-footer { height: auto !important; }
+.front #section-footer h5 { margin-bottom: 0; }
+.front #section-footer .content { line-height: 30px; min-height: 30px; }

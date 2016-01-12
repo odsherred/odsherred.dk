@@ -70,7 +70,10 @@ function os2web_borger_dk_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_os2web_borger_dk_article';
   $strongarm->value = array(
-    0 => 'menu-indholdsmenu',
+    0 => 'menu-indhold',
+    1 => 'menu-erhverv-genveje',
+    2 => 'menu-erhverv',
+    3 => 'menu-politik',
   );
   $export['menu_options_os2web_borger_dk_article'] = $strongarm;
 
@@ -78,7 +81,7 @@ function os2web_borger_dk_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_os2web_borger_dk_article';
-  $strongarm->value = 'menu-indholdsmenu:0';
+  $strongarm->value = 'menu-erhverv-genveje:0';
   $export['menu_parent_os2web_borger_dk_article'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -99,7 +102,7 @@ function os2web_borger_dk_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_os2web_borger_dk_article';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_os2web_borger_dk_article'] = $strongarm;
 
   return $export;

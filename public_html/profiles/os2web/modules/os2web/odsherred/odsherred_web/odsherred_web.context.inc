@@ -77,6 +77,7 @@ function odsherred_web_context_default_contexts() {
     'path' => array(
       'values' => array(
         '~nyheder' => '~nyheder',
+        '~node/896240' => '~node/896240',
       ),
     ),
     'sitewide' => array(

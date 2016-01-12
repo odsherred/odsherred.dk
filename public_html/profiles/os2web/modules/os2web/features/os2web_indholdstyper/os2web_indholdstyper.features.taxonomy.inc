@@ -13,17 +13,17 @@ function os2web_indholdstyper_taxonomy_default_vocabularies() {
       'name' => 'Forfrem til',
       'machine_name' => 'forfrem_til',
       'description' => 'Forside og portalforsider',
-      'hierarchy' => '0',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
     ),
     'nyhedstype' => array(
       'name' => 'Nyhedstype',
       'machine_name' => 'nyhedstype',
       'description' => '',
-      'hierarchy' => '1',
+      'hierarchy' => 1,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
     ),
   );
 }

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * odsherred_web.features.field_instance.inc
+ * os2web_borger_dk.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function odsherred_web_field_default_field_instances() {
+function os2web_borger_dk_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-os2web_borger_dk_article-body'

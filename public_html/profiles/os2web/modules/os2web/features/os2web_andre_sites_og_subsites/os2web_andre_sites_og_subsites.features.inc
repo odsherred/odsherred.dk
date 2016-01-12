@@ -47,6 +47,7 @@ function os2web_andre_sites_og_subsites_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'grid3',
   );
 
   return $styles;

@@ -64,6 +64,7 @@ features[field_base][] = field_rotate_publish
 features[field_base][] = field_rotating_link
 features[field_base][] = field_selvbetjening_direkte
 features[field_base][] = field_selvbetjeningslink_type
+features[field_base][] = field_text
 features[field_group][] = group_billeder|node|contentpage|form
 features[field_group][] = group_billede|node|news|form
 features[field_group][] = group_document|node|contentpage|default

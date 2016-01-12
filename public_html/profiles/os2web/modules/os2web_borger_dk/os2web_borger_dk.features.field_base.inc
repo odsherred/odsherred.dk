@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * odsherred_web.features.field_base.inc
+ * os2web_borger_dk.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function odsherred_web_field_default_field_bases() {
+function os2web_borger_dk_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_billede'

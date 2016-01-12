@@ -31,10 +31,11 @@ function os2web_andre_sites_og_subsites_default_panels_mini() {
   );
   $display->cache = array();
   $display->title = 'Andre sider i Odsherred Kommune';
+  $display->uuid = 'c4b3367f-dd23-4ead-8ef7-227d166cdd96';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
+    $pane->pid = 'new-a08f2a30-4304-456a-995b-0178adcde61b';
     $pane->panel = 'middle';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -55,10 +56,11 @@ function os2web_andre_sites_og_subsites_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['middle'][0] = 'new-1';
+    $pane->uuid = 'a08f2a30-4304-456a-995b-0178adcde61b';
+    $display->content['new-a08f2a30-4304-456a-995b-0178adcde61b'] = $pane;
+    $display->panels['middle'][0] = 'new-a08f2a30-4304-456a-995b-0178adcde61b';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = 'new-a08f2a30-4304-456a-995b-0178adcde61b';
   $mini->display = $display;
   $export['andre_sider_i_odsherred_kommune'] = $mini;
 

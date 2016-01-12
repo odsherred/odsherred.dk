@@ -50,6 +50,7 @@ function os2web_grund_paneler_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => '455_265',
   );
 
   return $styles;
