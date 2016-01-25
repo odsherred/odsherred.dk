@@ -400,18 +400,18 @@ ul.os2web_menus-container li.odsherred_politik .megamenu-panel {
 #page_1 ul.os2web_menus-container li a.js-megamenu-toggle:hover,
 #page_1 ul#main-menu li a.menu-minipanel,
 #page_1  ul#main-menu li a.menu-minipanel:hover {
-  background-image: url('img/plus.png');
-  background-repeat: no-repeat;
-  background-size: initial;
-  width:20px;
-  height:20px;
-  display: block;
-  position: absolute;
-  top: 24px;
-  right: 23px;
-  background-position: 50% 50%;
-  padding: 0;
-  margin: 0;
+	background-image: url('img/plus.png');
+	background-repeat: no-repeat;
+	background-size: initial;
+	width:20px;
+	height:20px;
+	display: block;
+	position: absolute;
+	top: 24px;
+	right: 23px;
+	background-position: 50% 50%;
+	padding: 0;
+	margin: 0;
 }
 
 #page_1 ul#main-menu li.first a.menu-minipanel,
