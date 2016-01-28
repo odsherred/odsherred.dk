@@ -271,6 +271,14 @@ a.overlayclass { display: table}
     max-width: none;
 }
 
+.slider_left,
+.slider_right {
+  display: none;
+}
+
+/* Hide external links on kultunaut page (node 896240) URL: http://www.kultunaut.dk/perl/arrlist/type-odsherred2?Area=Odsherred-storkommune&periode=1 */
+.page-node-896240 span.ext { display: none; }
+
 /* Remove original styling on frontpage footer */
 #zone-footer-wrapper { background-image: none; border-top: 0; border-image: none; background-color: #00538F; padding: 6px 0; }
 .front #section-footer { height: auto !important; }

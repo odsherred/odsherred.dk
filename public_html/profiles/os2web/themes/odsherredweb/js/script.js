@@ -1,4 +1,8 @@
 jQuery(document).ready(function () {
+
+	// Hide external links on kultunaut page (node 896240) URL: http://www.kultunaut.dk/perl/arrlist/type-odsherred2?Area=Odsherred-storkommune&periode=1
+	jQuery('body.page-node-896240').find('a.ext[target="_blank"]').removeAttr('target');
+
 	var slideNavItems = jQuery('.custom-slideshow .item-bg');
 	slideNavItems.each(function(k,v) {
 		jQuery(v).parent().parent().parent().css('background-image','url('+jQuery(v).attr("title")+')');
