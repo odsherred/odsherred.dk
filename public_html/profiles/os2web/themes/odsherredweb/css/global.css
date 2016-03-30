@@ -186,7 +186,6 @@ img {
 .spotbox .text a{
   color: #272727;
   text-decoration: none;
-  font-size: 0.8em;
 }
 
 .spotbox .goto {
@@ -265,7 +264,7 @@ img {
 #sliding-popup .popup-content { width: 100%;}
 a.overlayclass { display: table}
 
-.jcrop-holder img, 
+.jcrop-holder img,
 .jcrop-preview-wrapper img,
 .imagefield-crop-cropbox img {
     max-width: none;
