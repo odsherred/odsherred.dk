@@ -47,7 +47,6 @@ jQuery(document).ready(function () {
       };
       jQuery(window).resize(resize);
       resize();
-
-
+	
 });
 
