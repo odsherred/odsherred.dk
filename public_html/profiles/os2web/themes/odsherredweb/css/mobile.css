@@ -498,8 +498,7 @@
         clear: both;
     }
 
-    .gul-boks,
-    .node-type-contentpage .panel-region-stack2
+    .gul-boks
     {
         margin: 10px -5px;
         padding: 15px 10px 0;
@@ -508,27 +507,48 @@
         background: url('img/lineYellow.png') repeat-x;
     }
 
-    .node-type-contentpage .panel-region-stack2 li
-    {
-        line-height: 1.25em;
-
-        margin-left: 0;
+    .node-type-contentpage .panel-region-stack2 {
+        background-color: #f0be03;
+        padding: 10px;
+        margin-bottom: 20px;
     }
 
-    .node-type-contentpage .panel-region-stack2 a
-    {
+    .node-type-contentpage .panel-region-stack2 .view-kle-lonks-boks .item-list ul {
+        margin: 0;
+    }
+
+
+    .node-type-contentpage .panel-region-stack2 a,
+    .node-type-contentpage .panel-region-stack2 h1,
+    .node-type-contentpage .panel-region-stack2 h2,
+    .node-type-contentpage .panel-region-stack2 h3,
+    .node-type-contentpage .panel-region-stack2 h4,
+    .node-type-contentpage .panel-region-stack2 h5,
+    .node-type-contentpage .panel-region-stack2 h6 {
+        color: #fff;
+    }
+
+    .node-type-contentpage .panel-region-stack2 a,
+    .node-type-contentpage .panel-region-stack2 .views-field-title a {
         font-weight: normal;
-
-        text-decoration: none;
+        font-size: 14px;
+        text-decoration: underline;
     }
 
+    .node-type-contentpage .panel-region-stack2 .panel-separator
+    {
+        height: 20px;
+    }
+
+    .node-type-contentpage .panel-region-stack2 .pane-selvbetjening .views-row,
     .node-type-contentpage .panel-region-stack2 .pane-kle-lonks-boks-panel-pane-1 li
     {
         display: list-item !important;
-
+        margin: 0;
         list-style-position: inside !important;
         list-style-type: disc !important;
         list-style-image: url(img/ikon-green-dot.png) !important;
+        padding: 2px 0;
     }
 
     .node-type-contentpage .panel-region-stack2 .pane-node-field-mediafile .pane-content
