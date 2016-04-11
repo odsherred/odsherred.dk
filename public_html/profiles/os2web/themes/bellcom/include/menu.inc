@@ -13,7 +13,7 @@ function _bellcom_generate_menu($menu_name, $menu_type = FALSE, $max_depth = NUL
     return array();
   }
 
-  $menu_tree = menu_tree_page_data($menu_name, $max_depth);
+  $menu_tree = menu_tree_all_data($menu_name, NULL, $max_depth);
 
   $output = menu_tree_output($menu_tree);
 
