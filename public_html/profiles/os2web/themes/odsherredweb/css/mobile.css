@@ -39,13 +39,11 @@
     font-size: 2.1em;
   }
 
-  a:link,
   a:visited,
   a {
     color: #407daa;
   }
 
-  .region-content a:link,
   .region-content a:visited,
   .region-content a {
     font-weight: bold;
@@ -335,7 +333,15 @@
   }
 
   #region-header-first #block-menu-menu-mobil-top .block-inner {
-    padding: 5px;
+    padding-bottom: 10px;
+  }
+
+  #block-menu-block-17 {
+    display: none;
+  }
+
+  #block-delta-blocks-breadcrumb {
+    display: none;
   }
 
   #region-header-first #block-menu-menu-mobil-top .content li {
@@ -352,7 +358,11 @@
     border: none !important;
   }
 
-  #region-header-first #block-menu-menu-mobil-top .content li a {
+  #region-header-first #block-menu-menu-mobil-top .content li a,
+  #region-header-first #block-menu-menu-mobil-top .content li a:hover,
+  #region-header-first #block-menu-menu-mobil-top .content li a:focus,
+  #region-header-first #block-menu-menu-mobil-top .content li a:active
+  {
     font-size: 2em;
     display: block;
     float: left;
@@ -369,11 +379,18 @@
     width: 34%;
   }
 
-  #region-header-first #block-menu-menu-mobil-top .content li.first a {
+  #region-header-first #block-menu-menu-mobil-top .content li.first a,
+  #region-header-first #block-menu-menu-mobil-top .content li.first a:hover,
+  #region-header-first #block-menu-menu-mobil-top .content li.first a:focus,
+  #region-header-first #block-menu-menu-mobil-top .content li.first a:active {
     background-color: #56ae30;
   }
 
-  #region-header-first #block-menu-menu-mobil-top .content li.last a {
+  #region-header-first #block-menu-menu-mobil-top .content li.last a,
+  #region-header-first #block-menu-menu-mobil-top .content li.last a:hover,
+  #region-header-first #block-menu-menu-mobil-top .content li.last a:focus,
+  #region-header-first #block-menu-menu-mobil-top .content li.last a:active
+  {
     background-color: #c63838;
   }
 
@@ -382,9 +399,12 @@
     color: #ffffff;
   }
 
+  #region-header-first #block-search-form {
+    display: none;
+  }
+
   #section-header {
     max-width: 100%;
-    background-color: #333333;
   }
 
   .region-header-first-inner {

@@ -68,6 +68,11 @@ function odsherredweb_preprocess_region(&$variables) {
 function odsherredweb_preprocess_page(&$variables, $hook) {
   $current_theme = variable_get('theme_default', 'none');
 
+  // Navigation
+  $variables['sidebar_borger'] = _bellcom_generate_menu('menu-indhold', 'sidebar');
+  $variables['sidebar_erhverv'] = _bellcom_generate_menu('menu-erhverv', 'sidebar');
+  $variables['sidebar_politik'] = _bellcom_generate_menu('menu-politik', 'sidebar');
+
   // Add the site structure term id to the page div
   $node = node_load(arg(1));
 

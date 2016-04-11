@@ -30,12 +30,16 @@
 .simple-navigation {
 
   .simple-navigation-logo-link {
+    display: inline-block;
+    padding: floor( ((@bs3-simple-navigation-height - (@bs3-simple-navigation-logo-image-height / 2)) / 2) ) 0;
+    line-height: normal;
 
     .simple-navigation-logo-image {
-      width: 100%;
       max-width: floor( (@bs3-simple-navigation-logo-image-width / 2) );
-      max-height: @bs3-simple-navigation-height;
+      max-height: floor( (@bs3-simple-navigation-logo-image-height / 2) );
       border: 0;
+      margin: 0;
+      padding: 0;
     }
   }
 }

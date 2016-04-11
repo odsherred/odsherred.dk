@@ -26,17 +26,21 @@
       </div>
       <!-- End - logo -->
 
-      <div class="content"></div>
-
-      <?php if (isset($sidebar_secondary)): ?>
+      <?php if (isset($sidebar_borger)): ?>
         <!-- Begin - navigation -->
-        <?php print render($sidebar_secondary); ?>
+        <?php print render($sidebar_borger); ?>
         <!-- End - navigation -->
       <?php endif; ?>
 
-      <?php if (isset($sidebar_primary)): ?>
+      <?php if (isset($sidebar_erhverv)): ?>
         <!-- Begin - navigation -->
-        <?php print render($sidebar_primary); ?>
+        <?php print render($sidebar_erhverv); ?>
+        <!-- End - navigation -->
+      <?php endif; ?>
+
+      <?php if (isset($sidebar_politik)): ?>
+        <!-- Begin - navigation -->
+        <?php print render($sidebar_politik); ?>
         <!-- End - navigation -->
       <?php endif; ?>
 
