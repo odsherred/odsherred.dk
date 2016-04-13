@@ -65,8 +65,11 @@ function odsherredweb_preprocess_region(&$variables) {
  *
  **/
 
-function odsherredweb_preprocess_page(&$variables, $hook) {
+function odsherredweb_preprocess_page(&$variables) {
   $current_theme = variable_get('theme_default', 'none');
+
+  // Search form
+  $variables['simple_navigation_search'] = module_invoke('search', 'block_view', 'search');
 
   // Navigation
   $variables['sidebar_borger'] = _bellcom_generate_menu('menu-indhold', 'sidebar');

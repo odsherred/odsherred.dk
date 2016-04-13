@@ -82,8 +82,12 @@
 
         <!-- Begin - button -->
         <li class="simple-navigation-button">
-          <a href="#" data-sidebar-toggle="left">
-            <span class="fa icon fa-search"></span> </a>
+          <a href="#" data-search-form-toggle>
+            <span class="fa icon fa-search"></span>
+          </a>
+          <div class="simple-navigation-search-form">
+            <?php print render($simple_navigation_search); ?>
+          </div>
         </li>
         <!-- End - button -->
 

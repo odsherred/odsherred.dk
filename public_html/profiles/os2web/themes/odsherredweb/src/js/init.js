@@ -5,4 +5,5 @@ jQuery(document).ready(function($){
   // Sidebar
   // --------------------------------------------------
   bs3Sidebar.init();
+  bs3SimpleNavigation.init();
 });
