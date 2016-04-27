@@ -89,7 +89,7 @@ body {
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
-.full-screen-background {
+.front .full-screen-background {
   position: fixed !important;
   top: 0;
   left: 0;
