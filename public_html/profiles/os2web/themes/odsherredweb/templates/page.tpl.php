@@ -97,6 +97,8 @@
     </nav>
     <!-- End - simple navigation -->
 
+    <div class="full-screen-background"></div>
+
     <div class="content">
 
       <div<?php print $attributes; ?>>
