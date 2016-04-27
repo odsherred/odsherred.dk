@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "dependencies": {
     "bs3-sidebar": "~0.*",
+    "bs3-simple-navigation": "~0.*",
     "fastclick": "~1.*",
     "fontawesome": "~4.*",
     "html5shiv": "~3.*",
