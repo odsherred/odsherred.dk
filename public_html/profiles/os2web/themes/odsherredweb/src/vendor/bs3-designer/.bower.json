@@ -1,0 +1,27 @@
+{
+  "name": "bs3-designer",
+  "description": "Helpful layout additions for Bootstrap v. 3.x.",
+  "version": "0.1.4",
+  "dependencies": {
+    "jquery": "~2.*",
+    "jquery-ui": "~1.*",
+    "bootstrap": "~3.*",
+    "appear": "~0.3.*"
+  },
+  "ignore": [
+    "bower_components"
+  ],
+  "authors": [
+    "Morten Nissen <mail@hjemmesidekongen.dk> (http://hjemmesidekongen.dk)"
+  ],
+  "homepage": "https://github.com/by-nissen/bs3-designer",
+  "_release": "0.1.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.4",
+    "commit": "336ce4bac9f1dd4615bc6be3e470ba2d8f634347"
+  },
+  "_source": "https://github.com/by-nissen/bs3-designer.git",
+  "_target": "~0.*",
+  "_originalSource": "bs3-designer"
+}

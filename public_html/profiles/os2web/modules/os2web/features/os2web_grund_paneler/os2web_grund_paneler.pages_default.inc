@@ -352,7 +352,8 @@ function os2web_grund_paneler_default_page_manager_handlers() {
         0 => '',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Se mere her hvis du vil...',
+      'override_title_text' => 'Vil du',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
