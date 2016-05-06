@@ -4,7 +4,6 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script>
     window.jQuery = window.$j = jQuery;
   </script>
