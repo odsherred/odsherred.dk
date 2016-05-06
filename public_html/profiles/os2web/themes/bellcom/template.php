@@ -145,32 +145,6 @@ function bellcom_preprocess_taxonomy_term(&$variables) {
   }
 }
 
-/**
- * Implements template_menu_local_tasks().
- */
-function bellcom_menu_local_tasks(&$variables) {
-}
-
-/*
- * Implements template_preprocess_field().
- */
-function bellcom_preprocess_field(&$variables, $hook) {
-}
-
-/*
- * Implements hook_preprocess_region().
- */
-function bellcom_preprocess_region(&$variables, $hook) {
-}
-
-/*
- * Implements theme_preprocess_block().
- */
-function bellcom_preprocess_block(&$variables) {
-
-  $variables ['classes_array'][] = drupal_html_class('block-' . $variables ['block']->module);
-}
-
 /*
  * Implements theme_menu_tree().
  * For main navigation.
