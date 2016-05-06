@@ -209,6 +209,9 @@
     padding-left: 0;
   }
 
+  #block-menu-menu-mobil-forside li a {
+    color: #fff;
+  }
   #block-menu-menu-mobil-forside li a,
   #region-sidebar-first li a {
     font-size: 1.4em;
