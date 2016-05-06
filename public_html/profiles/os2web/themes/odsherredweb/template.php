@@ -13,6 +13,7 @@
 
 function odsherredweb_js_alter(&$js) {
   unset($js['misc/jquery.js']); // delete drupal's default jquery file.
+  unset($js['misc/jquery.form.js']);
 }
 
 /**
@@ -30,6 +31,9 @@ function odsherredweb_preprocess_html(&$variables) {
     'group' => JS_LIBRARY,
   ));
   drupal_add_js($theme_path . '/js/app.js', array(
+    'group' => JS_THEME,
+  ));
+  drupal_add_js($theme_path . '/js/jquery.form.js', array(
     'group' => JS_THEME,
   ));
   drupal_add_js($theme_path . '/js/ie9.js', array(
