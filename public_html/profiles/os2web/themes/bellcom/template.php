@@ -149,23 +149,6 @@ function bellcom_preprocess_taxonomy_term(&$variables) {
  * Implements template_menu_local_tasks().
  */
 function bellcom_menu_local_tasks(&$variables) {
-  $output = '';
-
-  if (!empty($variables['primary'])) {
-    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
-    $variables['primary']['#prefix'] .= '<ul class="tabs--primary">';
-    $variables['primary']['#suffix'] = '</ul>';
-    $output .= drupal_render($variables['primary']);
-  }
-
-  if (!empty($variables['secondary'])) {
-    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
-    $variables['secondary']['#prefix'] .= '<ul class="tabs--secondary">';
-    $variables['secondary']['#suffix'] = '</ul>';
-    $output .= drupal_render($variables['secondary']);
-  }
-
-  return $output;
 }
 
 /*
@@ -304,44 +287,4 @@ function bellcom_menu_link__sidebar(array $variables) {
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
 
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
-}
-
-/**
- * Implements hook_field_widget_form_alter().
- */
-function bellcom_field_widget_form_alter(&$element, &$form_state, $context) {
-
-  // Make input groups work on BS3
-  if (!empty($element['value']['#field_prefix']) || !empty($element['value']['#field_suffix'])) {
-    $element['value']['#input_group'] = TRUE;
-  }
-}
-
-/*
- * Implements template_preprocess_views_view_table().
- */
-function bellcom_preprocess_views_view_table(&$variables) {
-  $view = $variables['view'];
-
-  // Add responsive class to the table
-  $variables['classes_array'][] = 'table-responsive-stacked';
-
-  $result = $variables['result'] = $variables['rows'];
-  $options = $view->style_plugin->options;
-  $handler = $view->style_plugin;
-  $fields = &$view->field;
-  $columns = $handler->sanitize_columns($options['columns'], $fields);
-
-  foreach ($columns as $field => $column) {
-
-    // Render each field into its appropriate column.
-    foreach ($result as $num => $row) {
-
-      if (!empty($fields[$field]) && empty($fields[$field]->options['exclude'])) {
-        $label = check_plain(!empty($fields[$field]) ? $fields[$field]->label() : '');
-
-        $variables['field_attributes'][$field][$num]['data-title'] = $label;
-      }
-    }
-  }
 }
