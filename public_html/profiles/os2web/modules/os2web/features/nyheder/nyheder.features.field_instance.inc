@@ -184,7 +184,7 @@ function nyheder_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'medium-content',
+          'image_style' => 'indholdsside',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -440,7 +440,7 @@ function nyheder_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -659,7 +659,7 @@ Må ikke rettes, er juridisk gældende.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 48,
+      'weight' => 49,
     ),
   );
 
@@ -872,7 +872,7 @@ Må ikke rettes, er juridisk gældende.',
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '1600x1200',
+      'max_resolution' => '2200x1800',
       'min_resolution' => '1600x1200',
       'title_field' => 1,
       'title_field_required' => 0,
@@ -889,6 +889,7 @@ Må ikke rettes, er juridisk gældende.',
             'plupload' => 0,
             'reference' => 0,
             'remote' => 0,
+            'upload' => 'upload',
           ),
           'source_attach' => array(
             'absolute' => 0,
@@ -906,7 +907,7 @@ Må ikke rettes, er juridisk gældende.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 49,
+      'weight' => 50,
     ),
   );
 
@@ -1011,7 +1012,7 @@ Må ikke rettes, er juridisk gældende.',
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 47,
+      'weight' => 48,
     ),
   );
 
@@ -1233,7 +1234,7 @@ Må ikke rettes, er juridisk gældende.',
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 

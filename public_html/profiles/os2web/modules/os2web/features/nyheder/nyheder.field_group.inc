@@ -21,7 +21,7 @@ function nyheder_field_group_info() {
   $field_group->parent_name = 'group_news_tabs';
   $field_group->data = array(
     'label' => 'Dato',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_newstypedato',
       1 => 'field_udloebsdato',
@@ -53,11 +53,11 @@ function nyheder_field_group_info() {
     'label' => 'Nyhed',
     'weight' => '0',
     'children' => array(
-      0 => 'group_billeder',
-      1 => 'group_dato',
-      2 => 'group_indstillinger',
-      3 => 'group_taksonomi',
-      4 => 'group_tekst',
+      0 => 'group_dato',
+      1 => 'group_indstillinger',
+      2 => 'group_taksonomi',
+      3 => 'group_tekst',
+      4 => 'group_billeder',
       5 => 'group_bilag',
     ),
     'format_type' => 'htabs',
