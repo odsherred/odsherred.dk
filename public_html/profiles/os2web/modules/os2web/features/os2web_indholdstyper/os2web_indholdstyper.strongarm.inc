@@ -537,13 +537,13 @@ function os2web_indholdstyper_strongarm() {
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '51',
+          'weight' => '50',
         ),
         'workbench_access' => array(
           'weight' => '0',
         ),
         'redirect' => array(
-          'weight' => '52',
+          'weight' => '51',
         ),
         'metatags' => array(
           'weight' => '2',

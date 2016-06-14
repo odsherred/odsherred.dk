@@ -18,7 +18,6 @@ function os2web_borger_dk_user_default_permissions() {
       'Editor' => 'Editor',
       'Kommunikation' => 'Kommunikation',
       'Webmaster' => 'Webmaster',
-      'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
   );
@@ -30,7 +29,6 @@ function os2web_borger_dk_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
-      'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
   );
@@ -43,7 +41,6 @@ function os2web_borger_dk_user_default_permissions() {
       'Editor' => 'Editor',
       'Kommunikation' => 'Kommunikation',
       'Webmaster' => 'Webmaster',
-      'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
   );
@@ -55,7 +52,6 @@ function os2web_borger_dk_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
-      'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
   );
@@ -68,7 +64,6 @@ function os2web_borger_dk_user_default_permissions() {
       'Editor' => 'Editor',
       'Kommunikation' => 'Kommunikation',
       'Webmaster' => 'Webmaster',
-      'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
   );

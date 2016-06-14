@@ -21,14 +21,14 @@ function os2web_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_default_timezone';
-  $strongarm->value = 'Europe/Copenhagen';
+  $strongarm->value = 'Europe/Berlin';
   $export['date_default_timezone'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_first_day';
-  $strongarm->value = 1;
+  $strongarm->value = '1';
   $export['date_first_day'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -182,7 +182,7 @@ function os2web_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_cleanup_links_last';
-  $strongarm->value = 1452096001;
+  $strongarm->value = 1465862401;
   $export['linkchecker_cleanup_links_last'] = $strongarm;
 
   $strongarm = new stdClass();

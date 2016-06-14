@@ -76,7 +76,6 @@ function os2web_settings_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
-      'Kommuneinformation' => 'Kommuneinformation',
       'Opret afgørelser' => 'Opret afgørelser',
       'Opret høringer' => 'Opret høringer',
       'Opret møder' => 'Opret møder',
@@ -123,7 +122,6 @@ function os2web_settings_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
-      'Kommuneinformation' => 'Kommuneinformation',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'node',
@@ -177,7 +175,6 @@ function os2web_settings_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
-      'Kommuneinformation' => 'Kommuneinformation',
       'Opret afgørelser' => 'Opret afgørelser',
       'Opret høringer' => 'Opret høringer',
       'Opret møder' => 'Opret møder',
@@ -231,7 +228,6 @@ function os2web_settings_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
-      'Kommuneinformation' => 'Kommuneinformation',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'node',
@@ -281,7 +277,6 @@ function os2web_settings_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
       'Erhverv' => 'Erhverv',
-      'Kommuneinformation' => 'Kommuneinformation',
       'Opret afgørelser' => 'Opret afgørelser',
       'Opret høringer' => 'Opret høringer',
       'Opret møder' => 'Opret møder',
@@ -395,12 +390,6 @@ function os2web_settings_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
-      'Kommuneinformation' => 'Kommuneinformation',
-      'Kommunikation' => 'Kommunikation',
-      'Opret afgørelser' => 'Opret afgørelser',
-      'Opret møder' => 'Opret møder',
-      'Opret nyhed' => 'Opret nyhed',
-      'Opret udbud' => 'Opret udbud',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
@@ -412,7 +401,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Kommuneinformation' => 'Kommuneinformation',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
     ),
