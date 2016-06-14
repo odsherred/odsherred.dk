@@ -1,5 +1,0 @@
-name=OS2Web Menus
-description=Provides accessible megamenu
-core=7.x
-dependencies[]=panels
-dependencies[]=panels_mini
