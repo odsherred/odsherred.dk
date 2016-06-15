@@ -186,7 +186,7 @@ function os2web_indholdstyper_field_group_info() {
     'label' => 'Indstillinger',
     'weight' => '8',
     'children' => array(
-      0 => 'field_rotate_publish',
+      0 => 'field_os2web_base_field_rotate',
       1 => 'field_node_reference_kontaktblok',
       2 => 'field_indholdsside_spotboxe',
       3 => 'field_noderef_selvbtjn',
@@ -222,7 +222,7 @@ function os2web_indholdstyper_field_group_info() {
     'weight' => '14',
     'children' => array(
       0 => 'field_source_id',
-      1 => 'field_site_structure',
+      1 => 'field_os2web_base_field_struct',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -337,7 +337,7 @@ function os2web_indholdstyper_field_group_info() {
     'label' => 'Indstillinger',
     'weight' => '7',
     'children' => array(
-      0 => 'field_promoteto',
+      0 => 'field_os2web_base_field_promote',
       1 => 'field_side_baggrungsbillede',
       2 => 'field_skjul_relaterede_links',
       3 => 'path',
@@ -496,7 +496,7 @@ function os2web_indholdstyper_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_resume_long',
-      2 => 'field_site_structure',
+      2 => 'field_os2web_base_field_struct',
       3 => 'field_newstype',
       4 => 'title',
     ),

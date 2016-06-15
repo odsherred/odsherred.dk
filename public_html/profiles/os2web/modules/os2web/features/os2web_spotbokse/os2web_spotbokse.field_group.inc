@@ -24,7 +24,7 @@ function os2web_spotbokse_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_termref_kle',
-      1 => 'field_site_structure',
+      1 => 'field_os2web_base_field_struct',
       2 => 'title',
     ),
     'format_type' => 'htab',
@@ -143,7 +143,7 @@ function os2web_spotbokse_field_group_info() {
       2 => 'field_organization',
       3 => 'field_editortags',
       4 => 'field_politics',
-      5 => 'field_promoteto',
+      5 => 'field_os2web_base_field_promote',
       6 => 'field_spotbox_image_tall',
       7 => 'field_stort_billede_spot5',
     ),

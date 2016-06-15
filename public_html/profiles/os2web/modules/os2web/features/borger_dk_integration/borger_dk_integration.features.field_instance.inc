@@ -153,8 +153,8 @@ function borger_dk_integration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-borger_dk_permalink-field_site_structure'
-  $field_instances['node-borger_dk_permalink-field_site_structure'] = array(
+  // Exported field_instance: 'node-borger_dk_permalink-field_os2web_base_field_struct'
+  $field_instances['node-borger_dk_permalink-field_os2web_base_field_struct'] = array(
     'bundle' => 'borger_dk_permalink',
     'default_value' => NULL,
     'deleted' => 0,
@@ -181,7 +181,7 @@ function borger_dk_integration_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'structure',
     'required' => FALSE,
     'settings' => array(

@@ -86,10 +86,10 @@ function odsherred_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@localhost::im_field_site_structure';
+  $facet->name = 'apachesolr@localhost::im_field_os2web_base_field_struct';
   $facet->searcher = 'apachesolr@localhost';
   $facet->realm = '';
-  $facet->facet = 'im_field_site_structure';
+  $facet->facet = 'im_field_os2web_base_field_struct';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'operator' => 'and',
@@ -108,7 +108,7 @@ function odsherred_search_facetapi_default_facet_settings() {
     'query_type' => 'term',
     'pretty_paths_alias' => 'portalkategori',
   );
-  $export['apachesolr@localhost::im_field_site_structure'] = $facet;
+  $export['apachesolr@localhost::im_field_os2web_base_field_struct'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -191,10 +191,10 @@ function odsherred_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@localhost::is_field_site_structure';
+  $facet->name = 'apachesolr@localhost::is_field_os2web_base_field_struct';
   $facet->searcher = 'apachesolr@localhost';
   $facet->realm = '';
-  $facet->facet = 'is_field_site_structure';
+  $facet->facet = 'is_field_os2web_base_field_struct';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'operator' => 'and',
@@ -208,11 +208,11 @@ function odsherred_search_facetapi_default_facet_settings() {
     'facet_missing' => 0,
     'flatten' => '1',
     'query_type' => 'term',
-    'pretty_paths_alias' => 'is_field_site_structure',
+    'pretty_paths_alias' => 'is_field_os2web_base_field_struct',
     'pretty_paths_taxonomy_pathauto' => 0,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'site_struktur',
   );
-  $export['apachesolr@localhost::is_field_site_structure'] = $facet;
+  $export['apachesolr@localhost::is_field_os2web_base_field_struct'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */

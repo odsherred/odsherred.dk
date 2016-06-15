@@ -288,8 +288,8 @@ function os2web_webform_downloads_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-webform-field_site_structure'
-  $field_instances['node-webform-field_site_structure'] = array(
+  // Exported field_instance: 'node-webform-field_os2web_base_field_struct'
+  $field_instances['node-webform-field_os2web_base_field_struct'] = array(
     'bundle' => 'webform',
     'default_value' => NULL,
     'deleted' => 0,
@@ -315,7 +315,7 @@ function os2web_webform_downloads_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Portalkategori',
     'required' => 0,
     'settings' => array(

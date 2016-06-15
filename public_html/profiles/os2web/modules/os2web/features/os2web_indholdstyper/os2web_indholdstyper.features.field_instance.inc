@@ -878,8 +878,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-contentpage-field_rotate_publish'
-  $field_instances['node-contentpage-field_rotate_publish'] = array(
+  // Exported field_instance: 'node-contentpage-field_os2web_base_field_rotate'
+  $field_instances['node-contentpage-field_os2web_base_field_rotate'] = array(
     'bundle' => 'contentpage',
     'deleted' => 0,
     'description' => '',
@@ -910,7 +910,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_rotate_publish',
+    'field_name' => 'field_os2web_base_field_rotate',
     'label' => 'Indløb / Udløb',
     'required' => 0,
     'settings' => array(
@@ -936,8 +936,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-contentpage-field_site_structure'
-  $field_instances['node-contentpage-field_site_structure'] = array(
+  // Exported field_instance: 'node-contentpage-field_os2web_base_field_struct'
+  $field_instances['node-contentpage-field_os2web_base_field_struct'] = array(
     'bundle' => 'contentpage',
     'default_value' => NULL,
     'deleted' => 0,
@@ -970,7 +970,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Portalkategori',
     'required' => 0,
     'settings' => array(
@@ -1671,8 +1671,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-galleri-field_site_structure'
-  $field_instances['node-galleri-field_site_structure'] = array(
+  // Exported field_instance: 'node-galleri-field_os2web_base_field_struct'
+  $field_instances['node-galleri-field_os2web_base_field_struct'] = array(
     'bundle' => 'galleri',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1698,7 +1698,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Portalkategori',
     'required' => 1,
     'settings' => array(
@@ -2584,8 +2584,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-media-field_site_structure'
-  $field_instances['node-media-field_site_structure'] = array(
+  // Exported field_instance: 'node-media-field_os2web_base_field_struct'
+  $field_instances['node-media-field_os2web_base_field_struct'] = array(
     'bundle' => 'media',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2611,7 +2611,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Overordnet placering',
     'required' => 1,
     'settings' => array(
@@ -2725,8 +2725,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rotating_image-field_promoteto'
-  $field_instances['node-rotating_image-field_promoteto'] = array(
+  // Exported field_instance: 'node-rotating_image-field_os2web_base_field_promote'
+  $field_instances['node-rotating_image-field_os2web_base_field_promote'] = array(
     'bundle' => 'rotating_image',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2753,7 +2753,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_promoteto',
+    'field_name' => 'field_os2web_base_field_promote',
     'label' => 'Forfrem til',
     'required' => 0,
     'settings' => array(
@@ -2768,8 +2768,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rotating_image-field_rotate_image'
-  $field_instances['node-rotating_image-field_rotate_image'] = array(
+  // Exported field_instance: 'node-rotating_image-field_os2web_base_field_rota_img'
+  $field_instances['node-rotating_image-field_os2web_base_field_rota_img'] = array(
     'bundle' => 'rotating_image',
     'deleted' => 0,
     'description' => '',
@@ -2798,7 +2798,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_rotate_image',
+    'field_name' => 'field_os2web_base_field_rota_img',
     'label' => 'Billede',
     'required' => 1,
     'settings' => array(
@@ -2838,8 +2838,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rotating_image-field_rotate_publish'
-  $field_instances['node-rotating_image-field_rotate_publish'] = array(
+  // Exported field_instance: 'node-rotating_image-field_os2web_base_field_rotate'
+  $field_instances['node-rotating_image-field_os2web_base_field_rotate'] = array(
     'bundle' => 'rotating_image',
     'deleted' => 0,
     'description' => '',
@@ -2871,7 +2871,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_rotate_publish',
+    'field_name' => 'field_os2web_base_field_rotate',
     'label' => 'Indløb / Udløb',
     'required' => 1,
     'settings' => array(
@@ -2897,8 +2897,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rotating_image-field_rotating_link'
-  $field_instances['node-rotating_image-field_rotating_link'] = array(
+  // Exported field_instance: 'node-rotating_image-field_os2web_base_field_rota_lnk'
+  $field_instances['node-rotating_image-field_os2web_base_field_rota_lnk'] = array(
     'bundle' => 'rotating_image',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2925,7 +2925,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_rotating_link',
+    'field_name' => 'field_os2web_base_field_rota_lnk',
     'label' => 'Link',
     'required' => 0,
     'settings' => array(
@@ -2956,8 +2956,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rotating_image-field_site_structure'
-  $field_instances['node-rotating_image-field_site_structure'] = array(
+  // Exported field_instance: 'node-rotating_image-field_os2web_base_field_struct'
+  $field_instances['node-rotating_image-field_os2web_base_field_struct'] = array(
     'bundle' => 'rotating_image',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2984,7 +2984,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Overordnet placering',
     'required' => 1,
     'settings' => array(
@@ -3240,8 +3240,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-selvbetjeningslinks-field_site_structure'
-  $field_instances['node-selvbetjeningslinks-field_site_structure'] = array(
+  // Exported field_instance: 'node-selvbetjeningslinks-field_os2web_base_field_struct'
+  $field_instances['node-selvbetjeningslinks-field_os2web_base_field_struct'] = array(
     'bundle' => 'selvbetjeningslinks',
     'default_value' => NULL,
     'deleted' => 0,
@@ -3268,7 +3268,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Portalkategori',
     'required' => 0,
     'settings' => array(

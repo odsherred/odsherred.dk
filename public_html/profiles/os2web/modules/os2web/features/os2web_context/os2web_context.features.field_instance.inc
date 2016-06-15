@@ -482,8 +482,8 @@ function os2web_context_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-local_plan-field_site_structure'
-  $field_instances['node-local_plan-field_site_structure'] = array(
+  // Exported field_instance: 'node-local_plan-field_os2web_base_field_struct'
+  $field_instances['node-local_plan-field_os2web_base_field_struct'] = array(
     'bundle' => 'local_plan',
     'default_value' => NULL,
     'deleted' => 0,
@@ -509,7 +509,7 @@ function os2web_context_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Overordnet placering',
     'required' => 1,
     'settings' => array(

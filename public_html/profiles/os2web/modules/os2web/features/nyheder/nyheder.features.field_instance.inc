@@ -615,8 +615,8 @@ Må ikke rettes, er juridisk gældende.',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_promoteto'
-  $field_instances['node-news-field_promoteto'] = array(
+  // Exported field_instance: 'node-news-field_os2web_base_field_promote'
+  $field_instances['node-news-field_os2web_base_field_promote'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
@@ -648,7 +648,7 @@ Må ikke rettes, er juridisk gældende.',
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_promoteto',
+    'field_name' => 'field_os2web_base_field_promote',
     'label' => 'Forfrem til',
     'required' => 0,
     'settings' => array(
@@ -911,8 +911,8 @@ Må ikke rettes, er juridisk gældende.',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_site_structure'
-  $field_instances['node-news-field_site_structure'] = array(
+  // Exported field_instance: 'node-news-field_os2web_base_field_struct'
+  $field_instances['node-news-field_os2web_base_field_struct'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
@@ -944,7 +944,7 @@ Må ikke rettes, er juridisk gældende.',
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Portalkategori',
     'required' => 1,
     'settings' => array(

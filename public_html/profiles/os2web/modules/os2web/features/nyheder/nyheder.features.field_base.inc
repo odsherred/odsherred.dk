@@ -262,13 +262,13 @@ function nyheder_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_promoteto'
-  $field_bases['field_promoteto'] = array(
+  // Exported field_base: 'field_os2web_base_field_promote'
+  $field_bases['field_os2web_base_field_promote'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_promoteto',
+    'field_name' => 'field_os2web_base_field_promote',
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -417,13 +417,13 @@ function nyheder_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_site_structure'
-  $field_bases['field_site_structure'] = array(
+  // Exported field_base: 'field_os2web_base_field_struct'
+  $field_bases['field_os2web_base_field_struct'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'indexes' => array(
       'tid' => array(
         0 => 'tid',

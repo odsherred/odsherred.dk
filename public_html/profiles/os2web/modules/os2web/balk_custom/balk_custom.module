@@ -252,14 +252,14 @@ function balk_custom_node_assign_term_action(&$node, $context) {
   $tids = $context['tids'];
 
   if (!empty($tids)) {
-    $node->field_site_structure[LANGUAGE_NONE] = array();
+    $node->field_os2web_base_field_struct[LANGUAGE_NONE] = array();
 
     $node->workbench_access = array();
     $tree = workbench_access_get_active_tree();
     $node->workbench_access_scheme = $tree['access_scheme'];
 
     foreach ($tids as $tid) {
-      $node->field_site_structure[LANGUAGE_NONE][] = array('tid' => $tid);
+      $node->field_os2web_base_field_struct[LANGUAGE_NONE][] = array('tid' => $tid);
       $node->workbench_access[$tid] = $tid;
     }
 

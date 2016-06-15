@@ -174,16 +174,16 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Content: Portalkategori (field_site_structure) */
-  $handler->display->display_options['filters']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
-  $handler->display->display_options['filters']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator_id'] = 'field_site_structure_tid_op';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['label'] = 'Kategori';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['operator'] = 'field_site_structure_tid_op';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['identifier'] = 'field_site_structure_tid';
-  $handler->display->display_options['filters']['field_site_structure_tid']['expose']['remember_roles'] = array(
+  /* Filterkriterie: Content: Portalkategori (field_os2web_base_field_struct) */
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['id'] = 'field_os2web_base_field_struct_tid';
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['table'] = 'field_data_field_os2web_base_field_struct';
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['field'] = 'field_os2web_base_field_struct_tid';
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['expose']['operator_id'] = 'field_os2web_base_field_struct_tid_op';
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['expose']['label'] = 'Kategori';
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['expose']['operator'] = 'field_os2web_base_field_struct_tid_op';
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['expose']['identifier'] = 'field_os2web_base_field_struct_tid';
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     6 => 0,
@@ -196,9 +196,9 @@ function os2web_kommuneinfo_views_default_views() {
     11 => 0,
     15 => 0,
   );
-  $handler->display->display_options['filters']['field_site_structure_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_site_structure_tid']['vocabulary'] = 'site_struktur';
-  $handler->display->display_options['filters']['field_site_structure_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['vocabulary'] = 'site_struktur';
+  $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['hierarchy'] = 1;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -366,20 +366,20 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Felt: Content: Portalkategori */
-  $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['label'] = '';
-  $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_site_structure']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['id'] = 'field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['table'] = 'field_data_field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['field'] = 'field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
   $handler->display->display_options['fields']['field_newstype']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_newstype']['alter']['text'] = '[field_site_structure] - [field_newstype] ';
+  $handler->display->display_options['fields']['field_newstype']['alter']['text'] = '[field_os2web_base_field_struct] - [field_newstype] ';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_newstype']['element_default_classes'] = FALSE;
@@ -546,20 +546,20 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Felt: Content: Portalkategori */
-  $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['label'] = '';
-  $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_site_structure']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['id'] = 'field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['table'] = 'field_data_field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['field'] = 'field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
   $handler->display->display_options['fields']['field_newstype']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_newstype']['alter']['text'] = '[field_site_structure] - [field_newstype] ';
+  $handler->display->display_options['fields']['field_newstype']['alter']['text'] = '[field_os2web_base_field_struct] - [field_newstype] ';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_newstype']['element_default_classes'] = FALSE;
@@ -734,16 +734,16 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Portalkategori */
-  $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['label'] = '';
-  $handler->display->display_options['fields']['field_site_structure']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_site_structure']['alter']['text'] = '[field_site_structure] - [field_newstype]';
-  $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_site_structure']['element_wrapper_type'] = 'h4';
-  $handler->display->display_options['fields']['field_site_structure']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_site_structure']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['id'] = 'field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['table'] = 'field_data_field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['field'] = 'field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['alter']['text'] = '[field_os2web_base_field_struct] - [field_newstype]';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_wrapper_type'] = 'h4';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
@@ -899,16 +899,16 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Portalkategori */
-  $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
-  $handler->display->display_options['fields']['field_site_structure']['label'] = '';
-  $handler->display->display_options['fields']['field_site_structure']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_site_structure']['alter']['text'] = '[field_site_structure] - [field_newstype]';
-  $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_site_structure']['element_wrapper_type'] = 'h4';
-  $handler->display->display_options['fields']['field_site_structure']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_site_structure']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['id'] = 'field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['table'] = 'field_data_field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['field'] = 'field_os2web_base_field_struct';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['alter']['text'] = '[field_os2web_base_field_struct] - [field_newstype]';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_wrapper_type'] = 'h4';
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_struct']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
@@ -2090,7 +2090,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     t('Kommuneinformation - Høringer - Side'),
     t('<h1>Aktuelle høringer</h1>'),
     t('Der er ingen aktuelle høringer.'),
-    t('[field_site_structure] - [field_newstype] '),
+    t('[field_os2web_base_field_struct] - [field_newstype] '),
     t('<p class="indrykket">[field_resume_long]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Svarfrist: [field_udloebsdato]</p>'),
@@ -2109,7 +2109,7 @@ Klagefrist: [field_udloebsdato]</p>'),
     t('Kommuneinformation - Udbud - Side'),
     t('<h1>Aktuelle udbud</h1>'),
     t('Der er ingen aktuelle udbud.'),
-    t('[field_site_structure] - [field_newstype]'),
+    t('[field_os2web_base_field_struct] - [field_newstype]'),
     t('<p class="indrykket">[field_resume_long]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Tilbudsfrist: [field_udloebsdato]</p>'),

@@ -1365,14 +1365,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-contentpage-field_rotate_publish'.
-  $fields['node-contentpage-field_rotate_publish'] = array(
+  // Exported field: 'node-contentpage-field_os2web_base_field_rotate'.
+  $fields['node-contentpage-field_os2web_base_field_rotate'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_rotate_publish',
+      'field_name' => 'field_os2web_base_field_rotate',
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -1426,7 +1426,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_rotate_publish',
+      'field_name' => 'field_os2web_base_field_rotate',
       'label' => 'Indløb / Udløb',
       'required' => 0,
       'settings' => array(
@@ -1453,14 +1453,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-contentpage-field_site_structure'.
-  $fields['node-contentpage-field_site_structure'] = array(
+  // Exported field: 'node-contentpage-field_os2web_base_field_struct'.
+  $fields['node-contentpage-field_os2web_base_field_struct'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -1522,7 +1522,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'label' => 'Portalkategori',
       'required' => 0,
       'settings' => array(
@@ -2613,14 +2613,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-galleri-field_site_structure'.
-  $fields['node-galleri-field_site_structure'] = array(
+  // Exported field: 'node-galleri-field_os2web_base_field_struct'.
+  $fields['node-galleri-field_os2web_base_field_struct'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -2675,7 +2675,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'label' => 'Portalkategori',
       'required' => 1,
       'settings' => array(
@@ -4101,14 +4101,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-media-field_site_structure'.
-  $fields['node-media-field_site_structure'] = array(
+  // Exported field: 'node-media-field_os2web_base_field_struct'.
+  $fields['node-media-field_os2web_base_field_struct'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -4163,7 +4163,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'label' => 'Overordnet placering',
       'required' => 1,
       'settings' => array(
@@ -5070,14 +5070,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_promoteto'.
-  $fields['node-news-field_promoteto'] = array(
+  // Exported field: 'node-news-field_os2web_base_field_promote'.
+  $fields['node-news-field_os2web_base_field_promote'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_promoteto',
+      'field_name' => 'field_os2web_base_field_promote',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -5138,7 +5138,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_promoteto',
+      'field_name' => 'field_os2web_base_field_promote',
       'label' => 'Forfrem til',
       'required' => 0,
       'settings' => array(
@@ -5560,14 +5560,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_site_structure'.
-  $fields['node-news-field_site_structure'] = array(
+  // Exported field: 'node-news-field_os2web_base_field_struct'.
+  $fields['node-news-field_os2web_base_field_struct'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -5628,7 +5628,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'label' => 'Portalkategori',
       'required' => 1,
       'settings' => array(
@@ -6145,14 +6145,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-rotating_image-field_promoteto'.
-  $fields['node-rotating_image-field_promoteto'] = array(
+  // Exported field: 'node-rotating_image-field_os2web_base_field_promote'.
+  $fields['node-rotating_image-field_os2web_base_field_promote'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_promoteto',
+      'field_name' => 'field_os2web_base_field_promote',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -6208,7 +6208,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_promoteto',
+      'field_name' => 'field_os2web_base_field_promote',
       'label' => 'Forfrem til',
       'required' => 0,
       'settings' => array(
@@ -6224,14 +6224,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-rotating_image-field_rotate_image'.
-  $fields['node-rotating_image-field_rotate_image'] = array(
+  // Exported field: 'node-rotating_image-field_os2web_base_field_rota_img'.
+  $fields['node-rotating_image-field_os2web_base_field_rota_img'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_rotate_image',
+      'field_name' => 'field_os2web_base_field_rota_img',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -6283,7 +6283,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_rotate_image',
+      'field_name' => 'field_os2web_base_field_rota_img',
       'label' => 'Billede',
       'required' => 1,
       'settings' => array(
@@ -6324,14 +6324,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-rotating_image-field_rotate_publish'.
-  $fields['node-rotating_image-field_rotate_publish'] = array(
+  // Exported field: 'node-rotating_image-field_os2web_base_field_rotate'.
+  $fields['node-rotating_image-field_os2web_base_field_rotate'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_rotate_publish',
+      'field_name' => 'field_os2web_base_field_rotate',
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -6386,7 +6386,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_rotate_publish',
+      'field_name' => 'field_os2web_base_field_rotate',
       'label' => 'Indløb / Udløb',
       'required' => 1,
       'settings' => array(
@@ -6413,14 +6413,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-rotating_image-field_rotating_link'.
-  $fields['node-rotating_image-field_rotating_link'] = array(
+  // Exported field: 'node-rotating_image-field_os2web_base_field_rota_lnk'.
+  $fields['node-rotating_image-field_os2web_base_field_rota_lnk'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_rotating_link',
+      'field_name' => 'field_os2web_base_field_rota_lnk',
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -6470,7 +6470,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_rotating_link',
+      'field_name' => 'field_os2web_base_field_rota_lnk',
       'label' => 'Link',
       'required' => 0,
       'settings' => array(
@@ -6502,14 +6502,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-rotating_image-field_site_structure'.
-  $fields['node-rotating_image-field_site_structure'] = array(
+  // Exported field: 'node-rotating_image-field_os2web_base_field_struct'.
+  $fields['node-rotating_image-field_os2web_base_field_struct'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -6565,7 +6565,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'label' => 'Overordnet placering',
       'required' => 1,
       'settings' => array(
@@ -6994,14 +6994,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-selvbetjeningslinks-field_site_structure'.
-  $fields['node-selvbetjeningslinks-field_site_structure'] = array(
+  // Exported field: 'node-selvbetjeningslinks-field_os2web_base_field_struct'.
+  $fields['node-selvbetjeningslinks-field_os2web_base_field_struct'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -7057,7 +7057,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'label' => 'Portalkategori',
       'required' => 0,
       'settings' => array(

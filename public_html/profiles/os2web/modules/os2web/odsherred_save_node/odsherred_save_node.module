@@ -31,9 +31,9 @@ function odsherred_save_node_node_presave($node){
     $menu_name = $node->menu['menu_name'];
   }
 
-  if(isset($node->field_site_structure)){
-    if(empty($node->field_site_structure[LANGUAGE_NONE]) || $node->type == 'contentpage'){
-      $node->field_site_structure[LANGUAGE_NONE][0]['tid'] = $menu_term[$menu_name]; 
+  if(isset($node->field_os2web_base_field_struct)){
+    if(empty($node->field_os2web_base_field_struct[LANGUAGE_NONE]) || $node->type == 'contentpage'){
+      $node->field_os2web_base_field_struct[LANGUAGE_NONE][0]['tid'] = $menu_term[$menu_name]; 
     }
   }
 }

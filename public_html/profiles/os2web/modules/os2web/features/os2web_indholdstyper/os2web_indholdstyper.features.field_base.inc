@@ -496,13 +496,13 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_rotate_image'
-  $field_bases['field_rotate_image'] = array(
+  // Exported field_base: 'field_os2web_base_field_rota_img'
+  $field_bases['field_os2web_base_field_rota_img'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_rotate_image',
+    'field_name' => 'field_os2web_base_field_rota_img',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -518,13 +518,13 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_rotate_publish'
-  $field_bases['field_rotate_publish'] = array(
+  // Exported field_base: 'field_os2web_base_field_rotate'
+  $field_bases['field_os2web_base_field_rotate'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_rotate_publish',
+    'field_name' => 'field_os2web_base_field_rotate',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -547,13 +547,13 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_rotating_link'
-  $field_bases['field_rotating_link'] = array(
+  // Exported field_base: 'field_os2web_base_field_rota_lnk'
+  $field_bases['field_os2web_base_field_rota_lnk'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_rotating_link',
+    'field_name' => 'field_os2web_base_field_rota_lnk',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',

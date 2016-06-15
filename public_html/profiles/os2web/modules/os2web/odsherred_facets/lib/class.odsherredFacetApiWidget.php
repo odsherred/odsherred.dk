@@ -14,7 +14,7 @@ class OdsherredFacetApiWidget extends FacetapiWidget {
 
     $markup = '<ul class="'.$this->facet['field alias'].' custom-facet">';
 
-    if($this->facet['field alias'] == 'im_field_site_structure'){
+    if($this->facet['field alias'] == 'im_field_os2web_base_field_struct'){
       $markup .= '<li class="all"><a href="?">Alle resultater</a></li>';
     }
 
