@@ -5446,14 +5446,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_side_baggrungsbillede'.
-  $fields['node-news-field_side_baggrungsbillede'] = array(
+  // Exported field: 'node-news-field_os2web_frontend_bg_file'.
+  $fields['node-news-field_os2web_frontend_bg_file'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_side_baggrungsbillede',
+      'field_name' => 'field_os2web_frontend_bg_file',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -5511,7 +5511,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_side_baggrungsbillede',
+      'field_name' => 'field_os2web_frontend_bg_file',
       'label' => 'Baggrundsbillede',
       'required' => 0,
       'settings' => array(

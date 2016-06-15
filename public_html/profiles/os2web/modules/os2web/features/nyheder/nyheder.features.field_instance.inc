@@ -826,8 +826,8 @@ Må ikke rettes, er juridisk gældende.',
     ),
   );
 
-  // Exported field_instance: 'node-news-field_side_baggrungsbillede'
-  $field_instances['node-news-field_side_baggrungsbillede'] = array(
+  // Exported field_instance: 'node-news-field_os2web_frontend_bg_file'
+  $field_instances['node-news-field_os2web_frontend_bg_file'] = array(
     'bundle' => 'news',
     'deleted' => 0,
     'description' => 'Bruges til baggrund hvis nyheden vises på forsiden.',
@@ -862,7 +862,7 @@ Må ikke rettes, er juridisk gældende.',
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_side_baggrungsbillede',
+    'field_name' => 'field_os2web_frontend_bg_file',
     'label' => 'Baggrundsbillede',
     'required' => 0,
     'settings' => array(

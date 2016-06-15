@@ -312,17 +312,17 @@ function os2web_grund_paneler_views_default_views() {
   );
   $handler->display->display_options['fields']['field_lead_image']['delta_offset'] = '0';
   /* Felt: Content: Baggrundsbillede */
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['id'] = 'field_side_baggrungsbillede';
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['table'] = 'field_data_field_side_baggrungsbillede';
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['field'] = 'field_side_baggrungsbillede';
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['label'] = '';
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['element_wrapper_class'] = 'background-images';
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['type'] = 'image_url';
-  $handler->display->display_options['fields']['field_side_baggrungsbillede']['settings'] = array(
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['id'] = 'field_os2web_frontend_bg_file';
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['table'] = 'field_data_field_os2web_frontend_bg_file';
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['field'] = 'field_os2web_frontend_bg_file';
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['element_wrapper_class'] = 'background-images';
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_os2web_frontend_bg_file']['settings'] = array(
     'image_style' => 'fullscreen',
     'image_link' => '',
   );
@@ -354,11 +354,11 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
   $handler->display->display_options['filters']['field_newstype_tid']['hierarchy'] = 1;
-  /* Filterkriterie: Content: Baggrundsbillede (field_side_baggrungsbillede:alt) */
-  $handler->display->display_options['filters']['field_side_baggrungsbillede_alt']['id'] = 'field_side_baggrungsbillede_alt';
-  $handler->display->display_options['filters']['field_side_baggrungsbillede_alt']['table'] = 'field_data_field_side_baggrungsbillede';
-  $handler->display->display_options['filters']['field_side_baggrungsbillede_alt']['field'] = 'field_side_baggrungsbillede_alt';
-  $handler->display->display_options['filters']['field_side_baggrungsbillede_alt']['operator'] = 'not empty';
+  /* Filterkriterie: Content: Baggrundsbillede (field_os2web_frontend_bg_file:alt) */
+  $handler->display->display_options['filters']['field_os2web_frontend_bg_file_alt']['id'] = 'field_os2web_frontend_bg_file_alt';
+  $handler->display->display_options['filters']['field_os2web_frontend_bg_file_alt']['table'] = 'field_data_field_os2web_frontend_bg_file';
+  $handler->display->display_options['filters']['field_os2web_frontend_bg_file_alt']['field'] = 'field_os2web_frontend_bg_file_alt';
+  $handler->display->display_options['filters']['field_os2web_frontend_bg_file_alt']['operator'] = 'not empty';
 
   /* Display: Blok */
   $handler = $view->new_display('block', 'Blok', 'block_1');

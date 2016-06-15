@@ -10,8 +10,8 @@
 function os2web_design_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-baggrund-field_side_baggrungsbillede'
-  $field_instances['node-baggrund-field_side_baggrungsbillede'] = array(
+  // Exported field_instance: 'node-baggrund-field_os2web_frontend_bg_file'
+  $field_instances['node-baggrund-field_os2web_frontend_bg_file'] = array(
     'bundle' => 'baggrund',
     'deleted' => 0,
     'description' => '',
@@ -40,7 +40,7 @@ function os2web_design_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_side_baggrungsbillede',
+    'field_name' => 'field_os2web_frontend_bg_file',
     'label' => 'Baggrundsbillede',
     'required' => 0,
     'settings' => array(

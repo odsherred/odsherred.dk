@@ -338,7 +338,7 @@ function os2web_indholdstyper_field_group_info() {
     'weight' => '7',
     'children' => array(
       0 => 'field_os2web_base_field_promote',
-      1 => 'field_side_baggrungsbillede',
+      1 => 'field_os2web_frontend_bg_file',
       2 => 'field_skjul_relaterede_links',
       3 => 'path',
       4 => 'redirect',
