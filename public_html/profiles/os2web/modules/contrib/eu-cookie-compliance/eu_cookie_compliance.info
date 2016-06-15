@@ -1,0 +1,10 @@
+name = EU Cookie Compliance
+description = This module aims at making the website compliant with the new EU cookie regulation 
+core = 7.x
+
+; Information added by drupal.org packaging script on 2013-04-22
+version = "7.x-1.9"
+core = "7.x"
+project = "eu-cookie-compliance"
+datestamp = "1366648515"
+

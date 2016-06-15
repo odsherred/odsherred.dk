@@ -1,0 +1,19 @@
+
+name = Search cloud
+description = "Provides a block that shows a tag cloud of search terms"
+dependencies[] = search
+core = 7.x
+package = Search
+
+files[] = searchcloud_block.module
+files[] = searchcloud_block.api.inc
+files[] = searchcloud_block.admin.inc
+
+configure = admin/config/search/searchcloud_block
+
+; Information added by drupal.org packaging script on 2013-02-06
+version = "7.x-1.2"
+core = "7.x"
+project = "searchcloud_block"
+datestamp = "1360143795"
+

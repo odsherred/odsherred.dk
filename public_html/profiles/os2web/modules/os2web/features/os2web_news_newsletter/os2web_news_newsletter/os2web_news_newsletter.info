@@ -1,0 +1,11 @@
+name = OS2web - News Newsletter
+description = Using News and typr to crearte a list of news to copy past to a newsletter system manually
+core = 7.x
+package = Features
+version = 7.x-1.12
+project = os2web_news_newsletter
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = nyhedsbrev

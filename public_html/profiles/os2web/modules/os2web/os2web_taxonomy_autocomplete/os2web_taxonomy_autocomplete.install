@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Implements methods for the installation of the module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function os2web_taxonomy_autocomplete_install() {
+  // Placeholder.
+}
+
+/**
+ * Implmements hook_uninstall().
+ */
+function os2web_taxonomy_autocomplete_uninstall() {
+  // Placeholder.
+}
+
+/**
+ * Implements hook_enable().
+ *
+ * Make sure this modules hooks are called after taxonomy and i18ntaxonomy.
+ */
+function os2web_taxonomy_autocomplete_enable() {
+  $weight = db_query("SELECT weight FROM {system} WHERE name IN (:tax, :i18n) ORDER by weight DESC", array(':tax' => 'taxonomy', ':i18n' => 'i18ntaxonomy'))->fetchField();
+  $weight++;
+  db_query("UPDATE {system} SET weight = :weight WHERE name  = :settings", array(':weight' => $weight, ':settings' => 'os2web_taxonomy_autocomplete'));
+}

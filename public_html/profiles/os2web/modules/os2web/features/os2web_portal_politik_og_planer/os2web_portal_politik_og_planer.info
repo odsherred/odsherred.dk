@@ -1,0 +1,11 @@
+name = OS2Web Portal - Politik og Planer
+core = 7.x
+package = OS2Web - Portaler
+version = 1.11
+project = OS2Web
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = term_view_panel_context_4
+timestamp = 1369904058

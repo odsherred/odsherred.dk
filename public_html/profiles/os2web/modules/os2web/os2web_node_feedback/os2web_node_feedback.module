@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * Code for the OS2Web - Node feedback feature.
+ */
+include_once 'os2web_node_feedback.features.inc';
+
+/**
+ * Implements hook_feedback_insert().
+ */
+function os2web_node_feedback_feedback_insert($entry) {
+  $mail_to = variable_get('os2web_node_feedback_mail', FALSE);
+  if (FALSE === $mail_to) {
+    return;
+  }
+  $account = user_load($entry->uid);
+  // Load substitutions.
+  $entry = array(
+    '!location' => url($entry->location, array('absolute' => TRUE)),
+    '!message' => check_plain($entry->message),
+    '!user' => format_username($account),
+    '!email' => isset($entry->field_feedback_email[und][0]['value']) ? $entry->field_feedback_email[und][0]['value'] : t('Anonymous'),
+    '!date' => format_date($entry->timestamp),
+    '!fid' => $entry->fid,
+  );
+  // Set up the mail body.
+  $mail_body = t('Feedback entry') . ": !fid\n";
+  $mail_body .= t('Location') . ":\n  !location\n";
+  $mail_body .= t('Date') . ":\n  !date\n";
+  $mail_body .= t('User') . ":\n !user (!email)\n";
+  $mail_body .= t('Message') . ":\n !message\n";
+
+  $from = variable_get('site_mail','');
+  $my_module = 'os2web_node_feedback';
+  $my_mail_token = 'feedbackmail';
+  $message = array(
+    'id' => $my_module . '_' . $my_mail_token,
+    'to' => $mail_to,
+    'subject' => t('New feedback entry, !fid', $entry),
+    'body' => format_string($mail_body, $entry),
+    'headers' => array(
+      'From' => $from,
+      'Sender' => $from,
+      'Return-Path' => $from,
+    ),
+  );
+  // Send mail.
+  $system = drupal_mail_system($my_module, $my_mail_token);
+  if ($system->mail($message)) {
+    // Success.
+    }
+  else {
+    // Failure.
+    watchdog('os2web feedback','Message failed delivery, check site email settings.','warning');
+  }
+}
+
+/**
+ * Implements hook_FORM_alter().
+ */
+function os2web_node_feedback_form_os2web_settings_settings_form_alter(&$form, &$form_state) {
+  // MM configuration.
+  $form['feedback'] = array(
+    '#type' => 'fieldset',
+  );
+  $form['feedback']['os2web_node_feedback_mail'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Modtager af mail fra feedback modulet',
+    '#description' => 'Hvis tom vil der ikke blive udsendt mails. Mail kommer i html format',
+    '#default_value' => variable_get('os2web_node_feedback_mail'),
+  );
+  $form['#validate'][] = 'os2web_node_feedback_form_os2web_settings_settings_form_validate';
+}
+
+/**
+ * Implements hook_FORM_validate().
+ */
+function os2web_node_feedback_form_os2web_settings_settings_form_validate($form, &$form_state) {
+  if (!valid_email_address($form_state['values']['os2web_node_feedback_mail'])) {
+    form_set_error('os2web_node_feedback_mail', t('Your email address appears malformed'));
+  }
+}

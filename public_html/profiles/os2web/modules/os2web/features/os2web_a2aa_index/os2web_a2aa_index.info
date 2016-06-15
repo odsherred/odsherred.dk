@@ -1,0 +1,11 @@
+name = OS2Web - A-Å index
+core = 7.x
+package = Features
+version = 1.11
+project = OS2Web
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = a_aa_index
+timestamp = 1369904058
