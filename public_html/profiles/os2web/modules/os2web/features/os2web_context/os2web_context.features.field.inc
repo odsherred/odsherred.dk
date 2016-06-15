@@ -1441,14 +1441,14 @@ function os2web_context_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-local_plan-field_inherit_right_column'.
-  $fields['node-local_plan-field_inherit_right_column'] = array(
+  // Exported field: 'node-local_plan-field_os2web_base_field_inh_colm'.
+  $fields['node-local_plan-field_os2web_base_field_inh_colm'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_inherit_right_column',
+      'field_name' => 'field_os2web_base_field_inh_colm',
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -1497,7 +1497,7 @@ function os2web_context_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_inherit_right_column',
+      'field_name' => 'field_os2web_base_field_inh_colm',
       'label' => 'Nedarv højrespalte ',
       'required' => 0,
       'settings' => array(
@@ -1618,14 +1618,14 @@ function os2web_context_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-local_plan-field_parent_node'.
-  $fields['node-local_plan-field_parent_node'] = array(
+  // Exported field: 'node-local_plan-field_os2web_base_field_parent'.
+  $fields['node-local_plan-field_os2web_base_field_parent'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_parent_node',
+      'field_name' => 'field_os2web_base_field_parent',
       'foreign keys' => array(
         'nid' => array(
           'columns' => array(
@@ -1701,7 +1701,7 @@ function os2web_context_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_parent_node',
+      'field_name' => 'field_os2web_base_field_parent',
       'label' => 'Forældre-menupunk',
       'required' => 0,
       'settings' => array(

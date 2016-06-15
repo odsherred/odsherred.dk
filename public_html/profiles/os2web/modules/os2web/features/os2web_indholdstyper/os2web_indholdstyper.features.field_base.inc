@@ -155,13 +155,13 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_foto'
-  $field_bases['field_foto'] = array(
+  // Exported field_base: 'field_os2web_base_field_photo'
+  $field_bases['field_os2web_base_field_photo'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_foto',
+    'field_name' => 'field_os2web_base_field_photo',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -198,13 +198,13 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_iframe_url'
-  $field_bases['field_iframe_url'] = array(
+  // Exported field_base: 'field_os2web_base_field_iframe'
+  $field_bases['field_os2web_base_field_iframe'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_iframe_url',
+    'field_name' => 'field_os2web_base_field_iframe',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -284,13 +284,13 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_inherit_right_column'
-  $field_bases['field_inherit_right_column'] = array(
+  // Exported field_base: 'field_os2web_base_field_inh_colm'
+  $field_bases['field_os2web_base_field_inh_colm'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_inherit_right_column',
+    'field_name' => 'field_os2web_base_field_inh_colm',
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -447,13 +447,13 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_parent_node'
-  $field_bases['field_parent_node'] = array(
+  // Exported field_base: 'field_os2web_base_field_parent'
+  $field_bases['field_os2web_base_field_parent'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_parent_node',
+    'field_name' => 'field_os2web_base_field_parent',
     'indexes' => array(
       'nid' => array(
         0 => 'nid',

@@ -520,8 +520,8 @@ function os2web_spotbokse_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spotbox-field_spotbox_image_tall'
-  $field_instances['node-spotbox-field_spotbox_image_tall'] = array(
+  // Exported field_instance: 'node-spotbox-field_os2web_spotbox_image_tall'
+  $field_instances['node-spotbox-field_os2web_spotbox_image_tall'] = array(
     'bundle' => 'spotbox',
     'deleted' => 0,
     'description' => '',
@@ -556,7 +556,7 @@ function os2web_spotbokse_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_spotbox_image_tall',
+    'field_name' => 'field_os2web_spotbox_image_tall',
     'label' => 'Højt billede',
     'required' => 0,
     'settings' => array(
@@ -597,8 +597,8 @@ function os2web_spotbokse_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spotbox-field_spotbox_video'
-  $field_instances['node-spotbox-field_spotbox_video'] = array(
+  // Exported field_instance: 'node-spotbox-field_os2web_spotbox_video'
+  $field_instances['node-spotbox-field_os2web_spotbox_video'] = array(
     'bundle' => 'spotbox',
     'deleted' => 0,
     'description' => '',
@@ -633,7 +633,7 @@ function os2web_spotbokse_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_spotbox_video',
+    'field_name' => 'field_os2web_spotbox_video',
     'label' => 'Video',
     'required' => 0,
     'settings' => array(
@@ -677,8 +677,8 @@ function os2web_spotbokse_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spotbox-field_stort_billede_spot5'
-  $field_instances['node-spotbox-field_stort_billede_spot5'] = array(
+  // Exported field_instance: 'node-spotbox-field_os2web_spotbox_big_image'
+  $field_instances['node-spotbox-field_os2web_spotbox_big_image'] = array(
     'bundle' => 'spotbox',
     'deleted' => 0,
     'description' => '',
@@ -713,7 +713,7 @@ function os2web_spotbokse_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_stort_billede_spot5',
+    'field_name' => 'field_os2web_spotbox_big_image',
     'label' => 'Stort billede',
     'required' => 0,
     'settings' => array(
@@ -852,8 +852,8 @@ function os2web_spotbokse_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spotbox-field_text'
-  $field_instances['node-spotbox-field_text'] = array(
+  // Exported field_instance: 'node-spotbox-field_os2web_base_field_text'
+  $field_instances['node-spotbox-field_os2web_base_field_text'] = array(
     'bundle' => 'spotbox',
     'default_value' => NULL,
     'deleted' => 0,
@@ -886,7 +886,7 @@ function os2web_spotbokse_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_text',
+    'field_name' => 'field_os2web_base_field_text',
     'label' => 'Link tekst',
     'required' => 0,
     'settings' => array(

@@ -54,7 +54,7 @@ function os2web_spotbokse_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'field_url',
-      1 => 'field_text',
+      1 => 'field_os2web_base_field_text',
       2 => 'field_reference',
     ),
     'format_type' => 'htab',
@@ -144,8 +144,8 @@ function os2web_spotbokse_field_group_info() {
       3 => 'field_editortags',
       4 => 'field_politics',
       5 => 'field_os2web_base_field_promote',
-      6 => 'field_spotbox_image_tall',
-      7 => 'field_stort_billede_spot5',
+      6 => 'field_os2web_spotbox_image_tall',
+      7 => 'field_os2web_spotbox_big_image',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -173,7 +173,7 @@ function os2web_spotbokse_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'body',
-      1 => 'field_spotbox_video',
+      1 => 'field_os2web_spotbox_video',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

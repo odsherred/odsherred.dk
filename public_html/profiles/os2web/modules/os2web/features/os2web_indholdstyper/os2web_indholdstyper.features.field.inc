@@ -2039,14 +2039,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-galleri-field_foto'.
-  $fields['node-galleri-field_foto'] = array(
+  // Exported field: 'node-galleri-field_os2web_base_field_photo'.
+  $fields['node-galleri-field_os2web_base_field_photo'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_foto',
+      'field_name' => 'field_os2web_base_field_photo',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -2126,7 +2126,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_foto',
+      'field_name' => 'field_os2web_base_field_photo',
       'label' => 'Billeder',
       'required' => 0,
       'settings' => array(
@@ -2171,14 +2171,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-galleri-field_inherit_right_column'.
-  $fields['node-galleri-field_inherit_right_column'] = array(
+  // Exported field: 'node-galleri-field_os2web_base_field_inh_colm'.
+  $fields['node-galleri-field_os2web_base_field_inh_colm'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_inherit_right_column',
+      'field_name' => 'field_os2web_base_field_inh_colm',
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -2227,7 +2227,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_inherit_right_column',
+      'field_name' => 'field_os2web_base_field_inh_colm',
       'label' => 'Nedarv højrespalte',
       'required' => 0,
       'settings' => array(
@@ -2426,14 +2426,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-galleri-field_parent_node'.
-  $fields['node-galleri-field_parent_node'] = array(
+  // Exported field: 'node-galleri-field_os2web_base_field_parent'.
+  $fields['node-galleri-field_os2web_base_field_parent'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_parent_node',
+      'field_name' => 'field_os2web_base_field_parent',
       'foreign keys' => array(
         'nid' => array(
           'columns' => array(
@@ -2509,7 +2509,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_parent_node',
+      'field_name' => 'field_os2web_base_field_parent',
       'label' => 'Forældre-menupunkt',
       'required' => 0,
       'settings' => array(
@@ -3028,14 +3028,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-iframe_selvbetjeningsl_sning_mm-field_iframe_url'.
-  $fields['node-iframe_selvbetjeningsl_sning_mm-field_iframe_url'] = array(
+  // Exported field: 'node-iframe_selvbetjeningsl_sning_mm-field_os2web_base_field_iframe'.
+  $fields['node-iframe_selvbetjeningsl_sning_mm-field_os2web_base_field_iframe'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_iframe_url',
+      'field_name' => 'field_os2web_base_field_iframe',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -3087,7 +3087,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_iframe_url',
+      'field_name' => 'field_os2web_base_field_iframe',
       'label' => 'iFrame URL',
       'required' => 0,
       'settings' => array(
@@ -3500,14 +3500,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-iframe_selvbetjeningsl_sning_mm-field_text'.
-  $fields['node-iframe_selvbetjeningsl_sning_mm-field_text'] = array(
+  // Exported field: 'node-iframe_selvbetjeningsl_sning_mm-field_os2web_base_field_text'.
+  $fields['node-iframe_selvbetjeningsl_sning_mm-field_os2web_base_field_text'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_text',
+      'field_name' => 'field_os2web_base_field_text',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -3553,7 +3553,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_text',
+      'field_name' => 'field_os2web_base_field_text',
       'label' => 'Intro',
       'required' => 0,
       'settings' => array(
@@ -3652,14 +3652,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-media-field_inherit_right_column'.
-  $fields['node-media-field_inherit_right_column'] = array(
+  // Exported field: 'node-media-field_os2web_base_field_inh_colm'.
+  $fields['node-media-field_os2web_base_field_inh_colm'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_inherit_right_column',
+      'field_name' => 'field_os2web_base_field_inh_colm',
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -3708,7 +3708,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_inherit_right_column',
+      'field_name' => 'field_os2web_base_field_inh_colm',
       'label' => 'Nedarv højrespalte',
       'required' => 0,
       'settings' => array(
@@ -3924,14 +3924,14 @@ function os2web_indholdstyper_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-media-field_parent_node'.
-  $fields['node-media-field_parent_node'] = array(
+  // Exported field: 'node-media-field_os2web_base_field_parent'.
+  $fields['node-media-field_os2web_base_field_parent'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_parent_node',
+      'field_name' => 'field_os2web_base_field_parent',
       'foreign keys' => array(
         'nid' => array(
           'columns' => array(
@@ -4007,7 +4007,7 @@ function os2web_indholdstyper_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_parent_node',
+      'field_name' => 'field_os2web_base_field_parent',
       'label' => 'Forældre-menupunkt',
       'required' => 0,
       'settings' => array(

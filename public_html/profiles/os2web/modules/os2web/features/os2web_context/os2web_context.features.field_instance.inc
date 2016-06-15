@@ -170,8 +170,8 @@ function os2web_context_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-local_plan-field_inherit_right_column'
-  $field_instances['node-local_plan-field_inherit_right_column'] = array(
+  // Exported field_instance: 'node-local_plan-field_os2web_base_field_inh_colm'
+  $field_instances['node-local_plan-field_os2web_base_field_inh_colm'] = array(
     'bundle' => 'local_plan',
     'default_value' => array(
       0 => array(
@@ -201,7 +201,7 @@ function os2web_context_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_inherit_right_column',
+    'field_name' => 'field_os2web_base_field_inh_colm',
     'label' => 'Nedarv højrespalte ',
     'required' => 0,
     'settings' => array(
@@ -291,8 +291,8 @@ function os2web_context_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-local_plan-field_parent_node'
-  $field_instances['node-local_plan-field_parent_node'] = array(
+  // Exported field_instance: 'node-local_plan-field_os2web_base_field_parent'
+  $field_instances['node-local_plan-field_os2web_base_field_parent'] = array(
     'bundle' => 'local_plan',
     'default_value' => NULL,
     'deleted' => 0,
@@ -318,7 +318,7 @@ function os2web_context_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_parent_node',
+    'field_name' => 'field_os2web_base_field_parent',
     'label' => 'Forældre-menupunk',
     'required' => 0,
     'settings' => array(

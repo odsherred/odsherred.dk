@@ -83,9 +83,9 @@ function odsherredweb_preprocess_page(&$variables) {
   // Add the site structure term id to the page div
   $node = node_load(arg(1));
 
-  if (is_object($node) && isset($node->field_site_structure)) {
-    $termParents = taxonomy_get_parents($node->field_site_structure[LANGUAGE_NONE][0]['tid']);
-    $termId = 'tid-' . $node->field_site_structure[LANGUAGE_NONE][0]['tid'];
+  if (is_object($node) && isset($node->field_os2web_spotbox_sitestruct)) {
+    $termParents = taxonomy_get_parents($node->field_os2web_spotbox_sitestruct[LANGUAGE_NONE][0]['tid']);
+    $termId = 'tid-' . $node->field_os2web_spotbox_sitestruct[LANGUAGE_NONE][0]['tid'];
     $termIdParent = "";
     if (!empty($termParents)) {
       $termIdParent = 'tid-' . key($termParents);

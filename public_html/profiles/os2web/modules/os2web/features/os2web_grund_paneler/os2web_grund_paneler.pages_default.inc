@@ -750,7 +750,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->pid = 'new-6a874dd7-eff2-4b5a-9c0a-fcdd3b668264';
     $pane->panel = 'stack1';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_text';
+    $pane->subtype = 'node:field_os2web_base_field_text';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(

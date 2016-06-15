@@ -249,9 +249,9 @@ function os2web_indholdstyper_field_group_info() {
     'label' => 'Skjult',
     'weight' => '6',
     'children' => array(
-      0 => 'field_inherit_right_column',
+      0 => 'field_os2web_base_field_inh_colm',
       1 => 'field_lead_image',
-      2 => 'field_parent_node',
+      2 => 'field_os2web_base_field_parent',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

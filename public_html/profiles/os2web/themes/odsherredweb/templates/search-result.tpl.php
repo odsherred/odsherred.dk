@@ -66,10 +66,10 @@ $node = node_load($variables['result']['node']->entity_id);
 $termId = '';
 $termIdParent = '';
 
-if(is_object($node) && !empty($node->field_site_structure))
+if(is_object($node) && !empty($node->field_os2web_spotbox_sitestruct))
 {
-  $termId = 'tid-'.$node->field_site_structure[LANGUAGE_NONE][0]['tid'];
-  $termParents = taxonomy_get_parents($node->field_site_structure[LANGUAGE_NONE][0]['tid']);
+  $termId = 'tid-'.$node->field_os2web_spotbox_sitestruct[LANGUAGE_NONE][0]['tid'];
+  $termParents = taxonomy_get_parents($node->field_os2web_spotbox_sitestruct[LANGUAGE_NONE][0]['tid']);
   if(!empty($termParents))
   {
     $termIdParent = 'tid-'.key($termParents);  

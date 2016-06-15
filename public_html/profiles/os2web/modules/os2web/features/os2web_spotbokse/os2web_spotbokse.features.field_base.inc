@@ -94,13 +94,13 @@ function os2web_spotbokse_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_spotbox_image_tall'
-  $field_bases['field_spotbox_image_tall'] = array(
+  // Exported field_base: 'field_os2web_spotbox_image_tall'
+  $field_bases['field_os2web_spotbox_image_tall'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_spotbox_image_tall',
+    'field_name' => 'field_os2web_spotbox_image_tall',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -116,13 +116,13 @@ function os2web_spotbokse_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_spotbox_video'
-  $field_bases['field_spotbox_video'] = array(
+  // Exported field_base: 'field_os2web_spotbox_video'
+  $field_bases['field_os2web_spotbox_video'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_spotbox_video',
+    'field_name' => 'field_os2web_spotbox_video',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -138,13 +138,13 @@ function os2web_spotbokse_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_stort_billede_spot5'
-  $field_bases['field_stort_billede_spot5'] = array(
+  // Exported field_base: 'field_os2web_spotbox_big_image'
+  $field_bases['field_os2web_spotbox_big_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_stort_billede_spot5',
+    'field_name' => 'field_os2web_spotbox_big_image',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -160,13 +160,13 @@ function os2web_spotbokse_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_text'
-  $field_bases['field_text'] = array(
+  // Exported field_base: 'field_os2web_base_field_text'
+  $field_bases['field_os2web_base_field_text'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_text',
+    'field_name' => 'field_os2web_base_field_text',
     'indexes' => array(
       'format' => array(
         0 => 'format',
