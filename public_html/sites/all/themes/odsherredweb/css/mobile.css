@@ -163,25 +163,25 @@
     display: none !important;
   }
 
-  .view-spotboxe .spotwrapper {
+  .view-os2web_spotbox_view_spots .spotwrapper {
   }
 
-  .view-spotboxe .views-row {
+  .view-os2web_spotbox_view_spots .views-row {
     float: left;
     width: 50%;
     margin: 0 0;
   }
 
-  .view-spotboxe .views-row.views-row-odd {
+  .view-os2web_spotbox_view_spots .views-row.views-row-odd {
     clear: both;
   }
 
-  .view-spotboxe .views-row.views-row-odd .spotwrapper {
+  .view-os2web_spotbox_view_spots .views-row.views-row-odd .spotwrapper {
     display: block;
     margin-right: 5px;
   }
 
-  .view-spotboxe .views-row.views-row-even .spotwrapper {
+  .view-os2web_spotbox_view_spots .views-row.views-row-even .spotwrapper {
     display: block;
     margin-left: 5px;
   }
