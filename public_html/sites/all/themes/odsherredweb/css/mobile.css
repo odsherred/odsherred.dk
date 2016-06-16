@@ -143,10 +143,10 @@
   #region-header-second,
   #region-footer-second,
   #block-feedback-form,
-  .node-type-news.sidetitel,
-  .block-views-sitestuktur-block-2,
-  .block-views-sitestuktur-block-3,
-  .block-views-sitestuktur-block-4,
+  .node-type-os2web-base-news.sidetitel,
+  .block-views-os2web-base-panels-view-sitestru-block-2,
+  .block-views-os2web-base-panels-view-sitestru-block-3,
+  .block-views-os2web-base-panels-view-sitestru-block-4,
   #region-content .tabs,
   #region-content .sidetitel h1 slettesevt,
   #region-content .del-udskriv,
@@ -154,8 +154,8 @@
   .block-addtoany,
   .block-redaktoer-info-block,
   #toolbar,
-  #block-views-sitestuktur-block-2,
-  .node-type-news#block-block-11,
+  #block-views-os2web-base-panels-view-sitestru-block-2,
+  .node-type-os2web-base-news#block-block-11,
   .pane-menu-presseservice,
   .front #block-system-main,
   .contextual-links-wrapper,
@@ -426,39 +426,39 @@
     background: url('img/lineYellow.png') repeat-x;
   }
 
-  .node-type-contentpage .panel-region-stack2 {
+  .node-type-os2web-base-contentpage .panel-region-stack2 {
     background-color: #f0be03;
     padding: 10px;
     margin-bottom: 20px;
   }
 
-  .node-type-contentpage .panel-region-stack2 .view-kle-lonks-boks .item-list ul {
+  .node-type-os2web-base-contentpage .panel-region-stack2 .view-kle-lonks-boks .item-list ul {
     margin: 0;
   }
 
-  .node-type-contentpage .panel-region-stack2 a,
-  .node-type-contentpage .panel-region-stack2 h1,
-  .node-type-contentpage .panel-region-stack2 h2,
-  .node-type-contentpage .panel-region-stack2 h3,
-  .node-type-contentpage .panel-region-stack2 h4,
-  .node-type-contentpage .panel-region-stack2 h5,
-  .node-type-contentpage .panel-region-stack2 h6 {
+  .node-type-os2web-base-contentpage .panel-region-stack2 a,
+  .node-type-os2web-base-contentpage .panel-region-stack2 h1,
+  .node-type-os2web-base-contentpage .panel-region-stack2 h2,
+  .node-type-os2web-base-contentpage .panel-region-stack2 h3,
+  .node-type-os2web-base-contentpage .panel-region-stack2 h4,
+  .node-type-os2web-base-contentpage .panel-region-stack2 h5,
+  .node-type-os2web-base-contentpage .panel-region-stack2 h6 {
     color: #ffffff;
   }
 
-  .node-type-contentpage .panel-region-stack2 a,
-  .node-type-contentpage .panel-region-stack2 .views-field-title a {
+  .node-type-os2web-base-contentpage .panel-region-stack2 a,
+  .node-type-os2web-base-contentpage .panel-region-stack2 .views-field-title a {
     font-weight: normal;
     font-size: 14px;
     text-decoration: underline;
   }
 
-  .node-type-contentpage .panel-region-stack2 .panel-separator {
+  .node-type-os2web-base-contentpage .panel-region-stack2 .panel-separator {
     height: 20px;
   }
 
-  .node-type-contentpage .panel-region-stack2 .pane-selvbetjening .views-row,
-  .node-type-contentpage .panel-region-stack2 .pane-kle-lonks-boks-panel-pane-1 li {
+  .node-type-os2web-base-contentpage .panel-region-stack2 .pane-selvbetjening .views-row,
+  .node-type-os2web-base-contentpage .panel-region-stack2 .pane-kle-lonks-boks-panel-pane-1 li {
     display: list-item !important;
     margin: 0;
     list-style-position: inside !important;
@@ -467,7 +467,7 @@
     padding: 2px 0;
   }
 
-  .node-type-contentpage .panel-region-stack2 .pane-node-field-mediafile .pane-content {
+  .node-type-os2web-base-contentpage .panel-region-stack2 .pane-node-field-os2web-base-field-media .pane-content {
     padding-bottom: 10px;
   }
 
@@ -798,7 +798,7 @@
     clear: both;
   }
 
-  .list-8-bottom.news-page-list .views-field-field-lead-image {
+  .list-8-bottom.news-page-list .views-field-field-os2web-base-field-lead-img {
     float: left;
     margin-right: 8px;
     margin-bottom: 20px;
@@ -853,7 +853,7 @@
     padding: 8px;
   }
 
-  .node-type-news.field-type-image {
+  .node-type-os2web-base-news.field-type-image {
     margin-bottom: 12px;
   }
 

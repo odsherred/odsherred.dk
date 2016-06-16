@@ -37,7 +37,7 @@ ul#main-menu li .js-menu-minipanel-toggle:focus {
 }
 
 .zone-branding a:focus,
-.view-sitestuktur a:focus,
+.view-os2web-base-panels-view-sitestru a:focus,
 .front .view-aktuelt a:focus {
   font-weight: bold;
   text-decoration: underline;
@@ -55,7 +55,7 @@ ul#main-menu li .js-menu-minipanel-toggle:focus {
   outline: 1px dotted #ffffff;
 }
 
-.view-id-sitestuktur .views-field-name a:focus {
+.view-id-os2web-base-panels-view-sitestru .views-field-name a:focus {
   color: #000000 !important;
 }
 

@@ -97,7 +97,7 @@ ul.os2web_menus-container .megamenu-panel
     width: 700px;
 }
 
-.node-type-contentpage .field-slideshow-slide
+.node-type-os2web-base-contentpage .field-slideshow-slide
 {
     width: 510px;
 }
@@ -310,17 +310,17 @@ aside#region-sidebar-first.grid-3.region.region-sidebar-first
     width: 240px;
 }
 
-.responsive-layout-narrow .hovenyhed-portalside .views-field-field-lead-image
+.responsive-layout-narrow .hovenyhed-portalside .views-field-field-os2web-base-field-lead-img
 {
     width: 255px; height: auto;
 }
 
-.responsive-layout-narrow .hovenyhed-portalside .views-field-field-lead-image img
+.responsive-layout-narrow .hovenyhed-portalside .views-field-field-os2web-base-field-lead-img img
 {
     max-width: 100%; height: auto;
 }
 
-.responsive-layout-narrow .hovenyhed-portalside .views-field-field-lead-image a
+.responsive-layout-narrow .hovenyhed-portalside .views-field-field-os2web-base-field-lead-img a
 {
     width: 100%;
 }
@@ -334,7 +334,7 @@ aside#region-sidebar-first.grid-3.region.region-sidebar-first
     display: none !important;
 }
 
-.responsive-layout-narrow .view-id-sitestuktur .views-field-name a
+.responsive-layout-narrow .view-id-os2web-base-panels-view-sitestru .views-field-name a
 {font-size: 14px; 
 
     display: block; width: auto; height: auto; padding-top: 3px; padding-left: 28px;

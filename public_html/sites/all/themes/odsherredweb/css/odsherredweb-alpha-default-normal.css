@@ -89,7 +89,7 @@ ul#main-menu li.menu-784 a
     padding-left: 20px;
 }
 
-.menu-minipanels .view-megadd-news .views-field-field-lead-image
+.menu-minipanels .view-megadd-news .views-field-field-os2web-base-field-lead-img
 {
     float: left;
 
@@ -111,7 +111,7 @@ ul#main-menu li.menu-784 a
     margin-bottom: 10px;
 }
 
-.node-type-contentpage .field-slideshow-slide
+.node-type-os2web-base-contentpage .field-slideshow-slide
 {
     width: 690px;
 }
