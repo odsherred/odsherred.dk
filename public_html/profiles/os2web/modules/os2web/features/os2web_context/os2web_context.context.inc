@@ -38,9 +38,9 @@ function os2web_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-sitestuktur-block_2' => array(
+        'views-os2web_base_panels_view_sitestru-block_2' => array(
           'module' => 'views',
-          'delta' => 'sitestuktur-block_2',
+          'delta' => 'os2web_base_panels_view_sitestru-block_2',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
@@ -94,9 +94,9 @@ function os2web_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-sitestuktur-block_3' => array(
+        'views-os2web_base_panels_view_sitestru-block_3' => array(
           'module' => 'views',
-          'delta' => 'sitestuktur-block_3',
+          'delta' => 'os2web_base_panels_view_sitestru-block_3',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
@@ -148,9 +148,9 @@ function os2web_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-sitestuktur-block_4' => array(
+        'views-os2web_base_panels_view_sitestru-block_4' => array(
           'module' => 'views',
-          'delta' => 'sitestuktur-block_4',
+          'delta' => 'os2web_base_panels_view_sitestru-block_4',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),

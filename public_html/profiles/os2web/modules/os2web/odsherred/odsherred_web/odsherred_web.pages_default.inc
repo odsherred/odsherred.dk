@@ -65,7 +65,7 @@ function odsherred_web_default_page_manager_handlers() {
     $pane->pid = 'new-0f23c263-106f-4f6e-a948-21e858fdafb3';
     $pane->panel = 'lead';
     $pane->type = 'views_panes';
-    $pane->subtype = 'newslist-panel_pane_4';
+    $pane->subtype = 'os2web_base_panels_view_newslist-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(

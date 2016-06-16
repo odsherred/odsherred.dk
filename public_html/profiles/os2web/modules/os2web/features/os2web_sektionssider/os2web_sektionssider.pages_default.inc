@@ -71,7 +71,7 @@ function os2web_sektionssider_default_page_manager_handlers() {
     $pane->pid = 'new-2d79a73f-8d46-4d74-9c10-2565a36475cd';
     $pane->panel = 'lead';
     $pane->type = 'views';
-    $pane->subtype = 'rotating_image_view';
+    $pane->subtype = 'os2web_base_panels_view_rotating';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -151,7 +151,7 @@ function os2web_sektionssider_default_page_manager_handlers() {
     $pane->pid = 'new-b07683ea-eb26-44e1-950f-1fdcd2f88197';
     $pane->panel = 'middle_top';
     $pane->type = 'views_panes';
-    $pane->subtype = 'newslist-panel_pane_3';
+    $pane->subtype = 'os2web_base_panels_view_newslist-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(

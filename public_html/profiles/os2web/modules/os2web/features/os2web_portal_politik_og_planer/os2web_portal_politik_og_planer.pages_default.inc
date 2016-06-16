@@ -88,7 +88,7 @@ function os2web_portal_politik_og_planer_default_page_manager_handlers() {
     $pane->pid = 'new-790bec8d-23e4-496e-b6e6-33e760732a01';
     $pane->panel = 'middle_center';
     $pane->type = 'views_panes';
-    $pane->subtype = 'newslist-panel_pane_3';
+    $pane->subtype = 'os2web_base_panels_view_newslist-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(

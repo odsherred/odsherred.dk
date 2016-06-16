@@ -376,7 +376,7 @@ function nyheder_default_page_manager_handlers() {
     $pane->pid = 'new-290aadf3-ae45-4cd9-92ef-8064b54564d9';
     $pane->panel = 'stack2';
     $pane->type = 'views_panes';
-    $pane->subtype = 'kle_lonks_boks-panel_pane_1';
+    $pane->subtype = 'os2web_base_panels_view_kle_link-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(

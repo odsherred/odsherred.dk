@@ -668,7 +668,7 @@ function os2web_grund_paneler_views_default_views() {
   $export['aktuelt'] = $view;
 
   $view = new view();
-  $view->name = 'kle_lonks_boks';
+  $view->name = 'os2web_base_panels_view_kle_link';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -818,7 +818,7 @@ return $field==1?true:false;';
       'label' => 'Indhold: Nid',
     ),
   );
-  $translatables['kle_lonks_boks'] = array(
+  $translatables['os2web_base_panels_view_kle_link'] = array(
     t('Master'),
     t('KLE Links boks'),
     t('mere'),
@@ -834,7 +834,7 @@ return $field==1?true:false;';
     t('Content pane'),
     t('View panes'),
   );
-  $export['kle_lonks_boks'] = $view;
+  $export['os2web_base_panels_view_kle_link'] = $view;
 
   $view = new view();
   $view->name = 'megadd_news';
@@ -1055,7 +1055,7 @@ return $field==1?true:false;';
   $export['megadd_news'] = $view;
 
   $view = new view();
-  $view->name = 'newslist';
+  $view->name = 'os2web_base_panels_view_newslist';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -1653,7 +1653,7 @@ return $field==1?true:false;';
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
-  $translatables['newslist'] = array(
+  $translatables['os2web_base_panels_view_newslist'] = array(
     t('Master'),
     t('mere'),
     t('Udfør'),
@@ -1689,7 +1689,7 @@ return $field==1?true:false;';
     t('Hovednyhed - Portalside'),
     t('[title]'),
   );
-  $export['newslist'] = $view;
+  $export['os2web_base_panels_view_newslist'] = $view;
 
   $view = new view();
   $view->name = 'redaktoer_info';
@@ -1874,7 +1874,7 @@ return $field==1?true:false;';
   $export['redaktoer_info'] = $view;
 
   $view = new view();
-  $view->name = 'rotating_image_view';
+  $view->name = 'os2web_base_panels_view_rotating';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -2445,7 +2445,7 @@ return $field==1?true:false;';
     'rotating_image' => 'rotating_image',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  $translatables['rotating_image_view'] = array(
+  $translatables['os2web_base_panels_view_rotating'] = array(
     t('Master'),
     t('Rotating image view'),
     t('mere'),
@@ -2467,7 +2467,7 @@ return $field==1?true:false;';
     t('Har taksonomiterm'),
     t('Stor rotator - single2'),
   );
-  $export['rotating_image_view'] = $view;
+  $export['os2web_base_panels_view_rotating'] = $view;
 
   $view = new view();
   $view->name = 'selvbetjening';
@@ -3838,7 +3838,7 @@ return $field==1?true:false;';
   $export['selvbetjening'] = $view;
 
   $view = new view();
-  $view->name = 'sitestuktur';
+  $view->name = 'os2web_base_panels_view_sitestru';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
@@ -3971,7 +3971,7 @@ return $field==1?true:false;';
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $translatables['sitestuktur'] = array(
+  $translatables['os2web_base_panels_view_sitestru'] = array(
     t('Master'),
     t('mere'),
     t('Udfør'),
@@ -3997,7 +3997,7 @@ return $field==1?true:false;';
     t('Logo - Erhverv'),
     t('Logo - Politik og planer'),
   );
-  $export['sitestuktur'] = $view;
+  $export['os2web_base_panels_view_sitestru'] = $view;
 
   return $export;
 }
