@@ -399,7 +399,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->pid = 'new-4230a8df-5cbc-4149-9aaf-8c4e47290750';
     $pane->panel = 'stack2';
     $pane->type = 'views_panes';
-    $pane->subtype = 'kle_lonks_boks-panel_pane_1';
+    $pane->subtype = 'os2web_base_panels_view_kle_link-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -845,7 +845,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->pid = 'new-109fc443-59a1-45a3-a42c-6bcdedce875a';
     $pane->panel = 'stack2';
     $pane->type = 'views_panes';
-    $pane->subtype = 'kle_lonks_boks-panel_pane_1';
+    $pane->subtype = 'os2web_base_panels_view_kle_link-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1086,7 +1086,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->pid = 'new-1ed458e6-e240-4225-91ec-bc656522363d';
     $pane->panel = 'lead';
     $pane->type = 'views';
-    $pane->subtype = 'rotating_image_view';
+    $pane->subtype = 'os2web_base_panels_view_rotating';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1166,7 +1166,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->pid = 'new-0b848c6e-759f-426b-8b41-1b2a3c049262';
     $pane->panel = 'middle_top';
     $pane->type = 'views_panes';
-    $pane->subtype = 'newslist-panel_pane_3';
+    $pane->subtype = 'os2web_base_panels_view_newslist-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1452,7 +1452,7 @@ function os2web_grund_paneler_default_page_manager_pages() {
     $pane->pid = 'new-8d438a44-2f4d-4947-b152-83af4afe16d5';
     $pane->panel = 'left';
     $pane->type = 'views';
-    $pane->subtype = 'rotating_image_view';
+    $pane->subtype = 'os2web_base_panels_view_rotating';
     $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1489,7 +1489,7 @@ function os2web_grund_paneler_default_page_manager_pages() {
     $pane->pid = 'new-e67aff94-6aa4-4561-9d61-d9064df283f3';
     $pane->panel = 'left';
     $pane->type = 'views';
-    $pane->subtype = 'newslist';
+    $pane->subtype = 'os2web_base_panels_view_newslist';
     $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1551,7 +1551,7 @@ function os2web_grund_paneler_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'grid-4 omega alpha newslist-panel',
+      'css_class' => 'grid-4 omega alpha os2web_base_panels_view_newslist-panel',
     );
     $pane->extras = array();
     $pane->position = 3;

@@ -11,7 +11,7 @@ function os2web_spotbokse_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'spot_view';
+  $view->name = 'os2web_spotbox_view_spot';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -326,7 +326,7 @@ function os2web_spotbokse_views_default_views() {
     'title' => 0,
     'title_1' => 0,
   );
-  $translatables['spot_view'] = array(
+  $translatables['os2web_spotbox_view_spot'] = array(
     t('Master'),
     t('mere'),
     t('Udfør'),
@@ -356,7 +356,7 @@ function os2web_spotbokse_views_default_views() {
     t('<h3><a href=[field_url]>[title]'),
     t('Edit link'),
   );
-  $export['spot_view'] = $view;
+  $export['os2web_spotbox_view_spot'] = $view;
 
   $view = new view();
   $view->name = 'spotbox_referenceliste';
@@ -503,7 +503,7 @@ function os2web_spotbokse_views_default_views() {
   $export['spotbox_referenceliste'] = $view;
 
   $view = new view();
-  $view->name = 'spotboxe';
+  $view->name = 'os2web_spotbox_box';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -4017,7 +4017,7 @@ function os2web_spotbokse_views_default_views() {
       'label' => 'Indhold: Nid',
     ),
   );
-  $translatables['spotboxe'] = array(
+  $translatables['os2web_spotbox_box'] = array(
     t('Master'),
     t('Spotboxe'),
     t('mere'),
@@ -4115,7 +4115,7 @@ function os2web_spotbokse_views_default_views() {
     t('<div class="goto-wrapper">[nothing]</div><div class="border term-[tid] term-[tid_1]"></div>[field_fokus_sektionsforside_1]<div class="text">[body]</div>'),
     t('Edit link'),
   );
-  $export['spotboxe'] = $view;
+  $export['os2web_spotbox_box'] = $view;
 
   return $export;
 }

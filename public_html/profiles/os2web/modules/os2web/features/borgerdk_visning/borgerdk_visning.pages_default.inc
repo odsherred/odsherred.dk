@@ -271,7 +271,7 @@ function borgerdk_visning_default_page_manager_handlers() {
     $pane->pid = 'new-a5f946cb-95da-47a8-b21b-2f30b1571be1';
     $pane->panel = 'stack2';
     $pane->type = 'views_panes';
-    $pane->subtype = 'kle_lonks_boks-panel_pane_1';
+    $pane->subtype = 'os2web_base_panels_view_kle_link-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(

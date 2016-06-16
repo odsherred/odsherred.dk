@@ -629,7 +629,7 @@ function odsherred_web_default_panels_mini() {
     $pane->pid = 'new-8e2f24e8-b812-41bb-a56c-0f005f937eaa';
     $pane->panel = 'right';
     $pane->type = 'views_panes';
-    $pane->subtype = 'nyheder_hoeringer-panel_pane_1';
+    $pane->subtype = 'os2web_hearings_view_hearing-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -1223,7 +1223,7 @@ function odsherred_web_default_panels_mini() {
     $pane->pid = 'new-d6520d5a-1351-46bc-a648-96dc126ada70';
     $pane->panel = 'kol3';
     $pane->type = 'views_panes';
-    $pane->subtype = 'nyheder_hoeringer-panel_pane_1';
+    $pane->subtype = 'os2web_hearings_view_hearing-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();

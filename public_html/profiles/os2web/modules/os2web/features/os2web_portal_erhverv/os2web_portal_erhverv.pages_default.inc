@@ -88,7 +88,7 @@ function os2web_portal_erhverv_default_page_manager_handlers() {
     $pane->pid = 'new-9bb672aa-3745-495e-886e-dc99eea639e3';
     $pane->panel = 'lead';
     $pane->type = 'views';
-    $pane->subtype = 'rotating_image_view';
+    $pane->subtype = 'os2web_base_panels_view_rotating';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -165,7 +165,7 @@ function os2web_portal_erhverv_default_page_manager_handlers() {
     $pane->pid = 'new-fd879a38-d4aa-4a1c-aa91-db64a5dce5ff';
     $pane->panel = 'middle_top';
     $pane->type = 'views_panes';
-    $pane->subtype = 'newslist-panel_pane_3';
+    $pane->subtype = 'os2web_base_panels_view_newslist-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -290,7 +290,7 @@ function os2web_portal_erhverv_default_page_manager_handlers() {
     $pane->pid = 'new-b6bdb557-279f-4256-9705-9b423946a35b';
     $pane->panel = 'middle_top';
     $pane->type = 'views';
-    $pane->subtype = 'kle_lonks_boks';
+    $pane->subtype = 'os2web_base_panels_view_kle_link';
     $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(

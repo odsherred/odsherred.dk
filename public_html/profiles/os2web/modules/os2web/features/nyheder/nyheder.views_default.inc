@@ -713,7 +713,7 @@ function nyheder_views_default_views() {
   $export['news_page_views'] = $view;
 
   $view = new view();
-  $view->name = 'nyheder_hoeringer';
+  $view->name = 'os2web_hearings_view_hearing';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -1025,7 +1025,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_udloebsdato_value']['default_date'] = 'now';
-  $translatables['nyheder_hoeringer'] = array(
+  $translatables['os2web_hearings_view_hearing'] = array(
     t('Master'),
     t('I høring lige nu'),
     t('mere'),
@@ -1050,7 +1050,7 @@ function nyheder_views_default_views() {
     t('View panes'),
     t('Blok'),
   );
-  $export['nyheder_hoeringer'] = $view;
+  $export['os2web_hearings_view_hearing'] = $view;
 
   $view = new view();
   $view->name = 'nyheder_moedekalender';
@@ -1418,7 +1418,7 @@ function nyheder_views_default_views() {
   $export['nyheder_moedekalender'] = $view;
 
   $view = new view();
-  $view->name = 'nyheder_nyheder';
+  $view->name = 'os2web_news_page';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -1588,7 +1588,7 @@ function nyheder_views_default_views() {
   $handler = $view->new_display('panel_pane', 'MegaDD', 'panel_pane_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $translatables['nyheder_nyheder'] = array(
+  $translatables['os2web_news_page'] = array(
     t('Master'),
     t('Nyheder'),
     t('mere'),
@@ -1613,7 +1613,7 @@ function nyheder_views_default_views() {
     t('MegaDD'),
     t('View panes'),
   );
-  $export['nyheder_nyheder'] = $view;
+  $export['os2web_news_page'] = $view;
 
   $view = new view();
   $view->name = 'nyheder_udbud';
