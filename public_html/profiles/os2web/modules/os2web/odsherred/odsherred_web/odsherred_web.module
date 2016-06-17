@@ -258,6 +258,13 @@ function odsherred_web_rename() {
       db_update('views_display')
         ->expression('display_options', 'replace(display_options, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
         ->execute();
+      // Update content types in menus
+      db_update('menu_router')
+        ->expression('path', 'replace(path, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
+        ->expression('access_arguments', 'replace(access_arguments, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
+        ->expression('page_arguments', 'replace(page_arguments, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
+        ->expression('tab_root', 'replace(tab_root, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
+        ->execute();
     }
   }
 }
