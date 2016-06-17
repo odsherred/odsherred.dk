@@ -5,3 +5,259 @@
  */
 
 include_once 'odsherred_web.features.inc';
+
+/**
+ * Function for renaming fields and content types.
+ */
+function odsherred_web_rename() {
+  $new_field_tables = array();
+  $new_field_revision_tables = array();
+  print "Starting renaming fields...\n\n";
+  $fields = array(
+    # Nyhed (os2web_base_news)
+    'field_additional_info' => 'field_os2web_base_field_add_info',
+    'field_site_structure' => 'field_os2web_base_field_struct',
+    'field_resume_long' => 'field_os2web_base_field_summary',
+    'field_lead_image' => 'field_os2web_base_field_lead_img',
+    'field_mediafile' => 'field_os2web_base_field_media',
+    'field_termref_kle' => 'field_os2web_base_field_kle_ref',
+    'field_termref_sted' => 'field_os2web_base_field_loca_ref',
+    'field_organization' => 'field_os2web_base_field_organiz',
+    'field_politics' => 'field_os2web_base_field_politics',
+    'field_editortags' => 'field_os2web_base_field_edi_tags',
+    'field_promoteto' => 'field_os2web_base_field_promote',
+    'field_source_id' => 'field_os2web_base_field_sourceid',
+    'field_related' => 'field_os2web_base_field_related',
+    'field_related_tema' => 'field_os2web_base_field_rel_subj',
+
+    # Spotbox (os2web_spotbox_box)
+    'field_site_structure' => 'field_os2web_spotbox_sitestruct',
+    'field_termref_kle' => 'field_os2web_spotbox_ref_kle',
+    'field_lead_image' => 'field_os2web_spotbox_image_tall',
+    'field_spotbox_image_tall' => 'field_os2web_spotbox_image_tall',
+    'field_spotbox_video' => 'field_os2web_spotbox_video',
+    'field_text' => 'field_os2web_spotbox_text',
+    'field_url' => 'field_os2web_spotbox_url',
+    'field_termref_sted' => 'field_os2web_spotbox_ref_place',
+    'field_organization' => 'field_os2web_spotbox_organizati',
+    'field_politics' => 'field_os2web_spotbox_politics',
+    'field_editortags' => 'field_os2web_spotbox_editor_tags',
+    'field_promoteto' => 'field_os2web_spotbox_promote_to',
+    'field_stort_billede_spot5' => 'field_os2web_spotbox_big_image',
+
+    # Galleri (os2web_base_gallery)
+    'field_foto' => 'field_os2web_base_field_photo',
+    'field_lead_image' => 'field_os2web_base_field_lead_img',
+    'field_inherit_right_column' => 'field_os2web_base_field_inh_colm',
+    'field_parent_node' => 'field_os2web_base_field_parent',
+
+    # Ofir job (os2web_ofir_job)
+    'field_text' => 'field_os2web_ofir_job_text',
+    'field_period' => 'field_os2web_ofir_job_period',
+    'field_logo' => 'field_os2web_ofir_job_logo',
+
+    # Billedekarussel (os2web_base_rotating_image)
+    'field_site_structure' => 'field_os2web_base_field_struct',
+    'field_rotate_image' => 'field_os2web_base_field_rota_img',
+    'field_rotating_link' => 'field_os2web_base_field_rota_lnk',
+    'field_rotate_publish' => 'field_os2web_base_field_rotate',
+    'field_promoteto' => 'field_os2web_base_field_promote',
+
+    # Baggrund (os2web-frontend-background-img)
+    'field_side_baggrungsbillede' => 'field_os2web_frontend_bg_file',
+
+    # Kontaktblok (os2web_contact_contact)
+    'field_afdeling' => 'field_os2web_contact_field_dept',
+    'field_kontaktblok_callcenter' => 'field_os2web_contact_field_callc',
+    'field_kontaktblok_egetindhold' => 'field_os2web_contact_field_info',
+    'field_stedadresse' => 'field_os2web_contact_field_addr',
+    'field_stedpostnr' => 'field_os2web_contact_field_zip',
+    'field_email' => 'field_os2web_contact_field_email',
+    'field_phone1' => 'field_os2web_contact_field_phone',
+    'field_kontaktblok_vis_aabnen' => 'field_os2web_contact_field_show',
+    'field_kontaktblok_aa_manons' => 'field_os2web_contact_field_mowop',
+    'field_kontaktblok_aa_manolk' => 'field_os2web_contact_field_mowcl',
+    'field_kontaktblok_aa_manaa' => 'field_os2web_contact_field_monop',
+    'field_kontaktblok_aa_manlk' => 'field_os2web_contact_field_moncl',
+    'field_kontaktblok_aa_tiraa' => 'field_os2web_contact_field_tueop',
+    'field_kontaktblok_aa_tirlk' => 'field_os2web_contact_field_tuecl',
+    'field_kontaktblok_aa_onsaa' => 'field_os2web_contact_field_wedop',
+    'field_kontaktblok_aa_onslk' => 'field_os2web_contact_field_wedcl',
+    'field_kontaktblok_aa_toraa' => 'field_os2web_contact_field_thuop',
+    'field_kontaktblok_aa_torlk' => 'field_os2web_contact_field_thucl',
+    'field_kontaktblok_aa_freaa' => 'field_os2web_contact_field_friop',
+    'field_kontaktblok_aa_frelk' => 'field_os2web_contact_field_fricl',
+    'field_kontaktblok_aa_loeaa' => 'field_os2web_contact_field_satop',
+    'field_kontaktblok_aa_loelk' => 'field_os2web_contact_field_satcl',
+    'field_kontaktblok_aa_soeaa' => 'field_os2web_contact_field_sunop',
+    'field_kontaktblok_aa_soelk' => 'field_os2web_contact_field_suncl',
+
+    # Indholdsside (os2web_base_contentpage)
+    'field_resume_long' => 'field_os2web_base_field_summary',
+    'field_billede' => 'field_os2web_base_field_image',
+    'field_mediafile' => 'field_os2web_base_field_media',
+    'field_termref_sted' => 'field_os2web_base_field_loca_ref',
+    'field_organization' => 'field_os2web_base_field_organiz',
+    'field_politics' => 'field_os2web_base_field_politics',
+    'field_editortags' => 'field_os2web_base_field_edi_tags',
+    'field_skjul_relaterede_links' => 'field_os2web_base_field_hidlinks',
+    'field_indholdsside_spotboxe' => 'field_os2web_base_field_spotbox',
+    'field_noderef_selvbtjn' => 'field_os2web_base_field_selfserv',
+    'field_node_reference_kontaktblok' => 'field_os2web_base_field_contact',
+    'field_rotate_publish' => 'field_os2web_base_field_rotate',
+    'field_termref_kle' => 'field_os2web_base_field_kle_ref',
+
+    # Selvbetjeningslinks (os2web_base_selfservice_link)
+    'field_selvbetjeningslink_type' => 'field_os2web_base_field_type',
+    'field_attached_node' => 'field_os2web_base_field_ref_node',
+    'field_selvbetjening_direkte' => 'field_os2web_base_field_direct',
+    'field_site_structure' => 'field_os2web_base_field_struct',
+    'field_kilde' => 'field_os2web_base_field_source',
+    'field_gruppe_id' => 'field_os2web_base_field_grp_id',
+
+    # Iframe, Selvbetjeningsløsning mm.
+    'field_text' => 'field_os2web_base_field_text',
+    'field_iframe_url' => 'field_os2web_base_field_iframe',
+    'field_source_id' => 'field_os2web_base_field_sourceid',
+    'field_termref_sted' => 'field_os2web_base_field_loca_ref',
+    'field_organization' => 'field_os2web_base_field_organiz',
+    'field_politics' => 'field_os2web_base_field_politics',
+    'field_editortags' => 'field_os2web_base_field_edi_tags',
+
+    # borger.dk artikler
+    'field_billede' => 'field_os2web_borger_dk_image',
+  );
+  // Loop through each of the fields/tables with the old name and change them.
+  foreach($fields as $field_name => $new_field_name) {
+    print 'Renaming ' . $field_name . ' to ' . $new_field_name . "\n";
+
+    // First check that field_name exists.
+    if(!db_table_exists('field_data_' . $field_name)) {
+      // If we cannot find a data table then just continue.
+      drupal_set_message('field_data_' . $field_name . ' Table not found.');
+      continue;
+    }
+    // Define some things...
+    $data_table_name = 'field_data_' . $field_name;
+    $revision_table_name = 'field_revision_' . $field_name;
+    $field_info = field_info_field($field_name);
+    $storage_details = $field_info['storage']['details'];
+
+    // Create array with new field table names and field revision names
+    array_push($new_field_tables, 'field_data_' . $new_field_name);
+    array_push($new_field_revision_tables, 'field_revision_' . $new_field_name);
+
+    // The storage for each field has unique configuration. Must follow.
+    foreach($storage_details['sql']['FIELD_LOAD_CURRENT'] as $field) {
+      // Change the field names.
+      foreach($field as $key => $value) {
+        // Rename the field table columns and preserve existing spec. Let
+        // features take care of any configuration changes.
+        $spec = $field_info['columns'][$key];
+        db_change_field($data_table_name, $value, $new_field_name . "_" . $key, $spec);
+        db_change_field($revision_table_name, $value, $new_field_name . "_" . $key, $spec);
+      }
+    }
+
+    // Change the field storage table names.
+    db_rename_table($data_table_name, 'field_data_' . $new_field_name);
+    db_rename_table($revision_table_name, 'field_revision_' . $new_field_name);
+
+    // Change the field names in the field_config and
+    // field_instance_config tables
+    db_update('field_config')->fields(array('field_name' => $new_field_name))
+      ->condition('field_name', $field_name, '=')
+      ->execute();
+
+    $result = db_query('SELECT field_name, data FROM {field_config_instance} WHERE field_name = :name', array(':name' => $field_name));
+    foreach ($result as $record) {
+      $data = unserialize($record->data);
+
+     // Write settings back to the database.
+     db_update('field_config_instance')->fields(array(
+          'field_name' => $new_field_name,
+          'data' => serialize($data),
+        )
+      )
+      ->condition('field_name', $field_name, '=')
+      ->execute();
+    }
+    field_cache_clear(TRUE);
+  }
+
+  // Start renaming content types
+  print "Starting renaming content types...\n\n";
+
+  $cts = array(
+    'baggrund' => 'os2web_frontend_background_img',
+    'rotating_image' => 'os2web_base_rotating_image',
+    'borgerservices' => 'os2web_citizenservices_service',
+    'bullet_point' => 'os2web_meetings_bullet',
+    'bullet_point_attachment' => 'os2web_meetings_bullet_attach',
+    'contentpage' => 'os2web_base_contentpage',
+    'galleri' => 'os2web_base_gallery',
+    'kontaktblok' => 'os2web_contact_contact',
+    'knactivity' => 'os2web_kulturnaut_knactivity',
+    'news' => 'os2web_base_news',
+    'ofir_job' => 'os2web_ofir_job',
+    'sektionsside' => 'os2web_sections_page',
+    'selvbetjeningslinks' => 'os2web_base_selfservice_link',
+    'spotbox' => 'os2web_spotbox_box',
+    'iframe_selvbetjeningsl_sning_mm' => 'os2web_base_iframe'
+  );
+
+  foreach ($cts as $ct_old_name => $ct_new_name) {
+    // Rename type column in node table
+    db_update('node')->fields(array('type' => $ct_new_name))
+      ->condition('type', $ct_old_name, '=')
+      ->execute();
+    // Rename type column in node_type table
+    db_update('node_type')->fields(array('type' => $ct_new_name))
+      ->condition('type', $ct_old_name, '=')
+      ->execute();
+    // Rename bundle on field_data_body
+    db_update('field_data_body')->fields(array('bundle' => $ct_new_name))
+      ->condition('bundle', $ct_old_name, '=')
+      ->execute();
+    // Rename bundle on field_config_instance
+    db_update('field_config_instance')->fields(array('bundle' => $ct_new_name))
+      ->condition('bundle', $ct_old_name, '=')
+      ->execute();
+    // Rename type on block_node_type
+    db_update('block_node_type')->fields(array('type' => $ct_new_name))
+      ->condition('type', $ct_old_name, '=')
+      ->execute();
+
+    // Loop over all field tables and rename the bundle column
+    $result = db_query("SHOW TABLES LIKE 'field\_data\_%';");
+    foreach ($result->fetchCol() as $table) {
+      print "Renaming " . $ct_old_name . " to " . $ct_new_name . " in " . $table . "\n";
+      db_update($table)->fields(array('bundle' => $ct_new_name))
+        ->condition('bundle', $ct_old_name, '=')
+        ->execute();
+    }
+
+    // Loop over all field revision tables and rename the bundle column
+    $result = db_query("SHOW TABLES LIKE 'field\_revision\_%';");
+    foreach ($result->fetchCol() as $table) {
+      print "Renaming " . $ct_old_name . " to " . $ct_new_name . " in " . $table . "\n";
+      db_update($table)->fields(array('bundle' => $ct_new_name))
+        ->condition('bundle', $ct_old_name, '=')
+        ->execute();
+    }
+
+    // Update fields in views
+    foreach ($fields as $old_field_value => $new_field_value) {
+      db_update('views_display')
+        ->expression('display_options', 'replace(display_options, :old_field_value, :new_field_value)', array(':old_field_value' => $old_field_value, ':new_field_value' => $new_field_name))
+        ->execute();
+    }
+
+    // Update content types in views
+    foreach ($cts as $old_ct => $new_ct) {
+      db_update('views_display')
+        ->expression('display_options', 'replace(display_options, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
+        ->execute();
+    }
+  }
+}
