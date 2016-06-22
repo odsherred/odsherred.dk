@@ -45,7 +45,7 @@ function odsherred_web_default_linkit_profiles() {
         'andre_sider' => 0,
         'baggrund' => 0,
         'rotating_image' => 0,
-        'os2web_borger_dk_article' => 0,
+        'os2web_borger_dk_article' => 'os2web_borger_dk_article',
         'borger_dk_permalink' => 0,
         'borgerservices' => 0,
         'bullet_point' => 0,
