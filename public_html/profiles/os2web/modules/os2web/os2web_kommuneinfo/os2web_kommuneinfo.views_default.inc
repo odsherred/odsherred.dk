@@ -51,28 +51,28 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen tilgængelige høringer i arkivet.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -83,7 +83,7 @@ function os2web_kommuneinfo_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -95,19 +95,19 @@ function os2web_kommuneinfo_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Sorteringskriterie: Content: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -119,7 +119,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid_1']['id'] = 'field_newstype_tid_1';
   $handler->display->display_options['filters']['field_newstype_tid_1']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid_1']['field'] = 'field_newstype_tid';
@@ -131,7 +131,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid_1']['group'] = 1;
   $handler->display->display_options['filters']['field_newstype_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid_1']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Content: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid']['id'] = 'field_newstype_tid';
   $handler->display->display_options['filters']['field_newstype_tid']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid']['field'] = 'field_newstype_tid';
@@ -174,7 +174,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Content: Portalkategori (field_site_structure) */
+  /* Filter criterion: Content: Portalkategori (field_site_structure) */
   $handler->display->display_options['filters']['field_site_structure_tid']['id'] = 'field_site_structure_tid';
   $handler->display->display_options['filters']['field_site_structure_tid']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['filters']['field_site_structure_tid']['field'] = 'field_site_structure_tid';
@@ -239,26 +239,26 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Scheduler: Publish on */
+  /* Field: Scheduler: Publish on */
   $handler->display->display_options['fields']['publish_on']['id'] = 'publish_on';
   $handler->display->display_options['fields']['publish_on']['table'] = 'scheduler';
   $handler->display->display_options['fields']['publish_on']['field'] = 'publish_on';
   $handler->display->display_options['fields']['publish_on']['date_format'] = 'long';
-  /* Felt: Content: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -271,14 +271,14 @@ function os2web_kommuneinfo_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -286,7 +286,7 @@ function os2web_kommuneinfo_views_default_views() {
     'news' => 'news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterie: Content: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid_1']['id'] = 'field_newstype_tid_1';
   $handler->display->display_options['filters']['field_newstype_tid_1']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid_1']['field'] = 'field_newstype_tid';
@@ -310,7 +310,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -318,7 +318,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h1>Aktuelle høringer</h1>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -326,7 +326,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle høringer.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Node: Published at */
+  /* Field: Node: Published at */
   $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
   $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
@@ -337,7 +337,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['fields']['published_at']['element_wrapper_class'] = 'stordato';
   $handler->display->display_options['fields']['published_at']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['published_at']['date_format'] = 'dag_og_maaned';
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato_1']['id'] = 'field_udloebsdato_1';
   $handler->display->display_options['fields']['field_udloebsdato_1']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato_1']['field'] = 'field_udloebsdato';
@@ -355,7 +355,7 @@ function os2web_kommuneinfo_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -365,7 +365,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Felt: Content: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
@@ -373,7 +373,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_site_structure']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
@@ -384,7 +384,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['fields']['field_newstype']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_newstype']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -397,7 +397,7 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
-  /* Felt: Content: Publiceringsdato */
+  /* Field: Content: Publiceringsdato */
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['field'] = 'field_nyheder_publiceringsdato';
@@ -414,7 +414,7 @@ Svarfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -432,7 +432,7 @@ Svarfrist: [field_udloebsdato]</p>';
     'multiple_to' => '',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -446,14 +446,14 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '3';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -465,13 +465,13 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['operator'] = '<=';
   $handler->display->display_options['filters']['field_newstypedato_value']['default_date'] = 'now';
-  /* Filterkriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
@@ -491,7 +491,7 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -499,7 +499,7 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h1>Aktuelle afgørelser</h1>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -507,7 +507,7 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle afgørelser.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Node: Published at */
+  /* Field: Node: Published at */
   $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
   $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
@@ -518,7 +518,7 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['published_at']['element_wrapper_class'] = 'stordato';
   $handler->display->display_options['fields']['published_at']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['published_at']['date_format'] = 'dag_og_maaned';
-  /* Felt: Content: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -535,7 +535,7 @@ Svarfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -545,7 +545,7 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Felt: Content: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
@@ -553,7 +553,7 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_site_structure']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
@@ -564,7 +564,7 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_newstype']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -577,7 +577,7 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
-  /* Felt: Content: Publiceringsdato */
+  /* Field: Content: Publiceringsdato */
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['field'] = 'field_nyheder_publiceringsdato';
@@ -594,7 +594,7 @@ Klagefrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -612,7 +612,7 @@ Klagefrist: [field_udloebsdato]</p>';
     'multiple_to' => '',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -626,14 +626,14 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '4';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -645,13 +645,13 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_udloebsdato_value']['default_date'] = 'now';
-  /* Filterkriterie: Content: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -671,7 +671,7 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -679,7 +679,7 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h1>Aktuelle udbud</h1>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -687,7 +687,7 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle udbud.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Node: Published at */
+  /* Field: Node: Published at */
   $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
   $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
@@ -698,7 +698,7 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['published_at']['element_wrapper_class'] = 'stordato';
   $handler->display->display_options['fields']['published_at']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['published_at']['date_format'] = 'dag_og_maaned';
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato_1']['id'] = 'field_udloebsdato_1';
   $handler->display->display_options['fields']['field_udloebsdato_1']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato_1']['field'] = 'field_udloebsdato';
@@ -715,7 +715,7 @@ Klagefrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -725,7 +725,7 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
@@ -733,7 +733,7 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
@@ -744,7 +744,7 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_site_structure']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_site_structure']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_site_structure']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -756,7 +756,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_class'] = 'indrykket';
   $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -773,21 +773,21 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_to' => '',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sorteringskriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Sort criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['sorts']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['sorts']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['sorts']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
   $handler->display->display_options['sorts']['field_udloebsdato_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -799,7 +799,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid_1']['id'] = 'field_newstype_tid_1';
   $handler->display->display_options['filters']['field_newstype_tid_1']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid_1']['field'] = 'field_newstype_tid';
@@ -809,13 +809,13 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['field_newstype_tid_1']['group'] = 1;
   $handler->display->display_options['filters']['field_newstype_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid_1']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_udloebsdato_value']['default_date'] = 'now';
-  /* Filterkriterie: Content: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -835,7 +835,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -843,7 +843,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h1>Aktuelle møder</h1>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -851,7 +851,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle møder.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Content: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -867,7 +867,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -877,7 +877,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Felt: Content: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato_1']['id'] = 'field_newstypedato_1';
   $handler->display->display_options['fields']['field_newstypedato_1']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato_1']['field'] = 'field_newstypedato';
@@ -890,7 +890,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
@@ -898,7 +898,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Portalkategori */
+  /* Field: Content: Portalkategori */
   $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
   $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
@@ -909,7 +909,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_site_structure']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_site_structure']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_site_structure']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -922,7 +922,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -936,14 +936,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '4';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -955,7 +955,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -968,7 +968,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -976,7 +976,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h2>Tidligere udbud</h2>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -984,21 +984,21 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen tilgængelige udbud i arkivet.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -1013,14 +1013,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1032,7 +1032,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid_1']['id'] = 'field_newstype_tid_1';
   $handler->display->display_options['filters']['field_newstype_tid_1']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid_1']['field'] = 'field_newstype_tid';
@@ -1042,7 +1042,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['field_newstype_tid_1']['group'] = 1;
   $handler->display->display_options['filters']['field_newstype_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid_1']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
@@ -1065,7 +1065,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -1074,7 +1074,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h2>Tidligere afgørelser</h2>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -1082,21 +1082,21 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen tilgængelige afgørelser i arkivet.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -1109,7 +1109,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_to' => '',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -1123,14 +1123,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '3';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1142,7 +1142,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
@@ -1165,7 +1165,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -1173,7 +1173,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h2>Afholdte møder</h2>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -1181,21 +1181,21 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['empty']['area']['content'] = 'Der er ingen tilgængelige møder i arkivet.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['label'] = '';
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1208,7 +1208,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_to' => '',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -1222,14 +1222,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '3';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1241,7 +1241,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -1264,7 +1264,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -1272,21 +1272,21 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h2>Tidligere høringer</h2>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype_1']['id'] = 'field_newstype_1';
   $handler->display->display_options['fields']['field_newstype_1']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype_1']['field'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype_1']['label'] = '';
   $handler->display->display_options['fields']['field_newstype_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype_1']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -1299,7 +1299,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_to' => '',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -1313,14 +1313,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '3';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1332,7 +1332,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
@@ -1353,14 +1353,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   /* Display: Nyheder - Blok - Høringer */
   $handler = $view->new_display('block', 'Nyheder - Blok - Høringer', 'block_1');
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h3>Aktuelle høringer</h3>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Sidefod: Global: Text area */
+  /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -1368,7 +1368,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['footer']['area']['content'] = '<a class="setidligere" href="/kommuneinformationer/hoeringer">Se flere høringer</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -1377,7 +1377,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
 <p><a href="/kommuneinformationer/hoeringer" title="Tidligere høringer">Se tidligere høringer</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -1391,7 +1391,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato_1']['id'] = 'field_udloebsdato_1';
   $handler->display->display_options['fields']['field_udloebsdato_1']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato_1']['field'] = 'field_udloebsdato';
@@ -1409,7 +1409,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Node: Published at */
+  /* Field: Node: Published at */
   $handler->display->display_options['fields']['published_at_1']['id'] = 'published_at_1';
   $handler->display->display_options['fields']['published_at_1']['table'] = 'publication_date';
   $handler->display->display_options['fields']['published_at_1']['field'] = 'published_at';
@@ -1418,7 +1418,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['published_at_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['published_at_1']['date_format'] = 'custom';
   $handler->display->display_options['fields']['published_at_1']['custom_date_format'] = 'j.';
-  /* Felt: Node: Published at */
+  /* Field: Node: Published at */
   $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
   $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
@@ -1430,7 +1430,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['published_at']['date_format'] = 'custom';
   $handler->display->display_options['fields']['published_at']['custom_date_format'] = 'M';
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1439,7 +1439,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
@@ -1447,7 +1447,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Indhold */
+  /* Field: Content: Indhold */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -1457,7 +1457,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -1469,13 +1469,13 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Svarfrist: [field_udloebsdato_1]</i></p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sorteringskriterie: Node: Published at */
+  /* Sort criterion: Node: Published at */
   $handler->display->display_options['sorts']['published_at']['id'] = 'published_at';
   $handler->display->display_options['sorts']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['sorts']['published_at']['field'] = 'published_at';
   $handler->display->display_options['sorts']['published_at']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -1489,14 +1489,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '3';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1508,13 +1508,13 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_udloebsdato_value']['default_date'] = 'now';
-  /* Filterkriterie: Content: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -1534,7 +1534,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -1542,7 +1542,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h3>Aktuelle afgørelser</h3>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Sidefod: Global: Text area */
+  /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -1550,7 +1550,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['footer']['area']['content'] = '<a class="setidligere" href="/kommuneinformationer/afgoerelser">Se flere afgørelser</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -1559,7 +1559,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
 <p><a href="/kommuneinformationer/afgoerelser" title="Flere afgørelser">Se tidligere afgørelser</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Node: Published at */
+  /* Field: Node: Published at */
   $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
   $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
@@ -1568,7 +1568,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['published_at']['date_format'] = 'custom';
   $handler->display->display_options['fields']['published_at']['custom_date_format'] = 'j.';
-  /* Felt: Node: Published at */
+  /* Field: Node: Published at */
   $handler->display->display_options['fields']['published_at_1']['id'] = 'published_at_1';
   $handler->display->display_options['fields']['published_at_1']['table'] = 'publication_date';
   $handler->display->display_options['fields']['published_at_1']['field'] = 'published_at';
@@ -1580,7 +1580,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['published_at_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['published_at_1']['date_format'] = 'custom';
   $handler->display->display_options['fields']['published_at_1']['custom_date_format'] = 'M';
-  /* Felt: Content: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1594,7 +1594,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -1612,7 +1612,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1622,7 +1622,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
@@ -1630,7 +1630,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Indhold */
+  /* Field: Content: Indhold */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -1640,7 +1640,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -1652,13 +1652,13 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Klagefrist: [field_udloebsdato]</i></p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sorteringskriterie: Node: Published at */
+  /* Sort criterion: Node: Published at */
   $handler->display->display_options['sorts']['published_at']['id'] = 'published_at';
   $handler->display->display_options['sorts']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['sorts']['published_at']['field'] = 'published_at';
   $handler->display->display_options['sorts']['published_at']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -1672,14 +1672,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '3';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1691,13 +1691,13 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_udloebsdato_value']['default_date'] = 'now';
-  /* Filterkriterie: Content: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -1717,7 +1717,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -1725,7 +1725,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h3>Aktuelle udbud</h3>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Sidefod: Global: Text area */
+  /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -1733,7 +1733,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['footer']['area']['content'] = '<a class="setidligere" href="/kommuneinformationer/udbud">Se flere udbud</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -1742,7 +1742,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
 <p><a href="/kommuneinformationer/udbud" title="Tidligere udbud">Se tidligere udbud</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Node: Published at */
+  /* Field: Node: Published at */
   $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
   $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
@@ -1751,7 +1751,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['published_at']['date_format'] = 'custom';
   $handler->display->display_options['fields']['published_at']['custom_date_format'] = 'j.';
-  /* Felt: Node: Published at */
+  /* Field: Node: Published at */
   $handler->display->display_options['fields']['published_at_1']['id'] = 'published_at_1';
   $handler->display->display_options['fields']['published_at_1']['table'] = 'publication_date';
   $handler->display->display_options['fields']['published_at_1']['field'] = 'published_at';
@@ -1763,7 +1763,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['published_at_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['published_at_1']['date_format'] = 'custom';
   $handler->display->display_options['fields']['published_at_1']['custom_date_format'] = 'M';
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
@@ -1777,7 +1777,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Udløbsdato */
+  /* Field: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato_1']['id'] = 'field_udloebsdato_1';
   $handler->display->display_options['fields']['field_udloebsdato_1']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato_1']['field'] = 'field_udloebsdato';
@@ -1795,7 +1795,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1804,7 +1804,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
@@ -1812,7 +1812,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1826,7 +1826,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Indhold */
+  /* Field: Content: Indhold */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -1836,7 +1836,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -1848,7 +1848,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Tilbudsfrist: [field_udloebsdato_1]</i></p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sorteringskriterie: Node: Published at */
+  /* Sort criterion: Node: Published at */
   $handler->display->display_options['sorts']['published_at']['id'] = 'published_at';
   $handler->display->display_options['sorts']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['sorts']['published_at']['field'] = 'published_at';
@@ -1856,14 +1856,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1875,7 +1875,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Type (field_newstype) */
+  /* Filter criterion: Content: Type (field_newstype) */
   $handler->display->display_options['filters']['field_newstype_tid_1']['id'] = 'field_newstype_tid_1';
   $handler->display->display_options['filters']['field_newstype_tid_1']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['filters']['field_newstype_tid_1']['field'] = 'field_newstype_tid';
@@ -1885,14 +1885,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['field_newstype_tid_1']['group'] = 1;
   $handler->display->display_options['filters']['field_newstype_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid_1']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_udloebsdato_value']['group'] = 1;
   $handler->display->display_options['filters']['field_udloebsdato_value']['default_date'] = 'now';
-  /* Filterkriterie: Content: Dato (field_newstypedato) */
+  /* Filter criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
@@ -1912,7 +1912,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Text area */
+  /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -1920,7 +1920,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['header']['area']['content'] = '<h3>Aktuelle møder</h3>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Sidefod: Global: Text area */
+  /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -1928,7 +1928,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['footer']['area']['content'] = '<a class="setidligere" href="/kommuneinformationer/moeder">Se flere møder</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Opførsel ved ingen resultater: Global: Text area */
+  /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -1937,7 +1937,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
 <p><a href="/kommuneinformationer/moeder" title="Tidligere møder">Se tidligere møder</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Content: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
@@ -1950,7 +1950,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1959,7 +1959,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Felt: Content: Type */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
   $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
   $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
@@ -1967,7 +1967,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Dato */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_newstypedato_1']['id'] = 'field_newstypedato_1';
   $handler->display->display_options['fields']['field_newstypedato_1']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['fields']['field_newstypedato_1']['field'] = 'field_newstypedato';
@@ -1982,7 +1982,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Indhold */
+  /* Field: Content: Indhold */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -1992,7 +1992,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Felt: Content: Publiceringsdato */
+  /* Field: Content: Publiceringsdato */
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['field'] = 'field_nyheder_publiceringsdato';
@@ -2005,7 +2005,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Content: Resume - lang overskrift */
+  /* Field: Content: Resume - lang overskrift */
   $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
   $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
@@ -2016,12 +2016,12 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_resume_long']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Mødestart: [field_newstypedato_1]</i></p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sorteringskriterie: Content: Dato (field_newstypedato) */
+  /* Sort criterion: Content: Dato (field_newstypedato) */
   $handler->display->display_options['sorts']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
   $handler->display->display_options['sorts']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
   $handler->display->display_options['sorts']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -2035,14 +2035,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '3';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Content: Published */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Content: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -2054,12 +2054,468 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filterkriterie: Content: Udløbsdato (field_udloebsdato) */
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
   $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
   $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
   $handler->display->display_options['filters']['field_udloebsdato_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_udloebsdato_value']['default_date'] = 'now';
+
+  /* Display: Åstedsforretning */
+  $handler = $view->new_display('page', 'Åstedsforretning', 'page_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Kommuneinformation - Afgørelser - Side';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<h1>Aktuelle Åstedsforretninger</h1>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Der er ingen aktuelle åstedsforretninger.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Node: Published at */
+  $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['label'] = '';
+  $handler->display->display_options['fields']['published_at']['element_type'] = '0';
+  $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['published_at']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['published_at']['element_wrapper_class'] = 'stordato';
+  $handler->display->display_options['fields']['published_at']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['published_at']['date_format'] = 'dag_og_maaned';
+  /* Field: Content: Dato */
+  $handler->display->display_options['fields']['field_newstypedato']['id'] = 'field_newstypedato';
+  $handler->display->display_options['fields']['field_newstypedato']['table'] = 'field_data_field_newstypedato';
+  $handler->display->display_options['fields']['field_newstypedato']['field'] = 'field_newstypedato';
+  $handler->display->display_options['fields']['field_newstypedato']['label'] = '';
+  $handler->display->display_options['fields']['field_newstypedato']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_newstypedato']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_newstypedato']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_newstypedato']['element_wrapper_class'] = 'stordato';
+  $handler->display->display_options['fields']['field_newstypedato']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_newstypedato']['settings'] = array(
+    'format_type' => 'dag_og_maaned',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Content: Portalkategori */
+  $handler->display->display_options['fields']['field_site_structure']['id'] = 'field_site_structure';
+  $handler->display->display_options['fields']['field_site_structure']['table'] = 'field_data_field_site_structure';
+  $handler->display->display_options['fields']['field_site_structure']['field'] = 'field_site_structure';
+  $handler->display->display_options['fields']['field_site_structure']['label'] = '';
+  $handler->display->display_options['fields']['field_site_structure']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_site_structure']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_site_structure']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
+  $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
+  $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
+  $handler->display->display_options['fields']['field_newstype']['label'] = '';
+  $handler->display->display_options['fields']['field_newstype']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_newstype']['alter']['text'] = '[field_site_structure] - [field_newstype] ';
+  $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_newstype']['element_wrapper_type'] = 'h4';
+  $handler->display->display_options['fields']['field_newstype']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Resume - lang overskrift */
+  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
+  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
+  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
+  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
+  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_resume_long]</p>
+<p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
+Klagefrist: [field_udloebsdato]</p>';
+  $handler->display->display_options['fields']['field_resume_long']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_resume_long']['element_class'] = 'indrykket';
+  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
+  /* Field: Content: Publiceringsdato */
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['field'] = 'field_nyheder_publiceringsdato';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['label'] = 'Publiceret';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_wrapper_class'] = 'indrykket lilletekst';
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['settings'] = array(
+    'format_type' => 'odsherredtid',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Udløbsdato */
+  $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['label'] = 'Klagefrist';
+  $handler->display->display_options['fields']['field_udloebsdato']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_udloebsdato']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_udloebsdato']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_udloebsdato']['element_wrapper_class'] = 'indrykket lilletekst';
+  $handler->display->display_options['fields']['field_udloebsdato']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
+    'format_type' => 'odsherredtid',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '26424';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '4';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
+  $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Dato (field_newstypedato) */
+  $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
+  $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
+  $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
+  $handler->display->display_options['filters']['field_newstypedato_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_newstypedato_value']['default_date'] = 'now';
+  $handler->display->display_options['path'] = 'kommuneinformationer/aastedsforretning';
+
+  /* Display: Tidligere åstedsforretning */
+  $handler = $view->new_display('attachment', 'Tidligere åstedsforretning', 'attachment_5');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Tidligere åstedsforretninger';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<h2>Tidligere åstedsforretninger</h2>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Der er ingen tilgængelige åstedsforretninger i arkivet.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
+  $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
+  $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
+  $handler->display->display_options['fields']['field_newstype']['label'] = '';
+  $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Udløbsdato */
+  $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['label'] = '- Klagefrist';
+  $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
+    'format_type' => 'odsherredtid',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '26424';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '3';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
+  $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['default_date'] = 'now';
+  $handler->display->display_options['displays'] = array(
+    'page_6' => 'page_6',
+    'default' => 0,
+    'page' => 0,
+    'block' => 0,
+    'page_1' => 0,
+    'page_2' => 0,
+    'page_3' => 0,
+    'page_4' => 0,
+    'page_5' => 0,
+    'block_1' => 0,
+    'block_2' => 0,
+    'block_3' => 0,
+    'block_4' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
+
+  /* Display: Nyheder - Blok - Åstredsforretninger */
+  $handler = $view->new_display('block', 'Nyheder - Blok - Åstredsforretninger', 'block_5');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Aktuelle høringer</h3>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'Se flere åstedsforretninger';
+  $handler->display->display_options['footer']['area']['content'] = '<a class="setidligere" href="/kommuneinformationer/aastedsforretning">Se flere åstedsforretninger</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<p>Der er ingen aktuelle åstedsforretninger.</p>
+<p><a href="/kommuneinformationer/aastedsforretning" title="Tidligere høringer">Se tidligere åstedsforretninger</a>';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Udløbsdato */
+  $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['field'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato']['label'] = '';
+  $handler->display->display_options['fields']['field_udloebsdato']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_udloebsdato']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_udloebsdato']['settings'] = array(
+    'format_type' => 'dag_og_maaned',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Udløbsdato */
+  $handler->display->display_options['fields']['field_udloebsdato_1']['id'] = 'field_udloebsdato_1';
+  $handler->display->display_options['fields']['field_udloebsdato_1']['table'] = 'field_data_field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato_1']['field'] = 'field_udloebsdato';
+  $handler->display->display_options['fields']['field_udloebsdato_1']['label'] = '';
+  $handler->display->display_options['fields']['field_udloebsdato_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_udloebsdato_1']['alter']['text'] = '[field_udloebsdato_1-value]';
+  $handler->display->display_options['fields']['field_udloebsdato_1']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_udloebsdato_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_udloebsdato_1']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_udloebsdato_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_udloebsdato_1']['settings'] = array(
+    'format_type' => 'odsherredtid',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Node: Published at */
+  $handler->display->display_options['fields']['published_at_1']['id'] = 'published_at_1';
+  $handler->display->display_options['fields']['published_at_1']['table'] = 'publication_date';
+  $handler->display->display_options['fields']['published_at_1']['field'] = 'published_at';
+  $handler->display->display_options['fields']['published_at_1']['label'] = '';
+  $handler->display->display_options['fields']['published_at_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['published_at_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['published_at_1']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['published_at_1']['custom_date_format'] = 'j.';
+  /* Field: Node: Published at */
+  $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['label'] = '';
+  $handler->display->display_options['fields']['published_at']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['published_at']['alter']['text'] = '<div class="date-container"><span class="date">[published_at_1]</span><span class="month">[published_at]</span></div>';
+  $handler->display->display_options['fields']['published_at']['element_type'] = '0';
+  $handler->display->display_options['fields']['published_at']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['published_at']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['published_at']['custom_date_format'] = 'M';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['field_newstype']['id'] = 'field_newstype';
+  $handler->display->display_options['fields']['field_newstype']['table'] = 'field_data_field_newstype';
+  $handler->display->display_options['fields']['field_newstype']['field'] = 'field_newstype';
+  $handler->display->display_options['fields']['field_newstype']['label'] = '';
+  $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Indhold */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '120';
+  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Field: Content: Resume - lang overskrift */
+  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
+  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
+  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
+  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
+  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_resume_long]</p>
+<p class="indrykket  lilletekst"><i>Svarfrist: [field_udloebsdato_1]</i></p>';
+  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_resume_long']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
+<p class="indrykket  lilletekst"><i>Svarfrist: [field_udloebsdato_1]</i></p>';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Node: Published at */
+  $handler->display->display_options['sorts']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['sorts']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['sorts']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['sorts']['published_at']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '26424';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '3';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  /* Filter criterion: Content: Udløbsdato (field_udloebsdato) */
+  $handler->display->display_options['filters']['field_udloebsdato_value']['id'] = 'field_udloebsdato_value';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['table'] = 'field_data_field_udloebsdato';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['field'] = 'field_udloebsdato_value';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_udloebsdato_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Dato (field_newstypedato) */
+  $handler->display->display_options['filters']['field_newstypedato_value']['id'] = 'field_newstypedato_value';
+  $handler->display->display_options['filters']['field_newstypedato_value']['table'] = 'field_data_field_newstypedato';
+  $handler->display->display_options['filters']['field_newstypedato_value']['field'] = 'field_newstypedato_value';
+  $handler->display->display_options['filters']['field_newstypedato_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_newstypedato_value']['default_date'] = 'now';
   $translatables['kommuneinformation'] = array(
     t('Master'),
     t('Kommuneinformation'),
@@ -2184,6 +2640,18 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('<p class="indrykket">[field_newstype]: [field_resume_long]</p>'),
     t('<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Mødestart: [field_newstypedato_1]</i></p>'),
+    t('Åstedsforretning'),
+    t('<h1>Aktuelle Åstedsforretninger</h1>'),
+    t('Der er ingen aktuelle åstedsforretninger.'),
+    t('Tidligere åstedsforretning'),
+    t('Tidligere åstedsforretninger'),
+    t('<h2>Tidligere åstedsforretninger</h2>'),
+    t('Der er ingen tilgængelige åstedsforretninger i arkivet.'),
+    t('Nyheder - Blok - Åstredsforretninger'),
+    t('Se flere åstedsforretninger'),
+    t('<a class="setidligere" href="/kommuneinformationer/aastedsforretning">Se flere åstedsforretninger</a>'),
+    t('<p>Der er ingen aktuelle åstedsforretninger.</p>
+<p><a href="/kommuneinformationer/aastedsforretning" title="Tidligere høringer">Se tidligere åstedsforretninger</a>'),
   );
   $export['kommuneinformation'] = $view;
 

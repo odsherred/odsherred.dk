@@ -289,7 +289,7 @@ function nyheder_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => '',
-      'file_extensions' => 'pdf',
+      'file_extensions' => 'pdf xml',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
