@@ -169,6 +169,11 @@ function odsherred_web_rename() {
       ->condition('field_name', $field_name, '=')
       ->execute();
 
+    // Update field group field names
+    db_update('field_group')
+      ->expression('data', 'replace(data, :field_name, :new_field_name)', array(':field_name' => $field_name, ':new_field_name' => $new_field_name))
+      ->execute();
+
     $result = db_query('SELECT field_name, data FROM {field_config_instance} WHERE field_name = :name', array(':name' => $field_name));
     foreach ($result as $record) {
       $data = unserialize($record->data);
@@ -253,18 +258,27 @@ function odsherred_web_rename() {
         ->execute();
     }
 
+    // Update field group content types
+    db_update('field_group')
+      ->expression('identifier', 'replace(identifier, :old_ct, :new_ct)', array(':old_ct' => $ct_old_name, ':new_ct' => $ct_new_name))
+      ->execute();
+
+    db_update('field_group')->fields(array('bundle' => $ct_new_name))
+      ->condition('bundle', $ct_old_name, '=')
+      ->execute();
+
     // Update content types in views
     foreach ($cts as $old_ct => $new_ct) {
       db_update('views_display')
         ->expression('display_options', 'replace(display_options, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
         ->execute();
       // Update content types in menus
-      db_update('menu_router')
-        ->expression('path', 'replace(path, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
-        ->expression('access_arguments', 'replace(access_arguments, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
-        ->expression('page_arguments', 'replace(page_arguments, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
-        ->expression('tab_root', 'replace(tab_root, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
-        ->execute();
+      // db_update('menu_router')
+      //   ->expression('path', 'replace(path, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
+      //   ->expression('access_arguments', 'replace(access_arguments, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
+      //   ->expression('page_arguments', 'replace(page_arguments, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
+      //   ->expression('tab_root', 'replace(tab_root, :old_ct, :new_ct)', array(':old_ct' => $old_ct, ':new_ct' => $new_ct))
+      //   ->execute();
     }
   }
 }
