@@ -276,5 +276,13 @@ function odsherred_web_rename() {
     db_update('menu_links')
       ->expression('link_path', 'replace(link_path, :old_ct, :new_ct)', array(':old_ct' => $ct_old_name, ':new_ct' => str_replace('_', '-', $ct_new_name)))
       ->execute();
+
+    // Update content types in menuux
+    db_update('variable')
+      ->expression('name', 'replace(name, :old_ct, :new_ct)', array(':old_ct' => 'menu_options_' . $ct_old_name, ':new_ct' => 'menu_options_' . $ct_new_name))
+      ->execute();
   }
+
+  // Delete feedback table
+  db_drop_table('feedback');
 }
