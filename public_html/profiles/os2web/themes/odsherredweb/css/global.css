@@ -17,6 +17,10 @@ textarea:active {
   z-index: 1;
 }
 
+.page-search .spelling-suggestions {
+  display: none;
+}
+
 /* Focuses */
 .a:focus,
 .overlayclass:focus {
