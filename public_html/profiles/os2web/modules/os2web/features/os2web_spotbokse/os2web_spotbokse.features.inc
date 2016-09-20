@@ -166,7 +166,7 @@ function os2web_spotbokse_image_default_styles() {
  */
 function os2web_spotbokse_node_info() {
   $items = array(
-    'spotbox' => array(
+    'os2web_spotbox_box' => array(
       'name' => t('Spotbox'),
       'base' => 'node_content',
       'description' => '',

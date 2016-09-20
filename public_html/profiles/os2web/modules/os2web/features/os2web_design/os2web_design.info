@@ -26,7 +26,6 @@ features[delta][] = portalforside
 features[delta][] = standard
 features[features_api][] = api:2
 features[field_instance][] = node-baggrund-field_os2web_frontend_bg_file
-features[node][] = baggrund
 features[user_permission][] = administer background image
 features[user_permission][] = administer delta
 features[user_permission][] = manage background images

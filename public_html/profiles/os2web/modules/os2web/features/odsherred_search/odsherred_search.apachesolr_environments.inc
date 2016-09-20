@@ -27,8 +27,8 @@ function odsherred_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1465887269',
-        'last_entity_id' => '896735',
+        'last_changed' => '1474313011',
+        'last_entity_id' => '896948',
       ),
       'redirect' => array(
         'last_changed' => 0,
@@ -59,8 +59,8 @@ function odsherred_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1465889549,
-    'apachesolr_last_optimize' => 1465840801,
+    'apachesolr_index_updated' => 1474340401,
+    'apachesolr_last_optimize' => 1474279202,
   );
   $environment->index_bundles = array(
     'node' => array(

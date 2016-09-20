@@ -145,37 +145,3 @@ function os2web_indholdstyper_image_default_styles() {
 
   return $styles;
 }
-
-/**
- * Implements hook_node_info().
- */
-function os2web_indholdstyper_node_info() {
-  $items = array(
-    'contentpage' => array(
-      'name' => t('Indholdsside'),
-      'base' => 'node_content',
-      'description' => t('Almindelig webside til generel brug på sitet.'),
-      'has_title' => '1',
-      'title_label' => t('Overskrift'),
-      'help' => '',
-    ),
-    'news' => array(
-      'name' => t('Nyhed'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Overskrift'),
-      'help' => '',
-    ),
-    'selvbetjeningslinks' => array(
-      'name' => t('Selvbetjeningslinks'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Overskrift'),
-      'help' => '',
-    ),
-  );
-  drupal_alter('node_info', $items);
-  return $items;
-}

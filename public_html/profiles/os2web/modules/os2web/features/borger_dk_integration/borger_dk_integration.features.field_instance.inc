@@ -107,6 +107,98 @@ function borger_dk_integration_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-borger_dk_permalink-field_os2web_base_field_rel_subj'
+  $field_instances['node-borger_dk_permalink-field_os2web_base_field_rel_subj'] = array(
+    'bundle' => 'borger_dk_permalink',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_rel_subj',
+    'label' => 'Relateret tema',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 34,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-borger_dk_permalink-field_os2web_base_field_struct'
+  $field_instances['node-borger_dk_permalink-field_os2web_base_field_struct'] = array(
+    'bundle' => 'borger_dk_permalink',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_struct',
+    'label' => 'structure',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 36,
+    ),
+  );
+
   // Exported field_instance: 'node-borger_dk_permalink-field_related_tema'
   $field_instances['node-borger_dk_permalink-field_related_tema'] = array(
     'bundle' => 'borger_dk_permalink',
@@ -153,50 +245,6 @@ function borger_dk_integration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-borger_dk_permalink-field_os2web_base_field_struct'
-  $field_instances['node-borger_dk_permalink-field_os2web_base_field_struct'] = array(
-    'bundle' => 'borger_dk_permalink',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_os2web_base_field_struct',
-    'label' => 'structure',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 36,
-    ),
-  );
-
   // Exported field_instance: 'taxonomy_term-site_struktur-field_is_subsite'
   $field_instances['taxonomy_term-site_struktur-field_is_subsite'] = array(
     'bundle' => 'site_struktur',
@@ -230,6 +278,107 @@ function borger_dk_integration_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'taxonomy_term-site_struktur-field_os2web_base_field_contact'
+  $field_instances['taxonomy_term-site_struktur-field_os2web_base_field_contact'] = array(
+    'bundle' => 'site_struktur',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_os2web_base_field_contact',
+    'label' => 'Kontaktblok',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'taxonomy_term-site_struktur-field_os2web_base_field_ref_node'
+  $field_instances['taxonomy_term-site_struktur-field_os2web_base_field_ref_node'] = array(
+    'bundle' => 'site_struktur',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 2,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_os2web_base_field_ref_node',
+    'label' => 'Link til side',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 3,
     ),
   );
 
@@ -349,6 +498,8 @@ function borger_dk_integration_field_default_field_instances() {
   t('Body');
   t('Indsæt et permalink fra borger.dk som fx. https://www.borger.dk/_layouts/BorgerDK/Permalink/permalink.aspx?PageId=d39cefc9-3368-46e4-ba28-272468660&KommuneId=151');
   t('Is subsite');
+  t('Kontaktblok');
+  t('Link til side');
   t('Permalink fra Borger.dk');
   t('Relateret tema');
   t('Subsite banner');

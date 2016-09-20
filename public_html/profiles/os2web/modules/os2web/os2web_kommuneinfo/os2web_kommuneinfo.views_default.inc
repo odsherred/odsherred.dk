@@ -174,7 +174,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['filters']['field_newstype_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_newstype_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_newstype_tid']['vocabulary'] = 'nyhedstype';
-  /* Filterkriterie: Content: Portalkategori (field_os2web_base_field_struct) */
+  /* Filterkriterie: Content: structure (field_os2web_base_field_struct) */
   $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['id'] = 'field_os2web_base_field_struct_tid';
   $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['table'] = 'field_data_field_os2web_base_field_struct';
   $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['field'] = 'field_os2web_base_field_struct_tid';
@@ -365,7 +365,7 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Felt: Content: Portalkategori */
+  /* Felt: Content: structure */
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['id'] = 'field_os2web_base_field_struct';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['table'] = 'field_data_field_os2web_base_field_struct';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['field'] = 'field_os2web_base_field_struct';
@@ -545,7 +545,7 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Felt: Content: Portalkategori */
+  /* Felt: Content: structure */
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['id'] = 'field_os2web_base_field_struct';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['table'] = 'field_data_field_os2web_base_field_struct';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['field'] = 'field_os2web_base_field_struct';
@@ -733,7 +733,7 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Portalkategori */
+  /* Felt: Content: structure */
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['id'] = 'field_os2web_base_field_struct';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['table'] = 'field_data_field_os2web_base_field_struct';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['field'] = 'field_os2web_base_field_struct';
@@ -898,7 +898,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_newstype']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Content: Portalkategori */
+  /* Felt: Content: structure */
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['id'] = 'field_os2web_base_field_struct';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['table'] = 'field_data_field_os2web_base_field_struct';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['field'] = 'field_os2web_base_field_struct';
