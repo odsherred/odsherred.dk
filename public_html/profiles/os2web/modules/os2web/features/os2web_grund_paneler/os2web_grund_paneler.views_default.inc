@@ -989,7 +989,7 @@ function os2web_grund_paneler_views_default_views() {
     'kontaktblok' => 'kontaktblok',
     'media' => 'media',
     'panel' => 'panel',
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
     'spotbox' => 'spotbox',
     'tema' => 'tema',
   );
@@ -2740,7 +2740,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Promoted to front page */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
@@ -2764,7 +2764,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   $handler->display->display_options['path'] = 'selvbetjening';
   $handler->display->display_options['menu']['title'] = 'dsafg';
@@ -2795,7 +2795,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   $handler->display->display_options['path'] = 'selvbetjening.xml';
   $handler->display->display_options['displays'] = array(
@@ -2890,7 +2890,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Type (field_selvbetjeningslink_type) */
   $handler->display->display_options['filters']['field_selvbetjeningslink_type_value']['id'] = 'field_selvbetjeningslink_type_value';
@@ -3003,7 +3003,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Type (field_selvbetjeningslink_type) */
   $handler->display->display_options['filters']['field_selvbetjeningslink_type_value']['id'] = 'field_selvbetjeningslink_type_value';
@@ -3051,7 +3051,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Promoted to front page */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
@@ -3145,7 +3145,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Promoted to front page */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
@@ -3272,7 +3272,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Type (field_selvbetjeningslink_type) */
   $handler->display->display_options['filters']['field_selvbetjeningslink_type_value']['id'] = 'field_selvbetjeningslink_type_value';
@@ -3354,7 +3354,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Promoted to front page */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
@@ -3447,7 +3447,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Type (field_selvbetjeningslink_type) */
   $handler->display->display_options['filters']['field_selvbetjeningslink_type_value']['id'] = 'field_selvbetjeningslink_type_value';
@@ -3552,7 +3552,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Type (field_selvbetjeningslink_type) */
   $handler->display->display_options['filters']['field_selvbetjeningslink_type_value']['id'] = 'field_selvbetjeningslink_type_value';
@@ -3664,7 +3664,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Type (field_selvbetjeningslink_type) */
   $handler->display->display_options['filters']['field_selvbetjeningslink_type_value']['id'] = 'field_selvbetjeningslink_type_value';
@@ -3765,7 +3765,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Type (field_selvbetjeningslink_type) */
   $handler->display->display_options['filters']['field_selvbetjeningslink_type_value']['id'] = 'field_selvbetjeningslink_type_value';
@@ -3892,7 +3892,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['relationship'] = 'field_noderef_selvbtjn_nid';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
 
   /* Display: References */
@@ -3933,7 +3933,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
   );
   /* Filterkriterie: Content: Type (field_selvbetjeningslink_type) */
   $handler->display->display_options['filters']['field_selvbetjeningslink_type_value']['id'] = 'field_selvbetjeningslink_type_value';
