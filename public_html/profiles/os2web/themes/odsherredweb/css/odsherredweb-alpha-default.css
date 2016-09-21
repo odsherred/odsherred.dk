@@ -1727,9 +1727,10 @@ ul.breadcrumb {
 
 .node-type-contentpage .field-slideshow-slide img { max-width: 100%; height: auto; }
 
-.view-id-os2web-base-panels-view-sitestru  .views-field-name { position: absolute; }
 
-.view-id-os2web-base-panels-view-sitestru  .views-field-name a { display: block; height: 24px; padding-left: 41px; padding-top: 6px; color: #ffffff !important; font-size: 18px; }
+.view-os2web-base-panels-view-sitestru .views-field-name { position: absolute; }
+
+.view-os2web-base-panels-view-sitestru .views-field-name a { display: block; height: 24px; padding-left: 41px; padding-top: 6px; color: #ffffff !important; font-size: 18px; }
 
 .hovenyhed-portalside {
   background-image: url(img/c-bg.png);
