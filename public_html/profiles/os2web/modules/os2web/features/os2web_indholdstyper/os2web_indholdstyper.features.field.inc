@@ -2452,7 +2452,7 @@ function os2web_indholdstyper_field_default_fields() {
       'settings' => array(
         'referenceable_types' => array(
           'borger_dk_permalink' => 0,
-          'contentpage' => 'contentpage',
+          'os2web_base_contentpage' => 'os2web_base_contentpage',
           'esdh_dokument' => 0,
           'esdh_sag' => 0,
           'files' => 0,
@@ -3950,7 +3950,7 @@ function os2web_indholdstyper_field_default_fields() {
       'settings' => array(
         'referenceable_types' => array(
           'borger_dk_permalink' => 0,
-          'contentpage' => 'contentpage',
+          'os2web_base_contentpage' => 'os2web_base_contentpage',
           'esdh_dokument' => 0,
           'esdh_sag' => 0,
           'files' => 0,
@@ -5181,14 +5181,14 @@ function os2web_indholdstyper_field_default_fields() {
         'referenceable_types' => array(
           'activity' => 'activity',
           'borger_dk_permalink' => 0,
-          'contentpage' => 'contentpage',
+          'os2web_base_contentpage' => 'os2web_base_contentpage',
           'files' => 'files',
           'forum' => 0,
           'iframe_selvbetjeningsl_sning_mm' => 0,
           'institution' => 'institution',
           'local_plan' => 'local_plan',
           'media' => 'media',
-          'news' => 'news',
+          'os2web_base_news' => 'os2web_base_news',
           'person' => 'person',
           'politician' => 'politician',
           'referat' => 'referat',
@@ -6609,7 +6609,7 @@ function os2web_indholdstyper_field_default_fields() {
       'settings' => array(
         'referenceable_types' => array(
           'borger_dk_permalink' => 0,
-          'contentpage' => 'contentpage',
+          'os2web_base_contentpage' => 'os2web_base_contentpage',
           'esdh_dokument' => 0,
           'esdh_sag' => 0,
           'files' => 0,
@@ -7183,7 +7183,7 @@ function os2web_indholdstyper_field_default_fields() {
       'settings' => array(
         'referenceable_types' => array(
           'borger_dk_permalink' => 0,
-          'contentpage' => 'contentpage',
+          'os2web_base_contentpage' => 'os2web_base_contentpage',
           'esdh_dokument' => 0,
           'esdh_sag' => 0,
           'files' => 0,

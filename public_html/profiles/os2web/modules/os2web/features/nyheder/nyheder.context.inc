@@ -53,7 +53,7 @@ function nyheder_context_default_contexts() {
   $context->conditions = array(
     'node' => array(
       'values' => array(
-        'news' => 'news',
+        'os2web_base_news' => 'os2web_base_news',
       ),
       'options' => array(
         'node_form' => '1',
@@ -83,7 +83,7 @@ function nyheder_context_default_contexts() {
   $context->conditions = array(
     'node' => array(
       'values' => array(
-        'news' => 'news',
+        'os2web_base_news' => 'os2web_base_news',
       ),
       'options' => array(
         'node_form' => '1',

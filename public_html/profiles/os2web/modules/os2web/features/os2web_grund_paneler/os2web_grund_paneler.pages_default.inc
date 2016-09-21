@@ -62,7 +62,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
           'name' => 'node_type',
           'settings' => array(
             'type' => array(
-              'contentpage' => 'contentpage',
+              'os2web_base_contentpage' => 'os2web_base_contentpage',
             ),
           ),
           'context' => 'argument_entity_id:node_1',
@@ -514,7 +514,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
           'name' => 'node_type',
           'settings' => array(
             'type' => array(
-              'news' => 'news',
+              'os2web_base_news' => 'os2web_base_news',
             ),
           ),
           'context' => 'argument_entity_id:node_1',
@@ -658,7 +658,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
           'name' => 'node_type',
           'settings' => array(
             'type' => array(
-              'iframe_selvbetjeningsl_sning_mm' => 'iframe_selvbetjeningsl_sning_mm',
+              'os2web_base_iframe' => 'os2web_base_iframe',
               'webform' => 'webform',
             ),
           ),

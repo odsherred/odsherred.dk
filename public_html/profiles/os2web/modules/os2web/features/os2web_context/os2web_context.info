@@ -171,5 +171,5 @@ features_exclude[field_instance][node-esdh_sag-field_termref_sted] = node-esdh_s
 features_exclude[node][galleri] = galleri
 features_exclude[node][local_plan] = local_plan
 features_exclude[node][referat] = referat
-features_exclude[node][iframe_selvbetjeningsl_sning_mm] = iframe_selvbetjeningsl_sning_mm
+features_exclude[node][os2web_base_iframe] = os2web_base_iframe
 timestamp = 1369904058

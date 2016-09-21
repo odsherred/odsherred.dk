@@ -89,10 +89,10 @@ function odsherred_search_strongarm() {
       'mlt_maxwl' => '15',
       'mlt_maxqt' => '20',
       'mlt_type_filters' => array(
-        'contentpage' => 'contentpage',
+        'os2web_base_contentpage' => 'os2web_base_contentpage',
         'galleri' => 'galleri',
-        'iframe_selvbetjeningsl_sning_mm' => 'iframe_selvbetjeningsl_sning_mm',
-        'news' => 'news',
+        'os2web_base_iframe' => 'os2web_base_iframe',
+        'os2web_base_news' => 'os2web_base_news',
       ),
       'mlt_custom_filters' => '',
       'delta' => 'mlt-001',

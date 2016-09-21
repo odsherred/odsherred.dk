@@ -304,9 +304,9 @@ example.org';
   $strongarm->name = 'linkchecker_scan_nodetypes';
   $strongarm->value = array(
     'os2web_borger_dk_article' => 'os2web_borger_dk_article',
-    'contentpage' => 'contentpage',
-    'news' => 'news',
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
+    'os2web_base_contentpage' => 'os2web_base_contentpage',
+    'os2web_base_news' => 'os2web_base_news',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
     'spotbox' => 'spotbox',
     'subsites_og_sites' => 'subsites_og_sites',
     'webform' => 'webform',
@@ -341,7 +341,7 @@ example.org';
     'sektionsside' => 0,
     'speaker_paper' => 0,
     'tema' => 0,
-    'iframe_selvbetjeningsl_sning_mm' => 0,
+    'os2web_base_iframe' => 0,
   );
   $export['linkchecker_scan_nodetypes'] = $strongarm;
 

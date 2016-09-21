@@ -66,7 +66,7 @@ function odsherred_search_apachesolr_environments() {
     'node' => array(
       0 => 'baggrund',
       1 => 'contentpage',
-      2 => 'iframe_selvbetjeningsl_sning_mm',
+      2 => 'os2web_base_iframe',
       3 => 'news',
       4 => 'os2web_borger_dk_article',
       5 => 'sektionsside',

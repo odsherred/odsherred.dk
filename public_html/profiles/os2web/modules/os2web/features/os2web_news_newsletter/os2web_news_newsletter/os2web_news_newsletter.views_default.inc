@@ -69,7 +69,7 @@ function os2web_news_newsletter_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   /* Filterkriterie: Content: Post date */
   $handler->display->display_options['filters']['created']['id'] = 'created';
@@ -124,7 +124,7 @@ function os2web_news_newsletter_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['path'] = 'nyheder.xml';
   $translatables['os2web_news_page_news_feed'] = array(

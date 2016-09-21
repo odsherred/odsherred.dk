@@ -24,9 +24,9 @@ function os2web_context_context_default_contexts() {
     ),
     'node' => array(
       'values' => array(
-        'contentpage' => 'contentpage',
+        'os2web_base_contentpage' => 'os2web_base_contentpage',
         'galleri' => 'galleri',
-        'iframe_selvbetjeningsl_sning_mm' => 'iframe_selvbetjeningsl_sning_mm',
+        'os2web_base_iframe' => 'os2web_base_iframe',
         'os2web_borger_dk_article' => 'os2web_borger_dk_article',
         'sektionsside' => 'sektionsside',
       ),
@@ -77,9 +77,9 @@ function os2web_context_context_default_contexts() {
     ),
     'node' => array(
       'values' => array(
-        'contentpage' => 'contentpage',
+        'os2web_base_contentpage' => 'os2web_base_contentpage',
         'galleri' => 'galleri',
-        'iframe_selvbetjeningsl_sning_mm' => 'iframe_selvbetjeningsl_sning_mm',
+        'os2web_base_iframe' => 'os2web_base_iframe',
         'local_plan' => 'local_plan',
         'os2web_borger_dk_article' => 'os2web_borger_dk_article',
         'referat' => 'referat',
@@ -133,9 +133,9 @@ function os2web_context_context_default_contexts() {
     ),
     'node' => array(
       'values' => array(
-        'contentpage' => 'contentpage',
+        'os2web_base_contentpage' => 'os2web_base_contentpage',
         'galleri' => 'galleri',
-        'iframe_selvbetjeningsl_sning_mm' => 'iframe_selvbetjeningsl_sning_mm',
+        'os2web_base_iframe' => 'os2web_base_iframe',
         'local_plan' => 'local_plan',
         'os2web_borger_dk_article' => 'os2web_borger_dk_article',
         'sektionsside' => 'sektionsside',
