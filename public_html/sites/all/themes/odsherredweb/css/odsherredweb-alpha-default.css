@@ -1824,7 +1824,8 @@ ul.breadcrumb {
   width: 170px;
 }
 
-.field-name-field-resume-long {
+.field-name-field-resume-long,
+.field-name-field-os2web-base-field-summary {
   font-style: italic;
   color: #666666;
   font-size: 15px;
