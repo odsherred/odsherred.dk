@@ -1739,7 +1739,8 @@ ul.breadcrumb {
   padding: 25px 5px 25px 20px;
 }
 
-.hovenyhed-portalside .views-field-field-lead-image { float: right; width: 455px; height: 265px; }
+.hovenyhed-portalside .views-field-field-lead-image,
+.hovenyhed-portalside .views-field-field-os2web-base-field-lead-img { float: right; width: 455px; height: 265px; }
 
 .hovenyhed-portalside a {
   color: #3e3e3e;
@@ -1748,7 +1749,8 @@ ul.breadcrumb {
   display: block;
 }
 
-.hovenyhed-portalside .views-field-field-lead-image a { width: auto }
+.hovenyhed-portalside .views-field-field-lead-image a,
+hovenyhed-portalside .views-field-field-os2web-base-field-lead-img a { width: auto }
 
 .hovenyhed-portalside h3 a { color: #2d2d2d; font-size: 20px; font-weight: normal; }
 
