@@ -267,7 +267,7 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->pid = 'new-73876ca7-2fec-4eab-9f8d-431c8ef752ac';
     $pane->panel = 'stack1';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_resume_long';
+    $pane->subtype = 'node:field_os2web_base_field_summary';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
