@@ -156,7 +156,7 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
 
@@ -177,7 +177,7 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['pane_category']['name'] = 'CMS Theme';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -199,7 +199,7 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   /* Filterkriterie: Content: Forfrem til (field_os2web_base_field_promote) */
   $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['id'] = 'field_os2web_base_field_promote_tid';
@@ -341,7 +341,7 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filterkriterie: Content: Type (field_newstype) */
@@ -606,7 +606,7 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filterkriterie: Content: Forfrem til (field_os2web_base_field_promote) */
@@ -748,7 +748,7 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   /* Filterkriterie: Content: structure (field_os2web_base_field_struct) */
   $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['id'] = 'field_os2web_base_field_struct_tid';
@@ -840,7 +840,7 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   /* Filterkriterie: Content: structure (field_os2web_base_field_struct) */
   $handler->display->display_options['filters']['field_os2web_base_field_struct_tid']['id'] = 'field_os2web_base_field_struct_tid';
@@ -1174,7 +1174,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
 
   /* Display: Block */
@@ -1633,7 +1633,7 @@ return $field==1?true:false;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   /* Filterkriterie: Content: Forfrem til (field_os2web_base_field_promote) */
   $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['id'] = 'field_os2web_base_field_promote_tid';
