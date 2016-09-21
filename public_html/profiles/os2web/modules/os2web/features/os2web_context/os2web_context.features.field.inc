@@ -1662,7 +1662,7 @@ function os2web_context_field_default_fields() {
           'referat' => 0,
           'right_column' => 0,
           'rotating_image' => 0,
-          'spotbox' => 0,
+          'os2web_spotbox_box' => 0,
           'tema' => 0,
           'webform' => 0,
         ),

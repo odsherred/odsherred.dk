@@ -1020,7 +1020,7 @@ function os2web_spotbokse_field_default_field_instances() {
 
   // Exported field_instance: 'node-spotbox-body'
   $field_instances['node-spotbox-body'] = array(
-    'bundle' => 'spotbox',
+    'bundle' => 'os2web_spotbox_box',
     'default_value' => array(
       0 => array(
         'summary' => '',
@@ -1080,7 +1080,7 @@ function os2web_spotbokse_field_default_field_instances() {
 
   // Exported field_instance: 'node-spotbox-field_fokus_sektionsforside'
   $field_instances['node-spotbox-field_fokus_sektionsforside'] = array(
-    'bundle' => 'spotbox',
+    'bundle' => 'os2web_spotbox_box',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1149,7 +1149,7 @@ function os2web_spotbokse_field_default_field_instances() {
 
   // Exported field_instance: 'node-spotbox-field_os2web_base_field_promote'
   $field_instances['node-spotbox-field_os2web_base_field_promote'] = array(
-    'bundle' => 'spotbox',
+    'bundle' => 'os2web_spotbox_box',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1198,7 +1198,7 @@ function os2web_spotbokse_field_default_field_instances() {
 
   // Exported field_instance: 'node-spotbox-field_os2web_base_field_struct'
   $field_instances['node-spotbox-field_os2web_base_field_struct'] = array(
-    'bundle' => 'spotbox',
+    'bundle' => 'os2web_spotbox_box',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1249,7 +1249,7 @@ function os2web_spotbokse_field_default_field_instances() {
 
   // Exported field_instance: 'node-spotbox-field_os2web_base_field_text'
   $field_instances['node-spotbox-field_os2web_base_field_text'] = array(
-    'bundle' => 'spotbox',
+    'bundle' => 'os2web_spotbox_box',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1301,7 +1301,7 @@ function os2web_spotbokse_field_default_field_instances() {
 
   // Exported field_instance: 'node-spotbox-field_os2web_spotbox_big_image'
   $field_instances['node-spotbox-field_os2web_spotbox_big_image'] = array(
-    'bundle' => 'spotbox',
+    'bundle' => 'os2web_spotbox_box',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1370,7 +1370,7 @@ function os2web_spotbokse_field_default_field_instances() {
 
   // Exported field_instance: 'node-spotbox-field_os2web_spotbox_image_tall'
   $field_instances['node-spotbox-field_os2web_spotbox_image_tall'] = array(
-    'bundle' => 'spotbox',
+    'bundle' => 'os2web_spotbox_box',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1447,7 +1447,7 @@ function os2web_spotbokse_field_default_field_instances() {
 
   // Exported field_instance: 'node-spotbox-field_os2web_spotbox_video'
   $field_instances['node-spotbox-field_os2web_spotbox_video'] = array(
-    'bundle' => 'spotbox',
+    'bundle' => 'os2web_spotbox_box',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1527,7 +1527,7 @@ function os2web_spotbokse_field_default_field_instances() {
 
   // Exported field_instance: 'node-spotbox-field_reference'
   $field_instances['node-spotbox-field_reference'] = array(
-    'bundle' => 'spotbox',
+    'bundle' => 'os2web_spotbox_box',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1580,7 +1580,7 @@ function os2web_spotbokse_field_default_field_instances() {
 
   // Exported field_instance: 'node-spotbox-field_url'
   $field_instances['node-spotbox-field_url'] = array(
-    'bundle' => 'spotbox',
+    'bundle' => 'os2web_spotbox_box',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',

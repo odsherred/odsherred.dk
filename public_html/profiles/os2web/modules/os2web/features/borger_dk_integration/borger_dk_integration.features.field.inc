@@ -195,7 +195,7 @@ function borger_dk_integration_field_default_fields() {
           'contentpage' => 0,
           'files' => 0,
           'forum' => 0,
-          'iframe_selvbetjeningsl_sning_mm' => 0,
+          'os2web_base_iframe' => 0,
           'institution' => 0,
           'local_plan' => 0,
           'media' => 0,

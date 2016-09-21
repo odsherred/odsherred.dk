@@ -990,7 +990,7 @@ function os2web_grund_paneler_views_default_views() {
     'media' => 'media',
     'panel' => 'panel',
     'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
-    'spotbox' => 'spotbox',
+    'os2web_spotbox_box' => 'os2web_spotbox_box',
     'tema' => 'tema',
   );
   /* Filterkriterie: Global: PHP */
@@ -2492,7 +2492,7 @@ return $field==1?true:false;';
   $handler->display->display_options['relationships']['field_reference_nid']['id'] = 'field_reference_nid';
   $handler->display->display_options['relationships']['field_reference_nid']['table'] = 'field_data_field_reference';
   $handler->display->display_options['relationships']['field_reference_nid']['field'] = 'field_reference_nid';
-  $handler->display->display_options['relationships']['field_reference_nid']['label'] = 'spotbox';
+  $handler->display->display_options['relationships']['field_reference_nid']['label'] = 'os2web_spotbox_box';
   $handler->display->display_options['relationships']['field_reference_nid']['delta'] = '-1';
   /* Felt: Content: Author uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
@@ -2612,7 +2612,7 @@ return $field==1?true:false;';
     t('Stigende'),
     t('Faldende'),
     t('author'),
-    t('spotbox'),
+    t('os2web_spotbox_box'),
     t('Forfatter'),
     t('Fulde navn'),
     t('/'),

@@ -343,7 +343,7 @@ function os2web_spotbokse_field_default_field_bases() {
         'sektionsside' => 0,
         'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
         'speaker_paper' => 0,
-        'spotbox' => 0,
+        'os2web_spotbox_box' => 0,
         'tema' => 0,
         'webform' => 0,
       ),

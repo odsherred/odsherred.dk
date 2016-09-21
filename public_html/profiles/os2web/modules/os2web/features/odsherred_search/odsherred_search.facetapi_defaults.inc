@@ -158,11 +158,11 @@ function odsherred_search_facetapi_default_facet_settings() {
         'sektionsside' => 0,
         'selvbetjeningslinks' => 0,
         'speaker_paper' => 0,
-        'spotbox' => 0,
+        'os2web_spotbox_box' => 0,
         'subsites_og_sites' => 0,
         'tema' => 0,
         'webform' => 0,
-        'iframe_selvbetjeningsl_sning_mm' => 0,
+        'os2web_base_iframe' => 0,
       ),
       'roles' => array(
         1 => 0,

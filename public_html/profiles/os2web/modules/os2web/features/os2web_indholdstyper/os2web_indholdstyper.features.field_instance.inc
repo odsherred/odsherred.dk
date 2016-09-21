@@ -832,9 +832,9 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-iframe_selvbetjeningsl_sning_mm-body'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-body'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
+  // Exported field_instance: 'node-os2web_base_iframe-body'
+  $field_instances['node-os2web_base_iframe-body'] = array(
+    'bundle' => 'os2web_base_iframe',
     'default_value' => array(
       0 => array(
         'summary' => '',
@@ -890,9 +890,9 @@ function os2web_indholdstyper_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-iframe_selvbetjeningsl_sning_mm-field_os2web_base_field_iframe'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_os2web_base_field_iframe'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
+  // 'node-os2web_base_iframe-field_os2web_base_field_iframe'
+  $field_instances['node-os2web_base_iframe-field_os2web_base_field_iframe'] = array(
+    'bundle' => 'os2web_base_iframe',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -940,9 +940,9 @@ function os2web_indholdstyper_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-iframe_selvbetjeningsl_sning_mm-field_os2web_base_field_text'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_os2web_base_field_text'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
+  // 'node-os2web_base_iframe-field_os2web_base_field_text'
+  $field_instances['node-os2web_base_iframe-field_os2web_base_field_text'] = array(
+    'bundle' => 'os2web_base_iframe',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',

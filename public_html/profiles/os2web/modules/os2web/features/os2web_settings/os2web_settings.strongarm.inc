@@ -307,7 +307,7 @@ example.org';
     'os2web_base_contentpage' => 'os2web_base_contentpage',
     'os2web_base_news' => 'os2web_base_news',
     'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
-    'spotbox' => 'spotbox',
+    'os2web_spotbox_box' => 'os2web_spotbox_box',
     'subsites_og_sites' => 'subsites_og_sites',
     'webform' => 'webform',
     'arp_case' => 0,

@@ -16,7 +16,7 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_billeder|node|spotbox|form';
   $field_group->group_name = 'group_billeder';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_spotbox';
   $field_group->data = array(
@@ -46,7 +46,7 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_links|node|spotbox|form';
   $field_group->group_name = 'group_links';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_spotbox';
   $field_group->data = array(
@@ -75,7 +75,7 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_spotbilleder|node|spotbox|form';
   $field_group->group_name = 'group_spotbilleder';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_spotbox';
   $field_group->data = array(
@@ -102,7 +102,7 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_spotbox|node|spotbox|form';
   $field_group->group_name = 'group_spotbox';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -131,7 +131,7 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_taksonomi|node|spotbox|form';
   $field_group->group_name = 'group_taksonomi';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_spotbox';
   $field_group->data = array(
@@ -165,7 +165,7 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_tekst|node|spotbox|form';
   $field_group->group_name = 'group_tekst';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_spotbox';
   $field_group->data = array(
