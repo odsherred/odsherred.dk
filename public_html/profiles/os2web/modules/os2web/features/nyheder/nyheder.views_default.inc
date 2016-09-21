@@ -88,13 +88,13 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '130';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '130';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   /* Sorteringskriterie: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
@@ -187,14 +187,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '280';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '280';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
 
   /* Display: list 2 left */
   $handler = $view->new_display('panel_pane', 'list 2 left', 'panel_pane_2');
@@ -257,14 +257,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '90';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '90';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
 
   /* Display: list 8 bottom */
   $handler = $view->new_display('panel_pane', 'list 8 bottom', 'panel_pane_4');
@@ -322,14 +322,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '200';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
 
   /* Display: most read */
   $handler = $view->new_display('panel_pane', 'most read', 'panel_pane_5');
@@ -396,13 +396,13 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '65';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '65';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sorteringskriterie: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
@@ -473,14 +473,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '60';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '60';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterie: Content: Published */
@@ -562,14 +562,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '60';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '60';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterie: Content: Published */
@@ -650,14 +650,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '60';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '60';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterie: Content: Published */
@@ -946,13 +946,13 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '60';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '60';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
 
   /* Display: MegaDD2 */
   $handler = $view->new_display('panel_pane', 'MegaDD2', 'panel_pane_2');
@@ -1305,13 +1305,13 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '60';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '60';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   $translatables['nyheder_udbud'] = array(
     t('Master'),
     t('I udbud lige nu'),
@@ -1720,14 +1720,14 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '80';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '80';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['type'] = 'text_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterie: Content: Published */
