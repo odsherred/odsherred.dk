@@ -55,7 +55,7 @@ function os2web_grund_paneler_views_default_views() {
     'tid_1' => 0,
     'tid' => 0,
     'title' => 0,
-    'field_resume_long' => 0,
+    'field_os2web_base_field_summary' => 0,
     'field_os2web_base_field_lead_img' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
@@ -69,7 +69,7 @@ function os2web_grund_paneler_views_default_views() {
     'tid_2' => 0,
     'tid_1' => 0,
     'title' => 0,
-    'field_resume_long' => 0,
+    'field_os2web_base_field_summary' => 0,
     'field_os2web_base_field_lead_img' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_hover'] = 1;
@@ -279,21 +279,21 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'term-[tid_1]';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<span class="text-container">[field_resume_long-value]</span>';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '100';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['html'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['element_wrapper_class'] = 'term-[tid_1]';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<span class="text-container">[field_os2web_base_field_summary-value]</span>';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '100';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_wrapper_class'] = 'term-[tid_1]';
   /* Felt: Content: Primære billede */
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['id'] = 'field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['table'] = 'field_data_field_os2web_base_field_lead_img';
@@ -382,7 +382,7 @@ function os2web_grund_paneler_views_default_views() {
     'field_os2web_base_field_lead_img' => 'field_os2web_base_field_lead_img',
     'title' => 'title',
     'field_os2web_base_field_struct' => 'field_os2web_base_field_struct',
-    'field_resume_long' => 'field_resume_long',
+    'field_os2web_base_field_summary' => 'field_os2web_base_field_summary',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -437,23 +437,23 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<span class="title">[title]</span>
-<span class="text">[field_resume_long]</span>';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['path'] = '[path]';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '160';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['html'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_resume_long']['element_class'] = 'overlay';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<span class="title">[title]</span>
+<span class="text">[field_os2web_base_field_summary]</span>';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '160';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_class'] = 'overlay';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: Content: structure (field_os2web_base_field_struct) */
   $handler->display->display_options['arguments']['field_os2web_base_field_struct_tid']['id'] = 'field_os2web_base_field_struct_tid';
@@ -577,19 +577,19 @@ function os2web_grund_paneler_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   /* Felt: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Vigtig meddelelse';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '[field_resume_long] ';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[field_os2web_base_field_summary] ';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -652,17 +652,17 @@ function os2web_grund_paneler_views_default_views() {
     t('<i class="bullet term-[tid_1]"></i>'),
     t(','),
     t('<span class="text-container">[title]</span>'),
-    t('<span class="text-container">[field_resume_long-value]</span>'),
+    t('<span class="text-container">[field_os2web_base_field_summary-value]</span>'),
     t('View panes'),
     t('Blok'),
     t('Forside - Portalnyhed - 1'),
     t('/[path]'),
     t('<span class="title">[title]</span>
-<span class="text">[field_resume_long]</span>'),
+<span class="text">[field_os2web_base_field_summary]</span>'),
     t('Forside - Portalnyhed - 2-5'),
     t('Aktuelt - breaking news'),
     t('Vigtig meddelelse'),
-    t('[field_resume_long] '),
+    t('[field_os2web_base_field_summary] '),
     t('Forfrem til (field_os2web_base_field_promote)'),
   );
   $export['aktuelt'] = $view;
@@ -1119,25 +1119,25 @@ return $field==1?true:false;';
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long_1']['id'] = 'field_resume_long_1';
-  $handler->display->display_options['fields']['field_resume_long_1']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['max_length'] = '88';
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['id'] = 'field_os2web_base_field_summary_1';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['max_length'] = '88';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<div class="news-list-left">[field_os2web_base_field_lead_img]</div>
-<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]">[field_resume_long_1]</a></p></div>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<div class="news-list-left">[field_os2web_base_field_lead_img]</div>
+<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]">[field_os2web_base_field_summary_1]</a></p></div>
 <div class="news-list-next"></div>';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '10';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '10';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   /* Sorteringskriterie: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -1221,25 +1221,25 @@ return $field==1?true:false;';
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long_1']['id'] = 'field_resume_long_1';
-  $handler->display->display_options['fields']['field_resume_long_1']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['max_length'] = '80';
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['id'] = 'field_os2web_base_field_summary_1';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['max_length'] = '80';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<div class="news-list-left"><a href="node/[nid]" title=[field_resume_long_1] ><img src=[field_os2web_base_field_lead_img] alt=[field_resume_long_1]/></a></div>
-<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_resume_long_1] >[field_resume_long_1]</a></p></div>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<div class="news-list-left"><a href="node/[nid]" title=[field_os2web_base_field_summary_1] ><img src=[field_os2web_base_field_lead_img] alt=[field_os2web_base_field_summary_1]/></a></div>
+<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_os2web_base_field_summary_1] >[field_os2web_base_field_summary_1]</a></p></div>
 <div class="news-list-next"></div>';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '10';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '10';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
 
   /* Display: Page */
@@ -1284,25 +1284,25 @@ return $field==1?true:false;';
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long_1']['id'] = 'field_resume_long_1';
-  $handler->display->display_options['fields']['field_resume_long_1']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['max_length'] = '88';
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['id'] = 'field_os2web_base_field_summary_1';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['max_length'] = '88';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<div class="news-list-left"><a href="node/[nid]" title=[field_resume_long_1]><img src=[field_os2web_base_field_lead_img] alt=[field_resume_long_1]/></a></div>
-<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_resume_long_1]>[field_resume_long_1]</a></p></div>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<div class="news-list-left"><a href="node/[nid]" title=[field_os2web_base_field_summary_1]><img src=[field_os2web_base_field_lead_img] alt=[field_os2web_base_field_summary_1]/></a></div>
+<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_os2web_base_field_summary_1]>[field_os2web_base_field_summary_1]</a></p></div>
 <div class="news-list-next"></div>';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '10';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '10';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   /* Felt: Content: All taxonomy terms */
   $handler->display->display_options['fields']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['fields']['term_node_tid']['table'] = 'node';
@@ -1351,7 +1351,7 @@ return $field==1?true:false;';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['field'] = 'field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['label'] = '';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['alter']['text'] = '<img src=[field_os2web_base_field_lead_img]  alt=[field_resume_long_1]>';
+  $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['alter']['text'] = '<img src=[field_os2web_base_field_lead_img]  alt=[field_os2web_base_field_summary_1]>';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['type'] = 'image_url';
@@ -1370,25 +1370,25 @@ return $field==1?true:false;';
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long_1']['id'] = 'field_resume_long_1';
-  $handler->display->display_options['fields']['field_resume_long_1']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['max_length'] = '88';
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['id'] = 'field_os2web_base_field_summary_1';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['max_length'] = '88';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<div class="news-list-left"><a href="node/[nid]" title=[field_resume_long_1]><img src=[field_os2web_base_field_lead_img] alt=[field_resume_long_1] /></a></div>
-<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_resume_long_1]>[field_resume_long_1]</a></p></div>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<div class="news-list-left"><a href="node/[nid]" title=[field_os2web_base_field_summary_1]><img src=[field_os2web_base_field_lead_img] alt=[field_os2web_base_field_summary_1] /></a></div>
+<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_os2web_base_field_summary_1]>[field_os2web_base_field_summary_1]</a></p></div>
 <div class="news-list-next"></div>';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '10';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '10';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 0;
@@ -1446,25 +1446,25 @@ return $field==1?true:false;';
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long_1']['id'] = 'field_resume_long_1';
-  $handler->display->display_options['fields']['field_resume_long_1']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['max_length'] = '88';
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['id'] = 'field_os2web_base_field_summary_1';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['max_length'] = '88';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<div class="news-list-left"><a href="node/[nid]" title=[field_resume_long_1]><img src=[field_os2web_base_field_lead_img] alt=[field_resume_long_1] /></a></div>
-<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_resume_long_1]>[field_resume_long_1]</a></p></div>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<div class="news-list-left"><a href="node/[nid]" title=[field_os2web_base_field_summary_1]><img src=[field_os2web_base_field_lead_img] alt=[field_os2web_base_field_summary_1] /></a></div>
+<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_os2web_base_field_summary_1]>[field_os2web_base_field_summary_1]</a></p></div>
 <div class="news-list-next"></div>';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '10';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '10';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -1523,25 +1523,25 @@ return $field==1?true:false;';
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long_1']['id'] = 'field_resume_long_1';
-  $handler->display->display_options['fields']['field_resume_long_1']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['max_length'] = '88';
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['id'] = 'field_os2web_base_field_summary_1';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['max_length'] = '88';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<div class="news-list-left"><a href="node/[nid]" title=[field_resume_long_1] ><img src=[field_os2web_base_field_lead_img] alt=[field_resume_long_1]/></a></div>
-<div class="news-list-right"><p class="date">[created]</p><h3><a href="node/[nid]" title=[field_resume_long_1] >[field_resume_long_1]</a></h3></div>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<div class="news-list-left"><a href="node/[nid]" title=[field_os2web_base_field_summary_1] ><img src=[field_os2web_base_field_lead_img] alt=[field_os2web_base_field_summary_1]/></a></div>
+<div class="news-list-right"><p class="date">[created]</p><h3><a href="node/[nid]" title=[field_os2web_base_field_summary_1] >[field_os2web_base_field_summary_1]</a></h3></div>
 <div class="news-list-next"></div>';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['max_length'] = '10';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['max_length'] = '10';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -1607,18 +1607,18 @@ return $field==1?true:false;';
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long_1']['id'] = 'field_resume_long_1';
-  $handler->display->display_options['fields']['field_resume_long_1']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long_1']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['path'] = 'node/[nid] ';
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['alt'] = '[title]';
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['max_length'] = '88';
-  $handler->display->display_options['fields']['field_resume_long_1']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['id'] = 'field_os2web_base_field_summary_1';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['path'] = 'node/[nid] ';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['alt'] = '[title]';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['max_length'] = '88';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterie: Content: Published */
@@ -1662,29 +1662,29 @@ return $field==1?true:false;';
     t('Stigende'),
     t('Faldende'),
     t('<div class="news-list-left">[field_os2web_base_field_lead_img]</div>
-<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]">[field_resume_long_1]</a></p></div>
+<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]">[field_os2web_base_field_summary_1]</a></p></div>
 <div class="news-list-next"></div>'),
     t('Alle'),
     t('Block'),
     t('more'),
     t('<div class="rss-ikon"><a href="/nyheder/feed/alle-nyheder" title="Abonnér på rss-feed" class="rssikon">RSS Feed</a></div>'),
-    t('<div class="news-list-left"><a href="node/[nid]" title=[field_resume_long_1] ><img src=[field_os2web_base_field_lead_img] alt=[field_resume_long_1]/></a></div>
-<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_resume_long_1] >[field_resume_long_1]</a></p></div>
+    t('<div class="news-list-left"><a href="node/[nid]" title=[field_os2web_base_field_summary_1] ><img src=[field_os2web_base_field_lead_img] alt=[field_os2web_base_field_summary_1]/></a></div>
+<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_os2web_base_field_summary_1] >[field_os2web_base_field_summary_1]</a></p></div>
 <div class="news-list-next"></div>'),
     t('Page'),
-    t('<div class="news-list-left"><a href="node/[nid]" title=[field_resume_long_1]><img src=[field_os2web_base_field_lead_img] alt=[field_resume_long_1]/></a></div>
-<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_resume_long_1]>[field_resume_long_1]</a></p></div>
+    t('<div class="news-list-left"><a href="node/[nid]" title=[field_os2web_base_field_summary_1]><img src=[field_os2web_base_field_lead_img] alt=[field_os2web_base_field_summary_1]/></a></div>
+<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_os2web_base_field_summary_1]>[field_os2web_base_field_summary_1]</a></p></div>
 <div class="news-list-next"></div>'),
     t('Newslist'),
-    t('<img src=[field_os2web_base_field_lead_img]  alt=[field_resume_long_1]>'),
-    t('<div class="news-list-left"><a href="node/[nid]" title=[field_resume_long_1]><img src=[field_os2web_base_field_lead_img] alt=[field_resume_long_1] /></a></div>
-<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_resume_long_1]>[field_resume_long_1]</a></p></div>
+    t('<img src=[field_os2web_base_field_lead_img]  alt=[field_os2web_base_field_summary_1]>'),
+    t('<div class="news-list-left"><a href="node/[nid]" title=[field_os2web_base_field_summary_1]><img src=[field_os2web_base_field_lead_img] alt=[field_os2web_base_field_summary_1] /></a></div>
+<div class="news-list-right"><p>[created]</p><p><a href="node/[nid]" title=[field_os2web_base_field_summary_1]>[field_os2web_base_field_summary_1]</a></p></div>
 <div class="news-list-next"></div>'),
     t('View panes'),
     t('Portalnews'),
     t('Portalnews-big'),
-    t('<div class="news-list-left"><a href="node/[nid]" title=[field_resume_long_1] ><img src=[field_os2web_base_field_lead_img] alt=[field_resume_long_1]/></a></div>
-<div class="news-list-right"><p class="date">[created]</p><h3><a href="node/[nid]" title=[field_resume_long_1] >[field_resume_long_1]</a></h3></div>
+    t('<div class="news-list-left"><a href="node/[nid]" title=[field_os2web_base_field_summary_1] ><img src=[field_os2web_base_field_lead_img] alt=[field_os2web_base_field_summary_1]/></a></div>
+<div class="news-list-right"><p class="date">[created]</p><h3><a href="node/[nid]" title=[field_os2web_base_field_summary_1] >[field_os2web_base_field_summary_1]</a></h3></div>
 <div class="news-list-next"></div>'),
     t('Hovednyhed - Portalside'),
     t('[title]'),
