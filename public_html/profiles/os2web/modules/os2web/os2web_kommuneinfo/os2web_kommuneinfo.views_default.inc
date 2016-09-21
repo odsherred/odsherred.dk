@@ -385,18 +385,18 @@ function os2web_kommuneinfo_views_default_views() {
   $handler->display->display_options['fields']['field_newstype']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_resume_long]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<p class="indrykket">[field_os2web_base_field_summary]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Svarfrist: [field_udloebsdato]</p>';
-  $handler->display->display_options['fields']['field_resume_long']['element_type'] = 'p';
-  $handler->display->display_options['fields']['field_resume_long']['element_class'] = 'indrykket';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_class'] = 'indrykket';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_default_classes'] = FALSE;
   /* Felt: Content: Publiceringsdato */
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
@@ -565,18 +565,18 @@ Svarfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_newstype']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_newstype']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_resume_long]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<p class="indrykket">[field_os2web_base_field_summary]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Klagefrist: [field_udloebsdato]</p>';
-  $handler->display->display_options['fields']['field_resume_long']['element_type'] = 'p';
-  $handler->display->display_options['fields']['field_resume_long']['element_class'] = 'indrykket';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_class'] = 'indrykket';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_default_classes'] = FALSE;
   /* Felt: Content: Publiceringsdato */
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['id'] = 'field_nyheder_publiceringsdato';
   $handler->display->display_options['fields']['field_nyheder_publiceringsdato']['table'] = 'field_data_field_nyheder_publiceringsdato';
@@ -745,17 +745,17 @@ Klagefrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_resume_long]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<p class="indrykket">[field_os2web_base_field_summary]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Tilbudsfrist: [field_udloebsdato]</p>';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['field_resume_long']['element_wrapper_class'] = 'indrykket';
-  $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_wrapper_class'] = 'indrykket';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_default_classes'] = FALSE;
   /* Felt: Content: Udløbsdato */
   $handler->display->display_options['fields']['field_udloebsdato']['id'] = 'field_udloebsdato';
   $handler->display->display_options['fields']['field_udloebsdato']['table'] = 'field_data_field_udloebsdato';
@@ -910,17 +910,17 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_resume_long]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<p class="indrykket">[field_os2web_base_field_summary]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] </p>';
-  $handler->display->display_options['fields']['field_resume_long']['element_type'] = 'p';
-  $handler->display->display_options['fields']['field_resume_long']['element_class'] = 'indrykket';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_resume_long']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_class'] = 'indrykket';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
@@ -1458,15 +1458,15 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_resume_long]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_os2web_base_field_summary]</p>
 <p class="indrykket  lilletekst"><i>Svarfrist: [field_udloebsdato_1]</i></p>';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Svarfrist: [field_udloebsdato_1]</i></p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sorteringskriterie: Node: Published at */
@@ -1641,15 +1641,15 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_resume_long]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_os2web_base_field_summary]</p>
 <p class="indrykket  lilletekst"><i>Klagefrist: [field_udloebsdato]</i></p>';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Klagefrist: [field_udloebsdato]</i></p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sorteringskriterie: Node: Published at */
@@ -1837,15 +1837,15 @@ Tilbudsfrist: [field_udloebsdato]</p>';
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_resume_long]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_os2web_base_field_summary]</p>
 <p class="indrykket  lilletekst"><i>Tilbudsfrist: [field_udloebsdato_1]</i></p>';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Tilbudsfrist: [field_udloebsdato_1]</i></p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sorteringskriterie: Node: Published at */
@@ -2006,14 +2006,14 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     'multiple_to' => '',
   );
   /* Felt: Content: Resume - lang overskrift */
-  $handler->display->display_options['fields']['field_resume_long']['id'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['table'] = 'field_data_field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['field'] = 'field_resume_long';
-  $handler->display->display_options['fields']['field_resume_long']['label'] = '';
-  $handler->display->display_options['fields']['field_resume_long']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_resume_long']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_resume_long]</p>';
-  $handler->display->display_options['fields']['field_resume_long']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resume_long']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['alter']['text'] = '<p class="indrykket">[field_newstype]: [field_os2web_base_field_summary]</p>';
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_summary']['empty'] = '<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Mødestart: [field_newstypedato_1]</i></p>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sorteringskriterie: Content: Dato (field_newstypedato) */
@@ -2091,7 +2091,7 @@ Tilbudsfrist: [field_udloebsdato]</p>';
     t('<h1>Aktuelle høringer</h1>'),
     t('Der er ingen aktuelle høringer.'),
     t('[field_os2web_base_field_struct] - [field_newstype] '),
-    t('<p class="indrykket">[field_resume_long]</p>
+    t('<p class="indrykket">[field_os2web_base_field_summary]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Svarfrist: [field_udloebsdato]</p>'),
     t('Publiceriet'),
@@ -2100,7 +2100,7 @@ Svarfrist: [field_udloebsdato]</p>'),
     t('Kommuneinformation - Afgørelser - Side'),
     t('<h1>Aktuelle afgørelser</h1>'),
     t('Der er ingen aktuelle afgørelser.'),
-    t('<p class="indrykket">[field_resume_long]</p>
+    t('<p class="indrykket">[field_os2web_base_field_summary]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Klagefrist: [field_udloebsdato]</p>'),
     t('Publiceret'),
@@ -2110,7 +2110,7 @@ Klagefrist: [field_udloebsdato]</p>'),
     t('<h1>Aktuelle udbud</h1>'),
     t('Der er ingen aktuelle udbud.'),
     t('[field_os2web_base_field_struct] - [field_newstype]'),
-    t('<p class="indrykket">[field_resume_long]</p>
+    t('<p class="indrykket">[field_os2web_base_field_summary]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] <br>
 Tilbudsfrist: [field_udloebsdato]</p>'),
     t('Tilbudsfrist'),
@@ -2118,7 +2118,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('Kommuneinformation - Møder - Side'),
     t('<h1>Aktuelle møder</h1>'),
     t('Der er ingen aktuelle møder.'),
-    t('<p class="indrykket">[field_resume_long]</p>
+    t('<p class="indrykket">[field_os2web_base_field_summary]</p>
 <p class="indrykket lilletekst">Publiceret: [field_nyheder_publiceringsdato] </p>'),
     t('Tidligere udbud'),
     t('<h2>Tidligere udbud</h2>'),
@@ -2143,7 +2143,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
 <p><a href="/kommuneinformationer/hoeringer" title="Tidligere høringer">Se tidligere høringer</a>'),
     t('[field_udloebsdato_1-value]'),
     t('<div class="date-container"><span class="date">[published_at_1]</span><span class="month">[published_at]</span></div>'),
-    t('<p class="indrykket">[field_newstype]: [field_resume_long]</p>
+    t('<p class="indrykket">[field_newstype]: [field_os2web_base_field_summary]</p>
 <p class="indrykket  lilletekst"><i>Svarfrist: [field_udloebsdato_1]</i></p>'),
     t('<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Svarfrist: [field_udloebsdato_1]</i></p>'),
@@ -2158,7 +2158,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
 <p><a href="/kommuneinformationer/afgoerelser" title="Flere afgørelser">Se tidligere afgørelser</a>'),
     t('<div class="date-container"><span class="date">[published_at]</span><span class="month">[published_at_1]</span></div>'),
     t('[field_udloebsdato-value]'),
-    t('<p class="indrykket">[field_newstype]: [field_resume_long]</p>
+    t('<p class="indrykket">[field_newstype]: [field_os2web_base_field_summary]</p>
 <p class="indrykket  lilletekst"><i>Klagefrist: [field_udloebsdato]</i></p>'),
     t('<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Klagefrist: [field_udloebsdato]</i></p>'),
@@ -2169,7 +2169,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('<a class="setidligere" href="/kommuneinformationer/udbud">Se flere udbud</a>'),
     t('<p>Der er ingen aktuelle udbud.</p>
 <p><a href="/kommuneinformationer/udbud" title="Tidligere udbud">Se tidligere udbud</a>'),
-    t('<p class="indrykket">[field_newstype]: [field_resume_long]</p>
+    t('<p class="indrykket">[field_newstype]: [field_os2web_base_field_summary]</p>
 <p class="indrykket  lilletekst"><i>Tilbudsfrist: [field_udloebsdato_1]</i></p>'),
     t('<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Tilbudsfrist: [field_udloebsdato_1]</i></p>'),
@@ -2181,7 +2181,7 @@ Tilbudsfrist: [field_udloebsdato]</p>'),
     t('<p>Der er ingen aktuelle møder.</p>
 <p><a href="/kommuneinformationer/moeder" title="Tidligere møder">Se tidligere møder</a>'),
     t('[field_newstypedato_1-value]'),
-    t('<p class="indrykket">[field_newstype]: [field_resume_long]</p>'),
+    t('<p class="indrykket">[field_newstype]: [field_os2web_base_field_summary]</p>'),
     t('<p class="indrykket">[field_newstype]: [body]</p>
 <p class="indrykket  lilletekst"><i>Mødestart: [field_newstypedato_1]</i></p>'),
   );
