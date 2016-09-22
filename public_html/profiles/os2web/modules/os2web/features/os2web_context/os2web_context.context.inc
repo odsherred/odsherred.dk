@@ -83,7 +83,7 @@ function os2web_context_context_default_contexts() {
         'local_plan' => 'local_plan',
         'os2web_borger_dk_article' => 'os2web_borger_dk_article',
         'referat' => 'referat',
-        'sektionsside' => 'sektionsside',
+        'os2web_sections_page' => 'os2web_sections_page',
         'webform' => 'webform',
       ),
       'options' => array(
@@ -138,7 +138,7 @@ function os2web_context_context_default_contexts() {
         'os2web_base_iframe' => 'os2web_base_iframe',
         'local_plan' => 'local_plan',
         'os2web_borger_dk_article' => 'os2web_borger_dk_article',
-        'sektionsside' => 'sektionsside',
+        'os2web_sections_page' => 'os2web_sections_page',
       ),
       'options' => array(
         'node_form' => '1',
