@@ -26,6 +26,24 @@
       </div>
       <!-- End - logo -->
 
+      <?php if (isset($sidebar_borger)): ?>
+        <!-- Begin - navigation -->
+        <?php print render($sidebar_borger); ?>
+        <!-- End - navigation -->
+      <?php endif; ?>
+
+      <?php if (isset($sidebar_erhverv)): ?>
+        <!-- Begin - navigation -->
+        <?php print render($sidebar_erhverv); ?>
+        <!-- End - navigation -->
+      <?php endif; ?>
+
+      <?php if (isset($sidebar_politik)): ?>
+        <!-- Begin - navigation -->
+        <?php print render($sidebar_politik); ?>
+        <!-- End - navigation -->
+      <?php endif; ?>
+
     </div>
     <!-- End - inner wrapper -->
 
