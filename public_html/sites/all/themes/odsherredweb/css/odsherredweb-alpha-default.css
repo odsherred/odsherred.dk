@@ -784,8 +784,7 @@ ul.breadcrumb {
 .views-slideshow-pager-fields .slideshow-previous,
 .background-images { display: none }
 
-.views-field.views-field-field-resume-long,
-.views-field-field-os2web-base-field-summary {
+.views-field.views-field-field-resume-long {
   margin: 20px 0 0;
 }
 
@@ -1937,7 +1936,8 @@ h2.mArticle {
   margin: 9px 0 0 0;
 }
 
-.news-page-list .views-field.views-field-field-resume-long {
+.news-page-list .views-field.views-field-field-resume-long,
+.news-page-list .views-field-field-os2web-base-field-summary {
   margin: 5px 0 0;
 }
 
