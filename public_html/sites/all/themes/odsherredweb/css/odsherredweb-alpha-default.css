@@ -784,16 +784,19 @@ ul.breadcrumb {
 .views-slideshow-pager-fields .slideshow-previous,
 .background-images { display: none }
 
-.views-field.views-field-field-resume-long {
+.views-field.views-field-field-resume-long,
+.views-field-field-os2web-base-field-summary {
   margin: 20px 0 0;
 }
 
+.views-field-field-os2web-base-field-summary .field-content
 .views-field-field-resume-long .field-content {
   color: #ffffff;
   font-size: 23px;
   line-height: 26px;
 }
 
+.view-news-page-views .views-field-field-os2web-base-field-summary .field-content,
 .view-news-page-views .views-field-field-resume-long .field-content {
   line-height: 20px;
 }
@@ -803,6 +806,7 @@ ul.breadcrumb {
   line-height: 45px;
 }
 
+#views_slideshow_cycle_main_aktuelt-panel_pane_3 .views-field-field-os2web-base-field-summary .text-container,
 #views_slideshow_cycle_main_aktuelt-panel_pane_3 .views-field-field-resume-long .text-container {
   font-size: 20px;
 }
@@ -1941,7 +1945,8 @@ h2.mArticle {
   margin: 5px 0 0;
 }
 
-.page-nyheder .views-field-field-resume-long .field-content {
+.page-nyheder .views-field-field-resume-long .field-content,
+.page-nyheder .views-field-field-os2web-base-field-summary .field-content {
   color: #3e3e3e;
   font-size: 12px;
   overflow: hidden;
@@ -1969,7 +1974,8 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
   padding: 0 0 0 15px;
 }
 
-.list-1-top .views-field-field-resume-long .field-content {
+.list-1-top .views-field-field-resume-long .field-content,
+.list-1-top .views-field-field-os2web-base-field-summary  .field-content{
   padding: 0 0 0 15px;
   height: 60px;
   margin: 0 0 15px 0;
@@ -1991,7 +1997,8 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
   line-height: 17px;
 }
 
-.list-2-left .views-field-field-resume-long .field-content {
+.list-2-left .views-field-field-resume-long .field-content,
+.list-2-left .views-field-field-os2web-base-field-summary  .field-content{
   padding: 0 0 0 14px;
   height: 63px;
   line-height: 16px;
@@ -2010,13 +2017,15 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
   padding: 0 0 0 11px;
 }
 
-.list-3-right .views-field-field-resume-long .field-content {
+.list-3-right .views-field-field-resume-long .field-content,
+.list-3-right .views-field-field-os2web-base-field-summary .field-content {
   padding: 0 0 0 11px;
   height: 35px;
   line-height: 16px;
 }
 
-.list-3-right .views-field.views-field-field-resume-long {
+.list-3-right .views-field.views-field-field-resume-long,
+.list-3-right .views-field..views-field-field-os2web-base-field-summary {
   margin: 2px 0 0 0;
 }
 
