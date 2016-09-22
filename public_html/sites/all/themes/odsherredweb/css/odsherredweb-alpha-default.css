@@ -2047,7 +2047,7 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
 }
 
 .list-8-bottom .views-field-field-resume-long .field-content,
-.list-8-bottom .views-field-os2web-base-field-summary .field-content {
+.list-8-bottom .views-field-field-os2web-base-field-summary .field-content {
   padding: 0 0 0 8px;
   height: 50px;
 }
@@ -2071,18 +2071,14 @@ img.news_page_1_top, img.news_page_2_left, img.news_page_3_right { max-width: 10
 .list-8-bottom .views-field-title {
   padding: 0 0 0 8px;
   margin: 4px 0 0 0;
-  width: 166px;
   overflow: hidden;
   max-height: 37px;
-  float: left;
 }
 
-.list-8-bottom .views-field-os2web-base-field-summary,
+.list-8-bottom .views-field-field-os2web-base-field-summary,
 .list-8-bottom .views-field-field-resume-long {
-  width: 166px;
   overflow: hidden;
   max-height: 57px;
-  float: left;
 }
 
 .most-read {
