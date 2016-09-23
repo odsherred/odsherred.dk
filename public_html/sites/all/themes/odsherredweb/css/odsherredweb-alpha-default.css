@@ -3164,9 +3164,10 @@ ul.searchcloud li a {
   color: #ffffff;
   font-size: 12px;
   text-decoration: none;
-  padding: 0 0 5px 15px;
+  padding: 0 0 2px 15px;
   margin: 0;
   width: 200px;
+  font-weight: normal;
 }
 
 #quicktabs-nyheder ul li.active {
@@ -3192,7 +3193,7 @@ ul.searchcloud li a {
   margin: 0;
   background: transparent;
   padding-left: 17px;
-  padding-bottom: 15px
+  padding-bottom: 5px
 }
 
 #quicktabs-container-nyheder {
