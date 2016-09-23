@@ -47,6 +47,13 @@ function nyheder_quicktabs_default_quicktabs() {
       'weight' => '-97',
       'type' => 'block',
     ),
+    4 => array(
+      'bid' => 'views_delta_kommuneinformation-block_5',
+      'hide_title' => 1,
+      'title' => 'Åstedsforretninger',
+      'weight' => '-96',
+      'type' => 'block',
+    ),
   );
   $quicktabs->renderer = 'ui_tabs';
   $quicktabs->style = 'nostyle';
