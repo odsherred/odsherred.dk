@@ -67,7 +67,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid_1']['separator'] = '';
-  /* Felt: Content: Primære billede */
+  /* Felt: Content: Billede */
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['id'] = 'field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['table'] = 'field_data_field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['field'] = 'field_os2web_base_field_lead_img';
@@ -87,7 +87,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -166,7 +166,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid_1']['separator'] = '';
-  /* Felt: Content: Primære billede */
+  /* Felt: Content: Billede */
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['id'] = 'field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['table'] = 'field_data_field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['field'] = 'field_os2web_base_field_lead_img';
@@ -186,7 +186,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -236,7 +236,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['label'] = '';
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
-  /* Felt: Content: Primære billede */
+  /* Felt: Content: Billede */
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['id'] = 'field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['table'] = 'field_data_field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['field'] = 'field_os2web_base_field_lead_img';
@@ -256,7 +256,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -301,7 +301,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid_1']['separator'] = '';
-  /* Felt: Content: Primære billede */
+  /* Felt: Content: Billede */
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['id'] = 'field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['table'] = 'field_data_field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['field'] = 'field_os2web_base_field_lead_img';
@@ -319,9 +319,12 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['alt'] = '[title]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -395,7 +398,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '30';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -472,7 +475,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -561,7 +564,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -649,7 +652,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -703,6 +706,7 @@ function nyheder_views_default_views() {
     t('list 3 right'),
     t(','),
     t('list 8 bottom'),
+    t('[title]'),
     t('most read'),
     t('Mest læste nyheder'),
     t('<div class="date-container"><span class="date">[changed]</span><span class="month">[changed_1]</span></div>'),
@@ -945,7 +949,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['label'] = '';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -1304,7 +1308,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['label'] = '';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -1719,7 +1723,7 @@ function nyheder_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['label'] = '';
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2web_base_field_struct']['element_label_colon'] = FALSE;
-  /* Felt: Content: Resume - lang overskrift */
+  /* Felt: Content: Intro */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';

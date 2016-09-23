@@ -235,6 +235,73 @@ function nyheder_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_os2web_base_field_add_info'
+  $field_bases['field_os2web_base_field_add_info'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_base_field_add_info',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_os2web_base_field_hidlinks'
+  $field_bases['field_os2web_base_field_hidlinks'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_base_field_hidlinks',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 0,
+        1 => 1,
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'field_os2web_base_field_media'
+  $field_bases['field_os2web_base_field_media'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_base_field_media',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
+  );
+
   // Exported field_base: 'field_os2web_base_field_promote'
   $field_bases['field_os2web_base_field_promote'] = array(
     'active' => 1,
@@ -261,6 +328,64 @@ function nyheder_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_os2web_base_field_related'
+  $field_bases['field_os2web_base_field_related'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_base_field_related',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'referenceable_types' => array(
+        'activity' => 'activity',
+        'borger_dk_permalink' => 0,
+        'contentpage' => 'contentpage',
+        'files' => 'files',
+        'forum' => 0,
+        'iframe_selvbetjeningsl_sning_mm' => 0,
+        'institution' => 'institution',
+        'local_plan' => 'local_plan',
+        'media' => 'media',
+        'news' => 'news',
+        'person' => 'person',
+        'politician' => 'politician',
+        'referat' => 'referat',
+        'right_column' => 0,
+        'tema' => 'tema',
+        'webform' => 'webform',
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
+  );
+
+  // Exported field_base: 'field_os2web_base_field_sourceid'
+  $field_bases['field_os2web_base_field_sourceid'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_base_field_sourceid',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_os2web_base_field_struct'
@@ -358,13 +483,13 @@ function nyheder_field_default_field_bases() {
       'referenceable_types' => array(
         'activity' => 'activity',
         'borger_dk_permalink' => 0,
-        'os2web_base_contentpage' => 'os2web_base_contentpage',
         'files' => 'files',
         'forum' => 0,
-        'os2web_base_iframe' => 0,
         'institution' => 'institution',
         'local_plan' => 'local_plan',
         'media' => 'media',
+        'os2web_base_contentpage' => 'os2web_base_contentpage',
+        'os2web_base_iframe' => 0,
         'os2web_base_news' => 'os2web_base_news',
         'person' => 'person',
         'politician' => 'politician',
@@ -404,11 +529,11 @@ function nyheder_field_default_field_bases() {
         'contentpage' => 0,
         'files' => 0,
         'forum' => 0,
-        'os2web_base_iframe' => 0,
         'institution' => 0,
         'local_plan' => 0,
         'media' => 0,
         'news' => 0,
+        'os2web_base_iframe' => 0,
         'person' => 0,
         'politician' => 0,
         'referat' => 0,

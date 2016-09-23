@@ -32,60 +32,6 @@ function os2web_spotbokse_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_os2web_base_field_edi_tags'
-  $field_bases['field_os2web_base_field_edi_tags'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2web_base_field_edi_tags',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'redaktoertags',
-          'parent' => 0,
-        ),
-      ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_os2web_base_field_kle_ref'
-  $field_bases['field_os2web_base_field_kle_ref'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2web_base_field_kle_ref',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'kle',
-          'parent' => 0,
-        ),
-      ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_os2web_base_field_lead_img'
   $field_bases['field_os2web_base_field_lead_img'] = array(
     'active' => 1,
@@ -106,60 +52,6 @@ function os2web_spotbokse_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'image',
-  );
-
-  // Exported field_base: 'field_os2web_base_field_loca_ref'
-  $field_bases['field_os2web_base_field_loca_ref'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2web_base_field_loca_ref',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'egennavne_stednavne',
-          'parent' => 0,
-        ),
-      ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_os2web_base_field_organiz'
-  $field_bases['field_os2web_base_field_organiz'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2web_base_field_organiz',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'organisation',
-          'parent' => 0,
-        ),
-      ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_os2web_base_field_politics'
@@ -324,7 +216,6 @@ function os2web_spotbokse_field_default_field_bases() {
         'files' => 0,
         'galleri' => 0,
         'hoering' => 0,
-        'os2web_base_iframe' => 'os2web_base_iframe',
         'institution' => 0,
         'knactivity' => 0,
         'kontaktblok' => 0,
@@ -333,6 +224,8 @@ function os2web_spotbokse_field_default_field_bases() {
         'meeting' => 0,
         'news' => 0,
         'ofir_job' => 0,
+        'os2web_base_iframe' => 'os2web_base_iframe',
+        'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
         'os2web_meeting_search_status' => 0,
         'panel' => 0,
         'person' => 0,
@@ -341,9 +234,8 @@ function os2web_spotbokse_field_default_field_bases() {
         'right_column' => 0,
         'rotating_image' => 0,
         'sektionsside' => 0,
-        'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
         'speaker_paper' => 0,
-        'os2web_spotbox_box' => 0,
+        'spotbox' => 0,
         'tema' => 0,
         'webform' => 0,
       ),

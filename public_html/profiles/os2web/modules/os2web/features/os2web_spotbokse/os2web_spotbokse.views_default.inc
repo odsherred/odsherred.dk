@@ -45,7 +45,7 @@ function os2web_spotbokse_views_default_views() {
   $handler->display->display_options['relationships']['field_indholdsside_spotboxe_nid']['field'] = 'field_indholdsside_spotboxe_nid';
   $handler->display->display_options['relationships']['field_indholdsside_spotboxe_nid']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_indholdsside_spotboxe_nid']['delta'] = '-1';
-  /* Felt: Content: Primære billede */
+  /* Felt: Content: Billede */
   $handler->display->display_options['fields']['field_fokus_sektionsforside']['id'] = 'field_fokus_sektionsforside';
   $handler->display->display_options['fields']['field_fokus_sektionsforside']['table'] = 'field_data_field_fokus_sektionsforside';
   $handler->display->display_options['fields']['field_fokus_sektionsforside']['field'] = 'field_fokus_sektionsforside';
@@ -173,7 +173,7 @@ function os2web_spotbokse_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['relationship'] = 'field_indholdsside_spotboxe_nid';
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
-  /* Felt: Content: Primære billede */
+  /* Felt: Content: Billede */
   $handler->display->display_options['fields']['field_fokus_sektionsforside']['id'] = 'field_fokus_sektionsforside';
   $handler->display->display_options['fields']['field_fokus_sektionsforside']['table'] = 'field_data_field_fokus_sektionsforside';
   $handler->display->display_options['fields']['field_fokus_sektionsforside']['field'] = 'field_fokus_sektionsforside';
@@ -270,7 +270,7 @@ function os2web_spotbokse_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Felt: Content: Primære billede */
+  /* Felt: Content: Billede */
   $handler->display->display_options['fields']['field_fokus_sektionsforside']['id'] = 'field_fokus_sektionsforside';
   $handler->display->display_options['fields']['field_fokus_sektionsforside']['table'] = 'field_data_field_fokus_sektionsforside';
   $handler->display->display_options['fields']['field_fokus_sektionsforside']['field'] = 'field_fokus_sektionsforside';
