@@ -71,8 +71,8 @@ function os2web_spotbokse_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_spotbox_box-field_fokus_sektionsforside'
-  $field_instances['node-os2web_spotbox_box-field_fokus_sektionsforside'] = array(
+  // 'node-os2web_spotbox_box-field_os2web_spotbox_img'
+  $field_instances['node-os2web_spotbox_box-field_os2web_spotbox_img'] = array(
     'bundle' => 'os2web_spotbox_box',
     'deleted' => 0,
     'description' => '',
@@ -107,7 +107,7 @@ function os2web_spotbokse_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_fokus_sektionsforside',
+    'field_name' => 'field_os2web_spotbox_img',
     'label' => 'Billede',
     'required' => 0,
     'settings' => array(
@@ -1145,8 +1145,8 @@ function os2web_spotbokse_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spotbox-field_fokus_sektionsforside'
-  $field_instances['node-spotbox-field_fokus_sektionsforside'] = array(
+  // Exported field_instance: 'node-spotbox-field_os2web_spotbox_img'
+  $field_instances['node-spotbox-field_os2web_spotbox_img'] = array(
     'bundle' => 'spotbox',
     'deleted' => 0,
     'description' => '',
@@ -1181,7 +1181,7 @@ function os2web_spotbokse_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_fokus_sektionsforside',
+    'field_name' => 'field_os2web_spotbox_img',
     'label' => 'Billede',
     'required' => 0,
     'settings' => array(

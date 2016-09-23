@@ -83,7 +83,7 @@ function os2web_spotbokse_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_os2web_base_field_lead_img',
-      1 => 'field_fokus_sektionsforside',
+      1 => 'field_os2web_spotbox_img',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

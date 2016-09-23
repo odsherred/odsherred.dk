@@ -10,13 +10,13 @@
 function os2web_spotbokse_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_fokus_sektionsforside'
-  $field_bases['field_fokus_sektionsforside'] = array(
+  // Exported field_base: 'field_os2web_spotbox_img'
+  $field_bases['field_os2web_spotbox_img'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_fokus_sektionsforside',
+    'field_name' => 'field_os2web_spotbox_img',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
