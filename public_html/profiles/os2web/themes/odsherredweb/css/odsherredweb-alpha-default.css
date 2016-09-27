@@ -3304,3 +3304,7 @@ a.gminus {
 .group-hidden {
   display: none;
 }
+
+.form-item-unpublish-on {
+  display: none;
+}
