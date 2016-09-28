@@ -94,7 +94,7 @@ function os2web_a2aa_index_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'contentpage' => 'contentpage',
+    'os2web_base_contentpage' => 'os2web_base_contentpage',
   );
 
   /* Display: Page */

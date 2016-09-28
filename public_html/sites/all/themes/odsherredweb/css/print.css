@@ -1,0 +1,21 @@
+body {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+#messages,
+#section-header,
+#region-sidebar-first,
+#section-footer,
+#toolbar,
+ul.action-links,
+div.tabs,
+div.slider,
+.del-udskriv,
+h2.node-title,
+.field-name-field-os2web-base-field-media {
+  display: none;
+}
+
+.mArticle {
+  display: block !important;
+}

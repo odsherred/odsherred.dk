@@ -16,16 +16,15 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_billeder|node|spotbox|form';
   $field_group->group_name = 'group_billeder';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_spotbox';
   $field_group->data = array(
     'label' => 'Spotbox',
     'weight' => '1',
     'children' => array(
-      0 => 'field_termref_kle',
-      1 => 'field_site_structure',
-      2 => 'title',
+      0 => 'field_os2web_base_field_struct',
+      1 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -46,16 +45,17 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_links|node|spotbox|form';
   $field_group->group_name = 'group_links';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_spotbox';
   $field_group->data = array(
     'label' => 'Links',
     'weight' => '4',
     'children' => array(
-      0 => 'field_url',
-      1 => 'field_text',
+      0 => 'field_os2web_spotbox_url',
+      1 => 'field_os2web_base_field_text',
       2 => 'field_reference',
+      3 => 'field_url',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -75,14 +75,15 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_spotbilleder|node|spotbox|form';
   $field_group->group_name = 'group_spotbilleder';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_spotbox';
   $field_group->data = array(
     'label' => 'Billeder',
     'weight' => '2',
     'children' => array(
-      0 => 'field_fokus_sektionsforside',
+      0 => 'field_os2web_base_field_lead_img',
+      1 => 'field_os2web_spotbox_img',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -102,7 +103,7 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_spotbox|node|spotbox|form';
   $field_group->group_name = 'group_spotbox';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -131,21 +132,21 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_taksonomi|node|spotbox|form';
   $field_group->group_name = 'group_taksonomi';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_spotbox';
   $field_group->data = array(
     'label' => 'Emneord',
     'weight' => '5',
     'children' => array(
-      0 => 'field_lead_image',
-      1 => 'field_termref_sted',
-      2 => 'field_organization',
-      3 => 'field_editortags',
-      4 => 'field_politics',
-      5 => 'field_promoteto',
-      6 => 'field_spotbox_image_tall',
-      7 => 'field_stort_billede_spot5',
+      0 => 'field_os2web_base_field_kle_ref',
+      1 => 'field_os2web_base_field_loca_ref',
+      2 => 'field_os2web_base_field_organiz',
+      3 => 'field_os2web_base_field_edi_tags',
+      4 => 'field_os2web_base_field_politics',
+      5 => 'field_os2web_base_field_promote',
+      6 => 'field_os2web_spotbox_image_tall',
+      7 => 'field_os2web_spotbox_big_image',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -165,7 +166,7 @@ function os2web_spotbokse_field_group_info() {
   $field_group->identifier = 'group_tekst|node|spotbox|form';
   $field_group->group_name = 'group_tekst';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'spotbox';
+  $field_group->bundle = 'os2web_spotbox_box';
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_spotbox';
   $field_group->data = array(
@@ -173,7 +174,7 @@ function os2web_spotbokse_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'body',
-      1 => 'field_spotbox_video',
+      1 => 'field_os2web_spotbox_video',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

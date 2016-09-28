@@ -11,7 +11,7 @@ function os2web_news_newsletter_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'nyhedsbrev';
+  $view->name = 'os2web_news_page_news_feed';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -69,7 +69,7 @@ function os2web_news_newsletter_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   /* Filterkriterie: Content: Post date */
   $handler->display->display_options['filters']['created']['id'] = 'created';
@@ -124,10 +124,10 @@ function os2web_news_newsletter_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news' => 'news',
+    'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['path'] = 'nyheder.xml';
-  $translatables['nyhedsbrev'] = array(
+  $translatables['os2web_news_page_news_feed'] = array(
     t('Master'),
     t('nyhedsbrev'),
     t('mere'),
@@ -148,7 +148,7 @@ function os2web_news_newsletter_views_default_views() {
     t('more'),
     t('Feed'),
   );
-  $export['nyhedsbrev'] = $view;
+  $export['os2web_news_page_news_feed'] = $view;
 
   return $export;
 }

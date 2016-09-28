@@ -192,103 +192,6 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-contentpage-field_billede'
-  $field_instances['node-contentpage-field_billede'] = array(
-    'bundle' => 'contentpage',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'field_slideshow',
-        'settings' => array(
-          'slideshow_caption' => 'alt',
-          'slideshow_caption_link' => '',
-          'slideshow_carousel_circular' => 0,
-          'slideshow_carousel_follow' => 0,
-          'slideshow_carousel_image_style' => '',
-          'slideshow_carousel_scroll' => 1,
-          'slideshow_carousel_skin' => '',
-          'slideshow_carousel_speed' => 500,
-          'slideshow_carousel_vertical' => 0,
-          'slideshow_carousel_visible' => 3,
-          'slideshow_colorbox_image_style' => '',
-          'slideshow_colorbox_slideshow' => '',
-          'slideshow_colorbox_slideshow_speed' => 4000,
-          'slideshow_colorbox_speed' => 350,
-          'slideshow_colorbox_transition' => 'elastic',
-          'slideshow_controls' => 0,
-          'slideshow_controls_pause' => 0,
-          'slideshow_controls_position' => 'after',
-          'slideshow_field_collection_image' => '',
-          'slideshow_fx' => 'fade',
-          'slideshow_image_style' => 'indholdsside',
-          'slideshow_link' => '',
-          'slideshow_order' => '',
-          'slideshow_pager' => '',
-          'slideshow_pager_image_style' => '',
-          'slideshow_pager_position' => 'after',
-          'slideshow_pause' => 0,
-          'slideshow_speed' => 1000,
-          'slideshow_start_on_hover' => 0,
-          'slideshow_timeout' => 4000,
-        ),
-        'type' => 'slideshow',
-        'weight' => 1,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-      'search_result' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_billede',
-    'label' => 'Billede',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'alt_field_required' => 1,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '690x237',
-      'title_field' => 1,
-      'title_field_required' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'imagefield_crop',
-      'settings' => array(
-        'collapsible' => 2,
-        'croparea' => '690x400',
-        'enforce_minimum' => 1,
-        'enforce_ratio' => 1,
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-        'resolution' => '690x237',
-      ),
-      'type' => 'imagefield_crop_widget',
-      'weight' => -3,
-    ),
-  );
-
   // Exported field_instance: 'node-contentpage-field_contentpage_media'
   $field_instances['node-contentpage-field_contentpage_media'] = array(
     'bundle' => 'contentpage',
@@ -369,61 +272,6 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-contentpage-field_editortags'
-  $field_instances['node-contentpage-field_editortags'] = array(
-    'bundle' => 'contentpage',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med dine egne stikord. 
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'search_result' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_editortags',
-    'label' => 'Stikord',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'apply_chosen' => 1,
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_opt_groups' => 0,
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 12,
-    ),
-  );
-
   // Exported field_instance: 'node-contentpage-field_indholdsside_spotboxe'
   $field_instances['node-contentpage-field_indholdsside_spotboxe'] = array(
     'bundle' => 'contentpage',
@@ -473,84 +321,6 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
       'type' => 'node_reference_autocomplete',
       'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-contentpage-field_mediafile'
-  $field_instances['node-contentpage-field_mediafile'] = array(
-    'bundle' => 'contentpage',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_table',
-        'weight' => 5,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_table',
-        'weight' => 5,
-      ),
-      'search_result' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_mediafile',
-    'label' => 'PDF filer',
-    'required' => 0,
-    'settings' => array(
-      'description_field' => 0,
-      'file_directory' => 'PDF',
-      'file_extensions' => 'pdf swf doc docx',
-      'max_filesize' => '50 MB',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 0,
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_internet' => 0,
-          'upload' => 0,
-          'yani_media_browser--media_browser_1' => 0,
-          'yani_media_browser--media_browser_my_files' => 0,
-          'youtube' => 0,
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => -1,
     ),
   );
 
@@ -659,227 +429,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-contentpage-field_organization'
-  $field_instances['node-contentpage-field_organization'] = array(
-    'bundle' => 'contentpage',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med kommunens organisation. 
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_index' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_organization',
-    'label' => 'Organisation',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'node-contentpage-field_politics'
-  $field_instances['node-contentpage-field_politics'] = array(
-    'bundle' => 'contentpage',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med politisk parti, råd, nævn eller udvalg.
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_index' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_politics',
-    'label' => 'Politik',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-contentpage-field_resume_long'
-  $field_instances['node-contentpage-field_resume_long'] = array(
-    'bundle' => 'contentpage',
-    'default_value' => array(
-      0 => array(
-        'summary' => '',
-        'value' => '',
-        'format' => 'filtered_html',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'search_result' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_resume_long',
-    'label' => 'Intro',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'blokindhold' => 0,
-          'filtered_html' => 0,
-          'full_html' => 0,
-          'full_html_iframe' => 0,
-          'php_code' => 0,
-          'plain_text' => 0,
-          'raw' => 0,
-          'standard' => 'standard',
-        ),
-        'allowed_formats_toggle' => 1,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'blokindhold' => array(
-              'weight' => -7,
-            ),
-            'filtered_html' => array(
-              'weight' => -10,
-            ),
-            'full_html' => array(
-              'weight' => -9,
-            ),
-            'full_html_iframe' => array(
-              'weight' => 0,
-            ),
-            'php_code' => array(
-              'weight' => -6,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-            'raw' => array(
-              'weight' => 0,
-            ),
-            'standard' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
-      'display_summary' => 0,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 6,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-contentpage-field_rotate_publish'
-  $field_instances['node-contentpage-field_rotate_publish'] = array(
+  // Exported field_instance: 'node-contentpage-field_os2web_base_field_rotate'
+  $field_instances['node-contentpage-field_os2web_base_field_rotate'] = array(
     'bundle' => 'contentpage',
     'deleted' => 0,
     'description' => '',
@@ -910,7 +461,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_rotate_publish',
+    'field_name' => 'field_os2web_base_field_rotate',
     'label' => 'Indløb / Udløb',
     'required' => 0,
     'settings' => array(
@@ -936,8 +487,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-contentpage-field_site_structure'
-  $field_instances['node-contentpage-field_site_structure'] = array(
+  // Exported field_instance: 'node-contentpage-field_os2web_base_field_struct'
+  $field_instances['node-contentpage-field_os2web_base_field_struct'] = array(
     'bundle' => 'contentpage',
     'default_value' => NULL,
     'deleted' => 0,
@@ -970,7 +521,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Portalkategori',
     'required' => 0,
     'settings' => array(
@@ -984,227 +535,6 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 54,
-    ),
-  );
-
-  // Exported field_instance: 'node-contentpage-field_skjul_relaterede_links'
-  $field_instances['node-contentpage-field_skjul_relaterede_links'] = array(
-    'bundle' => 'contentpage',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_index' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_skjul_relaterede_links',
-    'label' => 'Skjul relaterede links',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-contentpage-field_source_id'
-  $field_instances['node-contentpage-field_source_id'] = array(
-    'bundle' => 'contentpage',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_index' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_source_id',
-    'label' => 'Source ID',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 55,
-    ),
-  );
-
-  // Exported field_instance: 'node-contentpage-field_termref_kle'
-  $field_instances['node-contentpage-field_termref_kle'] = array(
-    'bundle' => 'contentpage',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med KLs Emneord.
-<br>Se fuld oversigt på <a target="_blank" href="http://www.kle-online.dk">KLE-Online</a>.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-      'search_result' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_termref_kle',
-    'label' => 'KL Emneord',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-contentpage-field_termref_sted'
-  $field_instances['node-contentpage-field_termref_sted'] = array(
-    'bundle' => 'contentpage',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med steder fra kommunens GIS system. 
-<br>Dette giver mulighed for kortvisning.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_index' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_termref_sted',
-    'label' => 'Egennavne/stednavne',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 9,
     ),
   );
 
@@ -1262,20 +592,22 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-galleri-field_editortags'
-  $field_instances['node-galleri-field_editortags'] = array(
+  // Exported field_instance: 'node-galleri-field_os2web_base_field_inh_colm'
+  $field_instances['node-galleri-field_os2web_base_field_inh_colm'] = array(
     'bundle' => 'galleri',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
     'deleted' => 0,
-    'description' => 'Opmærk dit indhold med dine egne stikord. 
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'related_block' => array(
         'label' => 'above',
@@ -1287,31 +619,75 @@ function os2web_indholdstyper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_editortags',
-    'label' => 'Stikord',
+    'field_name' => 'field_os2web_base_field_inh_colm',
+    'label' => 'Nedarv højrespalte',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'allow',
-        'size' => 60,
+        'display_label' => 1,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 11,
+      'type' => 'options_onoff',
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-galleri-field_foto'
-  $field_instances['node-galleri-field_foto'] = array(
+  // Exported field_instance: 'node-galleri-field_os2web_base_field_parent'
+  $field_instances['node-galleri-field_os2web_base_field_parent'] = array(
+    'bundle' => 'galleri',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_parent',
+    'label' => 'Forældre-menupunkt',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-galleri-field_os2web_base_field_photo'
+  $field_instances['node-galleri-field_os2web_base_field_photo'] = array(
     'bundle' => 'galleri',
     'deleted' => 0,
     'description' => '',
@@ -1368,7 +744,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_foto',
+    'field_name' => 'field_os2web_base_field_photo',
     'label' => 'Billeder',
     'required' => 0,
     'settings' => array(
@@ -1412,267 +788,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-galleri-field_inherit_right_column'
-  $field_instances['node-galleri-field_inherit_right_column'] = array(
-    'bundle' => 'galleri',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_inherit_right_column',
-    'label' => 'Nedarv højrespalte',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-galleri-field_lead_image'
-  $field_instances['node-galleri-field_lead_image'] = array(
-    'bundle' => 'galleri',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_lead_image',
-    'label' => 'Vælg billede',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'alt_field_required' => 0,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'imagecrop' => array(
-        'medium' => 0,
-      ),
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 1,
-      'title_field_required' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'filefield_sources' => array(
-          'filefield_sources' => array(),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
-        ),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-galleri-field_organization'
-  $field_instances['node-galleri-field_organization'] = array(
-    'bundle' => 'galleri',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med kommunens organisation. 
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_organization',
-    'label' => 'Organisation',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-galleri-field_parent_node'
-  $field_instances['node-galleri-field_parent_node'] = array(
-    'bundle' => 'galleri',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_parent_node',
-    'label' => 'Forældre-menupunkt',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'node_reference',
-      'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'node_reference_autocomplete',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-galleri-field_politics'
-  $field_instances['node-galleri-field_politics'] = array(
-    'bundle' => 'galleri',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med politisk parti, råd, nævn eller udvalg.
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_politics',
-    'label' => 'Politik',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'node-galleri-field_site_structure'
-  $field_instances['node-galleri-field_site_structure'] = array(
+  // Exported field_instance: 'node-galleri-field_os2web_base_field_struct'
+  $field_instances['node-galleri-field_os2web_base_field_struct'] = array(
     'bundle' => 'galleri',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1698,7 +815,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Portalkategori',
     'required' => 1,
     'settings' => array(
@@ -1715,105 +832,9 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-galleri-field_termref_kle'
-  $field_instances['node-galleri-field_termref_kle'] = array(
-    'bundle' => 'galleri',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med KLs Emneord.
-<br>Se fuld oversigt på <a target="_blank" href="http://www.kle-online.dk">KLE-Online</a>.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_termref_kle',
-    'label' => 'KL Emneord',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-galleri-field_termref_sted'
-  $field_instances['node-galleri-field_termref_sted'] = array(
-    'bundle' => 'galleri',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med steder fra kommunens GIS system. 
-<br>Dette giver mulighed for kortvisning.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_termref_sted',
-    'label' => 'Egenavne / stednavne',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-iframe_selvbetjeningsl_sning_mm-body'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-body'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
+  // Exported field_instance: 'node-os2web_base_iframe-body'
+  $field_instances['node-os2web_base_iframe-body'] = array(
+    'bundle' => 'os2web_base_iframe',
     'default_value' => array(
       0 => array(
         'summary' => '',
@@ -1869,58 +890,9 @@ function os2web_indholdstyper_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-iframe_selvbetjeningsl_sning_mm-field_editortags'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_editortags'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med dine egne stikord. 
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_editortags',
-    'label' => 'Stikord',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'allow',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-iframe_selvbetjeningsl_sning_mm-field_iframe_url'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_iframe_url'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
+  // 'node-os2web_base_iframe-field_os2web_base_field_iframe'
+  $field_instances['node-os2web_base_iframe-field_os2web_base_field_iframe'] = array(
+    'bundle' => 'os2web_base_iframe',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1949,7 +921,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_iframe_url',
+    'field_name' => 'field_os2web_base_field_iframe',
     'label' => 'iFrame URL',
     'required' => 0,
     'settings' => array(
@@ -1968,251 +940,9 @@ function os2web_indholdstyper_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-iframe_selvbetjeningsl_sning_mm-field_organization'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_organization'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med kommunens organisation. 
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_organization',
-    'label' => 'Organisation',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-iframe_selvbetjeningsl_sning_mm-field_politics'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_politics'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med politisk parti, råd, nævn eller udvalg.
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_politics',
-    'label' => 'Politik',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-iframe_selvbetjeningsl_sning_mm-field_source_id'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_source_id'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_source_id',
-    'label' => 'Source ID',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-iframe_selvbetjeningsl_sning_mm-field_termref_kle'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_termref_kle'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med KLs Emneord.
-<br>Se fuld oversigt på <a target="_blank" href="http://www.kle-online.dk">KLE-Online</a>.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_termref_kle',
-    'label' => 'KL Emneord',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-iframe_selvbetjeningsl_sning_mm-field_termref_sted'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_termref_sted'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Opmærk dit indhold med steder fra kommunens GIS system. 
-<br>Dette giver mulighed for kortvisning.
-<br>Adskil flere opmærkninger med komma.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_termref_sted',
-    'label' => 'Egenavne / stednavne',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-iframe_selvbetjeningsl_sning_mm-field_text'
-  $field_instances['node-iframe_selvbetjeningsl_sning_mm-field_text'] = array(
-    'bundle' => 'iframe_selvbetjeningsl_sning_mm',
+  // 'node-os2web_base_iframe-field_os2web_base_field_text'
+  $field_instances['node-os2web_base_iframe-field_os2web_base_field_text'] = array(
+    'bundle' => 'os2web_base_iframe',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2237,7 +967,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_text',
+    'field_name' => 'field_os2web_base_field_text',
     'label' => 'Intro',
     'required' => 0,
     'settings' => array(
@@ -2306,8 +1036,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-media-field_inherit_right_column'
-  $field_instances['node-media-field_inherit_right_column'] = array(
+  // Exported field_instance: 'node-media-field_os2web_base_field_inh_colm'
+  $field_instances['node-media-field_os2web_base_field_inh_colm'] = array(
     'bundle' => 'media',
     'default_value' => array(
       0 => array(
@@ -2337,7 +1067,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_inherit_right_column',
+    'field_name' => 'field_os2web_base_field_inh_colm',
     'label' => 'Nedarv højrespalte',
     'required' => 0,
     'settings' => array(
@@ -2354,145 +1084,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-media-field_lead_image'
-  $field_instances['node-media-field_lead_image'] = array(
-    'bundle' => 'media',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
-        'weight' => 0,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_lead_image',
-    'label' => 'Primære billede',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'alt_field_required' => 0,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '10 MB',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'title_field_required' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'default' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'library' => 0,
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_internet' => 'media_internet',
-          'upload' => 'upload',
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-media-field_mediafile'
-  $field_instances['node-media-field_mediafile'] = array(
-    'bundle' => 'media',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 1,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_mediafile',
-    'label' => 'Tilføj medie',
-    'required' => 0,
-    'settings' => array(
-      'description_field' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'jpg jpeg mp3 pdf',
-      'max_filesize' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-          'youtube' => 'youtube',
-        ),
-        'allowed_types' => array(
-          'audio' => 'audio',
-          'default' => 'default',
-          'image' => 'image',
-          'video' => 'video',
-        ),
-        'browser_plugins' => array(
-          'library' => 0,
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_internet' => 'media_internet',
-          'upload' => 'upload',
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-media-field_parent_node'
-  $field_instances['node-media-field_parent_node'] = array(
+  // Exported field_instance: 'node-media-field_os2web_base_field_parent'
+  $field_instances['node-media-field_os2web_base_field_parent'] = array(
     'bundle' => 'media',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2518,7 +1111,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_parent_node',
+    'field_name' => 'field_os2web_base_field_parent',
     'label' => 'Forældre-menupunkt',
     'required' => 0,
     'settings' => array(
@@ -2537,55 +1130,8 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-media-field_resume_long'
-  $field_instances['node-media-field_resume_long'] = array(
-    'bundle' => 'media',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_resume_long',
-    'label' => 'Resume - lang overskrift',
-    'required' => 0,
-    'settings' => array(
-      'display_summary' => 0,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 4,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-media-field_site_structure'
-  $field_instances['node-media-field_site_structure'] = array(
+  // Exported field_instance: 'node-media-field_os2web_base_field_struct'
+  $field_instances['node-media-field_os2web_base_field_struct'] = array(
     'bundle' => 'media',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2611,7 +1157,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Overordnet placering',
     'required' => 1,
     'settings' => array(
@@ -2625,52 +1171,6 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-media-field_source_id'
-  $field_instances['node-media-field_source_id'] = array(
-    'bundle' => 'media',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_source_id',
-    'label' => 'Source ID',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 9,
     ),
   );
 
@@ -2725,8 +1225,9 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rotating_image-field_promoteto'
-  $field_instances['node-rotating_image-field_promoteto'] = array(
+  // Exported field_instance:
+  // 'node-rotating_image-field_os2web_base_field_promote'
+  $field_instances['node-rotating_image-field_os2web_base_field_promote'] = array(
     'bundle' => 'rotating_image',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2753,7 +1254,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_promoteto',
+    'field_name' => 'field_os2web_base_field_promote',
     'label' => 'Forfrem til',
     'required' => 0,
     'settings' => array(
@@ -2768,8 +1269,9 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rotating_image-field_rotate_image'
-  $field_instances['node-rotating_image-field_rotate_image'] = array(
+  // Exported field_instance:
+  // 'node-rotating_image-field_os2web_base_field_rota_img'
+  $field_instances['node-rotating_image-field_os2web_base_field_rota_img'] = array(
     'bundle' => 'rotating_image',
     'deleted' => 0,
     'description' => '',
@@ -2798,7 +1300,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_rotate_image',
+    'field_name' => 'field_os2web_base_field_rota_img',
     'label' => 'Billede',
     'required' => 1,
     'settings' => array(
@@ -2838,8 +1340,69 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rotating_image-field_rotate_publish'
-  $field_instances['node-rotating_image-field_rotate_publish'] = array(
+  // Exported field_instance:
+  // 'node-rotating_image-field_os2web_base_field_rota_lnk'
+  $field_instances['node-rotating_image-field_os2web_base_field_rota_lnk'] = array(
+    'bundle' => 'rotating_image',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_rota_lnk',
+    'label' => 'Link',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-rotating_image-field_os2web_base_field_rotate'
+  $field_instances['node-rotating_image-field_os2web_base_field_rotate'] = array(
     'bundle' => 'rotating_image',
     'deleted' => 0,
     'description' => '',
@@ -2871,7 +1434,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_rotate_publish',
+    'field_name' => 'field_os2web_base_field_rotate',
     'label' => 'Indløb / Udløb',
     'required' => 1,
     'settings' => array(
@@ -2897,67 +1460,9 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rotating_image-field_rotating_link'
-  $field_instances['node-rotating_image-field_rotating_link'] = array(
-    'bundle' => 'rotating_image',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 3,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_rotating_link',
-    'label' => 'Link',
-    'required' => 0,
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-rotating_image-field_site_structure'
-  $field_instances['node-rotating_image-field_site_structure'] = array(
+  // Exported field_instance:
+  // 'node-rotating_image-field_os2web_base_field_struct'
+  $field_instances['node-rotating_image-field_os2web_base_field_struct'] = array(
     'bundle' => 'rotating_image',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2984,7 +1489,7 @@ function os2web_indholdstyper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
+    'field_name' => 'field_os2web_base_field_struct',
     'label' => 'Overordnet placering',
     'required' => 1,
     'settings' => array(
@@ -3144,6 +1649,52 @@ function os2web_indholdstyper_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-selvbetjeningslinks-field_os2web_base_field_struct'
+  $field_instances['node-selvbetjeningslinks-field_os2web_base_field_struct'] = array(
+    'bundle' => 'selvbetjeningslinks',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_struct',
+    'label' => 'Portalkategori',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-selvbetjeningslinks-field_selvbetjening_direkte'
   $field_instances['node-selvbetjeningslinks-field_selvbetjening_direkte'] = array(
     'bundle' => 'selvbetjeningslinks',
@@ -3240,98 +1791,6 @@ function os2web_indholdstyper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-selvbetjeningslinks-field_site_structure'
-  $field_instances['node-selvbetjeningslinks-field_site_structure'] = array(
-    'bundle' => 'selvbetjeningslinks',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_site_structure',
-    'label' => 'Portalkategori',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-selvbetjeningslinks-field_termref_kle'
-  $field_instances['node-selvbetjeningslinks-field_termref_kle'] = array(
-    'bundle' => 'selvbetjeningslinks',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_termref_kle',
-    'label' => 'KL Emneord',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'taxonomy_term-site_struktur-field_attached_node'
   $field_instances['taxonomy_term-site_struktur-field_attached_node'] = array(
     'bundle' => 'site_struktur',
@@ -3410,55 +1869,27 @@ function os2web_indholdstyper_field_default_field_instances() {
   t('Billeder');
   t('Det der vises med sort');
   t('Direkte link');
-  t('Egenavne / stednavne');
-  t('Egennavne/stednavne');
   t('Forfrem til');
   t('Forældre-menupunkt');
   t('Gruppe ID');
   t('Indhold');
   t('Indløb / Udløb');
   t('Intro');
-  t('KL Emneord');
   t('Kilde');
   t('Kontaktblok');
   t('Link');
   t('Link til side');
   t('Media');
   t('Nedarv højrespalte');
-  t('Opmærk dit indhold med KLs Emneord.
-<br>Se fuld oversigt på <a target="_blank" href="http://www.kle-online.dk">KLE-Online</a>.
-<br>Adskil flere opmærkninger med komma.');
-  t('Opmærk dit indhold med dine egne stikord. 
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.');
-  t('Opmærk dit indhold med kommunens organisation. 
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.');
-  t('Opmærk dit indhold med politisk parti, råd, nævn eller udvalg.
-<br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
-<br>Adskil flere opmærkninger med komma.');
-  t('Opmærk dit indhold med steder fra kommunens GIS system. 
-<br>Dette giver mulighed for kortvisning.
-<br>Adskil flere opmærkninger med komma.');
-  t('Organisation');
   t('Overordnet placering');
-  t('PDF filer');
-  t('Politik');
   t('Portalkategori');
-  t('Primære billede');
-  t('Resume - lang overskrift');
   t('Selvbetjeningslinks');
   t('Skal være inkl. <i>http://</i> hvis det er sider uden for sitet. Skal kun bruges til sider ser ikke kan indlejres som indhold via iframe.');
-  t('Skjul relaterede links');
-  t('Source ID');
   t('Spotbox fokus');
   t('Spotboxe');
   t('Spotboxe Bund');
-  t('Stikord');
-  t('Tilføj medie');
   t('Type');
   t('Vises før indholdet af iframe');
-  t('Vælg billede');
   t('Vælg de spotboxe der skal vises nederst på siden.');
   t('iFrame URL');
 

@@ -13,10 +13,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::im_field_site_structure';
+  $facet->name = 'apachesolr@solr::im_field_os2web_base_field_struct';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = '';
-  $facet->facet = 'im_field_site_structure';
+  $facet->facet = 'im_field_os2web_base_field_struct';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'operator' => 'and',
@@ -31,7 +31,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'flatten' => '1',
     'query_type' => 'term',
   );
-  $export['apachesolr@solr::im_field_site_structure'] = $facet;
+  $export['apachesolr@solr::im_field_os2web_base_field_struct'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -104,10 +104,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:bm_field_inherit_right_column';
+  $facet->name = 'apachesolr@solr:block:bm_field_os2web_base_field_inh_colm';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
-  $facet->facet = 'bm_field_inherit_right_column';
+  $facet->facet = 'bm_field_os2web_base_field_inh_colm';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -133,15 +133,15 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@solr:block:bm_field_inherit_right_column'] = $facet;
+  $export['apachesolr@solr:block:bm_field_os2web_base_field_inh_colm'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:bm_field_kontaktblok_callcenter';
+  $facet->name = 'apachesolr@solr:block:bm_field_os2web_contact_field_callc';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
-  $facet->facet = 'bm_field_kontaktblok_callcenter';
+  $facet->facet = 'bm_field_os2web_contact_field_callc';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -167,15 +167,15 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@solr:block:bm_field_kontaktblok_callcenter'] = $facet;
+  $export['apachesolr@solr:block:bm_field_os2web_contact_field_callc'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:bm_field_kontaktblok_vis_aabnen';
+  $facet->name = 'apachesolr@solr:block:bm_field_os2web_contact_field_show';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
-  $facet->facet = 'bm_field_kontaktblok_vis_aabnen';
+  $facet->facet = 'bm_field_os2web_contact_field_show';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -201,7 +201,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@solr:block:bm_field_kontaktblok_vis_aabnen'] = $facet;
+  $export['apachesolr@solr:block:bm_field_os2web_contact_field_show'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -438,10 +438,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:dm_field_rotate_publish';
+  $facet->name = 'apachesolr@solr:block:dm_field_os2web_base_field_rotate';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
-  $facet->facet = 'dm_field_rotate_publish';
+  $facet->facet = 'dm_field_os2web_base_field_rotate';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -467,7 +467,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@solr:block:dm_field_rotate_publish'] = $facet;
+  $export['apachesolr@solr:block:dm_field_os2web_base_field_rotate'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -948,10 +948,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:im_field_parent_node';
+  $facet->name = 'apachesolr@solr:block:im_field_os2web_base_field_parent';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
-  $facet->facet = 'im_field_parent_node';
+  $facet->facet = 'im_field_os2web_base_field_parent';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -977,7 +977,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@solr:block:im_field_parent_node'] = $facet;
+  $export['apachesolr@solr:block:im_field_os2web_base_field_parent'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -1050,10 +1050,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:im_field_promoteto';
+  $facet->name = 'apachesolr@solr:block:im_field_os2web_base_field_promote';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
-  $facet->facet = 'im_field_promoteto';
+  $facet->facet = 'im_field_os2web_base_field_promote';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -1079,7 +1079,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@solr:block:im_field_promoteto'] = $facet;
+  $export['apachesolr@solr:block:im_field_os2web_base_field_promote'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -1458,10 +1458,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:im_field_site_structure';
+  $facet->name = 'apachesolr@solr:block:im_field_os2web_base_field_struct';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
-  $facet->facet = 'im_field_site_structure';
+  $facet->facet = 'im_field_os2web_base_field_struct';
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
@@ -1504,7 +1504,7 @@ function os2web_search_facetapi_default_facet_settings() {
     ),
     'submit_realm' => 'Save and go back to realm settings',
   );
-  $export['apachesolr@solr:block:im_field_site_structure'] = $facet;
+  $export['apachesolr@solr:block:im_field_os2web_base_field_struct'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -1679,10 +1679,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:itm_field_phone1';
+  $facet->name = 'apachesolr@solr:block:itm_field_os2web_contact_field_phone';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
-  $facet->facet = 'itm_field_phone1';
+  $facet->facet = 'itm_field_os2web_contact_field_phone';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -1708,7 +1708,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@solr:block:itm_field_phone1'] = $facet;
+  $export['apachesolr@solr:block:itm_field_os2web_contact_field_phone'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -2420,10 +2420,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search:block:field_phone1';
+  $facet->name = 'search:block:field_os2web_contact_field_phone';
   $facet->searcher = 'search';
   $facet->realm = 'block';
-  $facet->facet = 'field_phone1';
+  $facet->facet = 'field_os2web_contact_field_phone';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -2449,7 +2449,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['search:block:field_phone1'] = $facet;
+  $export['search:block:field_os2web_contact_field_phone'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -2556,10 +2556,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search:block:field_promoteto';
+  $facet->name = 'search:block:field_os2web_base_field_promote';
   $facet->searcher = 'search';
   $facet->realm = 'block';
-  $facet->facet = 'field_promoteto';
+  $facet->facet = 'field_os2web_base_field_promote';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -2585,7 +2585,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['search:block:field_promoteto'] = $facet;
+  $export['search:block:field_os2web_base_field_promote'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -2828,10 +2828,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search:block:field_site_structure';
+  $facet->name = 'search:block:field_os2web_base_field_struct';
   $facet->searcher = 'search';
   $facet->realm = 'block';
-  $facet->facet = 'field_site_structure';
+  $facet->facet = 'field_os2web_base_field_struct';
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
@@ -2857,7 +2857,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['search:block:field_site_structure'] = $facet;
+  $export['search:block:field_os2web_base_field_struct'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -3270,10 +3270,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@mitdjurs:block:field_site_structure';
+  $facet->name = 'search_api@mitdjurs:block:field_os2web_base_field_struct';
   $facet->searcher = 'search_api@mitdjurs';
   $facet->realm = 'block';
-  $facet->facet = 'field_site_structure';
+  $facet->facet = 'field_os2web_base_field_struct';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -3299,7 +3299,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['search_api@mitdjurs:block:field_site_structure'] = $facet;
+  $export['search_api@mitdjurs:block:field_os2web_base_field_struct'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -3712,10 +3712,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@searcher:block:field_site_structure';
+  $facet->name = 'search_api@searcher:block:field_os2web_base_field_struct';
   $facet->searcher = 'search_api@searcher';
   $facet->realm = 'block';
-  $facet->facet = 'field_site_structure';
+  $facet->facet = 'field_os2web_base_field_struct';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -3741,7 +3741,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['search_api@searcher:block:field_site_structure'] = $facet;
+  $export['search_api@searcher:block:field_os2web_base_field_struct'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -4017,10 +4017,10 @@ function os2web_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@solr1_index:block:field_text';
+  $facet->name = 'search_api@solr1_index:block:field_os2web_base_field_text';
   $facet->searcher = 'search_api@solr1_index';
   $facet->realm = 'block';
-  $facet->facet = 'field_text';
+  $facet->facet = 'field_os2web_base_field_text';
   $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
@@ -4046,7 +4046,7 @@ function os2web_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['search_api@solr1_index:block:field_text'] = $facet;
+  $export['search_api@solr1_index:block:field_os2web_base_field_text'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */

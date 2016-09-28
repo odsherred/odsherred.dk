@@ -207,6 +207,32 @@ function os2web_context_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__os2web_base_contentpage';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '21',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '19',
+        ),
+        'redirect' => array(
+          'weight' => '18',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_esdh_dokument';
   $strongarm->value = '0';
   $export['language_content_type_esdh_dokument'] = $strongarm;
@@ -258,6 +284,18 @@ function os2web_context_strongarm() {
     0 => 'menu-indholdsmenu',
   );
   $export['menu_options_local_plan'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_os2web_base_contentpage';
+  $strongarm->value = array(
+    0 => 'menu-indhold',
+    1 => 'menu-erhverv-genveje',
+    2 => 'menu-erhverv',
+    3 => 'menu-politik',
+  );
+  $export['menu_options_os2web_base_contentpage'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

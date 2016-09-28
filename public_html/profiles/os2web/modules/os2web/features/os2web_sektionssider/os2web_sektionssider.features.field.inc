@@ -10,14 +10,14 @@
 function os2web_sektionssider_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-sektionsside-field_site_structure'.
-  $fields['node-sektionsside-field_site_structure'] = array(
+  // Exported field: 'node-sektionsside-field_os2web_base_field_struct'.
+  $fields['node-sektionsside-field_os2web_base_field_struct'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -73,7 +73,7 @@ function os2web_sektionssider_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_site_structure',
+      'field_name' => 'field_os2web_base_field_struct',
       'label' => 'Portalkategori',
       'required' => 1,
       'settings' => array(

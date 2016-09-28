@@ -60,7 +60,7 @@ function balk_custom_tokens($type, $tokens, array $data = array(), array $option
     foreach ($tokens as $name => $original) {
       switch ($name) {
         case 'site-structure-path':
-          $tid = reset(field_get_items('node', $node, 'field_site_structure'));
+          $tid = reset(field_get_items('node', $node, 'field_os2web_base_field_struct'));
           $site_structure_path = '';
           if (!empty($tid)) {
             $site_structure_path = url('taxonomy/term/' . $tid['tid']);

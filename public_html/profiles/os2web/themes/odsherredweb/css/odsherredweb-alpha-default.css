@@ -1589,7 +1589,7 @@ ul.breadcrumb {
   padding: 0 0 5px 17px;
 }
 
-.page-node .pane-node-field-mediafile {
+.page-node .pane-node-field-os2web-base-field-media {
   min-width: 167px;
   float: left;
   margin: 0 43px 0 0;
@@ -1615,7 +1615,7 @@ ul.breadcrumb {
   display: block;
 }
 
-.page-node .pane-node-field-mediafile img { display: none; }
+.page-node .pane-node-field-os2web-base-field-media img { display: none; }
 
 .toggle-related .button {
   width: 31px;
@@ -1727,10 +1727,10 @@ ul.breadcrumb {
 
 .node-type-contentpage .field-slideshow-slide img { max-width: 100%; height: auto; }
 
-.view-id-sitestuktur .views-field-name { position: absolute; }
-
-.view-id-sitestuktur .views-field-name a { display: block; height: 24px; padding-left: 41px; padding-top: 6px; color: #ffffff !important; font-size: 18px; }
-
+#region-sidebar-first .view-os2web-base-panels-view-sitestru { display: block;}
+#region-sidebar-first .view-os2web-base-panels-view-sitestru .views-field-name { position: absolute; }
+#region-sidebar-first .view-os2web-base-panels-view-sitestru .views-field-name a { display: block; height: 24px; padding-left: 41px; padding-top: 6px; color: #ffffff !important; font-size: 18px; }
+.franz-was-here {}
 .hovenyhed-portalside {
   background-image: url(img/c-bg.png);
   height: 262px;
@@ -3299,4 +3299,12 @@ a.gminus {
   position: absolute;
   top: 10px;
   right: 5px;
+}
+
+.group-hidden {
+  display: none;
+}
+
+.form-item-unpublish-on {
+  display: none;
 }

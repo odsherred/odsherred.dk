@@ -56,9 +56,9 @@ function nyheder_default_page_manager_handlers() {
         'id' => 1,
       ),
       3 => array(
-        'identifier' => 'Ord i ordforråd from Indholdselement (on Indholdselement: Portalkategori [field_site_structure])',
+        'identifier' => 'Ord i ordforråd from Indholdselement (on Indholdselement: Portalkategori [field_os2web_base_field_struct])',
         'keyword' => 'site_structure',
-        'name' => 'entity_from_field:field_site_structure-node-taxonomy_term',
+        'name' => 'entity_from_field:field_os2web_base_field_struct-node-taxonomy_term',
         'delta' => 0,
         'context' => 'argument_entity_id:node_1',
         'id' => 1,
@@ -68,7 +68,7 @@ function nyheder_default_page_manager_handlers() {
         'keyword' => 'parent_term',
         'name' => 'term_parent',
         'type' => 'top',
-        'context' => 'relationship_entity_from_field:field_site_structure-node-taxonomy_term_1',
+        'context' => 'relationship_entity_from_field:field_os2web_base_field_struct-node-taxonomy_term_1',
         'id' => 1,
       ),
     ),
@@ -78,7 +78,7 @@ function nyheder_default_page_manager_handlers() {
           'name' => 'node_type',
           'settings' => array(
             'type' => array(
-              'news' => 'news',
+              'os2web_base_news' => 'os2web_base_news',
             ),
           ),
           'context' => 'argument_entity_id:node_1',
@@ -376,7 +376,7 @@ function nyheder_default_page_manager_handlers() {
     $pane->pid = 'new-290aadf3-ae45-4cd9-92ef-8064b54564d9';
     $pane->panel = 'stack2';
     $pane->type = 'views_panes';
-    $pane->subtype = 'kle_lonks_boks-panel_pane_1';
+    $pane->subtype = 'os2web_base_panels_view_kle_link-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -708,9 +708,9 @@ function nyheder_default_page_manager_pages() {
 		<div class="filter-container">
 			<ul class="facetapi-date-range facetapi-facet-changed facetapi-processed" id="facetapi-facet-apachesolrlocalhost-block-changed">
 			<li><span class="facet-date-label">Sorter efter:</span></li>
-			<li class="leaf first"><a href="/search/news?f[0]=im_field_site_structure%3A4" rel="nofollow">Borger</a></li>
-			<li class="leaf"><a href="/search/news?f[0]=im_field_site_structure%3A5" rel="nofollow">Erhverv</a></li>
-			<li class="leaf"><a href="/search/news?f[0]=im_field_site_structure%3A6" rel="nofollow">Politik</a></li>
+			<li class="leaf first"><a href="/search/news?f[0]=im_field_os2web_base_field_struct%3A4" rel="nofollow">Borger</a></li>
+			<li class="leaf"><a href="/search/news?f[0]=im_field_os2web_base_field_struct%3A5" rel="nofollow">Erhverv</a></li>
+			<li class="leaf"><a href="/search/news?f[0]=im_field_os2web_base_field_struct%3A6" rel="nofollow">Politik</a></li>
 			<li class="leaf"><a href="/search/news?f[0]=im_field_newstype%3A25757" rel="nofollow">Møder</a></li>
 			<li class="leaf"><a href="/search/news?f[0]=im_field_newstype%3A25755" rel="nofollow">Udbud</a></li>		
 			<li class="leaf"><a href="/search/news?f[0]=im_field_newstype%3A25752" rel="nofollow">Høringer</a></li>		
@@ -950,7 +950,7 @@ function nyheder_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<div class="header">Nyheder og presse<div class="relative-container"><div class="filter-container"><ul class="facetapi-date-range facetapi-facet-changed facetapi-processed" id="facetapi-facet-apachesolrlocalhost-block-changed"><li><span class="facet-date-label">Sorter efter:</span></li><li class="leaf first"><a href="/search/news/?f[0]=im_field_site_structure%3A4" rel="nofollow">Borger</a></li><li class="leaf"><a href="/search/news/?f[0]=im_field_site_structure%3A5" rel="nofollow">Erhverv</a></li><li class="leaf"><a href="/search/news/?f[0]=im_field_site_structure%3A6" rel="nofollow">Politik</a></li></ul><ul class="facetapi-date-range facetapi-facet-changed facetapi-processed" id="facetapi-facet-apachesolrlocalhost-block-changed"><li><span class="facet-date-label">Tidspunkt:</span></li><li class="leaf first"><a href="/search/news/?f[0]=ds_changed%3Apast_24_hours" rel="nofollow">Sidste 24 timer</a></li><li class="leaf"><a href="/search/news/?f[0]=ds_changed%3Apast_hour" rel="nofollow">Sidste time</a></li><li class="leaf"><a href="/search/news/?f[0]=ds_changed%3Apast_month" rel="nofollow">Sidste måned</a></li><li class="leaf"><a href="/search/news/?f[0]=ds_changed%3Apast_week" rel="nofollow">Sidste uge</a></li><li class="leaf last"><a href="/search/news/?f[0]=ds_changed%3Apast_year" rel="nofollow">Sidste år</a></li></ul></div></div></div><p>&nbsp;</p>',
+      'body' => '<div class="header">Nyheder og presse<div class="relative-container"><div class="filter-container"><ul class="facetapi-date-range facetapi-facet-changed facetapi-processed" id="facetapi-facet-apachesolrlocalhost-block-changed"><li><span class="facet-date-label">Sorter efter:</span></li><li class="leaf first"><a href="/search/news/?f[0]=im_field_os2web_base_field_struct%3A4" rel="nofollow">Borger</a></li><li class="leaf"><a href="/search/news/?f[0]=im_field_os2web_base_field_struct%3A5" rel="nofollow">Erhverv</a></li><li class="leaf"><a href="/search/news/?f[0]=im_field_os2web_base_field_struct%3A6" rel="nofollow">Politik</a></li></ul><ul class="facetapi-date-range facetapi-facet-changed facetapi-processed" id="facetapi-facet-apachesolrlocalhost-block-changed"><li><span class="facet-date-label">Tidspunkt:</span></li><li class="leaf first"><a href="/search/news/?f[0]=ds_changed%3Apast_24_hours" rel="nofollow">Sidste 24 timer</a></li><li class="leaf"><a href="/search/news/?f[0]=ds_changed%3Apast_hour" rel="nofollow">Sidste time</a></li><li class="leaf"><a href="/search/news/?f[0]=ds_changed%3Apast_month" rel="nofollow">Sidste måned</a></li><li class="leaf"><a href="/search/news/?f[0]=ds_changed%3Apast_week" rel="nofollow">Sidste uge</a></li><li class="leaf last"><a href="/search/news/?f[0]=ds_changed%3Apast_year" rel="nofollow">Sidste år</a></li></ul></div></div></div><p>&nbsp;</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

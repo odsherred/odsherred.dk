@@ -100,3 +100,21 @@ function nyheder_image_default_styles() {
 
   return $styles;
 }
+
+/**
+ * Implements hook_node_info().
+ */
+function nyheder_node_info() {
+  $items = array(
+    'os2web_base_news' => array(
+      'name' => t('Nyhed'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Overskrift'),
+      'help' => '',
+    ),
+  );
+  drupal_alter('node_info', $items);
+  return $items;
+}

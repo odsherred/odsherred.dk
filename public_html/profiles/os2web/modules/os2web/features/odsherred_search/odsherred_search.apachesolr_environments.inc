@@ -27,8 +27,8 @@ function odsherred_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1452167471',
-        'last_entity_id' => '896416',
+        'last_changed' => '1474313011',
+        'last_entity_id' => '896948',
       ),
       'redirect' => array(
         'last_changed' => 0,
@@ -59,14 +59,14 @@ function odsherred_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1452168001,
-    'apachesolr_last_optimize' => 1452099601,
+    'apachesolr_index_updated' => 1474340401,
+    'apachesolr_last_optimize' => 1474279202,
   );
   $environment->index_bundles = array(
     'node' => array(
       0 => 'baggrund',
       1 => 'contentpage',
-      2 => 'iframe_selvbetjeningsl_sning_mm',
+      2 => 'os2web_base_iframe',
       3 => 'news',
       4 => 'os2web_borger_dk_article',
       5 => 'sektionsside',

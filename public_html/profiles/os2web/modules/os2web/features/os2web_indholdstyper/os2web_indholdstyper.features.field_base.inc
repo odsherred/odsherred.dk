@@ -49,18 +49,18 @@ function os2web_indholdstyper_field_default_field_bases() {
     'settings' => array(
       'referenceable_types' => array(
         'borger_dk_permalink' => 0,
-        'contentpage' => 'contentpage',
+        'os2web_base_contentpage' => 'os2web_base_contentpage',
         'esdh_dokument' => 0,
         'esdh_sag' => 0,
         'files' => 0,
         'galleri' => 0,
-        'iframe_selvbetjeningsl_sning_mm' => 'iframe_selvbetjeningsl_sning_mm',
+        'os2web_base_iframe' => 'os2web_base_iframe',
         'institution' => 0,
         'knactivity' => 0,
         'kontaktblok' => 0,
         'local_plan' => 0,
         'media' => 0,
-        'news' => 0,
+        'os2web_base_news' => 0,
         'ofir_job' => 0,
         'panel' => 0,
         'person' => 0,
@@ -69,7 +69,7 @@ function os2web_indholdstyper_field_default_field_bases() {
         'right_column' => 0,
         'rotating_image' => 0,
         'selvbetjeningslinks' => 0,
-        'spotbox' => 0,
+        'os2web_spotbox_box' => 0,
         'tema' => 0,
         'webform' => 0,
       ),
@@ -100,17 +100,17 @@ function os2web_indholdstyper_field_default_field_bases() {
     'settings' => array(
       'referenceable_types' => array(
         'borger_dk_permalink' => 0,
-        'contentpage' => 0,
+        'os2web_base_contentpage' => 0,
         'esdh_dokument' => 0,
         'esdh_sag' => 0,
         'files' => 0,
         'galleri' => 0,
-        'iframe_selvbetjeningsl_sning_mm' => 0,
+        'os2web_base_iframe' => 0,
         'institution' => 0,
         'knactivity' => 0,
         'local_plan' => 0,
         'media' => 0,
-        'news' => 0,
+        'os2web_base_news' => 0,
         'ofir_job' => 0,
         'panel' => 0,
         'person' => 0,
@@ -119,7 +119,7 @@ function os2web_indholdstyper_field_default_field_bases() {
         'right_column' => 0,
         'rotating_image' => 0,
         'selvbetjeningslinks' => 0,
-        'spotbox' => 'spotbox',
+        'os2web_spotbox_box' => 'os2web_spotbox_box',
         'tema' => 0,
         'webform' => 0,
       ),
@@ -155,28 +155,6 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_foto'
-  $field_bases['field_foto'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_foto',
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
-  );
-
   // Exported field_base: 'field_gruppe_id'
   $field_bases['field_gruppe_id'] = array(
     'active' => 1,
@@ -184,27 +162,6 @@ function os2web_indholdstyper_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_gruppe_id',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_iframe_url'
-  $field_bases['field_iframe_url'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_iframe_url',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -243,20 +200,20 @@ function os2web_indholdstyper_field_default_field_bases() {
         'borgerservices' => 0,
         'bullet_point' => 0,
         'bullet_point_attachment' => 0,
-        'contentpage' => 0,
+        'os2web_base_contentpage' => 0,
         'esdh_dokument' => 0,
         'esdh_sag' => 0,
         'files' => 0,
         'galleri' => 0,
         'hoering' => 0,
-        'iframe_selvbetjeningsl_sning_mm' => 0,
+        'os2web_base_iframe' => 0,
         'institution' => 0,
         'knactivity' => 0,
         'kontaktblok' => 0,
         'local_plan' => 0,
         'media' => 0,
         'meeting' => 0,
-        'news' => 0,
+        'os2web_base_news' => 0,
         'ofir_job' => 0,
         'os2web_borger_dk_article' => 0,
         'os2web_meeting_search_status' => 0,
@@ -269,7 +226,7 @@ function os2web_indholdstyper_field_default_field_bases() {
         'sektionsside' => 0,
         'selvbetjeningslinks' => 0,
         'speaker_paper' => 0,
-        'spotbox' => 'spotbox',
+        'os2web_spotbox_box' => 'os2web_spotbox_box',
         'subsites_og_sites' => 0,
         'tema' => 0,
         'webform' => 0,
@@ -282,31 +239,6 @@ function os2web_indholdstyper_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'node_reference',
-  );
-
-  // Exported field_base: 'field_inherit_right_column'
-  $field_bases['field_inherit_right_column'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_inherit_right_column',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => 0,
-        1 => 1,
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_kilde'
@@ -348,18 +280,18 @@ function os2web_indholdstyper_field_default_field_bases() {
       'referenceable_types' => array(
         'borger_dk_permalink' => 0,
         'borgerservices' => 0,
-        'contentpage' => 0,
+        'os2web_base_contentpage' => 0,
         'esdh_dokument' => 0,
         'esdh_sag' => 0,
         'files' => 0,
         'galleri' => 0,
-        'iframe_selvbetjeningsl_sning_mm' => 0,
+        'os2web_base_iframe' => 0,
         'institution' => 0,
         'knactivity' => 0,
         'kontaktblok' => 'kontaktblok',
         'local_plan' => 0,
         'media' => 0,
-        'news' => 0,
+        'os2web_base_news' => 0,
         'ofir_job' => 0,
         'panel' => 0,
         'person' => 0,
@@ -368,7 +300,7 @@ function os2web_indholdstyper_field_default_field_bases() {
         'right_column' => 0,
         'rotating_image' => 0,
         'selvbetjeningslinks' => 0,
-        'spotbox' => 0,
+        'os2web_spotbox_box' => 0,
         'tema' => 0,
         'webform' => 0,
       ),
@@ -407,20 +339,20 @@ function os2web_indholdstyper_field_default_field_bases() {
         'borgerservices' => 0,
         'bullet_point' => 0,
         'bullet_point_attachment' => 0,
-        'contentpage' => 0,
+        'os2web_base_contentpage' => 0,
         'esdh_dokument' => 0,
         'esdh_sag' => 0,
         'files' => 0,
         'galleri' => 0,
         'hoering' => 0,
-        'iframe_selvbetjeningsl_sning_mm' => 0,
+        'os2web_base_iframe' => 0,
         'institution' => 0,
         'knactivity' => 0,
         'kontaktblok' => 0,
         'local_plan' => 0,
         'media' => 0,
         'meeting' => 0,
-        'news' => 0,
+        'os2web_base_news' => 0,
         'ofir_job' => 0,
         'os2web_meeting_search_status' => 0,
         'panel' => 0,
@@ -430,9 +362,9 @@ function os2web_indholdstyper_field_default_field_bases() {
         'right_column' => 0,
         'rotating_image' => 0,
         'sektionsside' => 0,
-        'selvbetjeningslinks' => 'selvbetjeningslinks',
+        'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
         'speaker_paper' => 0,
-        'spotbox' => 0,
+        'os2web_spotbox_box' => 0,
         'subsites_og_sites' => 0,
         'tema' => 0,
         'webform' => 0,
@@ -447,13 +379,59 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_parent_node'
-  $field_bases['field_parent_node'] = array(
+  // Exported field_base: 'field_os2web_base_field_iframe'
+  $field_bases['field_os2web_base_field_iframe'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_parent_node',
+    'field_name' => 'field_os2web_base_field_iframe',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_os2web_base_field_inh_colm'
+  $field_bases['field_os2web_base_field_inh_colm'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_base_field_inh_colm',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 0,
+        1 => 1,
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'field_os2web_base_field_parent'
+  $field_bases['field_os2web_base_field_parent'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_base_field_parent',
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -464,17 +442,17 @@ function os2web_indholdstyper_field_default_field_bases() {
     'settings' => array(
       'referenceable_types' => array(
         'borger_dk_permalink' => 0,
-        'contentpage' => 'contentpage',
+        'os2web_base_contentpage' => 'os2web_base_contentpage',
         'esdh_dokument' => 0,
         'esdh_sag' => 0,
         'files' => 0,
         'galleri' => 0,
-        'iframe_selvbetjeningsl_sning_mm' => 0,
+        'os2web_base_iframe' => 0,
         'institution' => 0,
         'knactivity' => 0,
         'local_plan' => 0,
         'media' => 0,
-        'news' => 0,
+        'os2web_base_news' => 0,
         'ofir_job' => 0,
         'panel' => 0,
         'person' => 0,
@@ -482,7 +460,7 @@ function os2web_indholdstyper_field_default_field_bases() {
         'referat' => 0,
         'right_column' => 0,
         'rotating_image' => 0,
-        'spotbox' => 0,
+        'os2web_spotbox_box' => 0,
         'tema' => 0,
         'webform' => 0,
       ),
@@ -496,13 +474,13 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_rotate_image'
-  $field_bases['field_rotate_image'] = array(
+  // Exported field_base: 'field_os2web_base_field_photo'
+  $field_bases['field_os2web_base_field_photo'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_rotate_image',
+    'field_name' => 'field_os2web_base_field_photo',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -518,42 +496,35 @@ function os2web_indholdstyper_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_rotate_publish'
-  $field_bases['field_rotate_publish'] = array(
+  // Exported field_base: 'field_os2web_base_field_rota_img'
+  $field_bases['field_os2web_base_field_rota_img'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_rotate_publish',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'date',
-    'settings' => array(
-      'cache_count' => 4,
-      'cache_enabled' => 0,
-      'granularity' => array(
-        'day' => 'day',
-        'hour' => 0,
-        'minute' => 0,
-        'month' => 'month',
-        'second' => 0,
-        'year' => 'year',
+    'field_name' => 'field_os2web_base_field_rota_img',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
       ),
-      'timezone_db' => '',
-      'todate' => 'required',
-      'tz_handling' => 'none',
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'datestamp',
+    'type' => 'image',
   );
 
-  // Exported field_base: 'field_rotating_link'
-  $field_bases['field_rotating_link'] = array(
+  // Exported field_base: 'field_os2web_base_field_rota_lnk'
+  $field_bases['field_os2web_base_field_rota_lnk'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_rotating_link',
+    'field_name' => 'field_os2web_base_field_rota_lnk',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -574,6 +545,35 @@ function os2web_indholdstyper_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'link_field',
+  );
+
+  // Exported field_base: 'field_os2web_base_field_rotate'
+  $field_bases['field_os2web_base_field_rotate'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_base_field_rotate',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'date',
+    'settings' => array(
+      'cache_count' => 4,
+      'cache_enabled' => 0,
+      'granularity' => array(
+        'day' => 'day',
+        'hour' => 0,
+        'minute' => 0,
+        'month' => 'month',
+        'second' => 0,
+        'year' => 'year',
+      ),
+      'timezone_db' => '',
+      'todate' => 'required',
+      'tz_handling' => 'none',
+    ),
+    'translatable' => 0,
+    'type' => 'datestamp',
   );
 
   // Exported field_base: 'field_selvbetjening_direkte'
@@ -622,25 +622,6 @@ function os2web_indholdstyper_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_text'
-  $field_bases['field_text'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_text',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
   );
 
   return $field_bases;

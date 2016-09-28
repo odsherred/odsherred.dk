@@ -186,7 +186,7 @@ function os2web_indholdstyper_field_group_info() {
     'label' => 'Indstillinger',
     'weight' => '8',
     'children' => array(
-      0 => 'field_rotate_publish',
+      0 => 'field_os2web_base_field_rotate',
       1 => 'field_node_reference_kontaktblok',
       2 => 'field_indholdsside_spotboxe',
       3 => 'field_noderef_selvbtjn',
@@ -222,7 +222,7 @@ function os2web_indholdstyper_field_group_info() {
     'weight' => '14',
     'children' => array(
       0 => 'field_source_id',
-      1 => 'field_site_structure',
+      1 => 'field_os2web_base_field_struct',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -249,9 +249,9 @@ function os2web_indholdstyper_field_group_info() {
     'label' => 'Skjult',
     'weight' => '6',
     'children' => array(
-      0 => 'field_inherit_right_column',
+      0 => 'field_os2web_base_field_inh_colm',
       1 => 'field_lead_image',
-      2 => 'field_parent_node',
+      2 => 'field_os2web_base_field_parent',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -337,8 +337,8 @@ function os2web_indholdstyper_field_group_info() {
     'label' => 'Indstillinger',
     'weight' => '7',
     'children' => array(
-      0 => 'field_promoteto',
-      1 => 'field_side_baggrungsbillede',
+      0 => 'field_os2web_base_field_promote',
+      1 => 'field_os2web_frontend_bg_file',
       2 => 'field_skjul_relaterede_links',
       3 => 'path',
       4 => 'redirect',
@@ -370,11 +370,11 @@ function os2web_indholdstyper_field_group_info() {
     'label' => 'Nyhed',
     'weight' => '0',
     'children' => array(
-      0 => 'group_dato',
-      1 => 'group_indstillinger',
-      2 => 'group_taksonomi',
-      3 => 'group_tekst',
-      4 => 'group_billeder',
+      0 => 'group_billeder',
+      1 => 'group_dato',
+      2 => 'group_indstillinger',
+      3 => 'group_taksonomi',
+      4 => 'group_tekst',
       5 => 'group_bilag',
     ),
     'format_type' => 'htabs',
@@ -421,10 +421,10 @@ function os2web_indholdstyper_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_taksonomi|node|iframe_selvbetjeningsl_sning_mm|form';
+  $field_group->identifier = 'group_taksonomi|node|os2web_base_iframe|form';
   $field_group->group_name = 'group_taksonomi';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'iframe_selvbetjeningsl_sning_mm';
+  $field_group->bundle = 'os2web_base_iframe';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -447,7 +447,7 @@ function os2web_indholdstyper_field_group_info() {
       ),
     ),
   );
-  $export['group_taksonomi|node|iframe_selvbetjeningsl_sning_mm|form'] = $field_group;
+  $export['group_taksonomi|node|os2web_base_iframe|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -496,7 +496,7 @@ function os2web_indholdstyper_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_resume_long',
-      2 => 'field_site_structure',
+      2 => 'field_os2web_base_field_struct',
       3 => 'field_newstype',
       4 => 'title',
     ),

@@ -71,6 +71,7 @@ function os2web_webform_downloads_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
+      'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
   );
@@ -81,6 +82,7 @@ function os2web_webform_downloads_user_default_permissions() {
     'roles' => array(
       'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
+      'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
   );
@@ -111,6 +113,7 @@ function os2web_webform_downloads_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
+      'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
   );
@@ -121,6 +124,7 @@ function os2web_webform_downloads_user_default_permissions() {
     'roles' => array(
       'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
+      'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
   );

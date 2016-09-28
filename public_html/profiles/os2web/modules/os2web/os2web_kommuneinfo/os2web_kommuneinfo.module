@@ -36,7 +36,7 @@ function os2web_kommuneinfo_form_news_node_form_alter(&$form, $form_state, $form
         $options[$term->tid] = $term->name;
       }
     }
-    $form['field_promoteto']['und']['#options'] = $options;
+    $form['field_os2web_base_field_promote']['und']['#options'] = $options;
   }
 }
 

@@ -82,7 +82,7 @@ function cmstheme_preprocess_region(&$vars) {
   if ($vars['region'] === 'sidebar_first') {
     $dirty = FALSE;
     $ignored_blocks = array(
-      'views_sitestuktur-block_1',
+      'views_os2web_base_panels_view_sitestru-block_1',
       'alpha_debug_sidebar_first',
       'context',
     );

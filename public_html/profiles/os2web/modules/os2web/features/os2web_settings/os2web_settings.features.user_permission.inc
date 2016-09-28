@@ -54,102 +54,6 @@ function os2web_settings_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create contentpage content'.
-  $permissions['create contentpage content'] = array(
-    'name' => 'create contentpage content',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create galleri content'.
-  $permissions['create galleri content'] = array(
-    'name' => 'create galleri content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create news content'.
-  $permissions['create news content'] = array(
-    'name' => 'create news content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
-      'Kommuneinformation' => 'Kommuneinformation',
-      'Opret afgørelser' => 'Opret afgørelser',
-      'Opret høringer' => 'Opret høringer',
-      'Opret møder' => 'Opret møder',
-      'Opret nyhed' => 'Opret nyhed',
-      'Opret udbud' => 'Opret udbud',
-      'Webmaster' => 'Webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create rotating_image content'.
-  $permissions['create rotating_image content'] = array(
-    'name' => 'create rotating_image content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
-      'Kommunikation' => 'Kommunikation',
-      'Webmaster' => 'Webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any contentpage content'.
-  $permissions['delete any contentpage content'] = array(
-    'name' => 'delete any contentpage content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Kommunikation' => 'Kommunikation',
-      'Webmaster' => 'Webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any galleri content'.
-  $permissions['delete any galleri content'] = array(
-    'name' => 'delete any galleri content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any news content'.
-  $permissions['delete any news content'] = array(
-    'name' => 'delete any news content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
-      'Kommuneinformation' => 'Kommuneinformation',
-      'Webmaster' => 'Webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any rotating_image content'.
-  $permissions['delete any rotating_image content'] = array(
-    'name' => 'delete any rotating_image content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own contentpage content'.
-  $permissions['delete own contentpage content'] = array(
-    'name' => 'delete own contentpage content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
-      'Kommunikation' => 'Kommunikation',
-      'Webmaster' => 'Webmaster',
-      'Webredaktør' => 'Webredaktør',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete own esdh_dokument content'.
   $permissions['delete own esdh_dokument content'] = array(
     'name' => 'delete own esdh_dokument content',
@@ -164,91 +68,12 @@ function os2web_settings_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own galleri content'.
-  $permissions['delete own galleri content'] = array(
-    'name' => 'delete own galleri content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own news content'.
-  $permissions['delete own news content'] = array(
-    'name' => 'delete own news content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
-      'Kommuneinformation' => 'Kommuneinformation',
-      'Opret afgørelser' => 'Opret afgørelser',
-      'Opret høringer' => 'Opret høringer',
-      'Opret møder' => 'Opret møder',
-      'Opret nyhed' => 'Opret nyhed',
-      'Opret udbud' => 'Opret udbud',
-      'Webmaster' => 'Webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own rotating_image content'.
-  $permissions['delete own rotating_image content'] = array(
-    'name' => 'delete own rotating_image content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete revisions'.
   $permissions['delete revisions'] = array(
     'name' => 'delete revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
       'Webmaster' => 'Webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any contentpage content'.
-  $permissions['edit any contentpage content'] = array(
-    'name' => 'edit any contentpage content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
-      'Kommunikation' => 'Kommunikation',
-      'Webmaster' => 'Webmaster',
-      'Webredaktør' => 'Webredaktør',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any galleri content'.
-  $permissions['edit any galleri content'] = array(
-    'name' => 'edit any galleri content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any news content'.
-  $permissions['edit any news content'] = array(
-    'name' => 'edit any news content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
-      'Kommuneinformation' => 'Kommuneinformation',
-      'Webmaster' => 'Webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any rotating_image content'.
-  $permissions['edit any rotating_image content'] = array(
-    'name' => 'edit any rotating_image content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own contentpage content'.
-  $permissions['edit own contentpage content'] = array(
-    'name' => 'edit own contentpage content',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -263,38 +88,6 @@ function os2web_settings_user_default_permissions() {
   // Exported permission: 'edit own esdh_sag content'.
   $permissions['edit own esdh_sag content'] = array(
     'name' => 'edit own esdh_sag content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own galleri content'.
-  $permissions['edit own galleri content'] = array(
-    'name' => 'edit own galleri content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own news content'.
-  $permissions['edit own news content'] = array(
-    'name' => 'edit own news content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
-      'Erhverv' => 'Erhverv',
-      'Kommuneinformation' => 'Kommuneinformation',
-      'Opret afgørelser' => 'Opret afgørelser',
-      'Opret høringer' => 'Opret høringer',
-      'Opret møder' => 'Opret møder',
-      'Opret nyhed' => 'Opret nyhed',
-      'Opret udbud' => 'Opret udbud',
-      'Webmaster' => 'Webmaster',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own rotating_image content'.
-  $permissions['edit own rotating_image content'] = array(
-    'name' => 'edit own rotating_image content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -395,12 +188,6 @@ function os2web_settings_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
-      'Kommuneinformation' => 'Kommuneinformation',
-      'Kommunikation' => 'Kommunikation',
-      'Opret afgørelser' => 'Opret afgørelser',
-      'Opret møder' => 'Opret møder',
-      'Opret nyhed' => 'Opret nyhed',
-      'Opret udbud' => 'Opret udbud',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
@@ -412,7 +199,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Kommuneinformation' => 'Kommuneinformation',
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
     ),

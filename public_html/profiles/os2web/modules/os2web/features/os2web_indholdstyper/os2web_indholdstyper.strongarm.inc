@@ -27,9 +27,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'comment_anonymous_os2web_base_iframe';
   $strongarm->value = 0;
-  $export['comment_anonymous_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['comment_anonymous_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -69,9 +69,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'comment_default_mode_os2web_base_iframe';
   $strongarm->value = 0;
-  $export['comment_default_mode_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['comment_default_mode_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -104,9 +104,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'comment_default_per_page_os2web_base_iframe';
   $strongarm->value = '50';
-  $export['comment_default_per_page_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['comment_default_per_page_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -139,9 +139,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'comment_form_location_os2web_base_iframe';
   $strongarm->value = 1;
-  $export['comment_form_location_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['comment_form_location_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -167,9 +167,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'comment_os2web_base_iframe';
   $strongarm->value = '1';
-  $export['comment_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['comment_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -202,9 +202,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'comment_preview_os2web_base_iframe';
   $strongarm->value = '1';
-  $export['comment_preview_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['comment_preview_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -237,9 +237,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'comment_subject_field_os2web_base_iframe';
   $strongarm->value = 1;
-  $export['comment_subject_field_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['comment_subject_field_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -448,7 +448,7 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'field_bundle_settings_node__os2web_base_iframe';
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
@@ -497,7 +497,7 @@ function os2web_indholdstyper_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['field_bundle_settings_node__os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -537,13 +537,13 @@ function os2web_indholdstyper_strongarm() {
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '51',
+          'weight' => '50',
         ),
         'workbench_access' => array(
           'weight' => '0',
         ),
         'redirect' => array(
-          'weight' => '52',
+          'weight' => '51',
         ),
         'metatags' => array(
           'weight' => '2',
@@ -616,9 +616,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'language_content_type_os2web_base_iframe';
   $strongarm->value = '0';
-  $export['language_content_type_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['language_content_type_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -681,12 +681,12 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'menu_options_os2web_base_iframe';
   $strongarm->value = array(
     0 => 'menu-indholdsmenu',
     1 => 'menu-selvbetjening',
   );
-  $export['menu_options_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['menu_options_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -742,9 +742,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'menu_parent_os2web_base_iframe';
   $strongarm->value = 'menu-selvbetjening:0';
-  $export['menu_parent_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['menu_parent_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -803,11 +803,11 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'node_options_os2web_base_iframe';
   $strongarm->value = array(
     0 => 'revision',
   );
-  $export['node_options_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['node_options_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -863,9 +863,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'node_preview_os2web_base_iframe';
   $strongarm->value = '1';
-  $export['node_preview_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['node_preview_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -919,9 +919,9 @@ function os2web_indholdstyper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_iframe_selvbetjeningsl_sning_mm';
+  $strongarm->name = 'node_submitted_os2web_base_iframe';
   $strongarm->value = 0;
-  $export['node_submitted_iframe_selvbetjeningsl_sning_mm'] = $strongarm;
+  $export['node_submitted_os2web_base_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

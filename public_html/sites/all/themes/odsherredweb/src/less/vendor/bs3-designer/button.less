@@ -1,0 +1,142 @@
+// |--------------------------------------------------------------------------
+// | Button
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .btn
+// | - .btn-secondary
+// | - .btn-tertiary
+// | - .btn-quaternary
+// | - .btn-faceless
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.btn {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, .15);
+
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		outline: none;
+	}
+}
+
+// Color
+.btn-secondary {
+	.button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+}
+.btn-tertiary {
+	.button-variant(@btn-tertiary-color; @btn-tertiary-bg; @btn-tertiary-border);
+}
+.btn-quaternary {
+	.button-variant(@btn-quaternary-color; @btn-quaternary-bg; @btn-quaternary-border);
+}
+.btn-quinary {
+	.button-variant(@btn-quinary-color; @btn-quinary-bg; @btn-quinary-border);
+}
+
+// 3D
+.btn-3d {
+	border-width: 1px;
+	border-bottom-width: 3px;
+	.box-shadow(0 4px 4px -5px rgba(0, 0, 0, .3));
+	.transition(all @bs3-designer-transition-time ease-in-out);
+
+	&:active,
+	&.active,
+	&:focus,
+	&.focus {
+		outline: 0 !important;
+	}
+
+	&:active,
+	&.active {
+		margin-top: 2px;
+		border-bottom-width: 1px;
+	}
+}
+
+// Faceless
+.btn-faceless {
+
+	&,
+	&:hover,
+	&:focus
+	&.focus,
+	&:active,
+	&.active,
+	&.disabled,
+	&[disabled] {
+		color: @text-color;
+		background-color: transparent;
+		.box-shadow(none);
+
+		&:before,
+		&:after,
+		.icon {
+			color: @text-color;
+		}
+	}
+}
+
+// Icon
+.btn {
+
+	&:before,
+	&:after,
+	.icon {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		color: #333;
+		color: rgba(0, 0, 0, .5);
+		vertical-align: middle;
+
+		+ .icon {
+			margin-left: 5px;
+		}
+	}
+}
+
+.btn-warning,
+.btn-danger,
+.btn-info,
+.btn-success,
+.btn-primary,
+.btn-secondary,
+.btn-tertiary,
+.btn-quaternary,
+.btn-quinary {
+
+	&:before,
+	&:after,
+	.icon {
+		color: #fff;
+		color: rgba(255, 255, 255, .5);
+	}
+}
+
+// Stacked
+.btn + .btn {
+	margin-left: 5px;
+}
+.btn-block + .btn-block {
+	margin-left: 0;
+}
+
+// Button loader
+.btn-loader {
+
+	&.btn-loader-active {
+
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+}

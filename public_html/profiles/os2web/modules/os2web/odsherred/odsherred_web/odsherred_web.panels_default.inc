@@ -46,7 +46,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_site_structure_tid' => '4',
+        'field_os2web_base_field_struct_tid' => '4',
       ),
     );
     $pane->cache = array();
@@ -69,7 +69,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_site_structure_tid' => '4',
+        'field_os2web_base_field_struct_tid' => '4',
       ),
     );
     $pane->cache = array();
@@ -270,7 +270,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_site_structure_tid' => '5',
+        'field_os2web_base_field_struct_tid' => '5',
       ),
     );
     $pane->cache = array();
@@ -293,7 +293,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_site_structure_tid' => '5',
+        'field_os2web_base_field_struct_tid' => '5',
       ),
     );
     $pane->cache = array();
@@ -488,7 +488,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_site_structure_tid' => '6',
+        'field_os2web_base_field_struct_tid' => '6',
       ),
     );
     $pane->cache = array();
@@ -511,7 +511,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_site_structure_tid' => '6',
+        'field_os2web_base_field_struct_tid' => '6',
       ),
     );
     $pane->cache = array();
@@ -629,7 +629,7 @@ function odsherred_web_default_panels_mini() {
     $pane->pid = 'new-8e2f24e8-b812-41bb-a56c-0f005f937eaa';
     $pane->panel = 'right';
     $pane->type = 'views_panes';
-    $pane->subtype = 'nyheder_hoeringer-panel_pane_1';
+    $pane->subtype = 'os2web_hearings_view_hearing-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -926,7 +926,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_site_structure_tid' => 'Borger',
+        'field_os2web_base_field_struct_tid' => 'Borger',
       ),
     );
     $pane->cache = array();
@@ -1107,7 +1107,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_site_structure_tid' => 'Erhverv',
+        'field_os2web_base_field_struct_tid' => 'Erhverv',
       ),
     );
     $pane->cache = array();
@@ -1223,7 +1223,7 @@ function odsherred_web_default_panels_mini() {
     $pane->pid = 'new-d6520d5a-1351-46bc-a648-96dc126ada70';
     $pane->panel = 'kol3';
     $pane->type = 'views_panes';
-    $pane->subtype = 'nyheder_hoeringer-panel_pane_1';
+    $pane->subtype = 'os2web_hearings_view_hearing-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -1293,7 +1293,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_site_structure_tid' => 'Politik',
+        'field_os2web_base_field_struct_tid' => 'Politik',
       ),
     );
     $pane->cache = array();

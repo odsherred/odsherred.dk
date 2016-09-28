@@ -68,7 +68,6 @@ features[field_instance][] = taxonomy_term-politik-field_acadrecomittee
 features[field_instance][] = taxonomy_term-politik-field_agendaenabled
 features[field_instance][] = taxonomy_term-politik-field_discontinued
 features[field_instance][] = taxonomy_term-politik-field_search_word
-features[field_instance][] = taxonomy_term-site_struktur-field_node_reference_kontaktblok
 features[field_instance][] = taxonomy_term-user_position-field_priority
 features[taxonomy][] = acadremmcomittee
 features[taxonomy][] = egennavne_stednavne

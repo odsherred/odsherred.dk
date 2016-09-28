@@ -10,6 +10,27 @@
 function os2web_andre_sites_og_subsites_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_os2web_spotbox_url'
+  $field_bases['field_os2web_spotbox_url'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_spotbox_url',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 100,
+    ),
+    'translatable' => 1,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_sitestruktur'
   $field_bases['field_sitestruktur'] = array(
     'active' => 1,
@@ -64,27 +85,6 @@ function os2web_andre_sites_og_subsites_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
-  );
-
-  // Exported field_base: 'field_url'
-  $field_bases['field_url'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_url',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 100,
-    ),
-    'translatable' => 1,
-    'type' => 'text',
   );
 
   return $field_bases;

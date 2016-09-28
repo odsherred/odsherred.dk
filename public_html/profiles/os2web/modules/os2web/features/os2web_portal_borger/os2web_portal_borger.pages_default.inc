@@ -162,7 +162,7 @@ function os2web_portal_borger_default_page_manager_handlers() {
     $pane->pid = 'new-59972225-bf30-4c47-8578-11b473f0b9f0';
     $pane->panel = 'middle_center';
     $pane->type = 'views_panes';
-    $pane->subtype = 'newslist-panel_pane_3';
+    $pane->subtype = 'os2web_base_panels_view_newslist-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
