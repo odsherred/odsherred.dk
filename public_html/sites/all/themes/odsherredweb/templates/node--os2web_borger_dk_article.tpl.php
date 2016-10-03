@@ -25,11 +25,11 @@
 
   <div class="content clearfix"<?php print $content_attributes; ?>>
   <?php
-    if (!empty($content['field_os2web_base_field_image'])) {
+    if (!empty($content['field_os2web_borger_dk_image'])) {
       print "<div class='billede'>";
-      print render($content['field_os2web_base_field_image']);
+      print render($content['field_os2web_borger_dk_image']);
       print "</div>";
-      hide($content['field_os2web_base_field_image']);
+      hide($content['field_os2web_borger_dk_image']);
     }
     
       if (!empty($content['field_os2web_borger_dk_header'])) {
