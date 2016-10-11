@@ -67,8 +67,8 @@ function nyheder_quicktabs_default_quicktabs() {
   t('Høringer');
   t('Møder');
   t('Udbud');
-  t('Åstedsforretninger');
   t('news page tabs');
+  t('Åstedsforretninger');
 
   $export['nyheder'] = $quicktabs;
 
