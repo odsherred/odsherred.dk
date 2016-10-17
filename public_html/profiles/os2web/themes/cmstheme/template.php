@@ -39,6 +39,17 @@ function cmstheme_menu_link(array $variables) {
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
+/*
+ * Implements theme_menu_tree().
+ */
+function cmstheme_menu_tree(&$variables) {
+  if($variables['theme_hook_original'] != 'menu_tree') {
+    return $variables['tree'];
+  }
+
+  return '<ul class="menu">' . $variables['tree'] . '</ul>';
+}
+
 /**
  * Implemensts hook_breadcrumb().
  *
