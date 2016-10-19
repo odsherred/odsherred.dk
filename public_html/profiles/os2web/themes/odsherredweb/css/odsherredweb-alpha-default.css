@@ -47,16 +47,16 @@ a:link, a:visited, a { color: #407daa;
   background-repeat: repeat-x;
 }
 
-.page-andre-sider #page_1,
-.bluenwhite #page_1 {
+.page-andre-sider,
+.bluenwhite {
   background-image: url(img/bluenwhite.png); background-repeat: repeat-x;
 }
 
 body.page-andre-sider,
 body.bluenwhite { background-image: none; }
 
-body.page-andre-sider #page_1 #zone-content,
-body.bluenwhite #page_1 #zone-content {
+body.page-andre-sider #zone-content,
+body.bluenwhite #zone-content {
   padding-top: 0; }
 
 #zone-branding {
@@ -433,10 +433,10 @@ ul.os2web_menus-container li.odsherred_politik .megamenu-panel {
 
 .os2web_menus-container .panel-region-kol4 .inside { padding-left: 20px; padding-right: 10px }
 
-#page_1 ul.os2web_menus-container li a.js-megamenu-toggle,
-#page_1 ul.os2web_menus-container li a.js-megamenu-toggle:hover,
-#page_1 ul#main-menu li a.menu-minipanel,
-#page_1 ul#main-menu li a.menu-minipanel:hover {
+ul.os2web_menus-container li a.js-megamenu-toggle,
+ul.os2web_menus-container li a.js-megamenu-toggle:hover,
+ul#main-menu li a.menu-minipanel,
+ul#main-menu li a.menu-minipanel:hover {
   background-image: url('img/plus.png');
   background-repeat: no-repeat;
   background-size: initial;
@@ -451,15 +451,15 @@ ul.os2web_menus-container li.odsherred_politik .megamenu-panel {
   margin: 0;
 }
 
-#page_1 ul#main-menu li.first a.menu-minipanel,
-#page_1 ul#main-menu li.first a.menu-minipanel:hover {
+ul#main-menu li.first a.menu-minipanel,
+ul#main-menu li.first a.menu-minipanel:hover {
   right: 22px;
 }
 
-#page_1 ul.os2web_menus-container li a.js-megamenu-toggle.open,
-#page_1 ul.os2web_menus-container li a.js-megamenu-toggle.open:hover
-#page_1 ul#main-menu li a.menu-minipanel.qtip-hover,
-#page_1 ul#main-menu li a.menu-minipanel.qtip-hover:hover {
+ul.os2web_menus-container li a.js-megamenu-toggle.open,
+ul.os2web_menus-container li a.js-megamenu-toggle.open:hover
+ul#main-menu li a.menu-minipanel.qtip-hover,
+ul#main-menu li a.menu-minipanel.qtip-hover:hover {
   background-image: url('img/minus.png');
 }
 

@@ -79,8 +79,8 @@ ul.os2web_menus-container li.odsherred_politik .megamenu-panel
     left: -480px;
 }
 
-#page_1 ul.os2web_menus-container li a.js-megamenu-toggle,
-#page_1 ul.os2web_menus-container li a.js-megamenu-toggle:hover
+ul.os2web_menus-container li a.js-megamenu-toggle,
+ul.os2web_menus-container li a.js-megamenu-toggle:hover
 {
     top: 15px;
     right: 14px;
