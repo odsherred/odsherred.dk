@@ -43,7 +43,7 @@ function cmstheme_menu_link(array $variables) {
  * Implements theme_menu_tree().
  */
 function cmstheme_menu_tree(&$variables) {
-  if($variables['theme_hook_original'] != 'menu_tree') {
+  if($variables['theme_hook_original'] == 'menu_tree__menu_indhold__sidebar') {
     return $variables['tree'];
   }
 
