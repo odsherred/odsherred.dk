@@ -1,6 +1,80 @@
 /* This file will hold styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
 
+/* global */
+.selvbetjening {
+
+}
+
+.selvbetjening ul,
+.selvbetjening li {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.selvbetjening li {
+  padding: 5px 0;
+}
+
+.selvbetjening a {
+  display: block;
+  text-decoration: none;
+}
+
+/* first level */
+.selvbetjening > ul > li {
+  border: 2px solid #0A5691;
+}
+
+.selvbetjening > ul > li > a {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #00538F;
+  color: #fff;
+  padding: 14px 25px;
+}
+
+.selvbetjening > ul > li.open > a,
+.selvbetjening > ul > li.open > a:hover,
+.selvbetjening > ul > li.open > a:active,
+.selvbetjening > ul > li > a:hover,
+.selvbetjening > ul > li > a:active {
+  background-color: #0063aa;
+}
+
+/* Second level */
+.selvbetjening > ul > li > ul {
+  display: none;
+}
+
+.selvbetjening > ul > li.open > ul {
+  display: block;
+}
+
+.selvbetjening > ul > li > ul > li {
+  background-color: #eee;
+}
+
+.selvbetjening > ul > li > ul > li:first-child {
+  padding-top: 15px;
+}
+
+.selvbetjening > ul > li > ul > li:last-child {
+  padding-bottom: 15px;
+}
+
+.selvbetjening > ul > li > ul > li > a,
+.selvbetjening > ul > li > ul > li > a:hover,
+.selvbetjening > ul > li > ul > li > a:active {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: transparent;
+  color: #333;
+  padding: 6px 25px;
+}
+
 html {
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
