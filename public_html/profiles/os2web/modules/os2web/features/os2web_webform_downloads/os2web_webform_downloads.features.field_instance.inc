@@ -102,99 +102,7 @@ function os2web_webform_downloads_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-webform-field_editortags'
-  $field_instances['node-webform-field_editortags'] = array(
-    'bundle' => 'webform',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_editortags',
-    'label' => 'Stikord',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'allow',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-webform-field_organization'
-  $field_instances['node-webform-field_organization'] = array(
-    'bundle' => 'webform',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_organization',
-    'label' => 'Organisation',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'allow',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 9,
+      'weight' => 4,
     ),
   );
 
@@ -255,7 +163,7 @@ function os2web_webform_downloads_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -302,7 +210,7 @@ function os2web_webform_downloads_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -362,7 +270,7 @@ function os2web_webform_downloads_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
@@ -422,7 +330,7 @@ function os2web_webform_downloads_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -466,7 +374,7 @@ function os2web_webform_downloads_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 1,
     ),
   );
 
@@ -477,7 +385,7 @@ function os2web_webform_downloads_field_default_field_instances() {
       0 => array(
         'summary' => '',
         'value' => '',
-        'format' => 'filtered_html',
+        'format' => 'standard',
       ),
     ),
     'deleted' => 0,
@@ -526,13 +434,13 @@ function os2web_webform_downloads_field_default_field_instances() {
       'better_formats' => array(
         'allowed_formats' => array(
           'blokindhold' => 0,
-          'filtered_html' => 0,
+          'filtered_html' => 'filtered_html',
           'full_html' => 0,
           'full_html_iframe' => 0,
           'php_code' => 0,
           'plain_text' => 0,
           'raw' => 0,
-          'standard' => 'standard',
+          'standard' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -573,97 +481,7 @@ function os2web_webform_downloads_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 6,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-webform-field_resume_long'
-  $field_instances['node-webform-field_resume_long'] = array(
-    'bundle' => 'webform',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_resume_long',
-    'label' => 'Introtekst',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'blokindhold' => 'blokindhold',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'full_html_iframe' => 'full_html_iframe',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-          'raw' => 'raw',
-          'standard' => 'standard',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'blokindhold' => array(
-              'weight' => -7,
-            ),
-            'filtered_html' => array(
-              'weight' => -10,
-            ),
-            'full_html' => array(
-              'weight' => -9,
-            ),
-            'full_html_iframe' => array(
-              'weight' => 0,
-            ),
-            'php_code' => array(
-              'weight' => -6,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-            'raw' => array(
-              'weight' => 0,
-            ),
-            'standard' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
-      'display_summary' => 0,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
+        'rows' => 3,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -763,53 +581,7 @@ function os2web_webform_downloads_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
-    ),
-  );
-
-  // Exported field_instance: 'node-webform-field_termref_kle'
-  $field_instances['node-webform-field_termref_kle'] = array(
-    'bundle' => 'webform',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_termref_kle',
-    'label' => 'KLE',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'allow',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -856,52 +628,6 @@ function os2web_webform_downloads_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'node-webform-field_termref_sted'
-  $field_instances['node-webform-field_termref_sted'] = array(
-    'bundle' => 'webform',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_termref_sted',
-    'label' => 'Egenavne / stednavne',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'allow',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
     ),
   );
 
@@ -964,18 +690,15 @@ function os2web_webform_downloads_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 4,
+      'weight' => 7,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Egenavne / stednavne');
   t('Egennavne/stednavne');
   t('Intro');
-  t('Introtekst');
   t('KL Emneord');
-  t('KLE');
   t('Opmærk dit indhold med dine egne stikord. 
 <br>Dette giver mulighed for at sammenkoble relateret indhold i listevisninger mv.
 <br>Adskil flere opmærkninger med komma.');

@@ -100,16 +100,16 @@ function os2web_webform_downloads_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '9',
         ),
         'metatags' => array(
-          'weight' => '13',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '12',
+          'weight' => '10',
         ),
       ),
       'display' => array(

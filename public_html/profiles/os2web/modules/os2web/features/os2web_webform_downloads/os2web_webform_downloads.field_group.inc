@@ -20,10 +20,24 @@ function os2web_webform_downloads_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => '',
-    'weight' => '0',
-    'children' => array(),
+    'label' => 'Emneord',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_os2web_base_field_organiz',
+      1 => 'field_termref_sofd',
+      2 => 'field_os2web_base_field_loca_ref',
+      3 => 'field_os2web_base_field_edi_tags',
+    ),
     'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Emneord',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
   );
   $export['group_taksonomi|node|webform|form'] = $field_group;
 
