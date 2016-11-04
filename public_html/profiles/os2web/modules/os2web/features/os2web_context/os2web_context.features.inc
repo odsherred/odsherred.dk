@@ -32,6 +32,14 @@ function os2web_context_node_info() {
       'title_label' => t('Overskrift'),
       'help' => '',
     ),
+    'webform' => array(
+      'name' => t('Webformular'),
+      'base' => 'node_content',
+      'description' => t('Opret en ny formular eller et nyt spørgeskema. Resultater og statistik gemmes og er tilgængelige for priviligerede brugere.'),
+      'has_title' => '1',
+      'title_label' => t('Titel'),
+      'help' => '',
+    ),
   );
   drupal_alter('node_info', $items);
   return $items;
