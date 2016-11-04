@@ -30,8 +30,9 @@ function os2web_indholdstyper_image_default_styles() {
 
   // Exported image style: indholdsside.
   $styles['indholdsside'] = array(
+    'label' => 'indholdsside',
     'effects' => array(
-      5 => array(
+      2 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 690,
@@ -40,7 +41,6 @@ function os2web_indholdstyper_image_default_styles() {
         'weight' => 1,
       ),
     ),
-    'label' => 'indholdsside',
   );
 
   // Exported image style: medium-content.
@@ -100,8 +100,9 @@ function os2web_indholdstyper_image_default_styles() {
 
   // Exported image style: news_big.
   $styles['news_big'] = array(
+    'label' => 'news_big',
     'effects' => array(
-      2 => array(
+      3 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 214,
@@ -110,7 +111,6 @@ function os2web_indholdstyper_image_default_styles() {
         'weight' => 1,
       ),
     ),
-    'label' => 'news_big',
   );
 
   // Exported image style: rotating_image.
