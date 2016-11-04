@@ -24,7 +24,7 @@ function os2web_borger_dk_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
       'related_block' => array(
         'label' => 'above',
@@ -82,10 +82,9 @@ function os2web_borger_dk_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'related_block' => array(
         'label' => 'above',
@@ -151,7 +150,7 @@ function os2web_borger_dk_field_default_field_instances() {
           'slideshow_controls_position' => 'after',
           'slideshow_field_collection_image' => '',
           'slideshow_fx' => 'fade',
-          'slideshow_image_style' => 'indholdsside',
+          'slideshow_image_style' => 'borger_dk_image',
           'slideshow_link' => '',
           'slideshow_order' => '',
           'slideshow_pager' => '',
@@ -163,7 +162,7 @@ function os2web_borger_dk_field_default_field_instances() {
           'slideshow_timeout' => 4000,
         ),
         'type' => 'slideshow',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'related_block' => array(
         'label' => 'above',
@@ -209,8 +208,16 @@ function os2web_borger_dk_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'imagefield_crop',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+        'allowed_types' => array(
+          0 => 'image',
+        ),
+        'browser_plugins' => array(),
         'collapsible' => 2,
         'croparea' => '690x400',
         'enforce_minimum' => 1,
@@ -219,7 +226,7 @@ function os2web_borger_dk_field_default_field_instances() {
         'progress_indicator' => 'throbber',
         'resolution' => '690x237',
       ),
-      'type' => 'imagefield_crop_widget',
+      'type' => 'media_generic',
       'weight' => -3,
     ),
   );
