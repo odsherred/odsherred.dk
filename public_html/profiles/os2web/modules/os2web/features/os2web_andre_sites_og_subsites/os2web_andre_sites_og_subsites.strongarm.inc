@@ -50,10 +50,16 @@ function os2web_andre_sites_og_subsites_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '6',
+        ),
+        'metatags' => array(
+          'weight' => '7',
+        ),
+        'redirect' => array(
+          'weight' => '5',
         ),
       ),
       'display' => array(),
