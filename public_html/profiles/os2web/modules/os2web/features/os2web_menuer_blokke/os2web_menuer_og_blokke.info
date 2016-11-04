@@ -29,7 +29,5 @@ features[menu_links][] = menu-indholdsmenu_borger:taxonomy/term/4
 features[menu_links][] = menu-indholdsmenu_erhverv:taxonomy/term/5
 features[menu_links][] = menu-top-menu_log-ud:user/logout
 features[menu_links][] = menu-top-menu_ls-hjt:http://www.adgangforalle.dk/
-features[menu_links][] = user-menu_log-out:user/logout
-features[menu_links][] = user-menu_user-account:user
 features[views_view][] = os2web_diverse
 timestamp = 1369904058
