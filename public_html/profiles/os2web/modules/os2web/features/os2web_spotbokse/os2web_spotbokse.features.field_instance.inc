@@ -71,76 +71,6 @@ function os2web_spotbokse_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_spotbox_box-field_os2web_spotbox_img'
-  $field_instances['node-os2web_spotbox_box-field_os2web_spotbox_img'] = array(
-    'bundle' => 'os2web_spotbox_box',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'spotbox_portal_uden_links',
-        ),
-        'type' => 'image',
-        'weight' => 14,
-      ),
-      'jquerymobile_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_os2web_spotbox_img',
-    'label' => 'Billede',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'alt_field_required' => 1,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '210x106',
-      'title_field' => 1,
-      'title_field_required' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'imagefield_crop',
-      'settings' => array(
-        'collapsible' => 2,
-        'croparea' => '500x500',
-        'enforce_minimum' => 1,
-        'enforce_ratio' => 1,
-        'preview_image_style' => '',
-        'progress_indicator' => 'throbber',
-        'resolution' => '210x106',
-      ),
-      'type' => 'imagefield_crop_widget',
-      'weight' => 35,
-    ),
-  );
-
-  // Exported field_instance:
   // 'node-os2web_spotbox_box-field_os2web_base_field_edi_tags'
   $field_instances['node-os2web_spotbox_box-field_os2web_base_field_edi_tags'] = array(
     'bundle' => 'os2web_spotbox_box',
@@ -247,81 +177,6 @@ function os2web_spotbokse_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-os2web_spotbox_box-field_os2web_base_field_lead_img'
-  $field_instances['node-os2web_spotbox_box-field_os2web_base_field_lead_img'] = array(
-    'bundle' => 'os2web_spotbox_box',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 1,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_os2web_base_field_lead_img',
-    'label' => 'Billede',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'alt_field_required' => 0,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'title_field_required' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'plupload' => 0,
-            'reference' => 0,
-            'remote' => 0,
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'copy',
-            'path' => 'file_attach',
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
-        ),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 34,
     ),
   );
 
@@ -729,7 +584,7 @@ function os2web_spotbokse_field_default_field_instances() {
         'resolution' => '300x261',
       ),
       'type' => 'imagefield_crop_widget',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -807,7 +662,76 @@ function os2web_spotbokse_field_default_field_instances() {
         'resolution' => '230x337',
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-os2web_spotbox_box-field_os2web_spotbox_img'
+  $field_instances['node-os2web_spotbox_box-field_os2web_spotbox_img'] = array(
+    'bundle' => 'os2web_spotbox_box',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'spotbox_portal_uden_links',
+        ),
+        'type' => 'image',
+        'weight' => 14,
+      ),
+      'jquerymobile_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_spotbox_img',
+    'label' => 'Billede',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'alt_field_required' => 1,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '210x106',
+      'title_field' => 1,
+      'title_field_required' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'imagefield_crop',
+      'settings' => array(
+        'collapsible' => 2,
+        'croparea' => '500x500',
+        'enforce_minimum' => 1,
+        'enforce_ratio' => 1,
+        'preview_image_style' => '',
+        'progress_indicator' => 'throbber',
+        'resolution' => '210x106',
+      ),
+      'type' => 'imagefield_crop_widget',
+      'weight' => 35,
     ),
   );
 
@@ -1033,58 +957,6 @@ function os2web_spotbokse_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_spotbox_box-field_url'
-  $field_instances['node-os2web_spotbox_box-field_url'] = array(
-    'bundle' => 'os2web_spotbox_box',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'jquerymobile_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_url',
-    'label' => 'URL',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 14,
-    ),
-  );
-
   // Exported field_instance: 'node-spotbox-body'
   $field_instances['node-spotbox-body'] = array(
     'bundle' => 'spotbox',
@@ -1142,75 +1014,6 @@ function os2web_spotbokse_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 15,
-    ),
-  );
-
-  // Exported field_instance: 'node-spotbox-field_os2web_spotbox_img'
-  $field_instances['node-spotbox-field_os2web_spotbox_img'] = array(
-    'bundle' => 'spotbox',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'spotbox_portal_uden_links',
-        ),
-        'type' => 'image',
-        'weight' => 14,
-      ),
-      'jquerymobile_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_os2web_spotbox_img',
-    'label' => 'Billede',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'alt_field_required' => 1,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '210x106',
-      'title_field' => 1,
-      'title_field_required' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'imagefield_crop',
-      'settings' => array(
-        'collapsible' => 2,
-        'croparea' => '500x500',
-        'enforce_minimum' => 1,
-        'enforce_ratio' => 1,
-        'preview_image_style' => '',
-        'progress_indicator' => 'throbber',
-        'resolution' => '210x106',
-      ),
-      'type' => 'imagefield_crop_widget',
-      'weight' => 6,
     ),
   );
 
@@ -1509,6 +1312,75 @@ function os2web_spotbokse_field_default_field_instances() {
       ),
       'type' => 'media_generic',
       'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'node-spotbox-field_os2web_spotbox_img'
+  $field_instances['node-spotbox-field_os2web_spotbox_img'] = array(
+    'bundle' => 'spotbox',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'spotbox_portal_uden_links',
+        ),
+        'type' => 'image',
+        'weight' => 14,
+      ),
+      'jquerymobile_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_spotbox_img',
+    'label' => 'Billede',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'alt_field_required' => 1,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '210x106',
+      'title_field' => 1,
+      'title_field_required' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'imagefield_crop',
+      'settings' => array(
+        'collapsible' => 2,
+        'croparea' => '500x500',
+        'enforce_minimum' => 1,
+        'enforce_ratio' => 1,
+        'preview_image_style' => '',
+        'progress_indicator' => 'throbber',
+        'resolution' => '210x106',
+      ),
+      'type' => 'imagefield_crop_widget',
+      'weight' => 6,
     ),
   );
 

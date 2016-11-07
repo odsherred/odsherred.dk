@@ -360,36 +360,6 @@ function os2web_indholdstyper_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_news_tabs|node|news|form';
-  $field_group->group_name = 'group_news_tabs';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'news';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Nyhed',
-    'weight' => '0',
-    'children' => array(
-      0 => 'group_billeder',
-      1 => 'group_dato',
-      2 => 'group_indstillinger',
-      3 => 'group_taksonomi',
-      4 => 'group_tekst',
-      5 => 'group_bilag',
-    ),
-    'format_type' => 'htabs',
-    'format_settings' => array(
-      'label' => 'Nyhed',
-      'instance_settings' => array(
-        'classes' => '',
-      ),
-    ),
-  );
-  $export['group_news_tabs|node|news|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_taksonomi|node|galleri|form';
   $field_group->group_name = 'group_taksonomi';
   $field_group->entity_type = 'node';
@@ -417,37 +387,6 @@ function os2web_indholdstyper_field_group_info() {
     ),
   );
   $export['group_taksonomi|node|galleri|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_taksonomi|node|os2web_base_iframe|form';
-  $field_group->group_name = 'group_taksonomi';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'os2web_base_iframe';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Taksonomi',
-    'weight' => '8',
-    'children' => array(
-      0 => 'field_termref_kle',
-      1 => 'field_editortags',
-      2 => 'field_organization',
-      3 => 'field_termref_sted',
-      4 => 'field_politics',
-    ),
-    'format_type' => 'fieldset',
-    'format_settings' => array(
-      'formatter' => 'collapsible',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_taksonomi|node|os2web_base_iframe|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -480,6 +419,37 @@ function os2web_indholdstyper_field_group_info() {
     ),
   );
   $export['group_taksonomi|node|news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_taksonomi|node|os2web_base_iframe|form';
+  $field_group->group_name = 'group_taksonomi';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_iframe';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Taksonomi',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_termref_kle',
+      1 => 'field_editortags',
+      2 => 'field_organization',
+      3 => 'field_termref_sted',
+      4 => 'field_politics',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_taksonomi|node|os2web_base_iframe|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

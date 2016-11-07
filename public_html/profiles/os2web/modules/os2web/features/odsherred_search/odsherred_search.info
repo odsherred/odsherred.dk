@@ -1,7 +1,7 @@
 name = odsherred_search
 core = 7.x
 package = Features
-version = 1.11
+version = 7.x-1.12
 project = OS2Web
 dependencies[] = apachesolr_search
 dependencies[] = context

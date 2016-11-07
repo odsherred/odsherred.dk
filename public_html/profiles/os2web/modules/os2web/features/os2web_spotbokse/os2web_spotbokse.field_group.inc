@@ -55,7 +55,6 @@ function os2web_spotbokse_field_group_info() {
       0 => 'field_os2web_spotbox_url',
       1 => 'field_os2web_base_field_text',
       2 => 'field_reference',
-      3 => 'field_url',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -110,11 +109,12 @@ function os2web_spotbokse_field_group_info() {
     'label' => 'Spotbox',
     'weight' => '0',
     'children' => array(
-      0 => 'group_billeder',
-      1 => 'group_links',
-      2 => 'group_spotbilleder',
-      3 => 'group_taksonomi',
-      4 => 'group_tekst',
+      0 => 'group_settings',
+      1 => 'group_billeder',
+      2 => 'group_links',
+      3 => 'group_spotbilleder',
+      4 => 'group_taksonomi',
+      5 => 'group_tekst',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -144,9 +144,6 @@ function os2web_spotbokse_field_group_info() {
       2 => 'field_os2web_base_field_organiz',
       3 => 'field_os2web_base_field_edi_tags',
       4 => 'field_os2web_base_field_politics',
-      5 => 'field_os2web_base_field_promote',
-      6 => 'field_os2web_spotbox_image_tall',
-      7 => 'field_os2web_spotbox_big_image',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

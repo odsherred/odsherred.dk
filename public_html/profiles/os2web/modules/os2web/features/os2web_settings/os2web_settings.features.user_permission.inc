@@ -54,20 +54,6 @@ function os2web_settings_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own esdh_dokument content'.
-  $permissions['delete own esdh_dokument content'] = array(
-    'name' => 'delete own esdh_dokument content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own esdh_sag content'.
-  $permissions['delete own esdh_sag content'] = array(
-    'name' => 'delete own esdh_sag content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete revisions'.
   $permissions['delete revisions'] = array(
     'name' => 'delete revisions',
@@ -75,20 +61,6 @@ function os2web_settings_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Webmaster' => 'Webmaster',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own esdh_dokument content'.
-  $permissions['edit own esdh_dokument content'] = array(
-    'name' => 'edit own esdh_dokument content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own esdh_sag content'.
-  $permissions['edit own esdh_sag content'] = array(
-    'name' => 'edit own esdh_sag content',
-    'roles' => array(),
     'module' => 'node',
   );
 
