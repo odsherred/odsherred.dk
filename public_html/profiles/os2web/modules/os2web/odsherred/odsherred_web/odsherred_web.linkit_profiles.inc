@@ -37,8 +37,8 @@ function odsherred_web_default_linkit_profiles() {
     'entity:node' => array(
       'result_description' => '',
       'bundles' => array(
-        'contentpage' => 'contentpage',
-        'news' => 'news',
+        'contentpage' => 'os2web_base_contentpage',
+        'news' => 'os2web_base_news',
         'iframe_selvbetjeningsl_sning_mm' => 'iframe_selvbetjeningsl_sning_mm',
         'arp_case' => 0,
         'arp_document' => 0,
