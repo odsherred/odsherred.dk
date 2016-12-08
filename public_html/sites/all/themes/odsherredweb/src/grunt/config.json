@@ -21,6 +21,7 @@
     "jsApp": [
       "src/js/bs3-sidebar.js",
       "src/js/bs3-simple-navigation.js",
+      "src/js/selfservice-links.js",
       "src/vendor/fastclick/lib/fastclick.js",
       "src/js/init.js"
     ],
