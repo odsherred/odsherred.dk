@@ -4,6 +4,7 @@ jQuery(document).ready(function($){
   // --------------------------------------------------
   // Sidebar
   // --------------------------------------------------
+  selfServiceLinks.init();
   bs3Sidebar.init();
   bs3SimpleNavigation.init();
 });
