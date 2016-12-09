@@ -436,6 +436,7 @@ a.overlayclass {
 
 .page-selvbetjeninger .panel-region-stack2 .inside {
     padding-top: 0 !important;
+    padding-right: 0 !important;
 }
 
 .selvbetjening .item-list ul {
