@@ -42,7 +42,8 @@ var selfServiceLinks = (function ($) {
 
             // Toggle active class
             $element
-                .parents('.selvbetjening-alfabetisk')
+                .parent()
+                .parent()
                 .toggleClass('open');
         });
     }
