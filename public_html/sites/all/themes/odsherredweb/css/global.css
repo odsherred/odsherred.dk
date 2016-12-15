@@ -452,7 +452,8 @@ a.overlayclass {
     padding-left: 0 !important;
 }
 
-.selvbetjening .item-list ul {
+.selvbetjening .item-list ul,
+.selvbetjening-alfabetisk .item-list ul {
     display: none !important;
     background-color: #fff;
     margin-top: 10px;
@@ -461,18 +462,22 @@ a.overlayclass {
 }
 
 .selvbetjening .item-list ul,
-.selvbetjening .item-list ul li {
+.selvbetjening .item-list ul li,
+.selvbetjening-alfabetisk .item-list ul,
+.selvbetjening-alfabetisk .item-list ul li {
     display: block;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.selvbetjening .item-list.open ul {
+.selvbetjening .item-list.open ul,
+.selvbetjening-alfabetisk .item-list.open ul {
     display: block !important;
 }
 
-.selvbetjening a {
+.selvbetjening a,
+.selvbetjening-alfabetisk a {
     display: block;
     text-decoration: none;
     background: none !important;
@@ -483,20 +488,27 @@ a.overlayclass {
 
 .selvbetjening a,
 .selvbetjening a:hover,
-.selvbetjening a:active {
+.selvbetjening a:active,
+.selvbetjening-alfabetisk a,
+.selvbetjening-alfabetisk a:hover,
+.selvbetjening-alfabetisk a:active {
     color: #000 !important;
 }
 
-.selvbetjening .item-list ul li:first-child a {
+.selvbetjening .item-list ul li:first-child a,
+.selvbetjening-alfabetisk .item-list ul li:first-child a {
     padding-top: 20px !important;
 }
 
-.selvbetjening .item-list ul li:last-child a {
+.selvbetjening .item-list ul li:last-child a,
+.selvbetjening-alfabetisk .item-list ul li:last-child a {
     padding-bottom: 20px !important;
 }
 
 .selvbetjening a:hover,
-.selvbetjening a:active {
+.selvbetjening a:active,
+.selvbetjening-alfabetisk a:hover,
+.selvbetjening-alfabetisk a:active {
     text-decoration: underline;
 }
 
