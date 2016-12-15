@@ -409,7 +409,7 @@ a.overlayclass {
 }
 
 .selvbetjening .item-list > h3,
-.selvbetjening-alfabetisk .item-list > h3 {
+.selvbetjening-alfabetisk h3 {
     position: relative;
     display: block;
     background-color: #00538f;
@@ -424,13 +424,13 @@ a.overlayclass {
 }
 
 .selvbetjening .item-list.open > h3,
-.selvbetjening-alfabetisk.open .item-list > h3 {
+.selvbetjening-alfabetisk.open h3 {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
 .selvbetjening .item-list > h3:before,
-.selvbetjening-alfabetisk .item-list > h3:before {
+.selvbetjening-alfabetisk h3:before {
     position: absolute;
     display: inline-block;
     content: "";
@@ -447,7 +447,7 @@ a.overlayclass {
 }
 
 .selvbetjening .item-list.open > h3:before,
-.selvbetjening-alfabetisk.open .item-list > h3:before {
+.selvbetjening-alfabetisk.open h3:before {
     background-image: url('img/minus.png');
 }
 
