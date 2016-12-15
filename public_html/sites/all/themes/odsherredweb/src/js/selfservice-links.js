@@ -35,8 +35,9 @@ var selfServiceLinks = (function ($) {
                 .toggleClass('open');
         });
 
-        $('.selvbetjening-alfabetisk .view-header h3').on('click', function (event) {
+        $('.selvbetjening-alfabetisk h3').on('click', function (event) {
             event.preventDefault();
+            console.log('Clicked h3');
 
             var $element = $(this);
 
