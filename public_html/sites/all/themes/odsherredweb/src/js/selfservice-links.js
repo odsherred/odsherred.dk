@@ -24,7 +24,18 @@ var selfServiceLinks = (function ($) {
     function registerEventHandlers() {
 
         // Main
-        $('.selvbetjening .item-list h3, .selvbetjening-alfabetisk .item-list h3').on('click', function (event) {
+        $('.selvbetjening .item-list h3').on('click', function (event) {
+            event.preventDefault();
+
+            var $element = $(this);
+
+            // Toggle active class
+            $element
+                .parents('.item-list')
+                .toggleClass('open');
+        });
+
+        $('.selvbetjening-alfabetisk h3').on('click', function (event) {
             event.preventDefault();
 
             var $element = $(this);
@@ -32,7 +43,6 @@ var selfServiceLinks = (function ($) {
             // Toggle active class
             $element
                 .parents('.selvbetjening-alfabetisk')
-                .parents('.item-list')
                 .toggleClass('open');
         });
     }
