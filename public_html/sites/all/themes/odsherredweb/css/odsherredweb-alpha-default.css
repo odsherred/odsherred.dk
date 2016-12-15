@@ -1875,7 +1875,8 @@ ul.breadcrumb {
 }
 
 /*borger.dk article -->>*/
-.node-type-os2web-borger-dk-article .panel-node {
+.node-type-os2web-borger-dk-article .panel-node,
+.node-type-borger-dk-article .panel-node{
   padding: 5px;
 }
 
@@ -1885,23 +1886,31 @@ ul.breadcrumb {
   font-size: 14px;
 }
 
-.node-type-os2web-borger-dk-article ul li {
+.node-type-os2web-borger-dk-article ul li,
+.node-type-borger-dk-article ul li {
   margin: 0;
   list-style: none;
 }
 
-.node-type-os2web-borger-dk-article .microArticle ul { margin-left: 0; }
+.node-type-os2web-borger-dk-article .microArticle ul,
+.node-type-borger-dk-article .microArticle ul
+{ margin-left: 0; }
 
-.node-type-os2web-borger-dk-article .microArticle ul li {
+.node-type-os2web-borger-dk-article .microArticle ul li,
+.node-type-borger-dk-article .microArticle ul li {
   list-style: disc;
 }
 
 .field-name-field-os2web-borger-dk-selfservi li { margin-left: 0; }
 
-.node-type-os2web-borger-dk-article .meta.submitted { margin-left: 15px; }
+.node-type-os2web-borger-dk-article .meta.submitted,
+.node-type-borger-dk-article .meta.submitted { margin-left: 15px; }
 
 .node-type-os2web-borger-dk-article .pane-node-field-os2web-borger-dk-recommend,
-.node-type-os2web-borger-dk-article .pane-node-field-os2web-borger-dk-shortlist {
+.node-type-os2web-borger-dk-article .pane-node-field-os2web-borger-dk-shortlist,
+.node-type-borger-dk-article .pane-node-field-borger-dk-recommend,
+.node-type-borger-dk-article .pane-node-field-borger-dk-shortlist,
+{
   background-image: url(img/c-bg.png);
   padding: 20px;
 }
@@ -2633,8 +2642,6 @@ div.clearfix {
   background-color: #ffffff;
 }
 
-.node-type-borger-dk-article .node-borger-dk-article { background-color: #ffffff; padding: 1em }
-
 #block-system-main .field-type-text-long.field-name-field-os2web-borger-dk-pre-text { padding: 10px }
 
 .panel-region-stack2 .pane-node-field-os2web-selfservice li { list-style: none; }
@@ -2902,17 +2909,21 @@ div.field-items div.field-item.even img {
   position: relative;
   width: auto; }
 
-.node-type-os2web-borger-dk-article h1#page-title {
+.node-type-os2web-borger-dk-article h1#page-title,
+.node-type-borger-dk-article h1#page-title {
   font-size: 25px;
 }
 
-.node-type-os2web-borger-dk-article .billede { float: right; margin-bottom: 20px; margin-left: 10px; }
+.node-type-os2web-borger-dk-article .billede,
+.node-type-borger-dk-article .billede { float: right; margin-bottom: 20px; margin-left: 10px; }
 
-.node-type-os2web-borger-dk-article #region-content .region-content-inner { background-image: url(img/c-bg.png); padding: 10px; }
+.node-type-os2web-borger-dk-article #region-content .region-content-inner,
+.node-type-borger-dk-article #region-content .region-content-inner { background-image: url(img/c-bg.png); padding: 10px; }
 
 .panel-region-stack4 { margin-top: 10px; }
 
-.node-type-os2web-borger-dk-article .panel-region-stack4 { padding: 0 15px; }
+.node-type-os2web-borger-dk-article .panel-region-stack4,
+.node-type-borger-dk-article .panel-region-stack4 { padding: 0 15px; }
 
 .field-type-text-long ul {
   padding-left: 0;
@@ -2930,7 +2941,8 @@ div.field-items div.field-item.even img {
 
 .node-type-os2web-borger-dk-article .field-name-field-os2web-borger-dk-byline { text-align: right; }
 
-.node-type-os2web-borger-dk-article .field-name-field-os2web-borger-dk-header { padding: 10px 15px !important; font-style: italic; }
+.node-type-os2web-borger-dk-article .field-name-field-os2web-borger-dk-header,
+.node-type-borger-dk-article .borger_dk_header { padding: 10px 15px !important; font-style: italic; }
 
 sup {
   vertical-align: super;
@@ -2970,9 +2982,11 @@ sub {
 
 .subsite .views-field-field-subsite-banner img { max-width: 100%; height: auto; }
 
-.node-type-os2web-borger-dk-article h1#page-title { padding-top: 0; }
+.node-type-os2web-borger-dk-article h1#page-title,
+.node-type-borger-dk-article h1#page-title { padding-top: 0; }
 
-.node-type-os2web-borger-dk-article .block-addtoany-button { float: right; }
+.node-type-os2web-borger-dk-article .block-addtoany-button,
+.node-type-borger-dk-article .block-addtoany-button { float: right; }
 
 .topborgerdk { width: 300px; height: 30px; float: right }
 
