@@ -31,6 +31,7 @@ var selfServiceLinks = (function ($) {
 
             // Toggle active class
             $element
+                .parents('.selvbetjening-alfabetisk')
                 .parents('.item-list')
                 .toggleClass('open');
         });

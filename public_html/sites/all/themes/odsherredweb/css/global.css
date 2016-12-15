@@ -402,12 +402,14 @@ a.overlayclass {
 .selvbetjening {
 }
 
-.selvbetjening .item-list {
+.selvbetjening .item-list,
+.selvbetjening-alfabetisk .item-list {
     position: relative;
     margin-bottom: 6px;
 }
 
-.selvbetjening .item-list > h3 {
+.selvbetjening .item-list > h3,
+.selvbetjening-alfabetisk .item-list > h3 {
     position: relative;
     display: block;
     background-color: #00538f;
@@ -421,12 +423,14 @@ a.overlayclass {
     font-size: 22px;
 }
 
-.selvbetjening .item-list.open > h3 {
+.selvbetjening .item-list.open > h3,
+.selvbetjening-alfabetisk.open .item-list > h3 {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.selvbetjening .item-list > h3:before {
+.selvbetjening .item-list > h3:before,
+.selvbetjening-alfabetisk .item-list > h3:before {
     position: absolute;
     display: inline-block;
     content: "";
@@ -442,7 +446,8 @@ a.overlayclass {
     padding: 0;
 }
 
-.selvbetjening .item-list.open > h3:before {
+.selvbetjening .item-list.open > h3:before,
+.selvbetjening-alfabetisk.open .item-list > h3:before {
     background-image: url('img/minus.png');
 }
 
@@ -472,7 +477,7 @@ a.overlayclass {
 }
 
 .selvbetjening .item-list.open ul,
-.selvbetjening-alfabetisk .item-list.open ul {
+.selvbetjening-alfabetisk.open .item-list ul {
     display: block !important;
 }
 
