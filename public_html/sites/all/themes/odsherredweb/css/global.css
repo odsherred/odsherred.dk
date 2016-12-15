@@ -442,6 +442,10 @@ a.overlayclass {
     padding: 0;
 }
 
+.selvbetjening .item-list.open > h3:before {
+    background-image: url('img/minus.png');
+}
+
 .page-selvbetjeninger .panel-region-stack2 .inside {
     padding-top: 0 !important;
     padding-right: 0 !important;
@@ -472,7 +476,7 @@ a.overlayclass {
     display: block;
     text-decoration: none;
     background: none !important;
-    padding: 5px 12px !important;
+    padding: 6px 12px !important;
     margin: 0;
     font-size: 16px;
 }
@@ -481,6 +485,14 @@ a.overlayclass {
 .selvbetjening a:hover,
 .selvbetjening a:active {
     color: #000 !important;
+}
+
+.selvbetjening .item-list ul li:first-child a {
+    padding-top: 20px !important;
+}
+
+.selvbetjening .item-list ul li:last-child a {
+    padding-bottom: 20px !important;
 }
 
 .selvbetjening a:hover,
