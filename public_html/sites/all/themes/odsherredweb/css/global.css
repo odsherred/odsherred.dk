@@ -417,10 +417,10 @@ a.overlayclass {
     color: #fff;
     margin: 0;
     padding: 10px 12px;
-    font-weight: bold;
+    font-weight: normal !important;
     cursor: hand;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 22px !important;
 }
 
 .selvbetjening .item-list.open > h3,
