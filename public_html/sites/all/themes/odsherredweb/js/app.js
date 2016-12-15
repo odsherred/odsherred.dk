@@ -264,6 +264,17 @@ var selfServiceLinks = (function ($) {
                 .parents('.item-list')
                 .toggleClass('open');
         });
+
+        $('.selvbetjening-alfabetisk h3').on('click', function (event) {
+            event.preventDefault();
+
+            var $element = $(this);
+
+            // Toggle active class
+            $element
+                .parents('.selvbetjening-alfabetisk')
+                .toggleClass('open');
+        });
     }
 
     /**

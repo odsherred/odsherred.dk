@@ -35,16 +35,14 @@ var selfServiceLinks = (function ($) {
                 .toggleClass('open');
         });
 
-        $('.view-selvbetjeninger-alfa h3').on('click', function (event) {
+        $('.selvbetjening-alfabetisk h3').on('click', function (event) {
             event.preventDefault();
-            console.log('Clicked h3');
 
             var $element = $(this);
 
             // Toggle active class
             $element
-                .parent()
-                .parent()
+                .parents('.selvbetjening-alfabetisk')
                 .toggleClass('open');
         });
     }
