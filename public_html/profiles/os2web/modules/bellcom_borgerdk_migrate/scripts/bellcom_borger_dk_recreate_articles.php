@@ -65,7 +65,7 @@ if (isset($result['node'])) {
     $node->field_os2web_base_field_related = $old_article->field_os2web_base_field_related;
     $node->field_os2web_base_field_spotbox = $old_article->field_os2web_base_field_spotbox;
     $node->field_os2web_base_field_kle_ref = $old_article->field_os2web_base_field_kle_ref;
-    $node->field_os2web_base_field_edi_tags = $old_article->field_os2web_base_field_edi_tags;
+    $node->field_editortags = $old_article->field_editortags;
 
     $node->field_borger_dk_pre_text = $old_article->field_os2web_borger_dk_pre_text;
     $node->field_borger_dk_post_text = $old_article->field_os2web_borger_dk_post_text;
