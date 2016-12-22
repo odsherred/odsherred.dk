@@ -401,6 +401,12 @@ a.overlayclass {
 /* global */
 .selvbetjening {
 }
+.selvbetjening ul,
+.selvbetjening li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
 .selvbetjening .item-list,
 .selvbetjening-alfabetisk .item-list {
