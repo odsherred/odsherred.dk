@@ -399,23 +399,23 @@ a.overlayclass {
 }
 
 /* global */
-.selvbetjening {
+.page-selvbetjeninger .selvbetjening {
 }
-.selvbetjening ul,
-.selvbetjening li {
+.page-selvbetjeninger .selvbetjening ul,
+.page-selvbetjeninger .selvbetjening li {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.selvbetjening .item-list,
-.selvbetjening-alfabetisk .item-list {
+.page-selvbetjeninger .selvbetjening .item-list,
+.page-selvbetjeninger .selvbetjening-alfabetisk .item-list {
     position: relative;
     margin-bottom: 6px;
 }
 
-.selvbetjening .item-list > h3,
-.selvbetjening-alfabetisk h3 {
+.page-selvbetjeninger .selvbetjening .item-list > h3,
+.page-selvbetjeninger .selvbetjening-alfabetisk h3 {
     position: relative;
     display: block;
     background-color: #00538f;
@@ -429,14 +429,14 @@ a.overlayclass {
     font-size: 22px !important;
 }
 
-.selvbetjening .item-list.open > h3,
-.selvbetjening-alfabetisk.open h3 {
+.page-selvbetjeninger .selvbetjening .item-list.open > h3,
+.page-selvbetjeninger .selvbetjening-alfabetisk.open h3 {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.selvbetjening .item-list > h3:before,
-.selvbetjening-alfabetisk h3:before {
+.page-selvbetjeninger .selvbetjening .item-list > h3:before,
+.page-selvbetjeninger .selvbetjening-alfabetisk h3:before {
     position: absolute;
     display: inline-block;
     content: "";
@@ -458,8 +458,8 @@ a.overlayclass {
     box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.5);
 }
 
-.selvbetjening .item-list.open > h3:before,
-.selvbetjening-alfabetisk.open h3:before {
+.page-selvbetjeninger .selvbetjening .item-list.open > h3:before,
+.page-selvbetjeninger .selvbetjening-alfabetisk.open h3:before {
     background-image: url('img/minus.png');
 }
 
@@ -469,8 +469,8 @@ a.overlayclass {
     padding-left: 0 !important;
 }
 
-.selvbetjening .item-list ul,
-.selvbetjening-alfabetisk .item-list ul {
+.page-selvbetjeninger .selvbetjening .item-list ul,
+.page-selvbetjeninger .selvbetjening-alfabetisk .item-list ul {
     display: none !important;
     background-color: #fff;
     margin-top: 10px;
@@ -478,23 +478,23 @@ a.overlayclass {
     border-bottom-right-radius: 4px;
 }
 
-.selvbetjening .item-list ul,
-.selvbetjening .item-list ul li,
-.selvbetjening-alfabetisk .item-list ul,
-.selvbetjening-alfabetisk .item-list ul li {
+.page-selvbetjeninger .selvbetjening .item-list ul,
+.page-selvbetjeninger .selvbetjening .item-list ul li,
+.page-selvbetjeninger .selvbetjening-alfabetisk .item-list ul,
+.page-selvbetjeninger .selvbetjening-alfabetisk .item-list ul li {
     display: block;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.selvbetjening .item-list.open ul,
-.selvbetjening-alfabetisk.open .item-list ul {
+.page-selvbetjeninger .selvbetjening .item-list.open ul,
+.page-selvbetjeninger .selvbetjening-alfabetisk.open .item-list ul {
     display: block !important;
 }
 
-.selvbetjening a,
-.selvbetjening-alfabetisk a {
+.page-selvbetjeninger .selvbetjening a,
+.page-selvbetjeninger .selvbetjening-alfabetisk a {
     display: block;
     text-decoration: none;
     background: none !important;
@@ -503,8 +503,8 @@ a.overlayclass {
     font-size: 16px;
 }
 
-.selvbetjening a:before,
-.selvbetjening-alfabetisk a:before {
+.page-selvbetjeninger .selvbetjening a:before,
+.page-selvbetjeninger .selvbetjening-alfabetisk a:before {
     display: inline-block;
     content: "";
     margin-right: 6px;
@@ -516,29 +516,29 @@ a.overlayclass {
     height: 12px;
 }
 
-.selvbetjening a,
-.selvbetjening a:hover,
-.selvbetjening a:active,
-.selvbetjening-alfabetisk a,
-.selvbetjening-alfabetisk a:hover,
-.selvbetjening-alfabetisk a:active {
+.page-selvbetjeninger .selvbetjening a,
+.page-selvbetjeninger .selvbetjening a:hover,
+.page-selvbetjeninger .selvbetjening a:active,
+.page-selvbetjeninger .selvbetjening-alfabetisk a,
+.page-selvbetjeninger .selvbetjening-alfabetisk a:hover,
+.page-selvbetjeninger .selvbetjening-alfabetisk a:active {
     color: #000 !important;
 }
 
-.selvbetjening .item-list ul li:first-child a,
-.selvbetjening-alfabetisk .item-list ul li:first-child a {
+.page-selvbetjeninger .selvbetjening .item-list ul li:first-child a,
+.page-selvbetjeninger .selvbetjening-alfabetisk .item-list ul li:first-child a {
     padding-top: 20px !important;
 }
 
-.selvbetjening .item-list ul li:last-child a,
-.selvbetjening-alfabetisk .item-list ul li:last-child a {
+.page-selvbetjeninger .selvbetjening .item-list ul li:last-child a,
+.page-selvbetjeninger .selvbetjening-alfabetisk .item-list ul li:last-child a {
     padding-bottom: 20px !important;
 }
 
-.selvbetjening a:hover,
-.selvbetjening a:active,
-.selvbetjening-alfabetisk a:hover,
-.selvbetjening-alfabetisk a:active {
+.page-selvbetjeninger .selvbetjening a:hover,
+.page-selvbetjeninger .selvbetjening a:active,
+.page-selvbetjeninger .selvbetjening-alfabetisk a:hover,
+.page-selvbetjeninger .selvbetjening-alfabetisk a:active {
     text-decoration: underline;
 }
 
