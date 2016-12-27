@@ -832,6 +832,8 @@ ul.breadcrumb {
 }
 
 .view-id-aktuelt.view-display-id-panel_pane_6 {
+  position: relative;
+  z-index: 1000;
   background: #ecc73e;
   background-image: url(img/breaking-bg.png);
   line-height: 29px;
