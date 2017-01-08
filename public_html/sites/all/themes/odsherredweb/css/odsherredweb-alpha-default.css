@@ -1615,7 +1615,7 @@ ul.breadcrumb {
 .not-front .panel-region-stack2 a {
   padding: 0 0 0 12px;
   background: url('img/ikon-larger-right.png') no-repeat scroll 0 5px;
-  display: block;
+  display: none;
 }
 
 .page-node .pane-node-field-os2web-base-field-media img { display: none; }
