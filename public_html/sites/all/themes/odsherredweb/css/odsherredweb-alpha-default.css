@@ -1229,6 +1229,14 @@ ul.breadcrumb {
   background-image: url(img/ikon-feedback.png);
 }
 
+.fedbackogminside a.selvbetjening {
+  background-image: url(img/selvbetjening.png);
+  font-size:13px;
+  line-height:25px;
+  text-indent:15px;
+  width:136px;
+}
+
 .fedbackogminside a.minside {
   /*	background-image: url(img/ikon-minside.png);*/
   background-image: url(img/minside.png);
