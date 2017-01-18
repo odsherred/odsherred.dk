@@ -1,7 +1,28 @@
 <?php
-/**
- * @file
- * Drupal needs this blank file.
- */
+
 
 include_once 'odsherred_search.features.inc';
+
+function odsherred_search_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-elasticsearch-index-public-page') {
+    $form['submit']['#value'] = '';
+    $form['keys']['#attributes']['placeholder'] = t('Search');
+  }
+}
+
+function odsherred_search_page_alter(&$page) {
+  //dpm($page);
+}
+
+function odsherred_search_preprocess_page(&$vars) {
+  //dpm($vars);
+}
+
+function odsherred_search_preprocess_block(&$variables) {
+  $variables['theme_hook_suggestions'][] = 'block__' . $variables['block']->region . '__' . $variables['block']->context;
+}
+
+function odsherred_search_preprocess_views_exposed_form(&$variables) {
+}
+
+

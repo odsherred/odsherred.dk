@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Drupal hooks
+ */
+
+/**
+ * Implements hook_search_api_alter_callback_info().
+ */
+function bellcom_elasticsearch_inline_files_search_api_alter_callback_info() {
+  $callbacks['bellcom_elasticsearch_inline_files_alter_settings'] = array(
+    'name' => t('Bellcom Elastisearch inline files'),
+    'description' => t('Extract the content of inline files.'),
+    'class' => 'SearchApiAttachmentsInlineFilesAlterSettings',
+  );
+  return $callbacks;
+}
