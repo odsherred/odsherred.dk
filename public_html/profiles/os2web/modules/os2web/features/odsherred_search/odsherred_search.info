@@ -6,6 +6,7 @@ project = OS2Web
 dependencies[] = context
 dependencies[] = elasticsearch_connector_search_api
 dependencies[] = search_api
+dependencies[] = search_api_views
 dependencies[] = views
 features[context][] = odsherred_search
 features[ctools][] = context:context:3
