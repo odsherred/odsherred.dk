@@ -493,8 +493,8 @@ a.overlayclass {
     display: block !important;
 }
 
-.page-selvbetjeninger .selvbetjening a,
-.page-selvbetjeninger .selvbetjening-alfabetisk a {
+.page-selvbetjeninger .selvbetjening a.selvbetjenigslink,
+.page-selvbetjeninger .selvbetjening-alfabetisk a.selvbetjenigslink {
     display: block;
     text-decoration: none;
     background: none !important;
@@ -503,8 +503,8 @@ a.overlayclass {
     font-size: 16px;
 }
 
-.page-selvbetjeninger .selvbetjening a:before,
-.page-selvbetjeninger .selvbetjening-alfabetisk a:before {
+.page-selvbetjeninger .selvbetjening a.selvbetjenigslink:before,
+.page-selvbetjeninger .selvbetjening-alfabetisk a.selvbetjenigslink:before {
     display: inline-block;
     content: "";
     margin-right: 6px;
@@ -516,12 +516,12 @@ a.overlayclass {
     height: 12px;
 }
 
-.page-selvbetjeninger .selvbetjening a,
-.page-selvbetjeninger .selvbetjening a:hover,
-.page-selvbetjeninger .selvbetjening a:active,
-.page-selvbetjeninger .selvbetjening-alfabetisk a,
-.page-selvbetjeninger .selvbetjening-alfabetisk a:hover,
-.page-selvbetjeninger .selvbetjening-alfabetisk a:active {
+.page-selvbetjeninger .selvbetjening a.selvbetjenigslink,
+.page-selvbetjeninger .selvbetjening a.selvbetjenigslink:hover,
+.page-selvbetjeninger .selvbetjening a.selvbetjenigslink:active,
+.page-selvbetjeninger .selvbetjening-alfabetisk a.selvbetjenigslink,
+.page-selvbetjeninger .selvbetjening-alfabetisk a.selvbetjenigslink:hover,
+.page-selvbetjeninger .selvbetjening-alfabetisk a.selvbetjenigslink:active {
     color: #000 !important;
 }
 
@@ -535,10 +535,10 @@ a.overlayclass {
     padding-bottom: 20px !important;
 }
 
-.page-selvbetjeninger .selvbetjening a:hover,
-.page-selvbetjeninger .selvbetjening a:active,
-.page-selvbetjeninger .selvbetjening-alfabetisk a:hover,
-.page-selvbetjeninger .selvbetjening-alfabetisk a:active {
+.page-selvbetjeninger .selvbetjening a.selvbetjenigslink:hover,
+.page-selvbetjeninger .selvbetjening a.selvbetjenigslink:active,
+.page-selvbetjeninger .selvbetjening-alfabetisk a.selvbetjenigslink:hover,
+.page-selvbetjeninger .selvbetjening-alfabetisk a.selvbetjenigslink:active {
     text-decoration: underline;
 }
 
