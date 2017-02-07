@@ -548,3 +548,7 @@ a.overlayclass {
 .page-selvbetjeninger.page-kontakter .selvbetjening .field-content.bg-white {
   padding-top: 0;
 }
+
+.page-selvbetjeninger.page-kontakter .selvbetjening .item-list ul li.selvbetjening {
+  margin-bottom: 20px;
+}
