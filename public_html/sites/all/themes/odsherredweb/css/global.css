@@ -552,3 +552,8 @@ a.overlayclass {
 .page-selvbetjeninger.page-kontakter .selvbetjening .item-list ul li.selvbetjening {
   margin-bottom: 20px;
 }
+
+.page-selvbetjeninger.page-kontakter .selvbetjening .item-list ul li.selvbetjening h4 {
+  margin-bottom: 0;
+  font-size: 18px;
+}
