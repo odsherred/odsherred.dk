@@ -542,9 +542,9 @@ a.overlayclass {
     text-decoration: underline;
 }
 
-.page-odsherred-kommune-kontakter .selvbetjening .item-list ul {
+.page-odsherred-kommune-kontakter .page-selvbetjeninger .selvbetjening .item-list ul {
   background-color: transparent;
 }
-.page-odsherred-kommune-kontakter .selvbetjening .field-content.bg-white {
+.page-odsherred-kommune-kontakter .page-selvbetjeninger .selvbetjening .field-content.bg-white {
   padding-top: 0;
 }
