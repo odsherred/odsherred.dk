@@ -18,7 +18,8 @@ function os2web_node_feedback_feedback_insert($entry) {
   // Load substitutions.
   $entry = array(
     '!location' => url($entry->location, array('absolute' => TRUE)),
-    '!message' => check_plain($entry->message),
+    //'!message' => check_plain($entry->message),
+    '!message' => htmlspecialchars($entry->message, ENT_NOQUOTES, 'UTF-8'),
     '!user' => format_username($account),
     '!email' => isset($entry->field_feedback_email[und][0]['value']) ? $entry->field_feedback_email[und][0]['value'] : t('Anonymous'),
     '!date' => format_date($entry->timestamp),
