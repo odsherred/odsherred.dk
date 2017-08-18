@@ -103,7 +103,13 @@ function bellcom_elasticsearch_schema() {
         'description' => t('Full path to the synonyms file'),
         'length' => 255,
         'type' => 'varchar',
-      )
+      ),
+      'duplicate_plain_list' => array(
+        'description' => t('Whether the synonyms are duplicated as plain list in index settings'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'default' => 0
+      ),
     ),
     'primary key' => array('index_name'),
   );
@@ -147,3 +153,17 @@ function bellcom_elasticsearch_update_7101() {
 
   db_create_table('bellcom_elasticsearch_synonyms_indices', $schema['bellcom_elasticsearch_synonyms_indices']);
 }
+
+/**
+ * Adding option to save synonyms as plain list
+ */
+function bellcom_elasticsearch_update_7102() {
+  $spec = array(
+    'description' => t('Whether the synonyms are duplicated as plain list in index settings'),
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'default' => 0
+  );
+  db_add_field('bellcom_elasticsearch_synonyms_indices', 'duplicate_plain_list', $spec);
+}
+

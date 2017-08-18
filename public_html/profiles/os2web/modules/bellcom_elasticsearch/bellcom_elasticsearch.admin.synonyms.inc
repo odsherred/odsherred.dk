@@ -5,18 +5,15 @@
  * @return string
  */
 function bellcom_elasticsearch_synonyms_indices() {
-  $header = array(t('Name'), t('Synonyms'));
-
-  $default_cluster = elasticsearch_connector_get_default_connector();
-  $cluster_indicies = elasticsearch_connector_get_indices_options($default_cluster);
-
   $rows = array();
-  foreach ($cluster_indicies as $row) {
+  foreach (bellcom_elastic_search_get_used_indices() as $row) {
     $rows[] = array(
       $row,
       l(t('Set up synonyms'), "admin/config/search/synonyms_index/$row")
     );
   }
+
+  $header = array(t('Name'), t('Synonyms'));
   $output = theme('table', array('header' => $header, 'rows' => $rows));
   $output .= theme('pager');
 
@@ -34,6 +31,15 @@ function bellcom_elasticsearch_synonyms_indices() {
 function bellcom_elasticsearch_synonyms_index($form, &$form_state, $index_name) {
   drupal_set_title(drupal_get_title() . ' ' . $index_name);
 
+  $used_indices = bellcom_elastic_search_get_used_indices();
+  if (!isset($used_indices[$index_name])) {
+    $form[] = array(
+      '#markup' => t('This index is either read-only or not enabled for that installation')
+    );
+    return $form;
+  }
+
+  //normal form
   $form['index'] = array(
     '#type' => 'hidden',
     '#value' => $index_name,
@@ -68,6 +74,12 @@ function bellcom_elasticsearch_synonyms_index($form, &$form_state, $index_name) 
     '#field_suffix' => '/' . $index_name . '_synonyms.txt',
   );
 
+  $form['duplicate_plain_list'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Save directly into the index settings'),
+    '#description' => t('Additionally save save the list directly into the index settings')
+  );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
@@ -85,6 +97,7 @@ function bellcom_elasticsearch_synonyms_index($form, &$form_state, $index_name) 
 
     $synonyms = file_get_contents($result['file_path'] . '/' . $index_name . '_synonyms.txt', FILE_USE_INCLUDE_PATH);
     $form['synonyms']['#default_value'] = $synonyms;
+    $form['duplicate_plain_list']['#default_value'] = $result['duplicate_plain_list'];
   }
 
   return $form;
@@ -106,31 +119,41 @@ function bellcom_elasticsearch_synonyms_index_submit($form, &$form_state) {
       $client = elasticsearch_connector_load_library($cluster_loaded);
       $index_name = $form_state['values']['index'];
 
+      $used_indices = bellcom_elastic_search_get_used_indices();
+      if (!isset($used_indices[$index_name])) {
+        drupal_set_message(('This index is either read-only or not enabled for that installation'), 'warning');
+        return;
+      }
+
       if ($form_state['values']['active']) {
         //saving file
         $data = $form_state['values']['synonyms'];
+        $duplicate_plain_list = $form_state['values']['duplicate_plain_list'];
         $path = $form_state['values']['file_path'];
         $file_uri = _bellcom_elasticsearch_save_synonyms_file($index_name, $data, $path);
 
         try {
           bellcom_elasticsearch_api_index_close($client, $index_name);
           if ($file_uri) {
-            bellcom_elasticsearch_api_add_analyzer($client, $index_name, drupal_realpath($file_uri));
+            bellcom_elasticsearch_api_add_analyzer_as_file($client, $index_name, drupal_realpath($file_uri));
           }
+          if ($duplicate_plain_list) {
+            bellcom_elasticsearch_api_add_analyzer_as_plaintext($client, $index_name, $data);
+          }
+          bellcom_elasticsearch_api_index_open($client, $index_name);
         } catch (Exception $e) {
           drupal_set_message(t('Error while updating index: ') . $e->getMessage(), 'warning');
           watchdog('bellcom_elasticsearch', $e->getMessage(), WATCHDOG_WARNING);
-        } finally {
           bellcom_elasticsearch_api_index_open($client, $index_name);
         }
       } else {
         try {
           bellcom_elasticsearch_api_index_close($client, $index_name);
-          bellcom_elasticsearch_api_add_analyzer($client, $index_name, '');
+          bellcom_elasticsearch_api_add_analyzer_as_file($client, $index_name, '');
+          bellcom_elasticsearch_api_index_open($client, $index_name);
         } catch (Exception $e) {
           drupal_set_message(t('Error while updating index: ') . $e->getMessage(), 'warning');
           watchdog('bellcom_elasticsearch', $e->getMessage(), WATCHDOG_WARNING);
-        } finally {
           bellcom_elasticsearch_api_index_open($client, $index_name);
         }
       }
@@ -148,14 +171,16 @@ function bellcom_elasticsearch_synonyms_index_submit($form, &$form_state) {
             'index_name' => $index_name,
             'cluster' => $cluster_name,
             'active' => $form_state['values']['active'],
-            'file_path' => $form_state['values']['file_path']
+            'file_path' => $form_state['values']['file_path'],
+            'duplicate_plain_list' => $form_state['values']['duplicate_plain_list'],
           ))
           ->execute();
       } else {
         db_update('bellcom_elasticsearch_synonyms_indices')
           ->fields(array(
             'active' => $form_state['values']['active'],
-            'file_path' => $form_state['values']['file_path']
+            'file_path' => $form_state['values']['file_path'],
+            'duplicate_plain_list' => $form_state['values']['duplicate_plain_list'],
           ))
           ->condition('index_name', $index_name)
           ->condition('cluster', $cluster_name)

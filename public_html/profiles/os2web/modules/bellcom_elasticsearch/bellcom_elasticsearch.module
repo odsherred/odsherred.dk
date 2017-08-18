@@ -279,12 +279,18 @@ function bellcom_elasticsearch_search_api_items_indexed(SearchApiIndex $index, a
 
       bellcom_elasticsearch_api_index_close($client, $index_name);
       if ($file_uri) {
-        bellcom_elasticsearch_api_add_analyzer($client, $index_name, drupal_realpath($file_uri));
+        bellcom_elasticsearch_api_add_analyzer_as_file($client, $index_name, drupal_realpath($file_uri));
       }
+
+      if ($result['duplicate_plain_list']) {
+        $synonyms = file_get_contents($result['file_path'] . '/' . $index_name . '_synonyms.txt', FILE_USE_INCLUDE_PATH);
+        bellcom_elasticsearch_api_add_analyzer_as_plaintext($client, $index_name, $synonyms);
+      }
+
+      bellcom_elasticsearch_api_index_open($client, $index_name);
     } catch (Exception $e) {
       drupal_set_message(t('Error while updating index: ') . $e->getMessage(), 'warning');
       watchdog('bellcom_elasticsearch', $e->getMessage(), WATCHDOG_WARNING);
-    } finally {
       bellcom_elasticsearch_api_index_open($client, $index_name);
     }
   }

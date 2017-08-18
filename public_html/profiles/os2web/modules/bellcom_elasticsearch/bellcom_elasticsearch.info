@@ -1,8 +1,8 @@
 name = Bellcom Elasticsearch
 description = Module that add special functionality and configuration to default elastic search
 core = 7.x
-package = Features
-version = 7.x-1.1
+package = Bellcom
+version = 7.x-1.3
 dependencies[] = strongarm
 dependencies[] = views
 features[ctools][] = strongarm:strongarm:1

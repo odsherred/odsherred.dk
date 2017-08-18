@@ -1,0 +1,13 @@
+name = Bellcom Elastisearch Multi Index Files
+description = "Making possible to index the attachmens when multi-index option is used"
+dependencies[] = search_api_attachments
+core = 7.x
+package = Features
+
+files[] = includes/callback_bellcom_elasticsearch_multi_index_files_settings.inc
+
+version = "7.x-1.1"
+core = "7.x"
+project = "bellcom_elasticsearch"
+datestamp = "1467464641"
+

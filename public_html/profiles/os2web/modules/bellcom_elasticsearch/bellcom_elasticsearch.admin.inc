@@ -24,38 +24,6 @@ function bellcom_elasticsearch_term_fields($form, $form_state) {
 
   return system_settings_form($form);
 }
-function bellcom_elasticsearch_kle_settings_page_weight_form($tid){
-  $kle = bellcom_elasticsearch_get_kle_by_tid($tid);
-
-  if ($kle) {
-    $weight = $kle->weight;
-    if ($kle->from_date){
-      $from_date = date_create_from_format('Y-m-d H:i:s', $kle->from_date);
-      $from_date = date(DATE_FORMAT, date_timestamp_get($from_date));
-    }
-    if ($kle->until_date){
-      $until_date = date_create_from_format('Y-m-d H:i:s', $kle->until_date);
-      $until_date = date(DATE_FORMAT, date_timestamp_get($until_date));
-    }
-  } else {
-    $weight = 1;
-    $from_date = '';
-    $until_date = '';
-  }
-
-  $html = '<div class="row_kle">
-  <input type="hidden" class="tid_id" value="' . $tid . '" >
-  From&nbsp;&nbsp;&nbsp;
-  <input type="text" class="form-text datepicker from locked" size="10" value="' . $from_date . '" disabled>
-  Until&nbsp;&nbsp;&nbsp;
-  <input type="text" class="form-text datepicker until locked" size="10" value="' . $until_date . '" disabled>
-  Weight&nbsp;&nbsp;&nbsp;
-  <input type="text" class="weight form-text locked" size="5" value="' . $weight . '" disabled>&nbsp;&nbsp;&nbsp;
-  <a class="edit-link" href="#">Edit</a>
-  <a class="submit-link" style="display: none;" href="#">Submit</a><span class="submitted" style="display: none;">OK</span>
-  </div>';
-  print $html;
-}
 
 function bellcom_elasticsearch_update_kle($tid, $weight, $from, $until){
   $fields = array('weight' => $weight);
@@ -97,28 +65,26 @@ function bellcom_elasticsearch_get_kle_by_tid($tid){
   return array_pop($kle);
 }
 
-function bellcom_elasticsearch_terms_term_removed($vocabulary_name) {
-  $allowed_vocs = array();
-  if ($cached = cache_get('bellcom_elasticsearch_terms_allows_vocs')) {
-    $allowed_vocs = $cached->data;
-  }
-  else {
-    $term_fields = variable_get('bellcom_elasticsearch_term_field_names');
-    $fields = explode(',', $term_fields);
+/**
+ * Implement hook_views_query_alter()
+ *
+ * @param $view
+ * @param $query
+ */
+function bellcom_elasticsearch_views_query_alter(&$view, &$query) {
+  if ($view->name === 'bellcom_elasticsearch_kle_terms') {
+    $query->where[1]['conditions'][0]['value'] = array();
 
+    $term_fields = variable_get('bellcom_elasticsearch_term_field_names', 'field_os2web_borger_dk_kle,field_os2web_base_field_kle_ref');
+    $fields = explode(',', $term_fields);
     foreach ($fields as $field) {
       $field_info = field_info_field($field);
       if (isset($field_info['settings']['allowed_values'])) {
-        $allowed_vocs[] = $field_info['settings']['allowed_values'][0]['vocabulary'];
+        $vocabulary = taxonomy_vocabulary_machine_name_load($field_info['settings']['allowed_values'][0]['vocabulary']);
+        $query->where[1]['conditions'][0]['value'][] = $vocabulary->vid;
       }
     }
-    cache_set('bellcom_elasticsearch_terms_allows_vocs', $allowed_vocs, 'cache', CACHE_TEMPORARY);
   }
-
-  if (!in_array($vocabulary_name, $allowed_vocs)) {
-    return TRUE;
-  }
-  return FALSE;
 }
 
 function bellcom_elasticsearch_phrase_catcher_settings_page(){
@@ -320,3 +286,24 @@ function bellcom_elasticsearch_get_js_date_format(){
     }
     return $jqueryui_format;
   }
+
+/**
+ * This function returns the list of active and not read-only indices from elasticsearch default cluster.
+ * @return array
+ */
+function bellcom_elastic_search_get_used_indices() {
+  $default_cluster = elasticsearch_connector_get_default_connector();
+  $cluster_indicies = elasticsearch_connector_get_indices_options($default_cluster);
+
+  $conditions = array(
+    'enabled' => TRUE,
+    'read_only' => 0
+  );
+  $indices = search_api_index_load_multiple(FALSE, $conditions);
+  $used_indices = array();
+  foreach($indices as $index) {
+    $used_indices[$index->options['index_name']['index']] = $index->options['index_name']['index'];
+  }
+
+  return array_intersect($used_indices, $cluster_indicies);
+}
