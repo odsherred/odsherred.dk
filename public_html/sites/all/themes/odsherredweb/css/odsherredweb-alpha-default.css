@@ -2400,7 +2400,9 @@ ul:hover .facet-date-label {
 }
 
 .search-result {
-  margin: 0 0 35px;
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 .search-results.apachesolr_search-results {
@@ -3333,4 +3335,7 @@ a.gminus {
 
 .form-item-unpublish-on {
   display: none !important;
+}
+.view-elasticsearch-index-public .view-header {
+  margin-bottom: 20px;
 }
