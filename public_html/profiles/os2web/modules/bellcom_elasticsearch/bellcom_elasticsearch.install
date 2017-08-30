@@ -1,0 +1,169 @@
+<?php
+function bellcom_elasticsearch_schema() {
+  $schema['bellcom_elasticsearch_kle'] = array(
+    'description' => t('Table to store KLE influence on elasticsearch results'),
+    'fields' => array(
+      'tid' => array(
+        'description' => t('TID of KLE term'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE
+      ),
+      'from_date' => array(
+        'description' => t('The date from when this weight is valid'),
+        'type' => 'varchar',
+        'mysql_type' => 'datetime',
+      ),
+      'until_date' => array(
+        'description' => t('The date until when this weight is valid'),
+        'type' => 'varchar',
+        'mysql_type' => 'datetime',
+      ),
+      'weight' => array(
+        'description' => t('The weight of this KLE term in the search results'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 1
+      )
+    ),
+    'primary key' => array('tid'),
+  );
+
+  $schema['bellcom_elasticsearch_phrase_catcher'] = array(
+    'description' => t('Table to store the phrase cather information'),
+    'fields' => array(
+      'id' => array(
+        'description' => t('ID'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE
+      ),
+      'phrase' => array(
+        'description' => t('The phrase to catch'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'nid' => array(
+        'description' => t('NID of the node'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+      ),
+      'exclusive' => array(
+        'description' => t('This desides whether the attached node should be returned as a single result'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'default' => 0
+      ),
+      'from_date' => array(
+        'description' => t('The date from when this phrase is active'),
+        'type' => 'varchar',
+        'mysql_type' => 'datetime',
+      ),
+      'until_date' => array(
+        'description' => t('The date until when this phrase is active'),
+        'type' => 'varchar',
+        'mysql_type' => 'datetime',
+      ),
+      'weight' => array(
+        'description' => t('The weight of this phrase in the search results is used when there are more than one phrases matching'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 1
+      )
+    ),
+    'primary key' => array('id'),
+  );
+
+  $schema['bellcom_elasticsearch_synonyms_indices'] = array(
+    'description' => t('Table to store the synonyms information'),
+    'fields' => array(
+      'index_name' => array(
+        'description' => t('Index name'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ),
+      'cluster' => array(
+        'description' => t('Cluster name'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ),
+      'active' => array(
+        'description' => t('Whether the synonyms is active for this index or not'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'default' => 0
+      ),
+      'file_path' => array(
+        'description' => t('Full path to the synonyms file'),
+        'length' => 255,
+        'type' => 'varchar',
+      ),
+      'duplicate_plain_list' => array(
+        'description' => t('Whether the synonyms are duplicated as plain list in index settings'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'default' => 0
+      ),
+    ),
+    'primary key' => array('index_name'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Create new database table bellcom_elasticsearch_synonyms_indices.
+ */
+function bellcom_elasticsearch_update_7101() {
+  $schema['bellcom_elasticsearch_synonyms_indices'] = array(
+    'description' => t('Table to store the synonyms information'),
+    'fields' => array(
+      'index_name' => array(
+        'description' => t('Index name'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ),
+      'cluster' => array(
+        'description' => t('Cluster name'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ),
+      'active' => array(
+        'description' => t('Whether the synonyms is active for this index or not'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'default' => 0
+      ),
+      'file_path' => array(
+        'description' => t('Full path to the synonyms file'),
+        'length' => 255,
+        'type' => 'varchar',
+      )
+    ),
+    'primary key' => array('index_name'),
+  );
+
+  db_create_table('bellcom_elasticsearch_synonyms_indices', $schema['bellcom_elasticsearch_synonyms_indices']);
+}
+
+/**
+ * Adding option to save synonyms as plain list
+ */
+function bellcom_elasticsearch_update_7102() {
+  $spec = array(
+    'description' => t('Whether the synonyms are duplicated as plain list in index settings'),
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'default' => 0
+  );
+  db_add_field('bellcom_elasticsearch_synonyms_indices', 'duplicate_plain_list', $spec);
+}
+

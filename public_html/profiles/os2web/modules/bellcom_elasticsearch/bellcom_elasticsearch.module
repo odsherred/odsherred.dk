@@ -1,0 +1,297 @@
+<?php
+/**
+ * @file
+ * Code for the Bellcom Elasticsearch feature.
+ */
+
+include_once 'bellcom_elasticsearch.features.inc';
+
+module_load_include('inc', 'bellcom_elasticsearch', 'bellcom_elasticsearch.admin');
+module_load_include('inc', 'bellcom_elasticsearch', 'bellcom_elasticsearch.admin.synonyms');
+
+function bellcom_elasticsearch_menu() {
+  $items = array();
+
+  $items['admin/config/search/term'] = array(
+    'title' => 'Term Weight',
+    'description' => 'Configure the weight of the terms',
+    'type' => MENU_NORMAL_ITEM | MENU_LOCAL_TASK,
+    'access arguments' => array('administer search_api'),
+    'page callback' => 'bellcom_elasticsearch_kle_settings_page',
+    'file' => 'bellcom_elasticsearch.admin.inc',
+  );
+  $items['admin/config/search/term_fields'] = array(
+    'title' => 'Term fields',
+    'description' => 'Term field machine names from content types',
+    'type' => MENU_NORMAL_ITEM | MENU_LOCAL_TASK,
+    'access arguments' => array('administer search_api'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('bellcom_elasticsearch_term_fields'),
+    'file' => 'bellcom_elasticsearch.admin.inc',
+  );
+
+  $items['admin/config/search/phrase'] = array(
+    'title' => 'Phrase catcher',
+    'description' => 'Configure the phrase top search result',
+    'type' => MENU_NORMAL_ITEM | MENU_LOCAL_TASK,
+    'access arguments' => array('administer search_api'),
+    'page callback' => 'bellcom_elasticsearch_phrase_catcher_settings_page',
+    'file' => 'bellcom_elasticsearch.admin.inc',
+  );
+
+  $items['kle/%/update/%/%/%'] = array(
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer search_api'),
+    'page callback' => 'bellcom_elasticsearch_update_kle',
+    'page arguments' => array(1, 3, 4, 5),
+    'file' => 'bellcom_elasticsearch.admin.inc',
+  );
+
+  $items['phrase/%/update'] = array(
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer search_api'),
+    'page callback' => 'bellcom_elasticsearch_update_phrase',
+    'page arguments' => array(1),
+    'file' => 'bellcom_elasticsearch.admin.inc',
+  );
+
+  $items['admin/config/search/synonyms_indices'] = array(
+    'title' => 'Synonyms set up',
+    'description' => 'Configure the synonyms used during the search',
+    'type' => MENU_NORMAL_ITEM | MENU_LOCAL_TASK,
+    'access arguments' => array('administer search_api'),
+    'page callback' => 'bellcom_elasticsearch_synonyms_indices',
+    'file' => 'bellcom_elasticsearch.admin.synonyms.inc',
+  );
+
+  $items['admin/config/search/synonyms_index/%'] = array(
+    'title' => 'Synonyms set up for index',
+    'type' => MENU_NORMAL_ITEM,
+    'access arguments' => array('administer search_api'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('bellcom_elasticsearch_synonyms_index', 4),
+    'file' => 'bellcom_elasticsearch.admin.synonyms.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements elasticsearch_connector_search_api_query_alter
+ *
+ * Alters the query so that boosting, phrase catcher and synonyms is included during the search process.
+ *
+ * @param $query
+ * @param $params
+ */
+function bellcom_elasticsearch_elasticsearch_connector_search_api_query_alter(&$query, &$params) {
+  if (isset($params['body']['query'])) {
+    if (bellcom_elasticsearch_synonyms_active($params['index'])) {
+      if (isset($params['body']['query']['bool'])) {
+        $query_str = $params['body']['query']['bool']['must'][0]['multi_match']['query'];
+        $query_fields = $params['body']['query']['bool']['must'][0]['multi_match']['fields'];
+        $params['body']['query'] = array(
+          'function_score' => array(
+            'functions' => _bellcom_elasticsearch_get_boosting($query_str),
+            'query' => _bellcom_elasticsearch_get_query($query_str, $query_fields)
+          )
+        );
+
+      }
+      else {
+        if (isset($params['body']['query']['filtered'])) {
+          $query_str = $params['body']['query']['filtered']['query']['bool']['must'][0]['multi_match']['query'];
+          $query_fields = $params['body']['query']['filtered']['query']['bool']['must'][0]['multi_match']['fields'];
+          $params['body']['query']['filtered']['query'] = array(
+            'function_score' => array(
+              'functions' => _bellcom_elasticsearch_get_boosting($query_str),
+              'query' => _bellcom_elasticsearch_get_query($query_str, $query_fields)
+            )
+          );
+        }
+      }
+
+      $size = _bellcom_elasticsearch_get_size($query_str);
+      if ($size) {
+        $params['body']['size'] = $size;
+      }
+    }
+
+    // Fixing facets multi - choice
+    if ($params['body']['query']['filtered']['filter']) {
+      $query_filter = $params['body']['query']['filtered']['filter'];
+      unset($params['body']['query']['filtered']['filter']);
+      $params['body']['filter'] = $query_filter;
+    }
+  }
+}
+
+/**
+ * Retuns the boosting setting for the search query.
+ *
+ * @param null $query_string
+ * @return array
+ */
+function _bellcom_elasticsearch_get_boosting($query_string = NULL) {
+  $now = date('Y-m-d H:i:s', time());
+  $fromDateCondition = db_or();
+  $fromDateCondition->condition('from_date', $now, "<=");
+  $fromDateCondition->condition('from_date', NULL, 'is');
+
+  $untilDateCondition = db_or();
+  $untilDateCondition->condition('until_date', $now, ">=");
+  $untilDateCondition->condition('until_date', NULL, 'is');
+
+  $results = db_select('bellcom_elasticsearch_kle', 'i')
+    ->fields('i')
+    ->condition('weight', 1, "!=")
+    ->condition($fromDateCondition)
+    ->condition($untilDateCondition)
+    ->execute()
+    ->fetchAll();
+
+  $term_fields = variable_get('bellcom_elasticsearch_term_field_names', 'field_os2web_borger_dk_kle,field_os2web_base_field_kle_ref');
+  $fields = explode(',', $term_fields);
+  $fields = array_flip($fields);
+
+  $boosting = array();
+  $fields_query = array();
+  foreach ($results as $kle_term) {
+    foreach ($fields as $key => $value) {
+      $fields_query['node:' . $key] = $kle_term->tid;
+    }
+    $boosting[] = array(
+      'weight' => $kle_term->weight,
+      'filter' => array(
+        'term' => $fields_query,
+      )
+    );
+  }
+
+  // making sure, that all found phrase NID are on top of the list (multiplying weight by 100)
+  $results = db_query('SELECT * FROM {bellcom_elasticsearch_phrase_catcher} i WHERE :phrase LIKE i.phrase
+			AND nid IS NOT NULL AND (i.from_date IS NULL or i.from_date <= :now)
+			AND  (i.until_date IS NULL or i.until_date >= :now) order by i.weight DESC',
+    array(':phrase' => $query_string, ':now' => $now))->fetchAll();
+
+  foreach ($results as $phrase) {
+    $boosting[] = array(
+      'weight' => intval($phrase->weight) * 100,
+      'filter' => array(
+        'term' => array('node:nid' => $phrase->nid)
+      ),
+    );
+  }
+
+  return $boosting;
+}
+
+/**
+ * Composes a custom query with synonyms and/or phrase catcher implementation.
+ *
+ * @param $query_fields
+ * @param $query_string
+ * @return array
+ */
+function _bellcom_elasticsearch_get_query($query_string, $query_fields) {
+  $synonym_active = variable_get('bellcom_elasticsearch_synonyms_active', FALSE);
+  $query = array(
+    'bool' => array(
+      'should' => array(
+        array(
+          'query_string' => array(
+            'query' => $query_string,
+            'fields' => $query_fields,
+            'analyzer' => 'bellcom_elasticsearch_analyser'
+          )
+        ),
+      ),
+    )
+  );
+
+  // making sure the all found phrase NID are included into the search result
+  $results = db_query('SELECT * FROM {bellcom_elasticsearch_phrase_catcher} i WHERE :phrase LIKE i.phrase
+			AND nid IS NOT NULL AND (i.from_date IS NULL or i.from_date <= :now)
+			AND  (i.until_date IS NULL or i.until_date >= :now) order by i.weight DESC',
+    array(':phrase' => $query_string, ':now' => date('Y-m-d H:i:s', time())))->fetchAll();
+  foreach ($results as $phrase) {
+    $query['bool']['should'][] = array(
+      'term' => array('node:nid' => $phrase->nid)
+    );
+  }
+
+  return $query;
+}
+
+/**
+ * Returns the size of the query result set, return int (usually one) of that is the single result query, or null is the result is default.
+ *
+ * @param $query_string
+ * @return int|null
+ */
+function _bellcom_elasticsearch_get_size($query_string) {
+  // making sure the all found phrase NID are included into the search result
+  $results = db_query('SELECT exclusive, nid FROM {bellcom_elasticsearch_phrase_catcher} i WHERE :phrase LIKE i.phrase
+	AND nid IS NOT NULL AND (i.from_date IS NULL or i.from_date <= :now)
+	AND  (i.until_date IS NULL or i.until_date >= :now)',
+    array(':phrase' => $query_string, ':now' => date('Y-m-d H:i:s', time())))->fetchAll();
+
+  foreach ($results as $result) {
+    if ($result->exclusive) { //if any of the mathcing phrase are set to be exclusive
+      drupal_goto('node/' . $result->nid);
+      return 1;
+    }
+  }
+
+  //non of the matching phrases are set to be exclusive, return default size
+  return NULL;
+}
+
+/**
+ * Implements hook_search_api_items_indexed
+ *
+ * readds the synonyms file after the items have been reindexed.
+ * Is helpful if the index has been deleted and recreated again.
+ *
+ * @param SearchApiIndex $index
+ * @param array $item_ids
+ */
+function bellcom_elasticsearch_search_api_items_indexed(SearchApiIndex $index, array $item_ids) {
+  module_load_include('inc', 'bellcom_elasticsearch', 'includes/bellcom_elasticsearch.api.index');
+
+  $cluster_name = $index->options['index_name']['cluster_id'];
+  $index_name = $index->options['index_name']['index'];
+
+  //load file
+  $result = db_select('bellcom_elasticsearch_synonyms_indices', 'n')
+    ->fields('n')
+    ->condition('index_name', $index_name)
+    ->execute()
+    ->fetchAssoc();
+
+  //add file to index
+  if ($result && $result['active']) {
+    $file_uri = $result['file_path'] . '/' . $index_name . '_synonyms.txt';
+
+    try {
+      $cluster_loaded = elasticsearch_connector_cluster_load($cluster_name);
+      $client = elasticsearch_connector_load_library($cluster_loaded);
+
+      bellcom_elasticsearch_api_index_close($client, $index_name);
+      if ($file_uri) {
+        bellcom_elasticsearch_api_add_analyzer_as_file($client, $index_name, drupal_realpath($file_uri));
+      }
+
+      if ($result['duplicate_plain_list']) {
+        $synonyms = file_get_contents($result['file_path'] . '/' . $index_name . '_synonyms.txt', FILE_USE_INCLUDE_PATH);
+        bellcom_elasticsearch_api_add_analyzer_as_plaintext($client, $index_name, $synonyms);
+      }
+
+      bellcom_elasticsearch_api_index_open($client, $index_name);
+    } catch (Exception $e) {
+      drupal_set_message(t('Error while updating index: ') . $e->getMessage(), 'warning');
+      watchdog('bellcom_elasticsearch', $e->getMessage(), WATCHDOG_WARNING);
+      bellcom_elasticsearch_api_index_open($client, $index_name);
+    }
+  }
+}

@@ -95,11 +95,11 @@ function odsherred_web_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-11',
         ),
-        'search-form' => array(
-          'module' => 'search',
-          'delta' => 'form',
+        'views-47b76bc015f8f4593045cf225fc6a647' => array(
+          'module' => 'views',
+          'delta' => '47b76bc015f8f4593045cf225fc6a647',
           'region' => 'header_first',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'menu_block-19' => array(
           'module' => 'menu_block',
@@ -128,6 +128,7 @@ function odsherred_web_context_default_contexts() {
   $context->conditions = array(
     'node' => array(
       'values' => array(
+        'borger_dk_article' => 'borger_dk_article',
         'os2web_borger_dk_article' => 'os2web_borger_dk_article',
       ),
       'options' => array(
