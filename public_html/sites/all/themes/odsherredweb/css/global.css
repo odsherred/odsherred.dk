@@ -543,7 +543,8 @@ a.overlayclass {
 }
 
 .page-odsherred-kommune-kontakter .page-selvbetjeninger .selvbetjening .item-list ul li:last-child a,
-.page-odsherred-kommune-kontakter .page-selvbetjeninger .selvbetjening a {
+.page-odsherred-kommune-kontakter .page-selvbetjeninger .selvbetjening a,
+.page-odsherred-kommune-kontakter .page-selvbetjeninger .selvbetjening .item-list ul li:first-child a {
   padding-bottom: inherit !important;
   padding-top: inherit !important;
 }
@@ -554,4 +555,5 @@ a.overlayclass {
   font-size: inherit;
   padding-left: 0 !important;
   text-decoration: underline;
+  display: inline !important;
 }
