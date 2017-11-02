@@ -72,18 +72,17 @@ function odsherred_search_default_search_api_index() {
             "bundles" : {
               "borger_dk_article" : "borger_dk_article",
               "os2web_base_contentpage" : "os2web_base_contentpage",
-              "os2web_contact_contact" : "os2web_contact_contact",
               "os2web_base_news" : "os2web_base_news",
               "webform" : "webform"
             }
           }
         },
-        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
-        "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
-        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] }
+        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
+        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [] }
       },
       "processors" : {
         "search_api_case_ignore" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
@@ -112,18 +111,6 @@ function odsherred_search_default_search_api_index() {
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
           }
         },
-        "search_api_highlighting" : {
-          "status" : 0,
-          "weight" : "35",
-          "settings" : {
-            "prefix" : "\\u003Cstrong\\u003E",
-            "suffix" : "\\u003C\\/strong\\u003E",
-            "excerpt" : 1,
-            "excerpt_length" : "256",
-            "exclude_fields" : [],
-            "highlight" : "always"
-          }
-        },
         "search_api_elasticsearch_highlighting" : {
           "status" : 1,
           "weight" : "35",
@@ -137,7 +124,19 @@ function odsherred_search_default_search_api_index() {
             "highlight" : "always"
           }
         },
-        "search_api_elasticsearch_prefix_search" : { "status" : 0, "weight" : "35", "settings" : { "fields" : [] } }
+        "search_api_elasticsearch_prefix_search" : { "status" : 0, "weight" : "35", "settings" : { "fields" : [] } },
+        "search_api_highlighting" : {
+          "status" : 0,
+          "weight" : "35",
+          "settings" : {
+            "prefix" : "\\u003Cstrong\\u003E",
+            "suffix" : "\\u003C\\/strong\\u003E",
+            "excerpt" : 1,
+            "excerpt_length" : "256",
+            "exclude_fields" : [],
+            "highlight" : "always"
+          }
+        }
       }
     },
     "enabled" : "1",
