@@ -72,8 +72,16 @@ function odsherredweb_preprocess_region(&$variables) {
 function odsherredweb_preprocess_page(&$variables) {
   $current_theme = variable_get('theme_default', 'none');
 
-  // Search form
-  $variables['simple_navigation_search'] = module_invoke('search', 'block_view', 'search');
+  //Old search form
+  //$variables['simple_navigation_search'] = module_invoke('search', 'block_view', 'search');
+
+  //views-exposed-form-elasticsearch form loading start
+  $view = views_get_view('elasticsearch_index_public');
+  $view->set_display('page');
+  $view->init_handlers();
+  $exposed_form = $view->display_handler->get_plugin('exposed_form');
+  $variables['simple_navigation_search'] = $exposed_form->render_exposed_form(true);
+  //views-exposed-form-elasticsearch form loading end
 
   // Navigation
   $variables['sidebar_borger'] = _bellcom_generate_menu('menu-indhold', 'sidebar');
