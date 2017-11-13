@@ -152,7 +152,7 @@ function nyheder_default_page_manager_handlers() {
       'admin_title' => 'Udskriv',
       'title' => '',
       'body' => '<a href="/print/%node:nid" target="_blank" title="Udskriv">Udskriv</a>
-<a href="/indhold/nyhedsbreve" title="Abonner" class="abonnerlink">Abonner</a>',
+<a href="/din-kommune/nyhedsbreve" title="Abonner" class="abonnerlink">Abonner</a>',
       'format' => 'php_code',
       'substitute' => 1,
     );
