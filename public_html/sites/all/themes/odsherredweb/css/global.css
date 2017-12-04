@@ -398,6 +398,9 @@ a.overlayclass {
     list-style: none;
 }
 
+.region.region-page-top p {
+  margin-bottom: 0;
+}
 /* global */
 .page-selvbetjeninger .selvbetjening {
 }
