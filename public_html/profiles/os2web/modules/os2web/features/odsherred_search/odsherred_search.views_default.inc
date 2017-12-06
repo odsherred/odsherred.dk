@@ -118,6 +118,50 @@ function odsherred_search_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'search';
+
+  /* Display: News search */
+  $handler = $view->new_display('page', 'News search', 'page_1');
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_elasticsearch_index_public';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['operator'] = 'OR';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+    3 => 0,
+    5 => 0,
+    8 => 0,
+    12 => 0,
+    11 => 0,
+    15 => 0,
+    16 => 0,
+    17 => 0,
+    18 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+  );
+  /* Filter criterion: Indexed Node: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_elasticsearch_index_public';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'os2web_base_news' => 'os2web_base_news',
+  );
+  $handler->display->display_options['path'] = 'search/os2web-base-news';
   $translatables['elasticsearch_index_public'] = array(
     t('Master'),
     t('Elasticsearch Index Public'),
@@ -143,6 +187,7 @@ function odsherred_search_views_default_views() {
 <li>Skriv et andet ord der betyder det samme eller prøv en anden kombination af ord.</li>
 </ul>'),
     t('Page'),
+    t('News search'),
   );
   $export['elasticsearch_index_public'] = $view;
 
