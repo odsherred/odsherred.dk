@@ -3339,3 +3339,14 @@ a.gminus {
 .view-elasticsearch-index-public .view-header {
   margin-bottom: 20px;
 }
+
+.block-webform .webform-client-form{
+  background-color: #FFF;
+  padding: 10px;
+  margin-left: 10px; margin-right: 5px
+    
+}
+.block-webform .webform-client-form .form-submit { width: auto}
+.block-webform .webform-client-form input { width: 100%;}
+
+.block-webform .webform-client-form textarea { width: 100%;} 
