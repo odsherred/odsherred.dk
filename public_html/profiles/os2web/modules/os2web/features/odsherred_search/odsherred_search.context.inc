@@ -32,6 +32,12 @@ function odsherred_search_context_default_contexts() {
           'region' => 'content',
           'weight' => '-999',
         ),
+        'facetapi-nwgWQnBrOf1Z0mjkL2E0XYs35viV9fN0' => array(
+          'module' => 'facetapi',
+          'delta' => 'nwgWQnBrOf1Z0mjkL2E0XYs35viV9fN0',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
