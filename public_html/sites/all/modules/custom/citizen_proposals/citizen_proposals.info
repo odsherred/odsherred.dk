@@ -1,6 +1,9 @@
 name = Citizen Proposals
 description = Citizen Proposals panel
 core = 7.x
+
+configure = admin/settings/citizen_proposals
+
 package = Odsherred
 version = 7.x-1.0
 dependencies[] = ctools
