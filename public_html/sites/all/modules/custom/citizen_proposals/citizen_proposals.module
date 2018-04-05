@@ -238,7 +238,7 @@ function citizen_proposals_mail($key, &$message, $params) {
 				Tak for dit forslag. Inden forslaget kommer til at fremgå af kommunens hjemmeside skal det vurderes om det opfylder betingelserne. Det tilstræbes, at vurdere alle forslag inden for tre arbejdsdage. Når forslaget er vurderet, får du direkte besked via mail og opfylder forslaget betingelserne vil det blive publiceret på hjemmesiden.<br />
 				<br />
 				Med venlig hilsen<br />
-				Ringsted Kommune, Koncerncenteret
+				Odsherred Kommune, Koncerncenteret
 			';
     $message['body'] = array($body);
     $message['headers'] = citizen_proposals_get_mail_headers($headers);
@@ -251,10 +251,10 @@ function citizen_proposals_mail($key, &$message, $params) {
     $body = '
 				Hej,<br />
 				<br />
-				Der er oprettet et nyt borgerdrevet forslag på Ringsted.dk<br />
+				Der er oprettet et nyt borgerdrevet forslag på odsherred.dk<br />
 				Titel: ' . $params['title'] . '<br />
 				<br />
-				Godkend eller afvis på https://ringsted.dk/node/' . $params['nid'] . '/edit<br />
+				Godkend eller afvis på www.odsherred.dk/node/' . $params['nid'] . '/edit<br />
 				<br />
 				Denne mail sendes automatisk.<br />
 			';
@@ -270,7 +270,7 @@ function citizen_proposals_mail($key, &$message, $params) {
 				Tak for din stemme den er nu registeret.<br />
 				<br />
 				Med venlig hilsen<br />
-				Ringsted Kommune, Koncerncenteret
+				Odsherred Kommune, Koncerncenteret
 			';
     $message['body'] = array($body);
     $message['headers'] = citizen_proposals_get_mail_headers($headers);
@@ -281,13 +281,13 @@ function citizen_proposals_mail($key, &$message, $params) {
     $body = '
 				Kære ' . $params['name'] . ',<br />
 				<br />
-				Ringsted Kommune har nu vurderet dit forslag om "' . $params['title'] . '". Forslaget opfylder betingelserne og vil blive publiceret på kommunens hjemmeside.<br />
+				Odsherred Kommune har nu vurderet dit forslag om "' . $params['title'] . '". Forslaget opfylder betingelserne og vil blive publiceret på kommunens hjemmeside.<br />
 				<br />
 				Hvis dit forslag opnår ' . CITIZEN_PROPOSALS_MAX_VOTES . ' gyldige stemmer inden for en periode på ' . CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS . ' måneder vil forslaget blive drøftet i Byrådet. Opnår forslaget ikke ' . CITIZEN_PROPOSALS_MAX_VOTES . ' stemmer inden for ' . CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS . ' måneder bliver det fjernet fra hjemmesiden.<br />
 				<br />
 				Med venlig hilsen<br />
 				' . (($user_full_name) ? $user_full_name . '<br />' : '') . '
-				Ringsted Kommune, Koncerncenteret
+				Odsherred Kommune, Koncerncenteret
 			';
     $message['body'] = array($body);
 
@@ -302,14 +302,14 @@ function citizen_proposals_mail($key, &$message, $params) {
     $body = '
 				Kære ' . $params['name'] . ',<br />
 				<br />
-				Ringsted Kommune har nu vurderet dit forslag om "' . $params['title'] . '". Forslaget opfylder ikke betingelsen om, ' . $params['reject_reason'] . '.<br />
+				Odsherred Kommune har nu vurderet dit forslag om "' . $params['title'] . '". Forslaget opfylder ikke betingelsen om, ' . $params['reject_reason'] . '.<br />
 				<br />
 				' . (!empty($params['extended_reject_reason']) ? nl2br($params['extended_reject_reason']) . '<br /><br />' : '') . '
-				Det er ikke muligt at klage over denne vurdering, men har du spørgsmål er du velkommen til at kontakte Ringsted Kommune på <a href="mailto: ringsted@ringsted.dk">ringsted@ringsted.dk</a><br />
+				Det er ikke muligt at klage over denne vurdering, men har du spørgsmål er du velkommen til at kontakte Odsherred Kommune på <a href="mailto:  kommune@odsherred.dk"> kommune@odsherred.dk</a><br />
 				<br />
 				Med venlig hilsen<br />
 				' . (($user_full_name) ? $user_full_name . '<br />' : '') . '
-				Ringsted Kommune, Koncerncenteret
+				Odsherred Kommune, Koncerncenteret
 			';
     $message['body'] = array($body);
 
@@ -324,7 +324,7 @@ function citizen_proposals_mail($key, &$message, $params) {
     $body = '
 				Hej,<br />
 				<br />
-				Link: https://ringsted.dk/node/' . $params['nid'] . '/edit<br />
+				Link: www.odsherred.dk/node/' . $params['nid'] . '/edit<br />
 				Titel: ' . $params['title'] . '<br />
 				Forfatter: ' . $params['author'] . '<br />
 				Beskrivelse: ' . $params['proposal_body'] . '<br />
