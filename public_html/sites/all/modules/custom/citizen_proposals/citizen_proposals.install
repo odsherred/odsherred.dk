@@ -1,0 +1,81 @@
+<?php
+
+/**
+* Implementation of hook_install().
+*/
+function citizen_proposals_install() {
+  // Use schema API to create database table.
+  drupal_install_schema('citizen_proposals_votes');
+}
+
+/**
+* Implementation of hook_uninstall().
+*/
+function citizen_proposals_uninstall() {
+  // Remove tables.
+  drupal_uninstall_schema('citizen_proposals_votes');
+}
+
+/**
+* Implementation of hook_schema().
+*/
+function citizen_proposals_schema() {
+  $schema['citizen_proposals_votes'] = array(
+    'description' => t('Stores user votes of citizen_proposals module.'),
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for a vote.',
+        'type' => 'serial',
+        'size' => 'normal',
+        'unsigned' => TRUE,
+        'not null' => TRUE),
+      'vote_for_nid' => array(
+        'description' => 'The node id for which the user voted.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'size' => 'normal',
+        'not null' => TRUE),
+      'name' => array(
+        'description' => 'Name of the voted user.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => ''),
+      'address' => array(
+        'description' => 'Address of the voted user.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => ''),
+      'zip_code' => array(
+        'description' => 'Post index of the voted user.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => ''),
+      'city' => array(
+        'description' => 'City of the voted user.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => ''),
+      'email' => array(
+        'description' => 'E-mail of the voted user.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => FALSE,
+        'default' => NULL),
+      'created' => array(
+        'mysql_type' => 'timestamp',
+        'not null' => TRUE,),
+    ),
+    'primary key' => array(
+      'id',
+    ),
+    'unique keys' => array(
+      'vote_for_nid_email' => array('vote_for_nid', 'email'),
+    ),
+  );
+
+return $schema;
+}
