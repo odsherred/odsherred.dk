@@ -36,7 +36,7 @@
 				<input type="text" name="address" placeholder="Adresse" 23" required /><br />
 				<br />
 				Postnummer *<br />
-				<input type="number" name="zip_code" placeholder="Postnummer" pattern="\d{4}" required maxlength="4" /><br />
+				<input type="text" name="zip_code" placeholder="Postnummer" pattern="\d{4}" required maxlength="4" /><br />
 				<br />
 				By *<br />
 				<input type="text" name="city" placeholder="By" required /><br />
@@ -90,7 +90,7 @@
 			 				<input type="text" name="address" placeholder="Adresse" 23" required /><br />
 			 				<br />
 			 				Postnummer *<br />
-			 				<input type="number" name="zip_code" placeholder="Postnummer" pattern="\d{4}" required maxlength="4" /><br />
+			 				<input type="text" name="zip_code" placeholder="Postnummer" pattern="\d{4}" required maxlength="4" /><br />
 			 				<br />
 			 				By *<br />
 			 				<input type="text" name="city" placeholder="By" required /><br />
