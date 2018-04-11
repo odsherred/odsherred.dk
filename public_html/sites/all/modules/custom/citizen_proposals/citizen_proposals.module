@@ -45,11 +45,23 @@ function citizen_proposals_menu() {
     'description' => 'Description of your On this date settings page',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('citizen_proposals_admin'),
-    'access arguments' => array('administer citizen_proposals settings'),
+    'access arguments' => array('administer citizen proposals settings'),
     'type' => MENU_NORMAL_ITEM,
    );
   
   return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function citizen_proposals_permission() {
+  return array(
+    'administer citizen proposals settings' => array(
+      'title' => t('Administer citizen proposals settings'),
+      'description' => t("Administer citizen proposals module settings on 'admin/settings/citizen_proposals'"),
+    )
+  );
 }
 
 function citizen_proposals_admin() {
