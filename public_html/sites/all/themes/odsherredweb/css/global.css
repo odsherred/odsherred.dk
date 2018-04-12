@@ -568,13 +568,10 @@ a.overlayclass {
   display: inline !important;
 }
 
-aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi,
-aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-delta-blocks.block-breadcrumb{
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi{
   background-image: none ;
 }
-aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-delta-blocks.block-breadcrumb div#breadcrumb{
-  padding: 0;
-}
+
 aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi{
   background-color: #fff;
 }
@@ -584,53 +581,12 @@ aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facet
   list-style-image: none;
   margin: 0;
 }
-
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi .block-inner h2{
+  display: flex;
+  align-items: center;
+  height: 38px;
+}
 aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi ul li a{
   padding: 8px 26px;
   display: block;
-}
-aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-delta-blocks.block-breadcrumb ul.breadcrumb{
-  padding: 0 0;
-  margin-bottom: 20px;
-  list-style: none;
-  background-color: inherit;
-  border-radius: 4px;
-  margin: 0;
-}
-aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-delta-blocks.block-breadcrumb ul.breadcrumb li{
-  display: block;
-  border-radius: 4px;
-  padding: 4px;
-  margin: 0;
-  margin-bottom: 2px;
-  background-image: -webkit-linear-gradient(top,#eeeeee 0%,#cccccc 100%);
-  background-image: linear-gradient(to bottom,#eeeeee 0%,#cccccc 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee',endColorstr='#ffcccccc',GradientType=0);
-  font-size: 15px;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  font-weight: 700;
-}
-aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-delta-blocks.block-breadcrumb ul.breadcrumb li.last{
-  margin-bottom: 0;
-  border-radius: 4px 4px 0 0;
-  background-image: -webkit-linear-gradient(top,#0062B4 0%,#005090 100%);
-  background-image: linear-gradient(to bottom,#0062B4 0%,#005090 100%);
-  background-repeat: repeat-x;
-  color: #fff;
-}
-aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-delta-blocks.block-breadcrumb ul.breadcrumb li.first{
-  list-style: none;
-  margin-left: 0;
-  padding-left: 1em;
-  text-indent: -1em;
-  list-style-image: none !important;
-  list-style-type: unset !important;
-}
-aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-delta-blocks.block-breadcrumb ul.breadcrumb li.first a{
-  padding-left: 22px;
-}
-aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-delta-blocks.block-breadcrumb ul.breadcrumb li.last a{
-  color: #fff;
 }
