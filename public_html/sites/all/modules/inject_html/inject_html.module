@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function inject_html_menu() {
+  $item = array();
+
+  $item['admin/config/user-interface/inject-html'] = array(
+    'title' => t('Indsæt HTML i head og body'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('inject_html_admin_settings'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'inject_html.admin.inc',
+  );
+
+  return $item;
+}
+
+/**
+ * Implements hook_page_build().
+ */
+function inject_html_page_build(&$page) {
+
+  // Inject HTML into every page if enabled
+  if (variable_get('inject_html_enable', FALSE)) {
+
+    // Head section
+    $head_render_array = array(
+      '#type' => 'markup',
+      '#markup' => variable_get('inject_html_head', ''),
+    );
+    drupal_add_html_head($head_render_array, 'inject_html_head');
+
+    // Body section
+    $page['page_bottom']['inject_html'] = array(
+      '#weight' => 1000,
+      '#markup' => variable_get('inject_html_body', ''),
+    );
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function inject_html_form_inject_html_admin_settings_alter(&$form, &$form_state, $form_id) {
+  $form['#submit'][] = 'inject_html_submit';
+}
+
+/**
+ * Submit handler. Clears cache when form is submitted.
+ */
+function inject_html_submit($form, &$form_state) {
+  drupal_flush_all_caches();
+  drupal_set_message('Cachen blev ryddet.');
+}
