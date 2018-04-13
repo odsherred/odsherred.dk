@@ -1,0 +1,7 @@
+name = Injects HTML
+description = Injects user defined HTML in the HEAD and BODY tags
+core = 7.x
+
+files[] = inject_html.admin.inc
+
+configure = admin/config/user-interface/inject-html
