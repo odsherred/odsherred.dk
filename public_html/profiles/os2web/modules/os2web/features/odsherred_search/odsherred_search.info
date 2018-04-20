@@ -17,6 +17,7 @@ features[ctools][] = facetapi:facetapi_defaults:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[elasticsearch_connector_cluster][] = odsherred_cluster_public
+features[facetapi][] = search_api@elasticsearch_index_public::type
 features[facetapi][] = search_api@elasticsearch_index_public:block:type
 features[features_api][] = api:2
 features[search_api_index][] = elasticsearch_index_public
