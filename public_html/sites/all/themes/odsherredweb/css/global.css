@@ -586,7 +586,17 @@ aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facet
   align-items: center;
   height: 38px;
 }
-aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi ul li a{
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi ul li a.facetapi-inactive{
+  background-color: white;
   padding: 8px 26px;
   display: block;
+}
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi ul li a.facetapi-active{
+  display: inline-block;
+  padding: 8px 10px;
+  color: white;
+}
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi ul li.leaf{
+  background-color: #0460aa;
+  color: white;
 }
