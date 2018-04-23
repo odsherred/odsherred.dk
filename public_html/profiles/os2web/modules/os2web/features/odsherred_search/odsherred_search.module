@@ -28,9 +28,19 @@ function odsherred_search_preprocess_views_exposed_form(&$variables) {
 function odsherred_search_block_view_alter(&$data, $block) {
   // We need to put Indholdsside at the top of facet filter list
   if($block->module == 'facetapi' && $block->delta == 'nwgWQnBrOf1Z0mjkL2E0XYs35viV9fN0'){
+    // We need to change active filter items output
+    foreach($data['content']['type']['#items'] as $key => &$item){
+      if(strpos($item['data'], 'facetapi-active') == TRUE){
+        $pos = strripos($item['data'], '>');
+        $item['data'] = substr($item['data'], 0, $pos+1);
+        $item['data'] = str_replace( array('(-)',' filter','Remove ','class="element-invisible"') , '' , $item['data'] );
+      }
+    }
+    unset($key, $item);
+    // We need to put Indholdsside at the top of facet filter list
     $firstItem = NULL;
     foreach($data['content']['type']['#items'] as $key => $item){
-      if (strpos($item['data'], 'Indholdsside') !== false){
+      if (strpos($item['data'], 'Indholdsside') == TRUE){
         $firstItem = $item;
         unset($data['content']['type']['#items'][$key]);
         break;
