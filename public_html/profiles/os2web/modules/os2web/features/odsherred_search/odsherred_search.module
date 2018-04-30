@@ -1,7 +1,7 @@
 <?php
 
-
 include_once 'odsherred_search.features.inc';
+include_once 'facet_api_odsherred_search.class.php';
 
 function odsherred_search_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-elasticsearch-index-public-page') {
@@ -50,4 +50,26 @@ function odsherred_search_block_view_alter(&$data, $block) {
       array_unshift($data['content']['type']['#items'], $firstItem);
     } 
   }
+}
+
+/**
+ * Implements hook_facetapi_searcher_info()
+ */
+function odsherred_search_facetapi_searcher_info_alter(array &$searcher_info) {
+  foreach ($searcher_info as $key => $value) {
+    if($value['url processor'] == 'standard'){
+      $searcher_info[$key]['url processor'] = 'odsherred_search_processor';
+    }
+  }
+}
+
+function odsherred_search_facetapi_url_processors() {
+  return array(
+    'odsherred_search_processor' => array(
+      'handler' => array(
+        'label' => t('Odsherred search URL processor'),
+        'class' => 'FacetApiOdsherredSearch',
+      ),
+    ),
+  );
 }
