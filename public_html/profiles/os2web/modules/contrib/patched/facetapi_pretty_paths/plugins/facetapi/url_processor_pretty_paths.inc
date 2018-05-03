@@ -150,6 +150,15 @@ class FacetapiUrlProcessorPrettyPaths extends FacetapiUrlProcessorStandard {
     $segments = $this->pathSegments;
     $active_items = $this->adapter->getActiveItems($facet);
 
+    // Strips all other filters for this facet if limit option is set.
+    if ($this->limitActiveItems($facet)) {
+      foreach ($segments as $key => $segment) {
+        if (isset($segment['facet']) && $segment['facet']['name'] == $facet['name']) {
+          unset($segments[$key]);
+        }
+      }
+    }
+    
     // Adds to segments if inactive, removes if active.
     foreach ($values as $value) {
       $segment = $this->getPathSegment($facet, $value);
