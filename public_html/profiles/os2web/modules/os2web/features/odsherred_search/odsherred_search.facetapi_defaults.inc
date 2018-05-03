@@ -31,6 +31,7 @@ function odsherred_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'exclude' => 0,
+    'limit_active_items' => 1,
   );
   $export['search_api@elasticsearch_index_public::type'] = $facet;
 
@@ -53,15 +54,15 @@ function odsherred_search_facetapi_default_facet_settings() {
       'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-48',
       'count' => '-50',
       'display' => '-49',
+      'active' => '-48',
       'indexed' => '-47',
     ),
     'sort_order' => array(
-      'active' => '3',
       'count' => '3',
       'display' => '4',
+      'active' => '3',
       'indexed' => '3',
     ),
     'empty_behavior' => 'none',
