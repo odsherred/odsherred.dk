@@ -13,6 +13,12 @@ define('CITIZEN_PROPOSALS_FROM_MAIL', variable_get('citizen_proposals_from_email
 define('CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS', variable_get('citizen_proposals_unpublish_older_than_months', 3));
 define('CITIZEN_PROPOSALS_MAX_VOTES', variable_get('citizen_proposals_proposals_max_votes', 300));
 define('CITIZEN_PROPOSALS_DELETE_AFTER_YEARS', variable_get('citizen_proposals_delete_after_years', 2));
+define('CITIZEN_PROPOSALS_MAIL_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED', variable_get('mail_to_customer_when_new_proposal_created',
+  'Kære @name,<br /><br />
+  Tak for dit forslag. Inden forslaget kommer til at fremgå af kommunens hjemmeside skal det vurderes om det opfylder betingelserne. Det tilstræbes, at vurdere alle forslag inden for tre arbejdsdage. Når forslaget er vurderet, får du direkte besked via mail og opfylder forslaget betingelserne vil det blive publiceret på hjemmesiden.
+  <br /><br />Med venlig hilsen<br />Odsherred Kommune, Koncerncenteret'));
+define('CITIZEN_PROPOSALS_MAIL_SUBJECT_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED', variable_get('mail_subject_to_customer_when_new_proposal_created',
+  'Dit forslag er oprettet'));
 
 // Telling ctools where plugins directory are.
 function citizen_proposals_ctools_plugin_directory($owner, $plugin_type) {
@@ -70,7 +76,7 @@ function citizen_proposals_admin() {
   $form['citizen_proposals_publisher_email'] = array(
     '#type' => 'textfield',
     '#title' => t('Citizen proposals publisher email'),
-    '#default_value' => variable_get('citizen_proposals_publisher_email', 'drupal@bellcom.dk'),
+    '#default_value' => variable_get('citizen_proposals_publisher_email', CITIZEN_PROPOSALS_PUBLISHER_EMAIL),
     '#size' => 100,
     '#maxlength' => 100,
     '#description' => t("Citizen proposals publisher email"),
@@ -80,7 +86,7 @@ function citizen_proposals_admin() {
   $form['citizen_proposals_from_email'] = array(
     '#type' => 'textfield',
     '#title' => t('Citizen proposals from email'),
-    '#default_value' => variable_get('citizen_proposals_from_email', 'Odsherred Kommune <no-reply@odsherred.dk>'),
+    '#default_value' => variable_get('citizen_proposals_from_email', CITIZEN_PROPOSALS_FROM_MAIL),
     '#size' => 100,
     '#maxlength' => 100,
     '#description' => t("Citizen proposals from email"),
@@ -90,7 +96,7 @@ function citizen_proposals_admin() {
   $form['citizen_proposals_unpublish_older_than_months'] = array(
     '#type' => 'textfield',
     '#title' => t('Citizen proposals unpublish after (month number)'),
-    '#default_value' => variable_get('citizen_proposals_unpublish_older_than_months', 3),
+    '#default_value' => variable_get('citizen_proposals_unpublish_older_than_months', CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS),
     '#size' => 5,
     '#maxlength' => 10,
     '#description' => t("Citizen proposals unpublish after (month number)"),
@@ -100,7 +106,7 @@ function citizen_proposals_admin() {
   $form['citizen_proposals_proposals_max_votes'] = array(
     '#type' => 'textfield',
     '#title' => t('Citizen proposals max votes number'),
-    '#default_value' => variable_get('citizen_proposals_proposals_max_votes', 300),
+    '#default_value' => variable_get('citizen_proposals_proposals_max_votes', CITIZEN_PROPOSALS_MAX_VOTES),
     '#size' => 100,
     '#maxlength' => 100,
     '#description' => t("Citizen proposals max votes number"),
@@ -110,10 +116,30 @@ function citizen_proposals_admin() {
   $form['citizen_proposals_delete_after_years'] = array(
     '#type' => 'textfield',
     '#title' => t('Citizen proposals delete after (years)'),
-    '#default_value' => variable_get('citizen_proposals_delete_after_years', 2),
+    '#default_value' => variable_get('citizen_proposals_delete_after_years', CITIZEN_PROPOSALS_DELETE_AFTER_YEARS),
     '#size' => 5,
     '#maxlength' => 10,
     '#description' => t("Citizen proposals delete after (years)"),
+    '#required' => TRUE,
+  );
+
+  $form['mail_subject_to_customer_when_new_proposal_created'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mail subject to the customer when a new proposal is created'),
+    '#default_value' => variable_get('mail_subject_to_customer_when_new_proposal_created', CITIZEN_PROPOSALS_MAIL_SUBJECT_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('You could use tokens: @name - proposal author name;'),
+    '#required' => TRUE,
+  );
+  
+  $form['mail_to_customer_when_new_proposal_created'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Mail to the customer when a new proposal is created'),
+    '#default_value' => variable_get('mail_to_customer_when_new_proposal_created', CITIZEN_PROPOSALS_MAIL_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED),
+    '#description' => t('You could use tokens: @name - proposal author name;'),
+    '#cols' => 60,
+    '#rows' => 5,
     '#required' => TRUE,
   );
 
@@ -224,6 +250,15 @@ function citizen_proposals_get_mail_headers($headers) {
   return $return;
 }
 
+/*
+ * Replace tokens with its values in the string.
+ */
+function citizen_proposals_prepare_string($tokens = array(), $values = array(), $string = NULL) {
+  $output = str_replace($tokens, $values, $string);
+  
+  return $output;
+}
+
 /**
  * hook_mail()
  */
@@ -243,15 +278,12 @@ function citizen_proposals_mail($key, &$message, $params) {
 
   if ($key == 'citizen_proposals_mail_create_proposal_customer') {
     // Mail to the customer when a new proposal is created.
-    $message['subject'] = 'Dit forslag er oprettet';
-    $body = '
-				Kære ' . $params['name'] . ',<br />
-				<br />
-				Tak for dit forslag. Inden forslaget kommer til at fremgå af kommunens hjemmeside skal det vurderes om det opfylder betingelserne. Det tilstræbes, at vurdere alle forslag inden for tre arbejdsdage. Når forslaget er vurderet, får du direkte besked via mail og opfylder forslaget betingelserne vil det blive publiceret på hjemmesiden.<br />
-				<br />
-				Med venlig hilsen<br />
-				Odsherred Kommune, Koncerncenteret
-			';
+    
+    $tokens = array(0 => '@name');
+    $values = array(0 => $params['name']);
+    
+    $message['subject'] = $this->citizen_proposals_prepare_string($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED);
+    $body = $this->citizen_proposals_prepare_string($tokens, $values, CITIZEN_PROPOSALS_MAIL_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED);
     $message['body'] = array($body);
     $message['headers'] = citizen_proposals_get_mail_headers($headers);
   }
