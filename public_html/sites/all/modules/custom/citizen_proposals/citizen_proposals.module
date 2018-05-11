@@ -34,6 +34,14 @@ define('CITIZEN_PROPOSALS_MAIL_VOTE', variable_get('citizen_proposals_mail_vote'
 define('CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE', variable_get('citizen_proposals_mail_subject_vote',
   'Tak for din stemme'));
 
+define('CITIZEN_PROPOSALS_MAIL_ACCEPT', variable_get('citizen_proposals_mail_accept',
+  'Kære @name,<br /><br />Odsherred Kommune har nu vurderet dit forslag om "@title". Forslaget opfylder betingelserne og vil blive publiceret på kommunens hjemmeside.<br />
+  <br />Hvis dit forslag opnår @max_votes gyldige stemmer inden for en periode på @unpublish_after_month måneder vil forslaget blive drøftet i Byrådet. Opnår forslaget ikke ' . CITIZEN_PROPOSALS_MAX_VOTES . ' stemmer inden for ' . CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS . ' måneder bliver det fjernet fra hjemmesiden.<br />
+  <br />Med venlig hilsen<br />@current_user_name<br />Odsherred Kommune, Koncerncenteret'));
+define('CITIZEN_PROPOSALS_MAIL_SUBJECT_ACCEPT', variable_get('citizen_proposals_mail_subject_accept',
+  'Tak for din stemme'));
+
+
 // Telling ctools where plugins directory are.
 function citizen_proposals_ctools_plugin_directory($owner, $plugin_type) {
   if ($owner == 'ctools' && $plugin_type == 'content_types') {
@@ -179,7 +187,7 @@ function citizen_proposals_admin() {
   
   $form['citizen_proposals_mail_subject_vote'] = array(
     '#type' => 'textfield',
-    '#title' => t('Mail subject to customer when a new vote is created.'),
+    '#title' => t('Mail subject to customer when a new vote is created'),
     '#default_value' => variable_get('citizen_proposals_mail_subject_vote', CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE),
     '#size' => 100,
     '#maxlength' => 100,
@@ -197,6 +205,28 @@ function citizen_proposals_admin() {
     '#required' => TRUE,
   );
 
+  
+    $form['citizen_proposals_mail_subject_accept'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mail subject to customer when proposal accepted'),
+    '#default_value' => variable_get('citizen_proposals_mail_subject_accept', CITIZEN_PROPOSALS_MAIL_SUBJECT_ACCEPT),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('You could use tokens: @title, @name, @max_votes, @unpublish_after_month, @current_user_name'),
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_mail_accept'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Mail to customer when proposal accepted'),
+    '#default_value' => variable_get('citizen_proposals_mail_accept', CITIZEN_PROPOSALS_MAIL_ACCEPT),
+    '#description' => t('You could use tokens: @title, @name, @max_votes, @unpublish_after_month, @current_user_name'),
+    '#cols' => 60,
+    '#rows' => 5,
+    '#required' => TRUE,
+  );
+  
+  
   return system_settings_form($form);
 }
 
@@ -358,18 +388,16 @@ function citizen_proposals_mail($key, &$message, $params) {
   }
 
   if ($key == 'citizen_proposals_mail_accept') {
-    $message['subject'] = 'Dit forslag er publiceret';
-    $body = '
-				Kære ' . $params['name'] . ',<br />
-				<br />
-				Odsherred Kommune har nu vurderet dit forslag om "' . $params['title'] . '". Forslaget opfylder betingelserne og vil blive publiceret på kommunens hjemmeside.<br />
-				<br />
-				Hvis dit forslag opnår ' . CITIZEN_PROPOSALS_MAX_VOTES . ' gyldige stemmer inden for en periode på ' . CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS . ' måneder vil forslaget blive drøftet i Byrådet. Opnår forslaget ikke ' . CITIZEN_PROPOSALS_MAX_VOTES . ' stemmer inden for ' . CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS . ' måneder bliver det fjernet fra hjemmesiden.<br />
-				<br />
-				Med venlig hilsen<br />
-				' . (($user_full_name) ? $user_full_name . '<br />' : '') . '
-				Odsherred Kommune, Koncerncenteret
-			';
+    
+    if(empty($user_full_name)){
+      $user_full_name = '';
+    }
+    
+    $tokens = array('@title', '@name', '@max_votes', '@unpublish_after_month', '@current_user_name');
+    $values = array($params['title'], $params['name'], CITIZEN_PROPOSALS_MAX_VOTES, CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS, $user_full_name);
+    
+    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_ACCEPT);
+    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_ACCEPT);
     $message['body'] = array($body);
 
     // BCC to the legal team
