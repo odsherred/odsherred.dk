@@ -137,7 +137,8 @@ function odsherred_search_default_search_api_index() {
             "highlight" : "always"
           }
         }
-      }
+      },
+      "additional fields" : { "field_os2web_base_field_summary" : "field_os2web_base_field_summary" }
     },
     "enabled" : "1",
     "read_only" : "0"
