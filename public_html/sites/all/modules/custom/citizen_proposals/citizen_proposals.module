@@ -250,15 +250,6 @@ function citizen_proposals_get_mail_headers($headers) {
   return $return;
 }
 
-/*
- * Replace tokens with its values in the string.
- */
-function citizen_proposals_prepare_string($tokens = array(), $values = array(), $string = NULL) {
-  $output = str_replace($tokens, $values, $string);
-  
-  return $output;
-}
-
 /**
  * hook_mail()
  */
@@ -279,11 +270,11 @@ function citizen_proposals_mail($key, &$message, $params) {
   if ($key == 'citizen_proposals_mail_create_proposal_customer') {
     // Mail to the customer when a new proposal is created.
     
-    $tokens = array(0 => '@name');
-    $values = array(0 => $params['name']);
+    $tokens = array('@name');
+    $values = array($params['name']);
     
-    $message['subject'] = $this->citizen_proposals_prepare_string($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED);
-    $body = $this->citizen_proposals_prepare_string($tokens, $values, CITIZEN_PROPOSALS_MAIL_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED);
+    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED);
+    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED);
     $message['body'] = array($body);
     $message['headers'] = citizen_proposals_get_mail_headers($headers);
   }
