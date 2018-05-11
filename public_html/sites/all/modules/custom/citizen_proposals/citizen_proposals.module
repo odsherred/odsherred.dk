@@ -474,8 +474,8 @@ function citizen_proposals_mail($key, &$message, $params) {
     $values = array($params['title'], $params['name'], CITIZEN_PROPOSALS_MAX_VOTES, CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS, $user_full_name, $params['extended_reject_reason'], $params['reject_reason']);
  
     
-    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_REJECT);
-    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_REJECT);
+    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_REJECT);
+    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_REJECT);
     $message['body'] = array($body);
 
     // BCC to the legal team
