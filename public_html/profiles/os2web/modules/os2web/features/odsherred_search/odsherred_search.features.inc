@@ -55,6 +55,8 @@ function odsherred_search_default_search_api_index() {
         "field_newstypedato" : { "type" : "date" },
         "field_os2web_base_field_hidlinks" : { "type" : "boolean" },
         "field_os2web_base_field_promote" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_os2web_base_field_summary:summary" : { "type" : "text" },
+        "field_os2web_base_field_summary:value" : { "type" : "text" },
         "promote" : { "type" : "boolean" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "search_api_language" : { "type" : "string" },
@@ -137,8 +139,7 @@ function odsherred_search_default_search_api_index() {
             "highlight" : "always"
           }
         }
-      },
-      "additional fields" : { "field_os2web_base_field_summary" : "field_os2web_base_field_summary" }
+      }
     },
     "enabled" : "1",
     "read_only" : "0"
