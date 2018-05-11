@@ -20,6 +20,13 @@ define('CITIZEN_PROPOSALS_MAIL_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED', variable_
 define('CITIZEN_PROPOSALS_MAIL_SUBJECT_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED', variable_get('mail_subject_to_customer_when_new_proposal_created',
   'Dit forslag er oprettet'));
 
+define('CITIZEN_PROPOSALS_MAIL_CREATE_PROPOSAL_HOTLINE', variable_get('citizen_proposals_mail_create_proposal_hotline',
+  'Hej,<br /><br />Der er oprettet et nyt borgerdrevet forslag på odsherred.dk<br />
+  Titel: @title<br /><br />Godkend eller afvis på www.odsherred.dk/node/@nid/edit<br />
+  <br />Denne mail sendes automatisk.<br />'));
+define('CITIZEN_PROPOSALS_MAIL_SUBJECT_CREATE_PROPOSAL_HOTLINE', variable_get('citizen_proposals_mail_subject_create_proposal_hotline',
+  'Nyt borgerdrevet forslag: @title'));
+
 // Telling ctools where plugins directory are.
 function citizen_proposals_ctools_plugin_directory($owner, $plugin_type) {
   if ($owner == 'ctools' && $plugin_type == 'content_types') {
@@ -142,7 +149,26 @@ function citizen_proposals_admin() {
     '#rows' => 5,
     '#required' => TRUE,
   );
-
+  
+  $form['citizen_proposals_mail_subject_create_proposal_hotline'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mail subject to hotline when a new proposal is created. The hotline can then allow or deny the proposal.'),
+    '#default_value' => variable_get('citizen_proposals_mail_subject_create_proposal_hotline', CITIZEN_PROPOSALS_MAIL_SUBJECT_CREATE_PROPOSAL_HOTLINE),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('You could use tokens: @title - proposal title; @nid - proposal node ID'),
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_mail_create_proposal_hotline'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Mail to hotline when a new proposal is created. The hotline can then allow or deny the proposal.'),
+    '#default_value' => variable_get('citizen_proposals_mail_create_proposal_hotline', CITIZEN_PROPOSALS_MAIL_CREATE_PROPOSAL_HOTLINE),
+    '#description' => t('You could use tokens: @title - proposal title; @nid - proposal node ID'),
+    '#cols' => 60,
+    '#rows' => 5,
+    '#required' => TRUE,
+  );
   return system_settings_form($form);
 }
 
@@ -282,17 +308,12 @@ function citizen_proposals_mail($key, &$message, $params) {
   if ($key == 'citizen_proposals_mail_create_proposal_hotline') {
     // Mail to hotline when a new proposal is created.
     // The hotline can then allow or deny the proposal.
-    $message['subject'] = 'Nyt borgerdrevet forslag: ' . $params['title'];
-    $body = '
-				Hej,<br />
-				<br />
-				Der er oprettet et nyt borgerdrevet forslag på odsherred.dk<br />
-				Titel: ' . $params['title'] . '<br />
-				<br />
-				Godkend eller afvis på www.odsherred.dk/node/' . $params['nid'] . '/edit<br />
-				<br />
-				Denne mail sendes automatisk.<br />
-			';
+    
+    $tokens = array('@title', '@nid');
+    $values = array($params['title'], $params['nid']);
+    
+    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_CREATE_PROPOSAL_HOTLINE);
+    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_CREATE_PROPOSAL_HOTLINE);
     $message['body'] = array($body);
     $message['headers'] = citizen_proposals_get_mail_headers($headers);
   }
