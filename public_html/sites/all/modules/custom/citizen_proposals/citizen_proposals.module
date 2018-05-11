@@ -48,6 +48,12 @@ define('CITIZEN_PROPOSALS_MAIL_REJECT', variable_get('citizen_proposals_mail_rej
 define('CITIZEN_PROPOSALS_MAIL_SUBJECT_REJECT', variable_get('citizen_proposals_mail_subject_reject',
   'Dit forslag er vurderet'));
 
+define('CITIZEN_PROPOSALS_MAIL_VOTE_MAXED', variable_get('citizen_proposals_mail_vote_maxed',
+  'Hej,<br /><br />Link: www.odsherred.dk/node/@nid/edit<br />
+  Titel: @title<br />Forfatter: @autor<br />
+  Beskrivelse: @proposal_body<br />'));
+define('CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE_MAXED', variable_get('citizen_proposals_mail_subject_vote_maxed',
+  'Et borgerdrevet forslag har nået @max_votes stemmer'));
 
 
 // Telling ctools where plugins directory are.
@@ -254,6 +260,26 @@ function citizen_proposals_admin() {
     '#required' => TRUE,
   );
   
+    $form['citizen_proposals_mail_subject_vote_maxed'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mail to customer when proposal reached max votes'),
+    '#default_value' => variable_get('citizen_proposals_mail_subject_vote_maxed', CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE_MAXED),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('You could use tokens: @title, @nid, @autor, @proposal_body, @max_votes'),
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_mail_vote_maxed'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Mail to customer when proposal reached max votes'),
+    '#default_value' => variable_get('citizen_proposals_mail_vote_maxed', CITIZEN_PROPOSALS_MAIL_VOTE_MAXED),
+    '#description' => t('You could use tokens: @title, @nid, @autor, @proposal_body, @max_votes'),
+    '#cols' => 60,
+    '#rows' => 5,
+    '#required' => TRUE,
+  );
+  
   return system_settings_form($form);
 }
 
@@ -439,7 +465,7 @@ function citizen_proposals_mail($key, &$message, $params) {
     $values = array($params['title'], $params['name'], CITIZEN_PROPOSALS_MAX_VOTES, CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS, $user_full_name, $params['extended_reject_reason'], $params['reject_reason']);
     
     if(!empty($params['extended_reject_reason'])){
-      $params['extended_reject_reason'] = nl2br($params['extended_reject_reason'] . '<br /><br />';
+      $params['extended_reject_reason'] = nl2br($params['extended_reject_reason'] . '<br /><br />');
     } else{
       $params['extended_reject_reason'] = '';
     }
@@ -456,20 +482,14 @@ function citizen_proposals_mail($key, &$message, $params) {
 
     $message['headers'] = citizen_proposals_get_mail_headers($headers);
   }
-
-  
-  
   
   if ($key == 'citizen_proposals_mail_vote_maxed') {
-    $message['subject'] = 'Et borgerdrevet forslag har nået ' . CITIZEN_PROPOSALS_MAX_VOTES . ' stemmer';
-    $body = '
-				Hej,<br />
-				<br />
-				Link: www.odsherred.dk/node/' . $params['nid'] . '/edit<br />
-				Titel: ' . $params['title'] . '<br />
-				Forfatter: ' . $params['author'] . '<br />
-				Beskrivelse: ' . $params['proposal_body'] . '<br />
-			';
+    
+    $tokens = array('@title', '@nid', '@autor', '@proposal_body', '@max_votes');
+    $values = array($params['title'], $params['nid'], $params['author'], $params['proposal_body'],CITIZEN_PROPOSALS_MAX_VOTES);
+    
+    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE_MAXED);
+    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_VOTE_MAXED);
     $message['body'] = array($body);
     $message['headers'] = citizen_proposals_get_mail_headers($headers);
   }
