@@ -58,7 +58,7 @@ jQuery(function ($) {
       },
       success: function (data) {
         if (data.status == 'success') {
-          proposal_form.text('Dit forslag er indsendt.')
+          proposal_form.text(data.message)
         } else {
           if (data.error_message) {
             alert(data.error_message)

@@ -55,6 +55,9 @@ define('CITIZEN_PROPOSALS_MAIL_VOTE_MAXED', variable_get('citizen_proposals_mail
 define('CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE_MAXED', variable_get('citizen_proposals_mail_subject_vote_maxed',
   'Et borgerdrevet forslag har nået @max_votes stemmer'));
 
+define('CITIZEN_PROPOSALS_PROPOSAL_SUCCESSFULLY_SUBMITTED_MESSAGE', variable_get('citizen_proposals_proposal_successfully_submitted_message',
+  'Dit forslag er indsendt'));
+
 
 // Telling ctools where plugins directory are.
 function citizen_proposals_ctools_plugin_directory($owner, $plugin_type) {
@@ -280,6 +283,16 @@ function citizen_proposals_admin() {
     '#required' => TRUE,
   );
   
+  $form['citizen_proposals_proposal_successfully_submitted_message'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Screen message after proposal successfully submitted'),
+    '#default_value' => variable_get('citizen_proposals_proposal_successfully_submitted_message', CITIZEN_PROPOSALS_PROPOSAL_SUCCESSFULLY_SUBMITTED_MESSAGE),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('Screen message after proposal successfully submitted'),
+    '#required' => TRUE,
+  );
+  
   return system_settings_form($form);
 }
 
@@ -331,7 +344,7 @@ function citizen_proposals_create_proposal() {
     'name' => htmlspecialchars($_POST['name'])
   );
   citizen_proposals_send_mail('citizen_proposals_mail_create_proposal_customer', $send_to, $params);
-  echo json_encode(array('status' => 'success'));
+  echo json_encode(array('status' => 'success', 'message' => variable_get('citizen_proposals_proposal_successfully_submitted_message')));
 }
 
 /**
