@@ -8,6 +8,7 @@ dependencies[] = elasticsearch_connector
 dependencies[] = elasticsearch_connector_search_api
 dependencies[] = facetapi
 dependencies[] = search_api
+dependencies[] = search_api_facetapi
 dependencies[] = search_api_views
 dependencies[] = views
 features[context][] = odsherred_search
