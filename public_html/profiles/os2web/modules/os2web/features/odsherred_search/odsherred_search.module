@@ -1,7 +1,7 @@
 <?php
 
-
 include_once 'odsherred_search.features.inc';
+include_once 'facet_api_odsherred_search.class.php';
 
 function odsherred_search_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-elasticsearch-index-public-page') {
@@ -25,4 +25,51 @@ function odsherred_search_preprocess_block(&$variables) {
 function odsherred_search_preprocess_views_exposed_form(&$variables) {
 }
 
+function odsherred_search_block_view_alter(&$data, $block) {
+  // We need to put Indholdsside at the top of facet filter list
+  if($block->module == 'facetapi' && $block->delta == 'nwgWQnBrOf1Z0mjkL2E0XYs35viV9fN0'){
+    // We need to change active filter items output
+    foreach($data['content']['type']['#items'] as $key => &$item){
+      if(strpos($item['data'], 'facetapi-active') == TRUE){
+        $pos = strripos($item['data'], '>');
+        $item['data'] = substr($item['data'], 0, $pos+1);
+        $item['data'] = str_replace( array('(-)',' filter','Remove ','class="element-invisible"') , '' , $item['data'] );
+      }
+    }
+    unset($key, $item);
+    // We need to put Indholdsside at the top of facet filter list
+    $firstItem = NULL;
+    foreach($data['content']['type']['#items'] as $key => $item){
+      if (strpos($item['data'], 'Indholdsside') == TRUE){
+        $firstItem = $item;
+        unset($data['content']['type']['#items'][$key]);
+        break;
+      }
+    }
+    if(!empty($firstItem)){
+      array_unshift($data['content']['type']['#items'], $firstItem);
+    } 
+  }
+}
 
+/**
+ * Implements hook_facetapi_searcher_info()
+ */
+function odsherred_search_facetapi_searcher_info_alter(array &$searcher_info) {
+  foreach ($searcher_info as $key => $value) {
+    if($value['url processor'] == 'standard'){
+      $searcher_info[$key]['url processor'] = 'odsherred_search_processor';
+    }
+  }
+}
+
+function odsherred_search_facetapi_url_processors() {
+  return array(
+    'odsherred_search_processor' => array(
+      'handler' => array(
+        'label' => t('Odsherred search URL processor'),
+        'class' => 'FacetApiOdsherredSearch',
+      ),
+    ),
+  );
+}

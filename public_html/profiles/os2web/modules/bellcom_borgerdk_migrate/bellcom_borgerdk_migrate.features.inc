@@ -19,7 +19,7 @@ function bellcom_borgerdk_migrate_ctools_plugin_api($module = NULL, $api = NULL)
 function bellcom_borgerdk_migrate_node_info() {
   $items = array(
     'borger_dk_article' => array(
-      'name' => t('Borger.dk Article'),
+      'name' => t('Info fra borger.dk'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

@@ -567,3 +567,33 @@ a.overlayclass {
   text-decoration: underline;
   display: inline !important;
 }
+
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi{
+  background-image: none ;
+}
+
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi{
+  background-color: #fff;
+}
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi ul li{
+  border-bottom: 1px solid #dfded7;
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+}
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi .block-inner h2{
+  display: flex;
+  align-items: center;
+  height: 38px;
+}
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi ul li a.facetapi-inactive{
+  padding: 8px 26px;
+  display: block;
+}
+aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facetapi ul li a.facetapi-active{
+  display: block;
+  padding: 8px 26px;
+  background-color: #0460aa;
+  color: white;
+  width: 100%;
+}
