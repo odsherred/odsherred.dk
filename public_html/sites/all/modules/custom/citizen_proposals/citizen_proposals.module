@@ -330,7 +330,7 @@ function citizen_proposals_create_proposal() {
 
   // Custom fields
   $node->field_navn[$node->language][0]['value'] = $_POST['name'];
-  $node->field_address[$node->language][0]['value'] = $_POST['address'];
+  $node->field_adresse[$node->language][0]['value'] = $_POST['address'];
   $node->field_zip_code[$node->language][0]['value'] = $_POST['zip_code'];
   $node->field_borgerdrevne_forslag_city[$node->language][0]['value'] = $_POST['city'];
   $node->field_email[$node->language][0]['email'] = $_POST['email'];
