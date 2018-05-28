@@ -14,8 +14,8 @@ class citizen_proposals_MailSystem implements MailSystemInterface {
    *   The formatted $message.
    */
   public function format(array $message) {
-    $message = "<div style=\"font-family: \"Trebuchet MS\", \"Lucida Grande\", \"Lucida Sans Unicode\", \"Lucida Sans\", Tahoma, sans-serif> " . $message;
-    $message = $message . ' </div>';
+    $message['body'] = "<div style=\"font-family: \"Trebuchet MS\", \"Lucida Grande\", \"Lucida Sans Unicode\", \"Lucida Sans\", Tahoma, sans-serif> " . $message['body'];
+    $message['body'] = $message['body'] . ' </div>';
     $message['body'] = implode("\n\n", $message['body']);
     $message['body'] = drupal_wrap_mail($message['body']);
     return $message;
