@@ -63,7 +63,13 @@ function citizen_proposals_field_default_field_instances() {
   // Exported field_instance: 'node-borgerdrevne_forslag-body'
   $field_instances['node-borgerdrevne_forslag-body'] = array(
     'bundle' => 'borgerdrevne_forslag',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'summary' => '',
+        'value' => '',
+        'format' => 'filtered_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -93,13 +99,56 @@ function citizen_proposals_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 1,
     'settings' => array(
-      'display_summary' => TRUE,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'blokindhold' => 'blokindhold',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'full_html_iframe' => 'full_html_iframe',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'raw' => 'raw',
+          'standard' => 'standard',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'blokindhold' => array(
+              'weight' => -7,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -9,
+            ),
+            'full_html_iframe' => array(
+              'weight' => 0,
+            ),
+            'php_code' => array(
+              'weight' => -6,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+            'raw' => array(
+              'weight' => 0,
+            ),
+            'standard' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -187,7 +236,7 @@ Du kan ikke redigere feltet efter det er gemt, da vi ikke sender 2 mails til bor
     'entity_type' => 'node',
     'field_name' => 'field_adresse',
     'label' => 'Adresse',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -280,7 +329,7 @@ Du kan ikke redigere feltet efter det er gemt, da vi ikke sender 2 mails til bor
     'entity_type' => 'node',
     'field_name' => 'field_borgerdrevne_forslag_city',
     'label' => 'By',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -372,7 +421,7 @@ Du kan ikke redigere feltet efter det er gemt, da vi ikke sender 2 mails til bor
     'entity_type' => 'node',
     'field_name' => 'field_email',
     'label' => 'E-mail',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -653,7 +702,7 @@ Du kan ikke redigere feltet efter det er gemt, da vi ikke sender 2 mails til bor
     'entity_type' => 'node',
     'field_name' => 'field_zip_code',
     'label' => 'Postnummer',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'max' => 9999,
       'min' => 1000,
