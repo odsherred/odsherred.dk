@@ -48,13 +48,6 @@ define('CITIZEN_PROPOSALS_MAIL_REJECT', variable_get('citizen_proposals_mail_rej
 define('CITIZEN_PROPOSALS_MAIL_SUBJECT_REJECT', variable_get('citizen_proposals_mail_subject_reject',
   'Dit forslag er vurderet'));
 
-define('CITIZEN_PROPOSALS_MAIL_VOTE_MAXED', variable_get('citizen_proposals_mail_vote_maxed',
-  'Hej,<br /><br />Link: www.odsherred.dk/node/@nid/edit<br />
-  Titel: @title<br />Forfatter: @autor<br />
-  Beskrivelse: @proposal_body<br />'));
-define('CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE_MAXED', variable_get('citizen_proposals_mail_subject_vote_maxed',
-  'Et borgerdrevet forslag har nået @max_votes stemmer'));
-
 define('CITIZEN_PROPOSALS_PROPOSAL_SUCCESSFULLY_SUBMITTED_MESSAGE', variable_get('citizen_proposals_proposal_successfully_submitted_message',
   'Dit forslag er indsendt'));
 
@@ -148,7 +141,7 @@ function citizen_proposals_admin() {
     '#default_value' => variable_get('citizen_proposals_proposals_max_votes', CITIZEN_PROPOSALS_MAX_VOTES),
     '#size' => 100,
     '#maxlength' => 100,
-    '#description' => t("Citizen proposals max votes number"),
+    '#description' => t("Citizen proposals max votes number. After reached max vote number the proposal is closed."),
     '#required' => TRUE,
   );
     
@@ -258,26 +251,6 @@ function citizen_proposals_admin() {
     '#title' => t('Mail to customer when proposal rejected'),
     '#default_value' => variable_get('citizen_proposals_mail_reject', CITIZEN_PROPOSALS_MAIL_REJECT),
     '#description' => t('You could use tokens: @title, @name, @max_votes, @unpublish_after_month, @current_user_name, @extended_reject_reason, @reject_reason'),
-    '#cols' => 60,
-    '#rows' => 5,
-    '#required' => TRUE,
-  );
-  
-    $form['citizen_proposals_mail_subject_vote_maxed'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Mail to customer when proposal reached max votes'),
-    '#default_value' => variable_get('citizen_proposals_mail_subject_vote_maxed', CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE_MAXED),
-    '#size' => 100,
-    '#maxlength' => 100,
-    '#description' => t('You could use tokens: @title, @nid, @autor, @proposal_body, @max_votes'),
-    '#required' => TRUE,
-  );
-  
-  $form['citizen_proposals_mail_vote_maxed'] = array(
-    '#type' => 'textarea',
-    '#title' => t('Mail to customer when proposal reached max votes'),
-    '#default_value' => variable_get('citizen_proposals_mail_vote_maxed', CITIZEN_PROPOSALS_MAIL_VOTE_MAXED),
-    '#description' => t('You could use tokens: @title, @nid, @autor, @proposal_body, @max_votes'),
     '#cols' => 60,
     '#rows' => 5,
     '#required' => TRUE,
@@ -496,17 +469,6 @@ function citizen_proposals_mail($key, &$message, $params) {
 
     $message['headers'] = citizen_proposals_get_mail_headers($headers);
   }
-  
-  if ($key == 'citizen_proposals_mail_vote_maxed') {
-    
-    $tokens = array('@title', '@nid', '@autor', '@proposal_body', '@max_votes');
-    $values = array($params['title'], $params['nid'], $params['author'], $params['proposal_body'],CITIZEN_PROPOSALS_MAX_VOTES);
-    
-    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE_MAXED);
-    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_VOTE_MAXED);
-    $message['body'] = array($body);
-    $message['headers'] = citizen_proposals_get_mail_headers($headers);
-  }
 }
 
 /**
@@ -553,20 +515,19 @@ function citizen_proposals_vote() {
 
   if (count($result) == CITIZEN_PROPOSALS_MAX_VOTES) {
     // Close this node.
-    // Edit: No longer close the node before votes has been confirmed.
-    // $node->status = 0;
-    // $node->field_accept_reject['und'][0]['value'] = '';
-    // $node->revision = true;
-    // node_save($node);
-    // Send mail to juridisk-hotline that a proposal got X votes.
-    $send_to = CITIZEN_PROPOSALS_PUBLISHER_EMAIL;
-    $params = array(
-      'title' => htmlspecialchars($node->title),
-      'proposal_body' => $node->body['und'][0]['value'],
-      'author' => htmlspecialchars($node->field_navn['und'][0]['value']),
-      'nid' => htmlspecialchars($_POST['vote_for_nid'])
-    );
-    citizen_proposals_send_mail('citizen_proposals_mail_vote_maxed', $send_to, $params);
+     $node->status = 0;
+     $node->field_accept_reject['und'][0]['value'] = '';
+     $node->revision = true;
+     node_save($node);
+    // Do not need to send mail to hotline that a proposal got X votes.
+//    $send_to = CITIZEN_PROPOSALS_PUBLISHER_EMAIL;
+//    $params = array(
+//      'title' => htmlspecialchars($node->title),
+//      'proposal_body' => $node->body['und'][0]['value'],
+//      'author' => htmlspecialchars($node->field_navn['und'][0]['value']),
+//      'nid' => htmlspecialchars($_POST['vote_for_nid'])
+//    );
+//    citizen_proposals_send_mail('citizen_proposals_mail_vote_maxed', $send_to, $params);
   }
 
   echo json_encode(array('status' => 'success'));
