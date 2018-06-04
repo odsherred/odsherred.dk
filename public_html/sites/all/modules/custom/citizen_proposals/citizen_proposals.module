@@ -1,0 +1,739 @@
+<?php
+
+/**
+ * @file
+ * Code for the Citizen Proposals feature.
+ */
+include_once 'citizen_proposals.features.inc';
+
+// Constants
+
+define('CITIZEN_PROPOSALS_PUBLISHER_EMAIL', variable_get('citizen_proposals_publisher_email', 'drupal@bellcom.dk'));
+define('CITIZEN_PROPOSALS_FROM_MAIL', variable_get('citizen_proposals_from_email', 'Odsherred Kommune <no-reply@odsherred.dk>'));
+define('CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS', variable_get('citizen_proposals_unpublish_older_than_months', 3));
+define('CITIZEN_PROPOSALS_MAX_VOTES', variable_get('citizen_proposals_proposals_max_votes', 300));
+define('CITIZEN_PROPOSALS_DELETE_AFTER_YEARS', variable_get('citizen_proposals_delete_after_years', 2));
+
+define('CITIZEN_PROPOSALS_MAIL_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED', variable_get('mail_to_customer_when_new_proposal_created',
+  'Kære @name,<br /><br />
+  Tak for dit forslag. Inden forslaget kommer til at fremgå af kommunens hjemmeside skal det vurderes om det opfylder betingelserne. Det tilstræbes, at vurdere alle forslag inden for tre arbejdsdage. Når forslaget er vurderet, får du direkte besked via mail og opfylder forslaget betingelserne vil det blive publiceret på hjemmesiden.
+  <br /><br />Med venlig hilsen<br />Odsherred Kommune, Koncerncenteret'));
+define('CITIZEN_PROPOSALS_MAIL_SUBJECT_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED', variable_get('mail_subject_to_customer_when_new_proposal_created',
+  'Dit forslag er oprettet'));
+
+define('CITIZEN_PROPOSALS_MAIL_CREATE_PROPOSAL_HOTLINE', variable_get('citizen_proposals_mail_create_proposal_hotline',
+  'Hej,<br /><br />Der er oprettet et nyt borgerdrevet forslag på odsherred.dk<br />
+  Titel: @title<br /><br />Godkend eller afvis på www.odsherred.dk/node/@nid/edit<br />
+  <br />Denne mail sendes automatisk.<br />'));
+define('CITIZEN_PROPOSALS_MAIL_SUBJECT_CREATE_PROPOSAL_HOTLINE', variable_get('citizen_proposals_mail_subject_create_proposal_hotline',
+  'Nyt borgerdrevet forslag: @title'));
+
+define('CITIZEN_PROPOSALS_MAIL_VOTE', variable_get('citizen_proposals_mail_vote',
+  'Kære @name,<br /><br />Tak for din stemme den er nu registeret.<br />
+  <br />Med venlig hilsen<br />Odsherred Kommune, Koncerncenteret'));
+define('CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE', variable_get('citizen_proposals_mail_subject_vote',
+  'Tak for din stemme'));
+
+define('CITIZEN_PROPOSALS_MAIL_ACCEPT', variable_get('citizen_proposals_mail_accept',
+  'Kære @name,<br /><br />Odsherred Kommune har nu vurderet dit forslag om "@title". Forslaget opfylder betingelserne og vil blive publiceret på kommunens hjemmeside.<br />
+  <br />Hvis dit forslag opnår @max_votes gyldige stemmer inden for en periode på @unpublish_after_month måneder vil forslaget blive drøftet i Byrådet. Opnår forslaget ikke ' . CITIZEN_PROPOSALS_MAX_VOTES . ' stemmer inden for ' . CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS . ' måneder bliver det fjernet fra hjemmesiden.<br />
+  <br />Med venlig hilsen<br />@current_user_name<br />Odsherred Kommune, Koncerncenteret'));
+define('CITIZEN_PROPOSALS_MAIL_SUBJECT_ACCEPT', variable_get('citizen_proposals_mail_subject_accept',
+  'Tak for din stemme'));
+
+define('CITIZEN_PROPOSALS_MAIL_REJECT', variable_get('citizen_proposals_mail_reject',
+  'Kære @name,<br /><br />Odsherred Kommune har nu vurderet dit forslag om "@title". Forslaget opfylder ikke betingelsen om, @reject_reason.<br />
+  <br />@extended_reject_reason	Det er ikke muligt at klage over denne vurdering, men har du spørgsmål er du velkommen til at kontakte Odsherred Kommune på <a href="mailto:  kommune@odsherred.dk"> kommune@odsherred.dk</a><br />
+  <br />Med venlig hilsen<br />@current_user_name<br />Odsherred Kommune, Koncerncenteret'));
+define('CITIZEN_PROPOSALS_MAIL_SUBJECT_REJECT', variable_get('citizen_proposals_mail_subject_reject',
+  'Dit forslag er vurderet'));
+
+define('CITIZEN_PROPOSALS_PROPOSAL_SUCCESSFULLY_SUBMITTED_MESSAGE', variable_get('citizen_proposals_proposal_successfully_submitted_message',
+  'Dit forslag er indsendt'));
+
+
+// Telling ctools where plugins directory are.
+function citizen_proposals_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/' . $plugin_type;
+  }
+}
+
+/**
+ * Implements hook_menu()
+ *
+ */
+function citizen_proposals_menu() {
+  // Create new proposal (ajax)
+  $items['citizen_proposals/create_proposal'] = array(
+    'page callback' => 'citizen_proposals_create_proposal',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+  );
+
+  // Vote back-end (ajax)
+  $items['citizen_proposals/vote'] = array(
+    'page callback' => 'citizen_proposals_vote',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+  );
+
+  $items['admin/settings/citizen_proposals'] = array(
+    'title' => 'On this date module settings',
+    'description' => 'Description of your On this date settings page',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('citizen_proposals_admin'),
+    'access arguments' => array('administer citizen proposals settings'),
+    'type' => MENU_NORMAL_ITEM,
+   );
+  
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function citizen_proposals_permission() {
+  return array(
+    'administer citizen proposals settings' => array(
+      'title' => t('Administer citizen proposals settings'),
+      'description' => t("Administer citizen proposals module settings on 'admin/settings/citizen_proposals'"),
+    )
+  );
+}
+
+function citizen_proposals_admin() {
+  $form = array();
+
+  $form['citizen_proposals_publisher_email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Citizen proposals publisher email'),
+    '#default_value' => variable_get('citizen_proposals_publisher_email', CITIZEN_PROPOSALS_PUBLISHER_EMAIL),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t("Citizen proposals publisher email"),
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_from_email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Citizen proposals from email'),
+    '#default_value' => variable_get('citizen_proposals_from_email', CITIZEN_PROPOSALS_FROM_MAIL),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t("Citizen proposals from email"),
+    '#required' => TRUE,
+  );
+    
+  $form['citizen_proposals_unpublish_older_than_months'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Citizen proposals unpublish after (month number)'),
+    '#default_value' => variable_get('citizen_proposals_unpublish_older_than_months', CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS),
+    '#size' => 5,
+    '#maxlength' => 10,
+    '#description' => t("Citizen proposals unpublish after (month number)"),
+    '#required' => TRUE,
+  );
+    
+  $form['citizen_proposals_proposals_max_votes'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Citizen proposals max votes number'),
+    '#default_value' => variable_get('citizen_proposals_proposals_max_votes', CITIZEN_PROPOSALS_MAX_VOTES),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t("Citizen proposals max votes number. After reached max vote number the proposal is closed."),
+    '#required' => TRUE,
+  );
+    
+  $form['citizen_proposals_delete_after_years'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Citizen proposals delete after (years)'),
+    '#default_value' => variable_get('citizen_proposals_delete_after_years', CITIZEN_PROPOSALS_DELETE_AFTER_YEARS),
+    '#size' => 5,
+    '#maxlength' => 10,
+    '#description' => t("Citizen proposals delete after (years)"),
+    '#required' => TRUE,
+  );
+
+  $form['mail_subject_to_customer_when_new_proposal_created'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mail subject to the customer when a new proposal is created'),
+    '#default_value' => variable_get('mail_subject_to_customer_when_new_proposal_created', CITIZEN_PROPOSALS_MAIL_SUBJECT_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('You could use tokens: @name - proposal author name;'),
+    '#required' => TRUE,
+  );
+  
+  $form['mail_to_customer_when_new_proposal_created'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Mail to the customer when a new proposal is created'),
+    '#default_value' => variable_get('mail_to_customer_when_new_proposal_created', CITIZEN_PROPOSALS_MAIL_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED),
+    '#description' => t('You could use tokens: @name - proposal author name;'),
+    '#cols' => 60,
+    '#rows' => 5,
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_mail_subject_create_proposal_hotline'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mail subject to hotline when a new proposal is created. The hotline can then allow or deny the proposal.'),
+    '#default_value' => variable_get('citizen_proposals_mail_subject_create_proposal_hotline', CITIZEN_PROPOSALS_MAIL_SUBJECT_CREATE_PROPOSAL_HOTLINE),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('You could use tokens: @title - proposal title; @nid - proposal node ID'),
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_mail_create_proposal_hotline'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Mail to hotline when a new proposal is created. The hotline can then allow or deny the proposal.'),
+    '#default_value' => variable_get('citizen_proposals_mail_create_proposal_hotline', CITIZEN_PROPOSALS_MAIL_CREATE_PROPOSAL_HOTLINE),
+    '#description' => t('You could use tokens: @title - proposal title; @nid - proposal node ID'),
+    '#cols' => 60,
+    '#rows' => 5,
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_mail_subject_vote'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mail subject to customer when a new vote is created'),
+    '#default_value' => variable_get('citizen_proposals_mail_subject_vote', CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('You could use tokens: @name - vote author name;'),
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_mail_vote'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Mail subject to customer when a new vote is created'),
+    '#default_value' => variable_get('citizen_proposals_mail_vote', CITIZEN_PROPOSALS_MAIL_VOTE),
+    '#description' => t('You could use tokens: @name - vote author name;'),
+    '#cols' => 60,
+    '#rows' => 5,
+    '#required' => TRUE,
+  );
+
+  
+    $form['citizen_proposals_mail_subject_accept'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mail subject to customer when proposal accepted'),
+    '#default_value' => variable_get('citizen_proposals_mail_subject_accept', CITIZEN_PROPOSALS_MAIL_SUBJECT_ACCEPT),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('You could use tokens: @title, @name, @max_votes, @unpublish_after_month, @current_user_name'),
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_mail_accept'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Mail to customer when proposal accepted'),
+    '#default_value' => variable_get('citizen_proposals_mail_accept', CITIZEN_PROPOSALS_MAIL_ACCEPT),
+    '#description' => t('You could use tokens: @title, @name, @max_votes, @unpublish_after_month, @current_user_name'),
+    '#cols' => 60,
+    '#rows' => 5,
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_mail_subject_reject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mail subject to customer when proposal rejected'),
+    '#default_value' => variable_get('citizen_proposals_mail_subject_reject', CITIZEN_PROPOSALS_MAIL_SUBJECT_REJECT),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('You could use tokens: @title, @name, @max_votes, @unpublish_after_month, @current_user_name, @extended_reject_reason, @reject_reason'),
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_mail_reject'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Mail to customer when proposal rejected'),
+    '#default_value' => variable_get('citizen_proposals_mail_reject', CITIZEN_PROPOSALS_MAIL_REJECT),
+    '#description' => t('You could use tokens: @title, @name, @max_votes, @unpublish_after_month, @current_user_name, @extended_reject_reason, @reject_reason'),
+    '#cols' => 60,
+    '#rows' => 5,
+    '#required' => TRUE,
+  );
+  
+  $form['citizen_proposals_proposal_successfully_submitted_message'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Screen message after proposal successfully submitted'),
+    '#default_value' => variable_get('citizen_proposals_proposal_successfully_submitted_message', CITIZEN_PROPOSALS_PROPOSAL_SUCCESSFULLY_SUBMITTED_MESSAGE),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t('Screen message after proposal successfully submitted'),
+    '#required' => TRUE,
+  );
+  
+  return system_settings_form($form);
+}
+
+/**
+ * Create new proposal
+ */
+function citizen_proposals_create_proposal() {
+  $allowed_fields = array(
+    'title',
+    'body',
+    'name',
+    'address',
+    'zip_code',
+    'city',
+    'email'
+  );
+
+  // Validate
+  foreach ($allowed_fields as $field_key) {
+    if (empty($_POST[$field_key])) {
+      echo json_encode(array('status' => 'failed', 'error_message' => 'Alle felter skal udfyldes'));
+      return;
+    }
+  }
+
+  // Save
+  $node = new stdClass();
+  $node->language = LANGUAGE_NONE;
+  $node->type = 'borgerdrevne_forslag';
+  $node->title = $_POST['title'];
+  $node->body[$node->language][0]['value'] = nl2br($_POST['body']);
+  $node->status = 0;
+  $node->promote = 0;
+  $node->comment = 0;
+
+  // Custom fields
+  $node->field_navn[$node->language][0]['value'] = $_POST['name'];
+  $node->field_adresse[$node->language][0]['value'] = $_POST['address'];
+  $node->field_zip_code[$node->language][0]['value'] = $_POST['zip_code'];
+  $node->field_borgerdrevne_forslag_city[$node->language][0]['value'] = $_POST['city'];
+  $node->field_email[$node->language][0]['email'] = $_POST['email'];
+
+  $node = node_submit($node);
+  node_save($node);
+
+  // Send mail to the customer
+  $send_to = $_POST['email'];
+  $params = array(
+    'name' => htmlspecialchars($_POST['name'])
+  );
+  citizen_proposals_send_mail('citizen_proposals_mail_create_proposal_customer', $send_to, $params);
+  echo json_encode(array('status' => 'success', 'message' => variable_get('citizen_proposals_proposal_successfully_submitted_message')));
+}
+
+/**
+ * hook_node_insert()
+ *
+ */
+function citizen_proposals_node_insert($node) {
+  if ($node->type != 'borgerdrevne_forslag') {
+    return;
+  }
+
+  if ($node->status == 1) {
+    // Already published, so don't send a notification mail.
+    return;
+  }
+
+  // Send mail to juridisk hotline
+  $send_to = CITIZEN_PROPOSALS_PUBLISHER_EMAIL;
+  $params = array(
+    'title' => htmlspecialchars($node->title),
+    'nid' => $node->nid
+  );
+  citizen_proposals_send_mail('citizen_proposals_mail_create_proposal_hotline', $send_to, $params);
+}
+
+/**
+ * Our custom mail function, used by other functions in this module.
+ *
+ */
+function citizen_proposals_send_mail($key, $send_to, $params) {
+  // We need to have the class availeble, thats we we load include file with the class in it.
+  module_load_include('inc', 'citizen_proposals', 'classes/citizen_proposals_MailSystem');
+
+  // Telling drupal mail system to use this class.
+  variable_set('mail_system', array('default-system' => 'DefaultMailSystem', 'citizen_proposals' => 'citizen_proposals_MailSystem'));
+
+  $from = CITIZEN_PROPOSALS_FROM_MAIL;
+
+  drupal_mail('citizen_proposals', $key, $send_to, language_default(), $params, $from, TRUE);
+}
+
+function citizen_proposals_get_mail_headers($headers) {
+  $return = array();
+
+  foreach ($headers as $key => $value) {
+    if (is_array($value)) {
+      $value = implode(', ', $value);
+    }
+
+    $return[$key] = $value;
+  }
+
+  return $return;
+}
+
+/**
+ * hook_mail()
+ */
+function citizen_proposals_mail($key, &$message, $params) {
+  global $user;
+  $user_data = user_load($user->uid);
+  $user_full_name = $user_data->field_full_name['und']['0']['value'];
+
+  // HTML headers
+  $headers = array(
+    'MIME-Version' => '1.0',
+    'Content-Type' => 'text/html; charset=UTF-8; format=flowed; delsp=yes',
+    'Content-Transfer-Encoding' => '8Bit',
+    'X-Mailer' => 'Drupal',
+    'from' => CITIZEN_PROPOSALS_FROM_MAIL
+  );
+
+  if ($key == 'citizen_proposals_mail_create_proposal_customer') {
+    // Mail to the customer when a new proposal is created.
+    
+    $tokens = array('@name');
+    $values = array($params['name']);
+    
+    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED);
+    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_TO_CUSTOMER_WHEN_NEW_PROPOSAL_CREATED);
+    $message['body'] = array($body);
+    $message['headers'] = citizen_proposals_get_mail_headers($headers);
+  }
+
+  if ($key == 'citizen_proposals_mail_create_proposal_hotline') {
+    // Mail to hotline when a new proposal is created.
+    // The hotline can then allow or deny the proposal.
+    
+    $tokens = array('@title', '@nid');
+    $values = array($params['title'], $params['nid']);
+    
+    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_CREATE_PROPOSAL_HOTLINE);
+    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_CREATE_PROPOSAL_HOTLINE);
+    $message['body'] = array($body);
+    $message['headers'] = citizen_proposals_get_mail_headers($headers);
+  }
+
+  if ($key == 'citizen_proposals_mail_vote') {
+    
+    $tokens = array('@name');
+    $values = array($params['name']);
+    
+    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_VOTE);
+    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_VOTE);
+    $message['body'] = array($body);
+    $message['headers'] = citizen_proposals_get_mail_headers($headers);
+  }
+
+  if ($key == 'citizen_proposals_mail_accept') {
+    
+    if(empty($user_full_name)){
+      $user_full_name = '';
+    }
+    
+    $tokens = array('@title', '@name', '@max_votes', '@unpublish_after_month', '@current_user_name');
+    $values = array($params['title'], $params['name'], CITIZEN_PROPOSALS_MAX_VOTES, CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS, $user_full_name);
+    
+    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_ACCEPT);
+    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_ACCEPT);
+    $message['body'] = array($body);
+
+    // BCC to the legal team
+    $headers['bcc'][] = CITIZEN_PROPOSALS_PUBLISHER_EMAIL;
+
+    $message['headers'] = citizen_proposals_get_mail_headers($headers);
+  }
+
+  if ($key == 'citizen_proposals_mail_reject') {
+       
+    if(!empty($params['extended_reject_reason'])){
+      $params['extended_reject_reason'] = nl2br($params['extended_reject_reason'] . '<br /><br />');
+    } else{
+      $params['extended_reject_reason'] = '';
+    }
+    if(empty($user_full_name)){
+      $user_full_name = '';
+    }
+    
+    $tokens = array('@title', '@name', '@max_votes', '@unpublish_after_month', '@current_user_name','@extended_reject_reason', '@reject_reason');
+    $values = array($params['title'], $params['name'], CITIZEN_PROPOSALS_MAX_VOTES, CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS, $user_full_name, $params['extended_reject_reason'], $params['reject_reason']);
+ 
+    
+    $message['subject'] = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_SUBJECT_REJECT);
+    $body = str_replace($tokens, $values, CITIZEN_PROPOSALS_MAIL_REJECT);
+    $message['body'] = array($body);
+
+    // BCC to the legal team
+    $headers['bcc'][] = CITIZEN_PROPOSALS_PUBLISHER_EMAIL;
+
+    $message['headers'] = citizen_proposals_get_mail_headers($headers);
+  }
+}
+
+/**
+ * Vote on a proposal
+ */
+function citizen_proposals_vote() {
+  $node = node_load($_POST['vote_for_nid']);
+
+  if ($node->type != 'borgerdrevne_forslag') {
+    return;
+  }
+
+  // Save vote in database.
+  $allowed_keys = array(
+    'vote_for_nid',
+    'name',
+    'address',
+    'zip_code',
+    'city',
+    'email'
+  );
+
+  // Only get the allowed keys out of the POST array.
+  $fields = array_intersect_key($_POST, array_flip($allowed_keys));
+
+  // Insert
+  db_insert('citizen_proposals_votes')
+      ->fields($fields)
+      ->execute();
+
+  // Mail reciept to the user.
+  $send_to = $_POST['email'];
+  $params = array(
+    'name' => htmlspecialchars($_POST['name'])
+  );
+  citizen_proposals_send_mail('citizen_proposals_mail_vote', $send_to, $params);
+
+  // Check if this proposal now has recieved X votes.
+  $result = db_select('citizen_proposals_votes', 'v')
+      ->fields('v', array('id'))
+      ->condition('vote_for_nid', $_POST['vote_for_nid'])
+      ->execute()
+      ->fetchAll();
+
+  if (count($result) == CITIZEN_PROPOSALS_MAX_VOTES) {
+    // Close this node.
+     $node->status = 0;
+     $node->field_accept_reject['und'][0]['value'] = '';
+     $node->revision = true;
+     node_save($node);
+    // Do not need to send mail to hotline that a proposal got X votes.
+//    $send_to = CITIZEN_PROPOSALS_PUBLISHER_EMAIL;
+//    $params = array(
+//      'title' => htmlspecialchars($node->title),
+//      'proposal_body' => $node->body['und'][0]['value'],
+//      'author' => htmlspecialchars($node->field_navn['und'][0]['value']),
+//      'nid' => htmlspecialchars($_POST['vote_for_nid'])
+//    );
+//    citizen_proposals_send_mail('citizen_proposals_mail_vote_maxed', $send_to, $params);
+  }
+
+  echo json_encode(array('status' => 'success'));
+}
+
+/**
+ * hook_form_alter()
+ *
+ */
+function citizen_proposals_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'borgerdrevne_forslag_node_form') {
+    $form['#validate'][] = 'citizen_proposals_custom_validation';
+  }
+}
+
+/**
+ * Custom validation for form_alter()
+ *
+ */
+function citizen_proposals_custom_validation($form, &$form_state) {
+  // Validate a reject reason has been set.
+  $status = $form_state['values']['field_accept_reject']['und'][0]['value'];
+
+  // Get reject reason from taxonomy term by ID.
+  $reject_reason_id = $form_state['values']['field_reject_reason_term']['und'][0]['tid'];
+
+  if ($status == 'reject' && empty($reject_reason_id)) {
+    form_set_error('field_reject_reason_term', 'Husk at vælge en afvisningsbegrundelse.');
+  }
+
+  if ($status == 'accept' && !empty($reject_reason_id)) {
+    form_set_error('field_reject_reason_term', 'Du kan ikke vælge en afvisningsbegrundelse når du godkender forslaget.');
+  }
+
+  return $form;
+}
+
+/**
+ * hook_node_presave()
+ *
+ */
+function citizen_proposals_node_presave($node) {
+  if ($node->type != 'borgerdrevne_forslag') {
+    return;
+  }
+
+  if ($node->is_new) {
+    return;
+  }
+
+
+  // Publish node if proposal is accepted.
+  // Unpublish node if proposal is rejected.
+  if ($node->field_accept_reject['und'][0]['value'] == 'accept') {
+    $node->status = 1;
+  }
+  else if ($node->field_accept_reject['und'][0]['value'] == 'reject') {
+    $node->status = 0;
+  }
+
+  // Only send mail to customer if this is the first edit (accept/reject).
+  $query = db_select('field_revision_field_accept_reject')
+      ->fields('field_revision_field_accept_reject', array('field_accept_reject_value'))
+      ->condition('entity_type', 'node')
+      ->condition('entity_id', $node->nid)
+      ->orderBy('revision_id', 'ASC')
+      ->range(0, 1);
+
+  $result = $query->execute();
+  $row = $result->fetchAssoc();
+
+  if (!empty($row['field_accept_reject_value'])) {
+    // There's already a value in the accept/reject field.
+    // So this node has already been accepted or rejected,
+    // and we don't want to e-mail the user twice.
+    return;
+  }
+
+  if ($node->field_accept_reject['und'][0]['value'] == 'accept') {
+    $send_to = $node->field_email['und'][0]['email'];
+    $params = array(
+      'name' => htmlspecialchars($node->field_navn['und'][0]['value']),
+      'title' => htmlspecialchars($node->title),
+    );
+    citizen_proposals_send_mail('citizen_proposals_mail_accept', $send_to, $params);
+  }
+  else if ($node->field_accept_reject['und'][0]['value'] == 'reject') {
+    // Get reject reason from taxonomy.
+    $reject_reason_id = $node->field_reject_reason_term['und'][0]['tid'];
+    $reject_term = taxonomy_term_load($reject_reason_id);
+
+    // Send reject mail
+    $send_to = $node->field_email['und'][0]['email'];
+    $params = array(
+      'name' => htmlspecialchars($node->field_navn['und'][0]['value']),
+      'title' => htmlspecialchars($node->title),
+      'reject_reason' => $reject_term->name,
+      'extended_reject_reason' => $node->field_extended_reject_reason['und'][0]['value']
+    );
+    citizen_proposals_send_mail('citizen_proposals_mail_reject', $send_to, $params);
+  }
+}
+
+/**
+ * hook_cron()
+ *
+ */
+function citizen_proposals_cron() {
+  _citizen_proposals_cron_expire_nodes();
+  _citizen_proposals_cron_delete_votes();
+  _citizen_proposals_cron_delete_nodes();
+}
+
+/**
+ * When a node has been active for X months, it is expired.
+ */
+function _citizen_proposals_cron_expire_nodes() {
+  $query = "
+			SELECT
+				node.nid
+			FROM
+				node
+			WHERE
+				node.type = :node_type
+				AND node.status = 1
+
+				/* The node is accepted over X months ago */
+				AND DATE_SUB(NOW(), INTERVAL :interval_month MONTH) >= (
+					SELECT FROM_UNIXTIME(nr.timestamp)
+					FROM
+						field_revision_field_accept_reject ar
+						INNER JOIN node_revision nr ON (nr.vid = ar.revision_id)
+					WHERE
+						ar.entity_type = 'node'
+						AND ar.entity_id = node.nid
+						AND ar.field_accept_reject_value = 'accept'
+					ORDER BY
+						nr.timestamp ASC
+					LIMIT 1
+
+				)
+		";
+  $result = db_query($query, array(
+    ':node_type' => 'borgerdrevne_forslag',
+    ':interval_month' => CITIZEN_PROPOSALS_CRON_UNPLUBLISH_OLDER_THAN_MONTHS,
+  ));
+
+  foreach ($result as $row) {
+    $node = node_load($row->nid);
+    $node->field_accept_reject['und'][0]['value'] = 'expired';
+    $node->status = 0;
+    $node->revision = true;
+    node_save($node);
+  }
+}
+
+/**
+ * Anonymized old votes.
+ */
+function _citizen_proposals_cron_delete_votes() {
+  // Update old VOTES, which needs to be anonymized after x years.
+  $db = db_update('citizen_proposals_votes')
+      ->fields(array(
+        'name' => '-deleted-',
+        'address' => '-deleted-',
+        'zip_code' => '-deleted-',
+        'city' => '-deleted-',
+        'email' => null
+      ))
+      ->condition('name', '-deleted-', '!=')
+      ->condition('vote_timestamp', date('Y-m-d H:i:s', strtotime("-" . CITIZEN_PROPOSALS_DELETE_AFTER_YEARS . " years")), '<=')
+      ->execute();
+}
+
+/**
+ * Anonymized old nodes (proposals).
+ */
+function _citizen_proposals_cron_delete_nodes() {
+  // Update old NODES, which needs to anonymized after x years.
+  $query = "
+			SELECT
+				node.nid
+			FROM node
+			WHERE
+				type = 'borgerdrevne_forslag'
+				AND created <= UNIX_TIMESTAMP(DATE_SUB(NOW(), INTERVAL :years YEAR))
+			ORDER BY
+				nid DESC
+		";
+
+  $result = db_query($query, array(
+    ':years' => CITIZEN_PROPOSALS_DELETE_AFTER_YEARS
+  ));
+
+  foreach ($result as $row) {
+    // Delete node.
+    $r = node_delete($row->nid);
+  }
+}
+
+/**
+ * Implementation of hook_preprocess_HOOK().
+ */
+function citizen_proposals_preprocess_page(&$vars) {
+  if ($vars['node']->type == 'article') {
+    drupal_add_js(drupal_get_path('module', 'citizen_proposals') . '/js/citizen_proposals.js');
+    drupal_add_css(drupal_get_path('module', 'citizen_proposals') . '/css/citizen_proposals.css');
+  }
+}

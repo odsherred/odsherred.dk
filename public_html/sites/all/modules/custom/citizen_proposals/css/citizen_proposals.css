@@ -1,0 +1,185 @@
+/* Create proposal */
+#create_proposal {
+	margin: 1em 0 2em;
+	padding: 18px;
+	background: #f9f9f9;
+	font-size: 14px;
+	display: none;
+}
+
+#create_proposal ._headline {
+	font-weight: bold;
+	color: #000;
+	font-size: 16px;
+}
+
+#create_proposal ._error {
+	color: #f00;
+	margin-top: 1em;
+}
+
+#create_proposal input,
+#create_proposal textarea {
+	border: 1px solid #ccc;
+	background: #fff;
+	border-radius: 0;
+	width: 100%;
+	padding: 20px 10px;
+	height: auto;
+	color: #000;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+#create_proposal textarea {
+	padding: 10px;
+	height: 150px;
+}
+
+#create_proposal button {
+	background: #c30a32;
+	padding: 10px 16px;
+	color: #fff;
+	cursor: pointer;
+	border: 0;
+}
+
+#create_proposal button:hover {
+	text-decoration: underline;
+}
+
+
+
+/* Citizen proposals list */
+#citizen_proposals {
+	border: 1px solid #eee;
+	background: #f3f3f3;
+}
+
+#citizen_proposals ._open {
+	background: #fff;
+}
+
+#citizen_proposals a.proposal:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#citizen_proposals a.proposal {
+	position: relative;
+	display: block;
+	border-bottom: 1px solid #ccc;
+	padding: 2em 12px;
+	background-image: url('../img/Thumbs-Up-32.png');
+	background-repeat: no-repeat;
+	background-position: right 12px top 16px;
+	/*line-height: 1px;*/
+	cursor: pointer;
+}
+
+#citizen_proposals a.proposal:hover {
+	background-color: #fff;
+}
+
+#citizen_proposals a.proposal div {
+	float: left;
+}
+
+#citizen_proposals ._date {
+	color: #666;
+	width: 100px;
+}
+
+#citizen_proposals ._title {
+	color: #000;
+	/*font-weight: bold;*/
+	width: 350px;
+	font-size: 15px;
+	/*line-height: 16px;*/
+	/*margin-top: -7px;*/
+}
+
+#citizen_proposals ._votes {
+	text-align: right;
+	width: 40px;
+}
+
+#citizen_proposals ._body {
+	display: none;
+	background: #f9f9f9;
+	padding: 18px;
+	padding-bottom: 2em;
+	font-size: 15px;
+	line-height: 20px;
+	border-bottom: 1px solid #aaa;
+}
+
+#citizen_proposals ._body p {
+	/*color: #444;*/
+	margin-bottom: 1em;
+}
+
+#citizen_proposals ._body ._author {
+	font-style: italic;
+}
+
+#citizen_proposals ._body hr {
+	border-color: #ccc;
+	margin: 30px 0;
+}
+
+#citizen_proposals ._body ._vote_headline {
+	font-weight: bold;
+	color: #000;
+	margin-bottom: 1em;
+}
+
+#citizen_proposals ._body input {
+	border: 1px solid #ccc;
+	background: #fff;
+	border-radius: 0;
+	width: 100%;
+	height: auto;
+    padding: 20px 10px;
+	color: #000;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+#citizen_proposals ._body button {
+	background: #c30a32;
+	padding: 10px 16px;
+	color: #fff;
+	cursor: pointer;
+	border: 0;
+}
+
+#citizen_proposals ._body button:hover {
+	text-decoration: underline;
+}
+
+#citizen_proposals ._vote_form ._error {
+	color: #f00;
+	margin-bottom: 1em;
+}
+
+
+/* Responsive */
+@media (max-width: 1000px) {
+	#citizen_proposals a.proposal div {
+		float: none;
+	}
+
+	#citizen_proposals ._title {
+		width: 80%;
+	}
+
+	#citizen_proposals ._votes {
+		position: absolute;
+		right: 55px;
+		top: 28px;
+	}
+}
