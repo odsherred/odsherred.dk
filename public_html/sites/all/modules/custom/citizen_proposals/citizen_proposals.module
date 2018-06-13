@@ -732,7 +732,7 @@ function _citizen_proposals_cron_delete_nodes() {
  * Implementation of hook_preprocess_HOOK().
  */
 function citizen_proposals_preprocess_page(&$vars) {
-  if ($vars['node']->type == 'article') {
+  if (in_array($vars['node']->type, array('article', 'os2web_base_contentpage'))) {
     drupal_add_js(drupal_get_path('module', 'citizen_proposals') . '/js/citizen_proposals.js');
     drupal_add_css(drupal_get_path('module', 'citizen_proposals') . '/css/citizen_proposals.css');
   }

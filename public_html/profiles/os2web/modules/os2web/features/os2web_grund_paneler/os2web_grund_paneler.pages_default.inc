@@ -491,6 +491,29 @@ function os2web_grund_paneler_default_page_manager_handlers() {
     $pane->uuid = '85a9e50f-ae30-47ac-b8cb-0a5aaef840f7';
     $display->content['new-85a9e50f-ae30-47ac-b8cb-0a5aaef840f7'] = $pane;
     $display->panels['stack4'][0] = 'new-85a9e50f-ae30-47ac-b8cb-0a5aaef840f7';
+    $pane = new stdClass();
+    $pane->pid = 'new-ae497a4d-3eda-4483-be92-893ac4102bb4';
+    $pane->panel = 'stack4';
+    $pane->type = 'citizen_proposals';
+    $pane->subtype = 'citizen_proposals';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'ae497a4d-3eda-4483-be92-893ac4102bb4';
+    $display->content['new-ae497a4d-3eda-4483-be92-893ac4102bb4'] = $pane;
+    $display->panels['stack4'][1] = 'new-ae497a4d-3eda-4483-be92-893ac4102bb4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-31a79f0a-ac38-49f7-bd18-b1cbfe33f718';
   $handler->conf['display'] = $display;
