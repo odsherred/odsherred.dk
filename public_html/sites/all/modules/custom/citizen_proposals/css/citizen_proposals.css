@@ -183,3 +183,12 @@
 		top: 28px;
 	}
 }
+
+.pane-citizen-proposals {
+	display: none;
+}
+
+.context-borgerdrevne-forslag .pane-citizen-proposals {
+	display: block;
+}
+
