@@ -597,3 +597,12 @@ aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facet
   color: white;
   width: 100%;
 }
+
+.pane-citizen-proposals {
+    display: none;
+}
+
+.page-node-898393 .pane-citizen-proposals, /* the node id on odsherred.dk */
+.page-node-898342 .pane-citizen-proposals { /* the node id on test.odsherred.dk */
+    display: block;
+}
