@@ -27,13 +27,13 @@
 				<input type="text" name="proposal_title" placeholder="Forslag overskrift" required autofocus /><br />
 				<br />
 				Forslag *<br />
-				<textarea name="proposal_body" required></textarea><br />
+				<textarea name="proposal_body" required placeholder="Skriv forslag"></textarea><br />
 				<br />
 				Dit navn *<br />
 				<input type="text" name="name" placeholder="Navn" required /><br />
 				<br />
 				Adresse *<br />
-				<input type="text" name="address" placeholder="Adresse" 23" required /><br />
+				<input type="text" name="address" placeholder="Adresse" required /><br />
 				<br />
 				Postnummer *<br />
 				<input type="text" name="zip_code" placeholder="Postnummer" pattern="\d{4}" required maxlength="4" /><br />
@@ -47,7 +47,6 @@
 				<button class="_submit">Indsend forslag</button>
 			</form>
 		';
-
 
 		// Get nodes
 		$query = db_select('node', 'n');
