@@ -5,6 +5,9 @@
  * Settings file
  */
 
+/**
+ * Generate the admin form.
+ */
 function searchcloud_block_admin() {
   $form = array();
   $form['searchcloud_block_count'] = array(
@@ -26,7 +29,36 @@ function searchcloud_block_admin() {
     '#title' => t('Path'),
     '#description' => t('Override the search path prefix (i.e. when a view is used as search page target)'),
     '#size' => 30,
-    '#default_value' => variable_get('searchcloud_block_overridepath'),
+    '#default_value' => variable_get('searchcloud_block_overridepath', ''),
+  );
+  $form['searchcloud_block_useparam'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Use a parameter for the searchterm'),
+    '#default_value' => variable_get('searchcloud_block_useparam', 0),
+  );
+  $form['searchcloud_block_paramname'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Parameter name'),
+    '#size' => 30,
+    '#default_value' => variable_get('searchcloud_block_paramname', ''),
+    '#states' => array(
+      'invisible' => array(
+        ':input[name="searchcloud_block_useparam"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+
+  $form['searchcloud_block_usepaths'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show terms from current path'),
+    '#description' => t('This option makes it possible to only show the search terms searched for on the current path. Add the paths to use in the next field. If the paths do not match it shows the normal view.'),
+    '#default_value' => variable_get('searchcloud_block_usepaths', 0),
+  );
+  $form['searchcloud_block_usepaths_pathlist'] = array(
+    '#type' => 'textarea',
+    '#title' => t('The paths to show the filtered searchwords'),
+    '#description' => t('Enter a comma seperated list of paths to use the searchword filter on.'),
+    '#default_value' => variable_get('searchcloud_block_usepaths_pathlist', ''),
   );
 
   $form['searchcloud_table'] = array(
@@ -34,12 +66,12 @@ function searchcloud_block_admin() {
   );
   if (user_access('searchcloud reset')) {
     $form['searchcloud_reset'] = array(
-      '#markup' => '<p>' . l(t('Reset searchcloud to remove counts from terms. The added settings (hide, etc.) per term are saved. This can\'t be undone.'), 'admin/config/search/searchcloud_block/reset') . '</p>',
+      '#markup' => '<p>' . l(t("Reset searchcloud to remove counts from terms. The added settings (hide, etc.) per term are saved. This can't be undone."), 'admin/config/search/searchcloud_block/reset') . '</p>',
     );
   }
   if (user_access('searchcloud truncate')) {
     $form['searchcloud_truncate'] = array(
-      '#markup' => '<p>' . l(t('Do a full truncate of the searchcloud table. This can\'t be undone.'), 'admin/config/search/searchcloud_block/truncate') . '</p>',
+      '#markup' => '<p>' . l(t("Do a full truncate of the searchcloud table. This can't be undone."), 'admin/config/search/searchcloud_block/truncate') . '</p>',
     );
   }
   return system_settings_form($form);
@@ -67,7 +99,7 @@ function searchcloud_block_admin_table() {
     t('Hide term'),
   );
   $rows = array();
-  $result = searchcloud_block_get_result(TRUE, FALSE, FALSE, TRUE);
+  $result = searchcloud_block_get_result(TRUE, FALSE, FALSE, 'DESC');
   foreach ($result as $row) {
     if ($row->hide == 1) {
       $hide = l(t('Show term in searchcloud'), 'admin/config/search/searchcloud_block/hide/' . $row->keyword . '/0');

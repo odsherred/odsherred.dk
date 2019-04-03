@@ -1,17 +1,19 @@
 <?php
 
 /**
- * hook_searchcloud_block_get_result_alter
+ * Function hook_searchcloud_block_get_result_alter.
+ *
  * Give modules the power to change the query.
  * 
- * @param type $query
+ * @param object $query
+ *   The search query object
  */
 function hook_searchcloud_block_get_result_alter(&$query) {
-  
+
 }
 
 /**
- * hook_searchcloud_block_check_keys_execute
+ * Function hook_searchcloud_block_check_keys_execute.
  * 
  * Notification about what keys are searched at, and what the new count is.
  * Gives modules the power to store additional data alongside of the searched
@@ -19,9 +21,11 @@ function hook_searchcloud_block_get_result_alter(&$query) {
  * 
  * This hook is the messenger.
  * 
- * @param type $keys
- * @param type $count
+ * @param array $keys
+ *   The search keys
+ * @param int $count
+ *   The count for keys
  */
 function hook_searchcloud_block_check_keys_execute($keys, $count) {
-  
+
 }
