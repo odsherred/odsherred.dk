@@ -60,6 +60,9 @@ function searchcloud_block_menu() {
   return $items;
 }
 
+/**
+ * Implements hook_theme().
+ */
 function searchcloud_block_theme() {
   return array(
     'searchcloud_block' => array(
@@ -70,6 +73,9 @@ function searchcloud_block_theme() {
   );
 }
 
+/**
+ * Implements hook_hook_info().
+ */
 function searchcloud_block_hook_info() {
   $hooks = array(
     'searchcloud_block_get_result_alter',
@@ -119,6 +125,7 @@ function searchcloud_block_submit_handler($form, $form_values) {
     case 'search_block_form':
       $keys = $form_values['values']['search_block_form'];
       break;
+
     default:
       $keys = $form_values['values']['keys'];
   }
@@ -133,6 +140,7 @@ function searchcloud_block_submit_handler($form, $form_values) {
 function searchcloud_block_check_keys($key) {
   $result = searchcloud_block_get_result(TRUE, $key);
   $rowcount = $result->rowCount();
+
   if (!empty($rowcount)) {
     foreach ($result as $record) {
       db_update('searchcloud_block_count')
@@ -150,40 +158,74 @@ function searchcloud_block_check_keys($key) {
     ->execute();
   }
 
-  // save parameters
-  $_key = $key;
-  $_count = $record->count + 1;
+  $usepaths = variable_get('searchcloud_block_usepaths', 0);
+  $paths = variable_get('searchcloud_block_usepaths_pathlist', '');
+  if (!empty($usepaths) && !empty($paths)) {
+    $paths = searchcloud_block_sanitize_paths($paths);
+    global $base_url;
+    $ref = str_replace($base_url . '/', '', $_SERVER['HTTP_REFERER']);
 
-  // execute hook
+    if (in_array($ref, $paths)) {
+      searchcloud_block_set_path_result($key, $ref);
+    }
+  }
+
+  // Save parameters.
+  $_key = $key;
+  if (isset($record)) {
+    $_count = $record->count + 1;
+  }
+  else {
+    $_count = 1;
+  }
+
+  // Execute hook.
   module_invoke_all('searchcloud_block_check_keys_execute', $_key, $_count);
 }
 
+/**
+ * Get the results from the DB.
+ */
 function searchcloud_block_get_result($all = FALSE, $key = FALSE, $nr = FALSE, $order = FALSE) {
+
+  if (empty($order) || $order == 'RAND') {
+    $order = FALSE;
+  }
+
   try {
-  $query = db_select('searchcloud_block_count', 'sbc');
-  $query->fields('sbc', array('keyword', 'count', 'hide'));
+    $query = db_select('searchcloud_block_count', 'sbc');
+    $query->fields('sbc', array('keyword', 'count', 'hide'));
 
-  if ($key) {
-    $query->condition('sbc.keyword', $key);
-  }
+    if ($key) {
+      $query->condition('sbc.keyword', $key);
+    }
 
-  if (!$all) {
-    $query->condition('sbc.hide', 1, '<>');
-  }
+    if (!$all) {
+      $query->condition('sbc.hide', 1, '<>');
+    }
 
-  if ($nr) {
-    $query->range(0, $nr);
-  }
+    if ($nr) {
+      $query->range(0, $nr);
+    }
 
-  if ($order) {
-    $query->orderBy('count', 'DESC');
-  }
+    if (!empty($order)) {
+      $query->orderBy('count', $order);
+    }
+
+    $usepaths = variable_get('searchcloud_block_usepaths', 0);
+    $paths = variable_get('searchcloud_block_usepaths_pathlist', '');
+    if (!empty($usepaths) && !empty($paths)) {
+      $paths = searchcloud_block_sanitize_paths($paths);
+      if (in_array($_GET['q'], $paths)) {
+        $query->join('searchcloud_block_paths', 'sbp', 'sbc.keyword = sbp.keyword AND sbp.path = :path', array(':path' => $_GET['q']));
+      }
+    }
 
     module_invoke_all('searchcloud_block_get_result_alter', $query);
 
-  // dsm($query->__toString());
-  $result = $query->execute();
-  } catch(Exception $e) {
+    $result = $query->execute();
+  }
+  catch(Exception $e) {
     watchdog('searchcloud_block', $e);
   }
 
@@ -217,8 +259,41 @@ function searchcloud_block_block_view($delta = '') {
   return $block;
 }
 
+/**
+ * Implements hook_block_configure().
+ */
+function searchcloud_block_block_configure($delta = '') {
+  $form = array();
+  if ($delta == 'searchcloud_block') {
+    $form['searchcloud_block_sort_order'] = array(
+      '#type' => 'select',
+      '#title' => t('Sort order of the search terms in this block'),
+      '#default_value' => variable_get('searchcloud_block_sort_order', 'RAND'),
+      '#options' => array(
+        'RAND' => t('Random'),
+        'DESC' => t('Descending'),
+        'ASC' => t('Ascending'),
+      ),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function searchcloud_block_block_save($delta = '', $edit = array()) {
+  if ($delta == 'searchcloud_block') {
+    variable_set('searchcloud_block_sort_order', $edit['searchcloud_block_sort_order']);
+  }
+}
+
+/**
+ * Get the keys.
+ */
 function searchcloud_block_get_keys() {
   drupal_add_css(drupal_get_path('module', 'searchcloud_block') . '/css/searchcloud_block.css');
+  $sort = variable_get('searchcloud_block_sort_order', 'RAND');
   $nr = variable_get('searchcloud_block_count', 10);
   $stylecount = variable_get('searchcloud_block_stylecount', 5);
   $default_search = search_get_default_module_info();
@@ -226,11 +301,12 @@ function searchcloud_block_get_keys() {
   $override_search = variable_get('searchcloud_block_overridepath');
   if (!empty($override_search)) {
     $root_search_path = $override_search;
-  } else {
+  }
+  else {
     $root_search_path = rtrim('search/' . $default_search['path'], '/');
   }
 
-  $result = searchcloud_block_get_result(FALSE, FALSE, $nr, TRUE);
+  $result = searchcloud_block_get_result(FALSE, FALSE, $nr, $sort);
   $items = array();
 
   $max = 0;
@@ -249,7 +325,9 @@ function searchcloud_block_get_keys() {
     $stepsize = 1;
     if (count($rows) > 1) {
       $stepsize = ceil(($max - $min) / $stylecount);
-      shuffle($rows);
+      if ($sort == 'RAND') {
+        shuffle($rows);
+      }
     }
     if ($stepsize < 1) {
       $stepsize = 1;
@@ -257,8 +335,8 @@ function searchcloud_block_get_keys() {
 
     foreach ($rows as $row) {
       $ratio = $row->count / $stepsize;
-      $ratio =  ceil($ratio);
-      $items[] = (object)array(
+      $ratio = ceil($ratio);
+      $items[] = (object) array(
         'param' => $row->keyword,
         'ratio' => $ratio,
         'row' => $row,
@@ -273,33 +351,42 @@ function searchcloud_block_get_keys() {
   }
 }
 
+/**
+ * Generate the searchcloud block.
+ */
 function theme_searchcloud_block(&$variables) {
+  $useparam = variable_get('searchcloud_block_useparam', 0);
+  $param = variable_get('searchcloud_block_paramname', '');
   $html = '<ul class="searchcloud">';
 
-  foreach($variables['items'] as $item) {
-    $html .= '<li class="cloud-' . $item->ratio . '">' . l($item->row->keyword, $item->path . '/' . $item->param) . '</li>';
+  foreach ($variables['items'] as $item) {
+    $query = array();
+    if ($useparam) {
+      $path = $item->path;
+      $query[$param] = $item->param;
+    }
+    else {
+      $path = $item->path . '/' . $item->param;
+    }
+    $html .= '<li class="cloud-' . $item->ratio . '">' . l($item->row->keyword, $path, array('query' => $query)) . '</li>';
   }
 
   return $html . '</ul>';
 }
 
 /**
- * Enable apachesolr integration
- *
- * @param SolrBaseQuery $query
+ * Implements hook_apachesolr_query_alter().
  */
 function searchcloud_block_apachesolr_query_alter(SolrBaseQuery $query) {
   $params = $query->getParams();
 
-  // search query is at $params['q']
+  // Search query is at $params['q'].
   searchcloud_block_check_keys($params['q']);
 
 }
 
 /**
- * Enable search_api
- *
- * @param SearchApiQueryInterface $query
+ * Implements hook_search_api_query_alter().
  */
 function searchcloud_block_search_api_query_alter(SearchApiQueryInterface $query) {
   $keys = $query->getKeys();
@@ -317,6 +404,39 @@ function searchcloud_block_search_api_query_alter(SearchApiQueryInterface $query
   unset($keys['#conjunction']);
   $key = trim(implode(' ', array_values($keys)));
 
-  // update the database.
+  // Update the database.
   searchcloud_block_check_keys($key);
+}
+
+/**
+ * Sanitize paths.
+ */
+function searchcloud_block_sanitize_paths($paths) {
+  $paths = explode(',', $paths);
+  foreach ($paths as $key => $val) {
+    $paths[$key] = trim($val);
+  }
+  return $paths;
+}
+
+/**
+ * Ser path results.
+ */
+function searchcloud_block_set_path_result($key, $ref) {
+  $query = db_select('searchcloud_block_paths', 'sbp');
+  $query->fields('sbp', array('keyword', 'path'));
+  $query->condition('sbp.keyword', $key);
+  $query->condition('sbp.path', $ref);
+
+  $result = $query->execute();
+  $rows = $result->fetchAll();
+
+  if (empty($rows)) {
+    db_insert('searchcloud_block_paths')
+    ->fields(array(
+      'keyword' => $key,
+      'path' => $ref,
+    ))
+    ->execute();
+  }
 }
