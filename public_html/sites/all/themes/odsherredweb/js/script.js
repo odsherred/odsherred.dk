@@ -50,5 +50,16 @@ jQuery(document).ready(function () {
   jQuery(window).resize(resize);
   resize();
 
+  // Menu on "nyheder" pages.
+  // Ticket: #REZ-430-84142
+  jQuery('.node-type-os2web-base-news #region-sidebar-first .block-11 .block-title').on('click', function(event) {
+    event.preventDefault();
+
+    var $element = jQuery(this);
+    var $parent = $element.parent().parent();
+
+    $parent.toggleClass('open');
+  });
+
 });
 
