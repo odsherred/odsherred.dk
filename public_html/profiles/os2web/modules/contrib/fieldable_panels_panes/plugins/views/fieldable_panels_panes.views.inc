@@ -12,7 +12,7 @@ function fieldable_panels_panes_views_data() {
   $data = array();
 
   // ------------------------------------------------------------------------
-  // Panels panes table
+  // Panels panes table.
   $data['fieldable_panels_panes'] = array(
     'table' => array(
       'base' => array(
@@ -205,6 +205,17 @@ function fieldable_panels_panes_views_data() {
       ),
       'filter' => array(
         'handler' => 'views_handler_filter_date',
+      ),
+    ),
+    'language' => array(
+      'title' => t('Language'),
+      'help' => t('The language of the entity.'),
+      'field' => array(
+        'handler' => 'fieldable_panels_panes_handler_field_language',
+        'click sortable' => TRUE,
+      ),
+      'filter' => array(
+        'handler' => 'fieldable_panels_panes_handler_filter_language',
       ),
     ),
     'view_entity' => array(

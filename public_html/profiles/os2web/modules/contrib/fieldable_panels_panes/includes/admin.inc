@@ -6,63 +6,85 @@
  */
 
 /**
- * List all bundles and administrative options for entity panes.
+ * Page callback for settings page.
  */
-function fieldable_panels_panes_entities_page() {
-  $entity_info = entity_get_info('fieldable_panels_pane');
+function fieldable_panels_panes_settings() {
+  $form = array();
 
-  $header = array(t('Name'), array('data' => t('Operations'), 'colspan' => 2));
-  $rows = array();
-
-  foreach ($entity_info['bundles'] as $bundle => $info) {
-    $type_url_str = str_replace('_', '-', $bundle);
-
-    $row = array();
-
-    $label = check_plain($info['label']);
-    $label .= ' <small>' . t('(Machine name: @type)', array('@type' => $bundle)) . '</small>';
-
-    $row[] = $label;
-
-    $operations = array();
-
-    $operations['list'] = array(
-      'title' => t('list'),
-      'href' => 'admin/structure/fieldable-panels-panes/manage/' . $type_url_str,
-    );
-
-    $operations['add'] = array(
-      'title' => t('add'),
-      'href' => 'admin/structure/fieldable-panels-panes/manage/' . $type_url_str . '/add',
-    );
-
-    $operations['fields'] = array(
-      'title' => t('manage fields'),
-      'href' => 'admin/structure/fieldable-panels-panes/manage/' . $type_url_str . '/fields',
-    );
-
-    $operations['display'] = array(
-      'title' => t('manage display'),
-      'href' => 'admin/structure/fieldable-panels-panes/manage/' . $type_url_str . '/display',
-    );
-
-    $ops = theme('links', array('links' => $operations, 'attributes' => array('class' => array('links', 'inline'))));
-
-    $row[] = $ops;
-    $rows[] = $row;
-  }
-
-  $build['panes_table'] = array(
-    '#theme' => 'table',
-    '#header' => $header,
-    '#rows' => $rows,
+  $form['fpp_revision_locking'] = array(
+    '#type' => 'radios',
+    '#title' => t('Should FPP CTools content panes reference FPP entities by entity ID or revision ID?'),
+    '#description' => t('For example, a panelized entity can revert the entity to previous revision and FPPs will also revert if they are referenced by revision ID. This also allows for editorial workflows using e.g. the Workbench Moderation or Revisioning modules.'),
+    '#options' => array(
+      'legacy' => t('Legacy: Use entity ID for all FPPs.'),
+      'lock' => t('Recommended: Use revision ID for non-reusable FPPs only; will also force each FPP update to create a new revision.'),
+    ),
+    '#default_value' => variable_get('fpp_revision_locking', 'lock'),
   );
 
-  return $build;
+  $form['fpp_hide_contextual_links'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Hide the FPP contextual menus?'),
+    '#description' => t('Being able to edit FPPs directly can cause problems with the editorial workflows when using e.g. Panelizer.'),
+    '#default_value' => variable_get('fpp_hide_contextual_links', FALSE),
+    '#disabled' => !module_exists('contextual'),
+  );
+
+  $form['fpp_blocks_expose'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Make fieldable panels panes available as blocks'),
+    '#description' => t('Fieldable Panels Panes that are reusable will be made available as blocks.'),
+    '#default_value' => variable_get('fpp_blocks_expose', FALSE),
+  );
+
+  $form['fpp_allow_reusable_access'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Allow access to the "reusable" option on the pane edit form after initial creation'),
+    '#description' => t('This only allows the pane te be made reusable. Reusable panes cannot be changed back to non reusable panes.<br />Warning: enabling this option could break the editorial workflows using e.g. the Workbench Moderation or Revisioning modules, and could cause other problems too.'),
+    '#default_value' => variable_get('fpp_allow_reusable_access', FALSE),
+  );
+
+  $form['bundles'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('FPP Types Exposed as Blocks'),
+    '#description' => t('Select FPP types to be exposed as blocks. If none is selected, then all FPP types will be exposed as blocks.'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#states' => array(
+      'visible' => array(
+        ':input[name="fpp_blocks_expose"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+
+  // Render checkbox for each FPP bundle if any FPP bundles exist.
+  $bundles = fieldable_panels_panes_get_bundle_labels();
+  if (!empty($bundles)) {
+    foreach ($bundles as $bundle => $info) {
+      $form['bundles']['fpp_expose_' . $bundle] = array(
+        '#type' => 'checkbox',
+        '#title' => $info . ' (' . $bundle . ')',
+        '#default_value' => variable_get('fpp_expose_' . $bundle, FALSE),
+      );
+    }
+  }
+
+  // Remove fieldset description and add markup if no FPP bundles exist.
+  else {
+    $form['bundles']['empty'] = array(
+      '#markup' => t('<p>No FPP types exist.</p>'),
+    );
+    $form['bundles']['#description'] = NULL;
+  }
+
+  return system_settings_form($form);
 }
 
 /**
  * List all entities for the given type.
+ *
+ * @param string $type
+ *   The FPP type to process.
  */
 function fieldable_panels_panes_entities_list_page($type) {
   return views_embed_view('fieldable_pane_entities', 'default', $type);
@@ -70,6 +92,9 @@ function fieldable_panels_panes_entities_list_page($type) {
 
 /**
  * Page callback to add a new pane entity.
+ *
+ * @param string $type
+ *   The FPP type to process.
  */
 function fieldable_panels_panes_entities_add_page($type) {
   $form_state = array(
@@ -88,13 +113,19 @@ function fieldable_panels_panes_entities_add_page($type) {
  * This represents an administrative view only. It is not available to
  * the general public. These entities are meant to be viewed as panel
  * panes (or blocks).
+ *
+ * @param object $entity
+ *   The FPP object to process.
  */
 function fieldable_panels_panes_entity_view_page($entity) {
-  return fieldable_panels_panes_view($entity);
+  return fieldable_panels_panes_view($entity, 'preview');
 }
 
 /**
  * Page callback to view a entity.
+ *
+ * @param object $entity
+ *   The FPP object to process.
  */
 function fieldable_panels_panes_entity_edit_page($entity) {
   $form_state = array(
@@ -106,21 +137,21 @@ function fieldable_panels_panes_entity_edit_page($entity) {
 }
 
 /**
- * Menu callback -- ask for confirmation of node deletion
+ * Menu callback -- ask for confirmation of node deletion.
  */
 function fieldable_panels_panes_entity_delete_form($form, &$form_state, $entity) {
   $form_state['entity'] = $entity;
   return confirm_form($form,
     t('Are you sure you want to delete %title?', array('%title' => $entity->title)),
     'admin/structure/fieldable-panels-panes/view/' . $entity->fpid,
-    t('This action cannot be undone. Note that deleting this entity will not delete panes using it, they will exist but display nothing.'),
+    t('This action cannot be undone. Note that deleting this entity will not delete panes using it, they will exist but will display nothing.'),
     t('Delete'),
     t('Cancel')
   );
 }
 
 /**
- * Execute node deletion
+ * Execute node deletion.
  */
 function fieldable_panels_panes_entity_delete_form_submit($form, &$form_state) {
   if ($form_state['values']['confirm']) {
@@ -134,7 +165,7 @@ function fieldable_panels_panes_entity_delete_form_submit($form, &$form_state) {
 }
 
 /**
- * Menu callback -- ask for confirmation of revision deletion
+ * Menu callback -- ask for confirmation of revision deletion.
  */
 function fieldable_panels_panes_entity_delete_revision_form($form, &$form_state, $entity) {
   $form_state['entity'] = $entity;
@@ -148,7 +179,7 @@ function fieldable_panels_panes_entity_delete_revision_form($form, &$form_state,
 }
 
 /**
- * Execute revision deletion
+ * Execute revision deletion.
  */
 function fieldable_panels_panes_entity_delete_revision_form_submit($form, &$form_state) {
   if ($form_state['values']['confirm']) {
@@ -168,15 +199,14 @@ function fieldable_panels_panes_entity_delete_revision_form_submit($form, &$form
 /**
  * Page callback to edit access control of an entity pane.
  *
- * @param $op
+ * @param string $op
  *   Either 'edit' or 'view' to determine which type of access.
- * @param $entity
+ * @param object $entity
  *   The entity to control access to.
  */
 function fieldable_panels_panes_entity_edit_access_page($op, $entity) {
   ctools_include('context-access-admin');
   // @todo -- add view_access field.
-
   $argument = $op . ':' . $entity->fpid;
 
   ctools_include('object-cache');
@@ -219,6 +249,12 @@ function fieldable_panels_panes_entity_edit_access_page($op, $entity) {
 
 /**
  * List all entities for the given type.
+ *
+ * @param object $entity
+ *   The FPP object to process.
+ *
+ * @return array
+ *   Render array.
  */
 function fieldable_panels_panes_entity_list_revisions_page($entity) {
   return views_embed_view('fieldable_pane_entity_revisions', 'default', $entity->fpid);
@@ -232,6 +268,9 @@ function fieldable_panels_panes_entity_list_revisions_page($entity) {
  * the entity.
  *
  * It is token protected.
+ *
+ * @param object $entity
+ *   The FPP object to process.
  */
 function fieldable_panels_panes_entity_make_current_page($entity) {
   if (!isset($_GET['token']) || !drupal_valid_token($_GET['token'], $entity->fpid . ':' . $entity->vid)) {
