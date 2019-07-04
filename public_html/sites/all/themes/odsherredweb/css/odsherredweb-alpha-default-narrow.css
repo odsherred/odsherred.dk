@@ -269,7 +269,7 @@ ul.os2web_menus-container .megamenu-panel
     margin-right: -49px;
 }
 
-.responsive-layout-narrow #views_slideshow_cycle_main_aktuelt-panel_pane_3 .views-field-title .text-container
+.responsive-layout-narrow .view-aktuelt.view-display-id-panel_pane_3 .views-field-title .text-container
 {
     font-size: 32px;
 }

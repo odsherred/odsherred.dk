@@ -371,7 +371,7 @@ a.overlayclass {
     line-height: 30px;
     min-height: 30px;
 }
-.front #section-footer .media.media-element-container {
+#section-footer .media.media-element-container {
   display: inline-block;
 }
 .media-youtube-video {
