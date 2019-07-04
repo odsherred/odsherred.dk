@@ -71,6 +71,12 @@ function _insertFrame_filter_settings($form, &$form_state, $filter, $format, $de
 	  '#description' => t("Clean urls change current path so relative path are relative to node path. Checking this options will always make relative path to base path."),
       '#default_value' => (array_key_exists('insertframe_use_base_prefix',$filter->settings) ? $filter->settings['insertframe_use_base_prefix'] : false)
     );
+    $settings['insertframe_searchable'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Add content to search engine'),
+	    '#description' => t("Add content to search engine. Note than only first page is indexed."),
+      '#default_value' => (array_key_exists('insertframe_searchable',$filter->settings) ? $filter->settings['insertframe_searchable'] : false)
+    );
     return $settings;
 }
 
@@ -91,7 +97,7 @@ function _insertFrame_filter_tips($filter, $format, $long = false) {
 
 
 function _insertFrame_replacer($matches, $use_base_prefix = FALSE) {
-	return 	_insertFrame_getHTML($matches[1], $use_base_prefix);
+	return 	_insertFrame_getHTML(trim($matches[1]), $use_base_prefix);
 }
 
 function _insertFrame_getHTML($params, $use_base_prefix = FALSE) {
@@ -115,8 +121,8 @@ function _insertFrame_getHTML($params, $use_base_prefix = FALSE) {
 			$params["url"] = $aParams[$i];
 		} else {
 			$param = explode("=", $aParams[$i]);
-			if (count($param == 2)) {
-				$params[strtolower($param[0])] = trim(urldecode($param[1]),"\"'");
+			if (count($param) == 2) {
+				$params[strtolower($param[0])] = trim(urldecode($param[1]),"\"' ");
 			}
 		}
 	}
@@ -130,7 +136,7 @@ function _insertFrame_getHTML($params, $use_base_prefix = FALSE) {
 		$output =  "<iframe $output></iframe>";
 	}
 	else {
-		$output = theme("insertFrame_render_wrapper",$params["wrapper"],$params);
+		$output = theme("insertFrame_render_wrapper",array("value"=> $params["wrapper"],"params" => $params));
 	}
 	$code = $output;
 	return "$code";
@@ -231,4 +237,22 @@ function theme_insertFrame_render_height($vars) {
 
 function insertFrame_render_usebaseprefix($vars) {
 	return "";
+}
+
+
+function insertFrame_node_update_index($node) {
+   $text = '';
+   
+   if (isset($node->body)) {
+     $body = $node->body['und'][0]['value']; 
+     $filters = filter_list_format( $node->body['und'][0]['format']);
+     $filter = $filters['insertFrame_filter']; 
+     $settings = $filter->settings; 
+     if (array_key_exists("insertframe_searchable",$settings)  && $settings['insertframe_searchable'] && strpos($body,"[[[") !== FALSE) {
+         $body = str_replace("]]]"," wrapper=html]]]",$body);
+         $text = _insertFrame_filter_process($body, $filters['insertFrame_filter']);
+      }
+   }
+   return $text;
+
 }

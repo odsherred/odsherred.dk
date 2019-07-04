@@ -10,6 +10,8 @@ To insert a frame in a node in drupal, add the following :
 
  [[[<url> width=<w> height=<h> scrolling=<yes|no|auto> className=<class> ID=<id]]]
 
+Note: > and < are not inserted, and a single space is required between variables.
+
 Where
  
 	url is the url of the page
@@ -22,4 +24,21 @@ Where
 	
 Only URL is required.
 
-Don't forget to set the input format the filter has been assigned to. 
+= Create Text Format For Use With Insert Frame =
+
+Go to: examplesite.com/admin/config/content/formats/add
+
+Name: Insert Frame
+
+Enabled Filters: Check "Include iFrame with auto-height feature"
+
+Save Configuration
+
+= Example =
+
+Following is a properly configured, inserted frame:
+
+[[[http://www.drupal.org width=98% height=500px scrolling=auto]]]
+
+
+ 
