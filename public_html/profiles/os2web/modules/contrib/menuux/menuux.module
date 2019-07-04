@@ -17,7 +17,7 @@ function menuux_enable() {
  *
  * Alters how the menu part of node forms behave
  */
-function menuux_form_node_form_alter(&$form, $form_state) {
+function menuux_form_node_form_alter(&$form, &$form_state) {
   module_load_include('inc', 'menuux', 'menuux.admin');
   menuux_node_form_alter($form, $form_state);
 }
