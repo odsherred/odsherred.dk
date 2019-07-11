@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * os2web_settings.features.user_permission.inc
@@ -60,6 +61,7 @@ function os2web_settings_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Webmaster' => 'Webmaster',
+      'Webredaktør' => 'Webredaktør',
     ),
     'module' => 'node',
   );
@@ -72,7 +74,7 @@ function os2web_settings_user_default_permissions() {
       'Webmaster' => 'Webmaster',
       'Webredaktør' => 'Webredaktør',
     ),
-    'module' => 'media',
+    'module' => 'media_bulk_upload',
   );
 
   // Exported permission: 'revert revisions'.

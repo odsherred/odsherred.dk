@@ -17,6 +17,13 @@ function date_facets_facetapi_widgets() {
         'query types' => array('date_range'),
       ),
     ),
+    'date_range_checkboxes' => array(
+      'handler' => array(
+        'label' => t('Date range with checkboxes'),
+        'class' => 'Drupal_Apachesolr_Facetapi_Widget_DateRangeCheckBoxesWidget',
+        'query types' => array('date_range'),
+      ),
+    ),
   );
 }
 
@@ -37,5 +44,11 @@ function date_facets_facetapi_query_types() {
         'adapter' => 'search',
       ),
     ),
+    'search_api_date_range' => array(
+      'handler' => array(
+        'class' => 'Drupal_SearchApi_Facetapi_QueryType_DateRangeQueryType',
+        'adapter' => 'search_api',
+      ),
+    )
   );
 }

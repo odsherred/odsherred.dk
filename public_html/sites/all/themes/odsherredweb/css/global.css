@@ -371,7 +371,9 @@ a.overlayclass {
     line-height: 30px;
     min-height: 30px;
 }
-
+#section-footer .media.media-element-container {
+  display: inline-block;
+}
 .media-youtube-video {
     position: relative;
     padding-bottom: 56.25%;

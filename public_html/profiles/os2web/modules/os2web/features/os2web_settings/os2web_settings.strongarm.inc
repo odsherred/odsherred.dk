@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * os2web_settings.strongarm.inc
@@ -9,6 +10,13 @@
  */
 function os2web_settings_strongarm() {
   $export = array();
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'addtoany_buttons_size';
+  $strongarm->value = '16';
+  $export['addtoany_buttons_size'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -241,10 +249,10 @@ example.org';
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_filter_blacklist';
   $strongarm->value = array(
+    'media_filter' => 'media_filter',
     'filter_autop' => 'filter_autop',
     'tite_removal' => 'tite_removal',
     'filter_html' => 0,
-    'media_filter' => 0,
     'transliteration' => 0,
     'lightbox_disable_iframe_filter' => 0,
     'filter_2' => 0,
@@ -281,62 +289,8 @@ example.org';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_scan_blocks';
-  $strongarm->value = 1;
-  $export['linkchecker_scan_blocks'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'linkchecker_scan_comments';
   $strongarm->value = 0;
-  $export['linkchecker_scan_comments'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'linkchecker_scan_nodetypes';
-  $strongarm->value = array(
-    'os2web_borger_dk_article' => 'os2web_borger_dk_article',
-    'contentpage' => 'contentpage',
-    'news' => 'news',
-    'selvbetjeningslinks' => 'selvbetjeningslinks',
-    'spotbox' => 'spotbox',
-    'subsites_og_sites' => 'subsites_og_sites',
-    'webform' => 'webform',
-    'arp_case' => 0,
-    'arp_document' => 0,
-    'andre_sider' => 0,
-    'baggrund' => 0,
-    'rotating_image' => 0,
-    'borger_dk_permalink' => 0,
-    'borgerservices' => 0,
-    'bullet_point' => 0,
-    'bullet_point_attachment' => 0,
-    'files' => 0,
-    'esdh_dokument' => 0,
-    'esdh_sag' => 0,
-    'galleri' => 0,
-    'right_column' => 0,
-    'institution' => 0,
-    'kontaktblok' => 0,
-    'knactivity' => 0,
-    'local_plan' => 0,
-    'media' => 0,
-    'meeting' => 0,
-    'os2web_meeting_search_status' => 0,
-    'ofir_job' => 0,
-    'panel' => 0,
-    'person' => 0,
-    'hoering' => 0,
-    'politician' => 0,
-    'politikker' => 0,
-    'referat' => 0,
-    'sektionsside' => 0,
-    'speaker_paper' => 0,
-    'tema' => 0,
-    'iframe_selvbetjeningsl_sning_mm' => 0,
-  );
-  $export['linkchecker_scan_nodetypes'] = $strongarm;
+  $export['linkchecker_scan_blocks'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -643,7 +597,7 @@ example.org';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_pdf_pdf_tool';
-  $strongarm->value = 'profiles/os2web/modules/contrib/print/dompdf/dompdf_config.inc.php';
+  $strongarm->value = 'print_pdf_dompdf|profiles/os2web/libraries/dompdf/src/Dompdf.php';
   $export['print_pdf_pdf_tool'] = $strongarm;
 
   $strongarm = new stdClass();

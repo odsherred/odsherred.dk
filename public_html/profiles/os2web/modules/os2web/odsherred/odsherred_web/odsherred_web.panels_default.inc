@@ -207,7 +207,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'menu_name' => 'menu-megadd--borger-oss',
-      'parent_mlid' => 'menu-megadd--borger-oss:0',
+      'parent_mlid' => '',
       'title_link' => 0,
       'admin_title' => 'Ofte stillede spørgsmål...',
       'level' => '1',
@@ -870,7 +870,7 @@ function odsherred_web_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'menu_name' => 'menu-megadd--borger-oss',
-      'parent_mlid' => 'menu-megadd--borger-oss:0',
+      'parent_mlid' => '',
       'title_link' => 0,
       'admin_title' => '',
       'level' => '1',

@@ -12,76 +12,156 @@
  */
 class tagadelic_plugin_style extends views_plugin_style_list {
 
+  private $cloud_tags = NULL;
+
+  /**
+   * Return the token replaced row class for the specified row.
+   */
+  function get_row_class($row_index) {
+    $classes_string = parent::get_row_class($row_index);
+    if($this->cloud_tags) {
+      $weight = $this->cloud_tags[$row_index]->get_weight();
+      $classes_string = implode(" ", array($classes_string, ' level'.$weight));
+    }
+    return $classes_string;
+  }
+
+  /**
+   * Allow the style to do stuff before each row is rendered.
+   *
+   * @param $result
+   *   The full array of results from the query.
+   */
+  function pre_render($result) {
+    parent::pre_render($result);
+    $this->build_cloud($result);
+  }
+
   /**
    * Set default options
    */
   function option_definition() {
-//    $options = parent::option_definition();
-    $options = array();
-    $options['steps'] = 6;
-
+    $options = parent::option_definition();
+    $options['display_field'] = NULL;
+    $options['count_field'] = NULL;
+    // uses tagadelic ul.tag-cloud CSS class
+    $options['class'] = array('default' => 'tag-cloud');
     return $options;
+  }
+
+  /**
+   * Normalize a list of columns based upon the fields that are
+   * available. This compares the fields stored in the style handler
+   * to the list of fields actually in the view, removing fields that
+   * have been removed and adding new fields in their own column.
+   *
+   * - Each field must be in a column.
+   * - Each column must be based upon a field, and that field
+   *   is somewhere in the column.
+   * - Any fields not currently represented must be added.
+   * - Columns must be re-ordered to match the fields.
+   *
+   * @param $columns
+   *   An array of all fields; the key is the id of the field and the
+   *   value is the id of the column the field should be in.
+   * @param $fields
+   *   The fields to use for the columns. If not provided, they will
+   *   be requested from the current display. The running render should
+   *   send the fields through, as they may be different than what the
+   *   display has listed due to access control or other changes.
+   *
+   * @return array
+   *    An array of all the sanitized columns.
+   */
+  function sanitize_columns($columns, $fields = NULL) {
+    $sanitized = array();
+    if ($fields === NULL) {
+      $fields = $this->display->handler->get_option('fields');
+    }
+    // Preconfigure the sanitized array so that the order is retained.
+    foreach ($fields as $field => $info) {
+      // Set to itself so that if it isn't touched, it gets column
+      // status automatically.
+      $sanitized[$field] = $field;
+    }
+
+    foreach ($columns as $field => $column) {
+      // first, make sure the field still exists.
+      if (!isset($sanitized[$field])) {
+        continue;
+      }
+
+      // If the field is the column, mark it so, or the column
+      // it's set to is a column, that's ok
+      if ($field == $column || $columns[$column] == $column && !empty($sanitized[$column])) {
+        $sanitized[$field] = $column;
+      }
+      // Since we set the field to itself initially, ignoring
+      // the condition is ok; the field will get its column
+      // status back.
+    }
+
+    return $sanitized;
   }
 
   /**
    * Render the given style.
    */
   function options_form(&$form, &$form_state) {
-//    parent::options_form($form, $form_state);
-//    $steps = 6;
-//    $size = 60;
-    $form['steps'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Steps'),
-        '#default_value' => $this->options['steps'] ? $this->options['steps'] : 6,
+
+    $handlers = $this->display->handler->get_handlers('field');
+    if (empty($handlers)) {
+      $form['error_markup'] = array(
+        '#markup' => '<div class="error messages">' . t('You need at least one field before you can configure your tagadelic settings') . '</div>',
+      );
+      return;
+    }
+
+    // Create an array of allowed columns from the data we know:
+    $columns = $this->sanitize_columns($this->options['columns']);
+    $field_names = $this->display->handler->get_field_labels();
+    foreach($columns as $column_name => $column_label) {
+      $columns[$column_name] = $field_names[$column_name];
+    }
+
+    $form['count_field'] = array(
+      '#type' => 'select',
+      '#title' => t('Count field'),
+      '#default_value' => $this->options['count_field'],
+      '#options' => $columns,
+      '#description' => t('The field used to count the results for a row.'),
     );
+
+    // standard settings for list style
+    parent::options_form($form, $form_state);
   }
 
-  function render() {
-    /*
-     * function tagadelic_build_weighted_tags($tags, $steps = 6) {
-     *
-     *    $tag: $tag->count, $tag->tid, $tag->name $tag->vid.
-     */
-    $steps = 6;
-    if (isset($this->view->style_plugin->options['steps'])) {
-      $steps = $this->view->style_plugin->options['steps'];
+  function build_cloud($result) {
+
+    drupal_add_css(drupal_get_path('module', 'tagadelic') . '/tagadelic.css');
+    
+    $count_field = $this->options['count_field'];
+    $columns = $this->display->handler->get_option('fields');
+
+    $count_field_alias = NULL;
+    if(isset($this->view->field[$count_field])) {
+      $count_field_alias = $this->view->field[$count_field]->field_alias;
     }
 
-    $size = count($this->view->result);
-
-    // count, td.tid, td.vid, td.name, td.description
-    // Create a term-like object for `tagadelic_build_weighted_tags()`
+    if(!$count_field_alias ) {
+      drupal_set_message("Please set which field you are using for counting results in the tagadelic display.", "error");
+      return "";
+    }
 
     $tags = array();
-    foreach ($this->view->result as $term) {
-
-//      dsm($term);
-
-      $tid = isset($term->taxonomy_term_data_tag_tid) ? $term->taxonomy_term_data_tag_tid : $term->tid;
-      $vid = isset($term->taxonomy_term_data_vid) ? $term->taxonomy_term_data_vid: $term->taxonomy_term_data_tag_vid;
-
-      $tags[$tid] = new StdClass();
-      $tags[$tid]->name = $term->taxonomy_term_data_tag_name;
-      $tags[$tid]->tid = $tid;
-      $tags[$tid]->vid = $vid;
-      $tags[$tid]->count = $term->taxonomy_term_data_tag_count;
-      $tags[$tid]->description = $term->taxonomy_term_data_tag_description;
+    foreach ($result as $index => $item) {
+      $count =  floatval($item->{$count_field_alias});
+      $tag = new TagadelicTag($index, "", $count);
+      $tags[] = $tag;
     }
 
-    $tags = tagadelic_build_weighted_tags($tags);
-    /// @todo: use views sorting options
-//    $tags = tagadelic_sort_tags($tags);
-
-    /// @TODO: check tagadelic requirement for vocabulary reference or rewrite theme function
-    $voc = new StdClass();
-    $voc->vid = 0;
-
-    $output = theme('tagadelic_weighted', array('terms' => $tags, 'voc' => $voc, 'more_link' => FALSE));
-
-
-    return $output;
+    $cloud = new TagadelicCloud($this->view->name, $tags);
+    $this->cloud_tags = $cloud->get_tags();
   }
 
 }
-

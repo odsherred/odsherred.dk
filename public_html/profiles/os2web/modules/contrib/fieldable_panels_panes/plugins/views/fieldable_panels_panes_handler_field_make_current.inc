@@ -1,18 +1,20 @@
 <?php
+
 /**
  * @file
- * Provide views handlers for fieldable panel panes
+ * Provide views handlers for fieldable panel panes.
  */
 
 /**
  * Field handler to present a link node edit.
  */
 class fieldable_panels_panes_handler_field_make_current extends fieldable_panels_panes_handler_field_view_revision {
+
   /**
-   * Renders the link.
+   * {@inheritdoc}
    */
-  function render_link($entity, $values) {
-    if (fieldable_panels_panes_access('update', $entity) && $entity->vid != $entity->current_vid) {
+  public function render_link($entity, $values) {
+    if (fieldable_panels_panes_entity_make_current_access($entity)) {
       $this->options['alter']['make_link'] = TRUE;
       $this->options['alter']['path'] = "admin/structure/fieldable-panels-panes/view/$entity->fpid/revision/$entity->vid/make-current";
       $this->options['alter']['query'] = drupal_get_destination();
@@ -25,4 +27,5 @@ class fieldable_panels_panes_handler_field_make_current extends fieldable_panels
       $this->options['alter']['path'] = '';
     }
   }
+
 }

@@ -156,5 +156,5 @@ MenuUX.createLinkField = function() {
     extra = ' value="' + title + '"';
   }
   $('#edit-fmenu-link-title').val(title);
-  return $('<div class="form-item"><input id="fmenu-link-input" type="text" size="60" maxlength="255"' + extra + '/></div>');
+  return $('<div class="form-item"><input class="form-text" id="fmenu-link-input" type="text" size="60" maxlength="255"' + extra + '/></div>');
 };
