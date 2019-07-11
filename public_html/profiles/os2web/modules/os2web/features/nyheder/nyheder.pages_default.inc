@@ -649,7 +649,7 @@ function nyheder_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'menu_name' => 'menu-presseservice',
-      'parent_mlid' => 'menu-presseservice:0',
+      'parent_mlid' => '',
       'title_link' => 0,
       'admin_title' => '',
       'level' => '1',
@@ -896,7 +896,7 @@ function nyheder_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'menu_name' => 'menu-presseservice',
-      'parent_mlid' => 'menu-presseservice:0',
+      'parent_mlid' => '',
       'title_link' => 0,
       'admin_title' => '',
       'level' => '1',
