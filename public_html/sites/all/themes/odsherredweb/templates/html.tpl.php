@@ -7,8 +7,8 @@
   <script>
     window.jQuery = window.$j = jQuery;
   </script>
-  <?php print $scripts; ?>
   <?php print $styles; ?>
+  <?php print $scripts; ?>
 </head>
 <body<?php print $attributes;?>>
 <div class="body-replacement simple-navigation-enabled-xs simple-navigation-sticky sidebar-left-enabled-xs sidebar-left-hidden-xs sidebar-left-content-push-xs">
