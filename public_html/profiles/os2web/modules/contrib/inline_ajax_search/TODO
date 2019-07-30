@@ -1,9 +1,0 @@
-Still to Do
-# Add translations
-# Option to use Apache Solr when installed
-# Option to use context search with Lucene 
-
-Fixed:
-# On install or update set the Lucene API Search count to 150
-# Dutch translation added
-# Use a correct path to search for outside the admin path
