@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the odsherred_eu_cookie_compliance feature.
+ */
+
+include_once 'odsherred_eu_cookie_compliance.features.inc';
