@@ -17,6 +17,7 @@
   </div>
   <?php print $page_top; ?>
   <?php print $page; ?>
+  <?php print $scripts; ?>
   <?php print $page_bottom; ?>
 </div>
 </body>
