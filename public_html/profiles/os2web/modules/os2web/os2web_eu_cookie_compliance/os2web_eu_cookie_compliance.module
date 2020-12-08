@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ * Code for the OS2Web EU Cookie compliance module.
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function os2web_eu_cookie_compliance_form_eu_cookie_compliance_admin_form_alter(&$form, &$form_state, $form_id) {
+  $popup_settings = eu_cookie_compliance_get_settings();
+
+  array_unshift($form['#submit'], 'os2web_eu_cookie_compliance_form_submit');
+  $form['#validate'][] = 'os2web_eu_cookie_compliance_form_validate';
+  $form['appearance']['eu_cookie_compliance']['branding_header'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Branding header'),
+    '#default_value' => isset($popup_settings['branding_header']) ? $popup_settings['branding_header'] : '',
+    '#maxlength' => 255,
+    '#required' => TRUE,
+    '#description' => t('Branding text show in top right side of popup'),
+  );
+
+  $form['appearance']['eu_cookie_compliance']['branding_logo_path'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Upload branding logo path'),
+    '#default_value' => isset($popup_settings['branding_logo_path']) ? $popup_settings['branding_logo_path'] : '',
+  );
+
+  $form['appearance']['eu_cookie_compliance']['branding_logo_upload'] = array(
+    '#type' => 'file',
+    '#title' => t('Upload new branding logo image'),
+  );
+
+}
+
+
+/**
+ * Custom validate handler.
+ */
+function os2web_eu_cookie_compliance_form_validate($form, &$form_state) {
+  $validators = array('file_validate_extensions' => array('png gif jpg jpeg apng svg'));
+
+  // Check for a new uploaded logo image.
+  $file = file_save_upload('eu_cookie_compliance', $validators);
+  if (isset($file)) {
+    // File upload was attempted.
+    if ($file) {
+      // Put the temporary file in form_values so we can save it on submit.
+      $form_state['values']['eu_cookie_compliance']['branding_logo_upload'] = $file;
+    }
+    else {
+      // File upload failed.
+      form_set_error('eu_cookie_compliance][branding_logo_upload', t('The logo image could not be uploaded.'));
+    }
+  }
+
+}
+
+/**
+ * Custom submit handler.
+ */
+function os2web_eu_cookie_compliance_form_submit($form, &$form_state) {
+  $values = &$form_state['values'];
+  if (!empty($values['eu_cookie_compliance']['branding_logo_upload'])) {
+    $file = $values['eu_cookie_compliance']['branding_logo_upload'];
+    unset($values['eu_cookie_compliance']['branding_logo_upload']);
+    $filename = file_unmanaged_copy($file->uri, 'public://', FILE_EXISTS_RENAME);
+    $values['eu_cookie_compliance']['branding_logo_path'] = $filename;
+  }
+}
+
