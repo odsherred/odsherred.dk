@@ -88,7 +88,7 @@
             </div>
           <?php } //end for ?>
         </div>
-        <div class="popup-banner-consent-group">
+        <div class="popup-banner-consent-group" id="eu-cookie-compliance-categories">
           <?php foreach ($cookie_categories as $key => $category) { ?>
             <div class="popup-banner-consent-field">
               <div class="consent-feld-name"><?php print check_plain($category['label']); ?></div>
