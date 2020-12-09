@@ -21,7 +21,7 @@ function os2web_eu_cookie_compliance_form_eu_cookie_compliance_admin_form_alter(
     '#required' => TRUE,
     '#description' => t('Branding text show in top right side of popup'),
   );
-
+  $form['appearance']['eu_cookie_compliance']['popup_position']['#options']['popup'] = t('Popup');
   $form['appearance']['eu_cookie_compliance']['branding_logo_path'] = array(
     '#type' => 'textfield',
     '#title' => t('Upload branding logo path'),
@@ -70,4 +70,3 @@ function os2web_eu_cookie_compliance_form_submit($form, &$form_state) {
     $values['eu_cookie_compliance']['branding_logo_path'] = $filename;
   }
 }
-
