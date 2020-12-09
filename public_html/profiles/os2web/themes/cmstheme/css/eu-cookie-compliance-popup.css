@@ -44,6 +44,7 @@
     fill: #1C771C !important;
 }
 #popupOverlay {
+    background: rgba(0, 0, 0, .7);
     display: flex;
     position: fixed;
     top: 0;
