@@ -8,20 +8,6 @@
  * Imlpements hook_install().
  */
 function os2web_eu_cookie_compliance_install() {
-  // Placeholder.
-}
-
-/**
- * Implements hook_uninstall().
- */
-function os2web_eu_cookie_compliance_uninstall() {
-  // Placeholder.
-}
-
-/**
- * Update variables.
- */
-function os2web_eu_cookie_compliance_7001(&$sandbox) {
   variable_set('eu_cookie_compliance_categories', array(
     'required' => array(
       'weight' => '0',
@@ -52,4 +38,11 @@ function os2web_eu_cookie_compliance_7001(&$sandbox) {
       'checkbox_default_state' => 'unchecked',
     ),
   ));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function os2web_eu_cookie_compliance_uninstall() {
+  // Placeholder.
 }
