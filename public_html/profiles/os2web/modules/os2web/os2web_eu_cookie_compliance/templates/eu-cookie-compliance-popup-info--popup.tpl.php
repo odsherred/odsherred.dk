@@ -47,7 +47,8 @@
     <div id="popupPage-1" class="popup-banner__page">
       <div class="popup-banner__summary">
         <div class="popup-banner__header">
-          <!-- branding -->
+          <img src="<?php print $branding_logo; ?>" alt="" />
+          <h2 class="popup-banner__branding"><?php print $branding_header; ?></h2>
         </div>
         <div class="popup-banner__text">
           <div class="popup-banner__maintext" id="popup-banner-wrapper_label">

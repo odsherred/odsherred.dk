@@ -19,8 +19,6 @@ function cmstheme_preprocess_html(&$variables) {
   drupal_add_js($theme_path . '/js/script.js');
   drupal_add_js($theme_path . '/js/jquery.phonenumber.js');
   drupal_add_js($theme_path . '/js/jquery.dagsorden.js', array('scope' => 'footer', 'weight' => 5));
-  drupal_add_css(drupal_get_path('theme', 'cmstheme') . '/css/eu-cookie-compliance-popup.css');
-  drupal_add_js(drupal_get_path('theme', 'cmstheme') . '/js/eu-cookie-compliance-popup.js', array('scope' => 'footer', 'weight' => 5));
 }
 
 /**
@@ -128,43 +126,3 @@ function cmstheme_filefield_item($file, $field) {
   }
   return '';
 }
-
-/**
- * Preprocessor for theme('eu_cookie_compliance_popup_info').
- */
-function cmstheme_preprocess_eu_cookie_compliance_popup_info(&$vars) {
-  $popup_settings = variable_get('eu_cookie_compliance', array());
-  if (isset($popup_settings['popup_position']) && $popup_settings['popup_position'] === 'popup') {
-    $vars['theme_hook_suggestions'][] = 'eu_cookie_compliance_popup_info__popup';
-
-    $data = array();
-    if (empty($popup_settings['use_bare_css'])) {
-      if ($popup_settings['popup_bg_hex'] != '') {
-        $data['css'] = '#popupOverlay .popup-banner__summary {background:#' . check_plain($popup_settings['popup_bg_hex']) . ';}';
-      }
-      if ($popup_settings['popup_text_hex'] != '') {
-        $data['css'] .= '#popupOverlay .popup-banner__text { border-color: #' . check_plain($popup_settings['popup_text_hex']) . ';}';
-
-      }
-      if ($popup_settings['info_template'] === 'new') {
-        $data['css'] .= '.eu-cookie-compliance-more-button {color: #' . check_plain($popup_settings['popup_text_hex']) . ' !important;}';
-      }
-    }
-    if (!empty($popup_settings['popup_position']) && $popup_settings['popup_position'] && !empty($popup_settings['fixed_top_position']) && $popup_settings['fixed_top_position']) {
-      $data['css'] .= '#sliding-popup.sliding-popup-popup { position: fixed; }';
-    }
-    if ($data['css']) {
-      $cid = md5($data['css']);
-      ctools_include('css');
-      $filename = ctools_css_retrieve($cid);
-      if (empty($filename)) {
-        $filename = ctools_css_store($cid, $data['css'], FALSE);
-      }
-      drupal_add_css($filename, array(
-        'weight' => 1000,
-      ));
-    }
-
-  }
-}
-

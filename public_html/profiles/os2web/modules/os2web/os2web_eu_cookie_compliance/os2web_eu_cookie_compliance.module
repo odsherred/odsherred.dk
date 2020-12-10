@@ -6,6 +6,17 @@
  */
 
 /**
+ * Implements hook_init().
+ *
+ * Inject additional Javascripts.
+ */
+function os2web_eu_cookie_compliance_init() {
+  $path = drupal_get_path('module', 'os2web_eu_cookie_compliance');
+  drupal_add_css( $path. '/css/eu-cookie-compliance-popup.css', array('weight' => 10));
+  drupal_add_js($path . '/js/eu-cookie-compliance-popup.js', array('scope' => 'footer', 'weight' => 10));
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function os2web_eu_cookie_compliance_form_eu_cookie_compliance_admin_form_alter(&$form, &$form_state, $form_id) {
@@ -34,7 +45,6 @@ function os2web_eu_cookie_compliance_form_eu_cookie_compliance_admin_form_alter(
   );
 
 }
-
 
 /**
  * Custom validate handler.
@@ -68,5 +78,67 @@ function os2web_eu_cookie_compliance_form_submit($form, &$form_state) {
     unset($values['eu_cookie_compliance']['branding_logo_upload']);
     $filename = file_unmanaged_copy($file->uri, 'public://', FILE_EXISTS_RENAME);
     $values['eu_cookie_compliance']['branding_logo_path'] = $filename;
+  }
+}
+
+/**
+ * Preprocessor for theme('eu_cookie_compliance_popup_info').
+ */
+function os2web_eu_cookie_compliance_preprocess_eu_cookie_compliance_popup_info(&$vars) {
+  $popup_settings = variable_get('eu_cookie_compliance', array());
+  if (isset($popup_settings['popup_position']) && $popup_settings['popup_position'] === 'popup') {
+    $vars['theme_hook_suggestions'][] = 'eu_cookie_compliance_popup_info__popup';
+    $vars['branding_logo'] = empty($popup_settings['branding_logo_path']) ? NULL : file_create_url($popup_settings['branding_logo_path']);
+    $vars['branding_header'] = empty($popup_settings['branding_logo_path']) ? NULL : $popup_settings['branding_header'];
+
+    $data = array();
+    if (empty($popup_settings['use_bare_css'])) {
+      if ($popup_settings['popup_bg_hex'] != '') {
+        $data['css'] = '#popupOverlay .popup-banner__summary {background:#' . check_plain($popup_settings['popup_bg_hex']) . ';}';
+      }
+      if ($popup_settings['popup_text_hex'] != '') {
+        $data['css'] .= '#popupOverlay .popup-banner__text { border-color: #' . check_plain($popup_settings['popup_text_hex']) . ';}';
+
+      }
+      if ($popup_settings['info_template'] === 'new') {
+        $data['css'] .= '.eu-cookie-compliance-more-button {color: #' . check_plain($popup_settings['popup_text_hex']) . ' !important;}';
+      }
+    }
+    if (!empty($popup_settings['popup_position']) && $popup_settings['popup_position'] && !empty($popup_settings['fixed_top_position']) && $popup_settings['fixed_top_position']) {
+      $data['css'] .= '#sliding-popup.sliding-popup-popup { position: fixed; }';
+    }
+    if ($data['css']) {
+      $cid = md5($data['css']);
+      ctools_include('css');
+      $filename = ctools_css_retrieve($cid);
+      if (empty($filename)) {
+        $filename = ctools_css_store($cid, $data['css'], FALSE);
+      }
+      drupal_add_css($filename, array(
+        'weight' => 1000,
+      ));
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function os2web_eu_cookie_compliance_theme_registry_alter(&$theme_registry) {
+  // Get module path
+  $eucc_path = drupal_get_path('module', 'eu_cookie_compliance');
+  $path = drupal_get_path('module', 'os2web_eu_cookie_compliance');
+
+  // Find all .tpl.php files in this module's folder recursively.
+  $template_files = drupal_find_theme_templates($theme_registry, '.tpl.php', $eucc_path);
+
+  // Itterate through all found template file objects.
+  foreach ($template_files as $key => $template_file) {
+    // If the template has not already been overridden by a theme.
+    if (!preg_match('#/themes/#', $theme_registry[$key]['theme path'])) {
+      // Alter the theme path and template elements.
+      $theme_registry[$key]['theme path'] = $path;
+      $theme_registry[$key] = array_merge($theme_registry[$key], $template_file);
+    }
   }
 }
