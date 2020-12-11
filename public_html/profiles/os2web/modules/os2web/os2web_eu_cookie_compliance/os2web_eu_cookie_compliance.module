@@ -5,6 +5,9 @@
  * Code for the OS2Web EU Cookie compliance module.
  */
 
+define('EUCC_POPUP_THEME', 'design1');
+define('EUCC_ONLY_REQUIRED_LABEL', t('Only required'));
+
 /**
  * Implements hook_init().
  *
@@ -12,8 +15,16 @@
  */
 function os2web_eu_cookie_compliance_init() {
   $path = drupal_get_path('module', 'os2web_eu_cookie_compliance');
-  drupal_add_css( $path. '/css/eu-cookie-compliance-popup.css', array('weight' => 10));
   drupal_add_js($path . '/js/eu-cookie-compliance-popup.js', array('scope' => 'footer', 'weight' => 10));
+  // Default styles.
+  drupal_add_css( $path. '/css/eu-cookie-compliance-popup.css', array('weight' => 10));
+
+  $popup_settings = eu_cookie_compliance_get_settings();
+  $popup_theme = empty($popup_settings['popup_theme']) ? EUCC_POPUP_THEME : $popup_settings['popup_theme'];
+  $styles_path = '/css/eu-cookie-compliance-popup--' . $popup_theme . '.css';
+  if (file_exists(DRUPAL_ROOT . '/' . $path . $styles_path)) {
+    drupal_add_css( $path . $styles_path, array('weight' => 10));
+  }
 }
 
 /**
@@ -24,6 +35,30 @@ function os2web_eu_cookie_compliance_form_eu_cookie_compliance_admin_form_alter(
 
   array_unshift($form['#submit'], 'os2web_eu_cookie_compliance_form_submit');
   $form['#validate'][] = 'os2web_eu_cookie_compliance_form_validate';
+  $form['cookies']['eu_cookie_compliance']['allowed_cookies_enriched'] = $form['cookies']['eu_cookie_compliance']['allowed_cookies'];
+  $form['cookies']['eu_cookie_compliance']['allowed_cookies_enriched']['#default_value'] = $popup_settings['allowed_cookies_enriched'];
+  $extraDescription = 'category:cookie_name|sevrice name|cockie goal|privacy policy url|lifetime|provider';
+  $form['cookies']['eu_cookie_compliance']['allowed_cookies_enriched']['#description'] .= '<p>' . $extraDescription . '</p>';
+
+  $form['cookies']['eu_cookie_compliance']['allowed_cookies']['#type'] = 'hidden';
+  // Consent per category.
+  if ($popup_settings['enable_save_preferences_button']) {
+    $form['consent_per_category']['eu_cookie_compliance']['only_required_button_label'] = array(
+      '#type' => 'textfield',
+      '#title' => t('"Only required categories" button label'),
+      '#default_value' => isset($popup_settings['only_required_button_label']) ? $popup_settings['only_required_button_label'] : EUCC_ONLY_REQUIRED_LABEL,
+      '#states' => array(
+        'visible' => array(
+          "input[name='eu_cookie_compliance[enable_save_preferences_button]']" => array('checked' => TRUE),
+        ),
+        'required' => array(
+          "input[name='eu_cookie_compliance[enable_save_preferences_button]']" => array('checked' => TRUE),
+        ),
+      ),
+    );
+  }
+
+  // Apperance.
   $form['appearance']['eu_cookie_compliance']['branding_header'] = array(
     '#type' => 'textfield',
     '#title' => t('Branding header'),
@@ -42,6 +77,16 @@ function os2web_eu_cookie_compliance_form_eu_cookie_compliance_admin_form_alter(
   $form['appearance']['eu_cookie_compliance']['branding_logo_upload'] = array(
     '#type' => 'file',
     '#title' => t('Upload new branding logo image'),
+  );
+
+  $form['appearance']['eu_cookie_compliance']['popup_theme'] = array(
+    '#type' => 'select',
+    '#title' => t('Theme'),
+    '#options' => array(
+      'design1' => t('Design 1'),
+      'design2' => t('Design 2'),
+    ),
+    '#default_value' => isset($popup_settings['popup_theme']) ? $popup_settings['popup_theme'] : EUCC_POPUP_THEME,
   );
 
 }
@@ -79,6 +124,16 @@ function os2web_eu_cookie_compliance_form_submit($form, &$form_state) {
     $filename = file_unmanaged_copy($file->uri, 'public://', FILE_EXISTS_RENAME);
     $values['eu_cookie_compliance']['branding_logo_path'] = $filename;
   }
+  $allowed_cookies = array();
+  $allowed_cookies_enriched = $values['eu_cookie_compliance']['allowed_cookies_enriched'];
+  $allowed_cookies_enriched_arr = _eu_cookie_compliance_explode_multiple_lines($allowed_cookies_enriched, FALSE);
+  $allowed_cookies_enriched_arr = array_filter($allowed_cookies_enriched_arr, 'strlen');
+  foreach ($allowed_cookies_enriched_arr as $line) {
+    $line_arr = explode('|', $line);
+    $line_arr = array_filter($line_arr, function($k) { return $k < 1; }, ARRAY_FILTER_USE_KEY);
+    $allowed_cookies[] = implode('|', $line_arr);
+  }
+  $values['eu_cookie_compliance']['allowed_cookies'] = implode(PHP_EOL, $allowed_cookies);
 }
 
 /**
@@ -87,9 +142,31 @@ function os2web_eu_cookie_compliance_form_submit($form, &$form_state) {
 function os2web_eu_cookie_compliance_preprocess_eu_cookie_compliance_popup_info(&$vars) {
   $popup_settings = variable_get('eu_cookie_compliance', array());
   if (isset($popup_settings['popup_position']) && $popup_settings['popup_position'] === 'popup') {
+    global $theme;
     $vars['theme_hook_suggestions'][] = 'eu_cookie_compliance_popup_info__popup';
-    $vars['branding_logo'] = empty($popup_settings['branding_logo_path']) ? NULL : file_create_url($popup_settings['branding_logo_path']);
-    $vars['branding_header'] = empty($popup_settings['branding_logo_path']) ? NULL : $popup_settings['branding_header'];
+    $popup_theme = empty($popup_settings['popup_theme']) ? EUCC_POPUP_THEME : $popup_settings['popup_theme'];
+    $vars['theme_hook_suggestions'][] = 'eu_cookie_compliance_popup_info__popup__' . $popup_theme;
+
+    $logo_path = theme_get_setting('logo', $theme);
+    if ($vars['method'] == 'categories') {
+      $vars['only_required_button_label'] = empty($popup_settings['only_required_button_label']) ? EUCC_ONLY_REQUIRED_LABEL : $popup_settings['only_required_button_label'];
+    }
+    $vars['branding_logo'] = empty($popup_settings['branding_logo_path']) ? $logo_path : file_create_url($popup_settings['branding_logo_path']);
+    $vars['branding_header'] = empty($popup_settings['branding_header']) ? NULL : $popup_settings['branding_header'];
+
+    $allowed_cookies_enriched = empty($popup_settings['allowed_cookies_enriched']) ? array() : $popup_settings['allowed_cookies_enriched'];
+    $allowed_cookies_enriched_arr = _eu_cookie_compliance_explode_multiple_lines($allowed_cookies_enriched, FALSE);
+    $allowed_cookies_enriched_arr = array_filter($allowed_cookies_enriched_arr, 'strlen');
+    $cookie_categories = &$vars['cookie_categories'];
+    foreach ($cookie_categories as $category_key => &$category) {
+      $category['cookies'] = array();
+      foreach ($allowed_cookies_enriched_arr as $line) {
+        if (strpos($line, $category_key . ':') === 0) {
+
+          $category['cookies'][] = explode('|', str_replace($category_key . ':','', $line));
+        }
+      }
+    }
 
     $data = array();
     if (empty($popup_settings['use_bare_css'])) {

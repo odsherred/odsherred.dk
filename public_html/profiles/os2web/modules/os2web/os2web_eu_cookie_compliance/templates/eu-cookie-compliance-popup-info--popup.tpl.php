@@ -61,44 +61,87 @@
       </div>
       <div class="popup-banner__page-footer" role="navigation" aria-label="menu">
         <div class="popup-button-group">
-          <?php if ($save_preferences_button_label) : ?>
-              <button type="button" class="eu-cookie-compliance-save-preferences-button popup-banner__decline"><?php print $save_preferences_button_label; ?></button>
+          <?php if ($only_required_button_label) : ?>
+              <button type="button" class="eu-cookie-compliance-only-required-button eucc-button eucc-button__decline"><?php print $only_required_button_label; ?></button>
           <?php endif; ?>
-          <button tabindex="0" type="button" class="<?php print $primary_button_class; ?> popup-banner__accept"  aria-label="<?php print $agree_button; ?>" ><?php print $agree_button; ?></button>
+          <?php if ($save_preferences_button_label) : ?>
+              <button type="button" class="eu-cookie-compliance-save-preferences-button eucc-button eucc-button__decline"><?php print $save_preferences_button_label; ?></button>
+          <?php endif; ?>
+          <button tabindex="0" type="button" class="<?php print $primary_button_class; ?> eucc-button eucc-button__accept"  aria-label="<?php print $agree_button; ?>" ><?php print $agree_button; ?></button>
         </div>
-        <?php if ($cookie_categories) : ?>
-          <div class="popup-toggle-group popup-toggle-group__details">
-            <button tabindex="0" aria-label="Vis detaljer">Vis detaljer</button>
-            <button tabindex="0" class="hidden" aria-label="Skjul detaljer">Skjul detaljer</button>
-          </div>
-        <?php endif; ?>
       </div>
       <?php if ($cookie_categories) : ?>
+        <div class="consent-wrapper">
+          <div class="popup-toggle-group popup-toggle-group__details">
+            <button tabindex="0" aria-label="Vis detailer" class="button-arrow button-arrow__after button-arrow__down">Vis detailer</button>
+            <button tabindex="0" aria-label="Skjul detailer" class="hidden button-arrow button-arrow__after button-arrow__top">Skjul detailer</button>
+          </div>
+          <div class="popup-banner-consent-group" id="eu-cookie-compliance-categories">
+            <?php foreach ($cookie_categories as $key => $category) { ?>
+              <div class="popup-banner-consent-field">
+                <input type="checkbox" name="cookie-categories" id="cookie-category-<?php print drupal_html_class($key); ?>"
+                       value="<?php print $key; ?>"
+                       <?php if (in_array($category['checkbox_default_state'], array('checked', 'required'))) : ?>checked<?php endif; ?>
+                       <?php if ($category['checkbox_default_state'] === 'required') : ?>disabled<?php endif; ?> >
+                <label for="cookie-category-<?php print drupal_html_class($key); ?>"><?php print check_plain($category['label']); ?></label>
+              </div>
+            <?php } //end for ?>
+          </div>
+        </div>
+
         <div class="popup-consent-banner__categories-wrapper" id="popupConsentBannerCategoriesWrapper" style="display: none;" aria-hidden="true">
           <?php foreach ($cookie_categories as $key => $category) { ?>
             <div class="popup-consent-banner__category-container">
-              <input class="popup-consent-banner__category-expander" id="popup-consent-banner__category-expander-cookie_cat_necessary" type="checkbox" name="tabs">
               <div class="popup-consent-banner__name-container">
-                <label for="popup-consent-banner__category-expander-cookie_cat_necessary" class="popup-consent-banner__category-name popup-consent-banner__category-name--slider">
-                  <span><?php print check_plain($category['label']); ?></span>
+                <label for="popup-consent-banner__category-expander-cookie_cat_<?php print check_plain($key) ?>" class="popup-consent-banner__category-name popup-consent-banner__category-name--slider">
+                  <span class="button-arrow button-arrow__down button-arrow__before"><?php print check_plain($category['label']); ?></span>
                   <?php if (isset($category['description'])) : ?>
                     <div class="popup-consent-banner__category-description"><?php print check_plain($category['description']) ?></div>
                   <?php endif; ?>
                 </label>
               </div>
-            </div>
-          <?php } //end for ?>
-        </div>
-        <div class="popup-banner-consent-group" id="eu-cookie-compliance-categories">
-          <?php foreach ($cookie_categories as $key => $category) { ?>
-            <div class="popup-banner-consent-field">
-              <div class="consent-feld-name"><?php print check_plain($category['label']); ?></div>
-              <div class="popup-consent-banner__switch-container" id="switch-cookie_cat_necessary">
-                <div class="popup-checkboxes">
-                  <input class="popup__checkbox" data-index="0" aria-label="Nødvendige"  name="cookie-categories" id="cookie-category-<?php print drupal_html_class($key); ?>" type="checkbox" value="<?php print $key; ?>"
-                    <?php if (in_array($category['checkbox_default_state'], array('checked', 'required'))) : ?>checked<?php endif; ?>
-                    <?php if ($category['checkbox_default_state'] === 'required') : ?>disabled<?php endif; ?> >
-                  <div class="checkbox-toggle" aria-label="toggle-for-<?php print check_plain($category['label']); ?>" ></div>
+              <div class="popup-consent-banner__description-container" style="display: none;" id="popup-consent-banner__category-expander-cookie_cat_<?php print check_plain($key) ?>">
+                <div class="popup-consent-banner__found-cookies">
+                  <?php foreach ($category['cookies'] as $cookie) { ?>
+                    <div class="popup-consent-banner__cookie-details">
+                      <?php if (isset($cookie['1'])) : ?>
+                        <div class="cookie-details__detail-container cookie-details__detail-container-data-processor-name" title="Cookie Information">
+                          <span class="cookie-details__detail-title">Service:</span>
+                          <span class="cookie-details__detail-content"><?php print check_plain($cookie['1']); ?></span>
+                        </div>
+                      <?php endif; ?>
+                      <?php if (isset($cookie['2'])) : ?>
+                        <div class="cookie-details__detail-container cookie-details__detail-container-purpose" title="<?php print check_plain($cookie['2']); ?>">
+                          <span class="cookie-details__detail-title">Formål:</span>
+                          <span class="cookie-details__detail-content"><?php print check_plain($cookie['2']); ?></span>
+                        </div>
+                      <?php endif; ?>
+                      <?php if (isset($cookie['3'])) : ?>
+                        <div class="cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy" title="<?php print check_plain($cookie['3']); ?>">
+                          <span class="cookie-details__detail-title">Privatlivspolitik:</span>
+                          <span class="cookie-details__detail-content"><a target="_blank" href="<?php print check_plain($cookie['3']); ?>"><?php print check_plain($cookie['3']); ?></a></span>
+                        </div>
+                      <?php endif; ?>
+                      <?php if (isset($cookie['4'])) : ?>
+                        <div class="cookie-details__detail-container cookie-details__detail-container-expiry" title="<?php print check_plain($cookie['4']); ?>">
+                          <span class="cookie-details__detail-title">Udløb:</span>
+                          <span class="cookie-details__detail-content"><?php print check_plain($cookie['4']); ?></span>
+                        </div>
+                      <?php endif; ?>
+                      <?php if (isset($cookie['0'])) : ?>
+                        <div class="cookie-details__detail-container cookie-details__detail-container-name" title="<?php print check_plain($cookie['0']); ?>">
+                          <span class="cookie-details__detail-title">Navn:</span>
+                          <span class="cookie-details__detail-content"><?php print check_plain($cookie['0']); ?></span>
+                        </div>
+                      <?php endif; ?>
+                      <?php if (isset($cookie['5'])) : ?>
+                          <div class="cookie-details__detail-container cookie-details__detail-container-provider" title="<?php print check_plain($cookie['5']); ?>">
+                          <span class="cookie-details__detail-title">Udbyder:</span>
+                          <span class="cookie-details__detail-content"><?php print check_plain($cookie['5']); ?></span>
+                        </div>
+                      </div>
+                    <?php endif; ?>
+                  <?php } //end for ?>
                 </div>
               </div>
             </div>
