@@ -12,7 +12,13 @@
           $popupWrapper.height(Drupal.settings.eu_cookie_compliance.popup_height)
             .width(Drupal.settings.eu_cookie_compliance.popup_width);
         }
-        closePopup();
+
+        if (Drupal.eu_cookie_compliance.getCurrentStatus() !== null) {
+          closePopup();
+        }
+        else {
+          openPopup();
+        }
       });
 
       $(document).on('click', '.agree-button, .eu-cookie-compliance-save-preferences-button, .decline-button', closePopup);
