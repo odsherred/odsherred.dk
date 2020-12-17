@@ -25,6 +25,34 @@ function os2web_eu_cookie_compliance_init() {
   if (file_exists(DRUPAL_ROOT . '/' . $path . $styles_path)) {
     drupal_add_css( $path . $styles_path, array('weight' => 10));
   }
+
+  $data = array();
+  if (empty($popup_settings['use_bare_css'])) {
+    if ($popup_settings['popup_bg_hex'] != '') {
+      $data['css'] = '#popupOverlay .popup-banner__summary {background:#' . check_plain($popup_settings['popup_bg_hex']) . ';}';
+    }
+    if ($popup_settings['popup_text_hex'] != '') {
+      $data['css'] .= '#popupOverlay .popup-banner__text { border-color: #' . check_plain($popup_settings['popup_text_hex']) . ';}';
+
+    }
+    if ($popup_settings['info_template'] === 'new') {
+      $data['css'] .= '.eu-cookie-compliance-more-button {color: #' . check_plain($popup_settings['popup_text_hex']) . ' !important;}';
+    }
+  }
+  if (!empty($popup_settings['popup_position']) && $popup_settings['popup_position'] && !empty($popup_settings['fixed_top_position']) && $popup_settings['fixed_top_position']) {
+    $data['css'] .= '#sliding-popup.sliding-popup-popup { position: fixed; }';
+  }
+  if ($data['css']) {
+    $cid = md5($data['css']);
+    ctools_include('css');
+    $filename = ctools_css_retrieve($cid);
+    if (empty($filename)) {
+      $filename = ctools_css_store($cid, $data['css'], FALSE);
+    }
+    drupal_add_css($filename, array(
+      'weight' => 1000,
+    ));
+  }
 }
 
 /**
@@ -166,34 +194,6 @@ function os2web_eu_cookie_compliance_preprocess_eu_cookie_compliance_popup_info(
           $category['cookies'][] = explode('|', str_replace($category_key . ':','', $line));
         }
       }
-    }
-
-    $data = array();
-    if (empty($popup_settings['use_bare_css'])) {
-      if ($popup_settings['popup_bg_hex'] != '') {
-        $data['css'] = '#popupOverlay .popup-banner__summary {background:#' . check_plain($popup_settings['popup_bg_hex']) . ';}';
-      }
-      if ($popup_settings['popup_text_hex'] != '') {
-        $data['css'] .= '#popupOverlay .popup-banner__text { border-color: #' . check_plain($popup_settings['popup_text_hex']) . ';}';
-
-      }
-      if ($popup_settings['info_template'] === 'new') {
-        $data['css'] .= '.eu-cookie-compliance-more-button {color: #' . check_plain($popup_settings['popup_text_hex']) . ' !important;}';
-      }
-    }
-    if (!empty($popup_settings['popup_position']) && $popup_settings['popup_position'] && !empty($popup_settings['fixed_top_position']) && $popup_settings['fixed_top_position']) {
-      $data['css'] .= '#sliding-popup.sliding-popup-popup { position: fixed; }';
-    }
-    if ($data['css']) {
-      $cid = md5($data['css']);
-      ctools_include('css');
-      $filename = ctools_css_retrieve($cid);
-      if (empty($filename)) {
-        $filename = ctools_css_store($cid, $data['css'], FALSE);
-      }
-      drupal_add_css($filename, array(
-        'weight' => 1000,
-      ));
     }
   }
 }

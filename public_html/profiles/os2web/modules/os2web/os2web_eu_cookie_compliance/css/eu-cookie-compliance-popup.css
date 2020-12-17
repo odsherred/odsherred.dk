@@ -90,7 +90,8 @@ body.eu-cookie-compliance-popup-open {
 }
 
 .eu-cookie-compliance-popup-closed #sliding-popup.sliding-popup-popup {
-    position: static !important;
+    position: fixed !important;
+    width: 100% !important;
 }
 
 #sliding-popup #popupOverlay div.consent-feld-name,
@@ -179,7 +180,7 @@ body.eu-cookie-compliance-popup-open {
     white-space: normal !important;
 }
 .popup-banner__page-footer {
-    background: #FFFFFF;
+    background: #f6f6f6;
     width: 100%;
     padding: 30px 40px;
     position: sticky;
@@ -229,7 +230,6 @@ body.eu-cookie-compliance-popup-open {
     border-radius: 3px;
     max-width: 50%;
     margin: 10px 0;
-    min-width: 200px;
     border:0;
     background:none;
     transition:all 300ms ease;
@@ -238,7 +238,7 @@ body.eu-cookie-compliance-popup-open {
 }
 #popupOverlay .eucc-button__decline {
     border:solid 1px #dddddd;
-    background:#f6f6f6;
+    background:#ececec;
     color: #000;
 }
 #popupOverlay .eucc-button:hover{
@@ -268,7 +268,7 @@ body.eu-cookie-compliance-popup-open {
     border: 1px solid #eee;
     border-radius: 5px;
     font-size: 14px;
-    margin-right: 200px;
+    margin-right: 150px;
 }
 .popup-banner-consent-field, .popup-banner-consent-field *{
     display:inline-block;
@@ -584,39 +584,4 @@ body.eu-cookie-compliance-popup-open {
     .cookie-details__detail-container, .cookie-details__detail-container a{
         flex-flow:column;
     }
-}
-/*overwrites*/
-.popup-banner__summary,
-.popup-banner__cookiedeclaration {
-    background-color: #004370;
-}
-.popup-banner__accept {
-    background: #013157;
-}
-.popup-banner__accept:hover {
-    background: #004370;
-}
-.popup-banner__text, .popup-banner__text p, .popup-banner__text ol li {
-    color: white;
-    font-size: 0.95em;
-    font-weight: 500;
-}
-.popup-banner__text ol li {
-    margin-bottom:0.5em;
-}
-.popup-banner__text p, .popup-banner__text ol {
-    margin-bottom:1em;
-}
-.popup-banner__text a {
-    color: white;
-    text-decoration: underline;
-}
-#popup-renew #popup-renew-svg .renew_path {
-    fill: #013157 !important;
-}
-.popup-checkboxes input[type="checkbox"]:checked + .checkbox-toggle {
-    background: #013157 !important;
-}
-.popup-consent-banner__category-expander:checked ~ .popup-consent-banner__name-container, .popup-consent-banner__category-name:hover {
-    color: #013157 !important;
 }
