@@ -62,10 +62,10 @@
       <div class="popup-banner__page-footer" role="navigation" aria-label="menu">
         <div class="popup-button-group">
           <?php if ($only_required_button_label) : ?>
-              <button type="button" class="eu-cookie-compliance-only-required-button eucc-button eucc-button__decline"><?php print $only_required_button_label; ?></button>
+            <button type="button" class="eu-cookie-compliance-only-required-button eucc-button eucc-button__decline"><?php print $only_required_button_label; ?></button>
           <?php endif; ?>
           <?php if ($save_preferences_button_label) : ?>
-              <button type="button" class="eu-cookie-compliance-save-preferences-button eucc-button eucc-button__decline"><?php print $save_preferences_button_label; ?></button>
+            <button type="button" class="eu-cookie-compliance-save-preferences-button eucc-button eucc-button__decline"><?php print $save_preferences_button_label; ?></button>
           <?php endif; ?>
           <button tabindex="0" type="button" class="<?php print $primary_button_class; ?> eucc-button eucc-button__accept"  aria-label="<?php print $agree_button; ?>" ><?php print $agree_button; ?></button>
         </div>
@@ -135,12 +135,12 @@
                         </div>
                       <?php endif; ?>
                       <?php if (isset($cookie['5'])) : ?>
-                          <div class="cookie-details__detail-container cookie-details__detail-container-provider" title="<?php print check_plain($cookie['5']); ?>">
+                        <div class="cookie-details__detail-container cookie-details__detail-container-provider" title="<?php print check_plain($cookie['5']); ?>">
                           <span class="cookie-details__detail-title">Udbyder:</span>
                           <span class="cookie-details__detail-content"><?php print check_plain($cookie['5']); ?></span>
                         </div>
-                      </div>
-                    <?php endif; ?>
+                      <?php endif; ?>
+                    </div>
                   <?php } //end for ?>
                 </div>
               </div>
