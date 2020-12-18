@@ -401,7 +401,7 @@ a.overlayclass {
 }
 
 .region.region-page-top p {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 /* global */
 .page-selvbetjeninger .selvbetjening {
@@ -607,4 +607,8 @@ aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facet
 .page-node-898393 .pane-citizen-proposals, /* the node id on odsherred.dk */
 .page-node-898342 .pane-citizen-proposals { /* the node id on test.odsherred.dk */
     display: block;
+}
+
+.eu-cookie-compliance-popup-closed .sliding-popup-popup .eu-cookie-withdraw-tab {
+    top: 60%;
 }

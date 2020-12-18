@@ -66,10 +66,10 @@ body.eu-cookie-compliance-popup-open {
 
 .eu-cookie-compliance-popup-closed .sliding-popup-popup .eu-cookie-withdraw-tab {
     margin: 0 !important;
-    border-width: 2px 2px 0;
+    border-width: 0;
     border-radius: 5px 5px 0 0;
     bottom: 0;
-    top: 40%;
+    top: 50%;
     right: 14px;
     z-index: 950;
     position: fixed;
