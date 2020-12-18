@@ -53,6 +53,23 @@ function os2web_eu_cookie_compliance_init() {
       'weight' => 1000,
     ));
   }
+  $data['variables'] = array(
+    'unhandled_cookies' => variable_get('os2web_eu_cookie_compliance_unhandled_cookies', array()),
+  );
+  $script_scope = isset($popup_settings['script_scope']) ? $popup_settings['script_scope'] : 'footer';
+  drupal_add_js(array('os2web_eu_cookie_compliance' => $data['variables']), array('type' => 'setting', 'scope' => $script_scope));
+}
+
+/**
+ * Implements hook_menu().
+ */
+function os2web_eu_cookie_compliance_menu() {
+  $items['os2web-eu-cookie-compliance/cookie-list-update'] = array(
+    'page callback' => 'os2web_eu_cookie_compliance_cookie_list_update',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('display EU Cookie Compliance popup'),
+  );
+  return $items;
 }
 
 /**
@@ -92,7 +109,6 @@ function os2web_eu_cookie_compliance_form_eu_cookie_compliance_admin_form_alter(
     '#title' => t('Branding header'),
     '#default_value' => isset($popup_settings['branding_header']) ? $popup_settings['branding_header'] : '',
     '#maxlength' => 255,
-    '#required' => TRUE,
     '#description' => t('Branding text show in top right side of popup'),
   );
   $form['appearance']['eu_cookie_compliance']['popup_position']['#options']['popup'] = t('Popup');
@@ -110,13 +126,58 @@ function os2web_eu_cookie_compliance_form_eu_cookie_compliance_admin_form_alter(
   $form['appearance']['eu_cookie_compliance']['popup_theme'] = array(
     '#type' => 'select',
     '#title' => t('Theme'),
-    '#options' => array(
-      'design1' => t('Design 1'),
-      'design2' => t('Design 2'),
-    ),
+    '#options' => _os2web_eu_cookie_compliance_design_theme_list(),
     '#default_value' => isset($popup_settings['popup_theme']) ? $popup_settings['popup_theme'] : EUCC_POPUP_THEME,
   );
 
+  // Rendering list with unhandled js-files.
+  $unhandled_js = variable_get('os2web_eu_cookie_compliance_unhandled_js', array());
+  if ($unhandled_js) {
+    $form['javascripts']['unhandled_js'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Unhandled JS files') . ' (' . count($unhandled_js) . ')',
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      'markup' =>     array(
+        '#markup' => theme('item_list', array('items' => $unhandled_js))
+      )
+    );
+  }
+
+  // Rendering list with unhandled cookies.
+  $unhandled_cookies = variable_get('os2web_eu_cookie_compliance_unhandled_cookies', array());
+  if ($unhandled_cookies) {
+    $form['cookies']['unhandled_cookies'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Unhandled Cookies') . ' (' . count($unhandled_cookies) . ')',
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      'markup' =>     array(
+        '#markup' => theme('item_list', array('items' => $unhandled_cookies))
+      )
+    );
+  }
+
+  // Advanced.
+  $form['advanced']['eu_cookie_compliance']['notification_email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Email for notifications'),
+    '#default_value' => isset($popup_settings['notification_email']) ? $popup_settings['notification_email'] : '',
+    '#maxlength' => 255,
+    '#description' => t('Email for notification on new unhandled JS files or cookies'),
+  );
+}
+
+/**
+ * Defines design theme list.
+ *
+ * @return array
+ */
+function _os2web_eu_cookie_compliance_design_theme_list() {
+  return array(
+    'design1' => t('Design 1'),
+    'design2' => t('Design 2'),
+  );
 }
 
 /**
@@ -162,6 +223,21 @@ function os2web_eu_cookie_compliance_form_submit($form, &$form_state) {
     $allowed_cookies[] = implode('|', $line_arr);
   }
   $values['eu_cookie_compliance']['allowed_cookies'] = implode(PHP_EOL, $allowed_cookies);
+
+  $unhandled_js_saved = variable_get('os2web_eu_cookie_compliance_unhandled_js', array());
+  $disabled_javascripts = $values['eu_cookie_compliance']['disabled_javascripts'];
+  $disabled_javascripts = _eu_cookie_compliance_explode_multiple_lines($disabled_javascripts, FALSE);
+  foreach ($disabled_javascripts as $script) {
+    _os2web_eu_cookie_compliance_remove_category($script);
+    if ($key = array_search($script, $unhandled_js_saved)) {
+      unset($unhandled_js_saved[$key]);
+    }
+  }
+
+  // Update unhandled files list there were removed lines.
+  if (array_diff(variable_get('os2web_eu_cookie_compliance_unhandled_js', array()), $unhandled_js_saved)) {
+    variable_set('os2web_eu_cookie_compliance_unhandled_js', $unhandled_js_saved);
+  }
 }
 
 /**
@@ -199,23 +275,197 @@ function os2web_eu_cookie_compliance_preprocess_eu_cookie_compliance_popup_info(
 }
 
 /**
- * Implements hook_theme_registry_alter().
+ * Implements hook_theme().
+ *
+ * Adding theme for custom design.
  */
-function os2web_eu_cookie_compliance_theme_registry_alter(&$theme_registry) {
-  // Get module path
-  $eucc_path = drupal_get_path('module', 'eu_cookie_compliance');
+function os2web_eu_cookie_compliance_theme() {
   $path = drupal_get_path('module', 'os2web_eu_cookie_compliance');
-
-  // Find all .tpl.php files in this module's folder recursively.
-  $template_files = drupal_find_theme_templates($theme_registry, '.tpl.php', $eucc_path);
-
-  // Itterate through all found template file objects.
-  foreach ($template_files as $key => $template_file) {
-    // If the template has not already been overridden by a theme.
-    if (!preg_match('#/themes/#', $theme_registry[$key]['theme path'])) {
-      // Alter the theme path and template elements.
-      $theme_registry[$key]['theme path'] = $path;
-      $theme_registry[$key] = array_merge($theme_registry[$key], $template_file);
+  $theme = array();
+  foreach (_os2web_eu_cookie_compliance_design_theme_list() as $key => $label) {
+    if ($key == EUCC_POPUP_THEME) {
+      $key = '';
     }
+    $suffix = $key ? ('__' . $key) : '';
+    $theme['eu_cookie_compliance_popup_info__popup' . $suffix] = array(
+      'variables' => array(),
+      'template' => 'eu-cookie-compliance-popup-info--popup' . str_replace('_', '-', $suffix),
+      'path' => $path . '/templates'
+    );
+  }
+  return $theme;
+}
+
+/**
+ * Implements hook__module_implements_alter().
+ */
+function os2web_eu_cookie_compliance_module_implements_alter(&$module_list, $context){
+  if (strpos($context, "js_alter") === 0) {
+    $temp = $module_list['os2web_eu_cookie_compliance'];
+    unset($module_list['os2web_eu_cookie_compliance']);
+    $module_list['os2web_eu_cookie_compliance'] = $temp;
+  }
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Check registered JS files and add it to unhandled list.
+ */
+function os2web_eu_cookie_compliance_js_alter(&$javascript) {
+  // Do not checking JS files from admin pages.
+  if (path_is_admin(current_path())) {
+    return;
+  }
+
+  $popup_settings = eu_cookie_compliance_get_settings();
+  $unhandled_js_detailed = array_filter($javascript, function($script) {
+    return $script['type'] == 'file';
+  });
+  $unhandled_js_saved = variable_get('os2web_eu_cookie_compliance_unhandled_js', array());
+  if (!empty($popup_settings['disabled_javascripts'])) {
+    $disabled_javascripts = $popup_settings['disabled_javascripts'];
+    $disabled_javascripts = _eu_cookie_compliance_explode_multiple_lines($disabled_javascripts, FALSE);
+
+    foreach ($disabled_javascripts as $script) {
+      _os2web_eu_cookie_compliance_remove_category($script);
+      unset($unhandled_js_detailed[$script]);
+    }
+  }
+
+  $unhandled_js = array_keys($unhandled_js_detailed);
+  // If there is new unhandled JS files add it to unhandled list.
+  if ($diff = array_diff($unhandled_js, $unhandled_js_saved)) {
+    variable_set('os2web_eu_cookie_compliance_unhandled_js', array_merge($diff, $unhandled_js_saved));
+    // Add info for notification if email specified.
+    if (!empty($popup_settings['notification_email'])) {
+      $notification_unhandled_js = variable_get('os2web_eu_cookie_compliance_notification_unhandled_js', []);
+      variable_set('os2web_eu_cookie_compliance_notification_unhandled_js', array_merge($notification_unhandled_js, $diff));
+    }
+  }
+}
+
+/**
+ * Callback handles request with new cookie info.
+ */
+function os2web_eu_cookie_compliance_cookie_list_update() {
+  $cookies = $_POST['cookies'];
+  if (!is_array($cookies) || path_is_admin(current_path())) {
+    return;
+  }
+
+  // Parsing request info against malware. Only plain string acceptable.
+  foreach ($cookies as $key => $cookie) {
+    if ($key != check_plain($key) || is_array($cookie) || $cookie != check_plain($cookie)) {
+      unset($cookies[$key]);
+      continue;
+    }
+  }
+
+  if (empty($cookies)) {
+    return;
+  }
+
+  $popup_settings = eu_cookie_compliance_get_settings();
+  $unhandled_cookies_saved = variable_get('os2web_eu_cookie_compliance_unhandled_cookies', array());
+  // Check new info against allowed cookies.
+  if (!empty($popup_settings['allowed_cookies'])) {
+    $allowed_cookies = $popup_settings['allowed_cookies'];
+    $allowed_cookies = _eu_cookie_compliance_explode_multiple_lines($allowed_cookies, FALSE);
+
+    foreach ($allowed_cookies as $cookie) {
+      _os2web_eu_cookie_compliance_remove_category($cookie);
+      if (in_array($cookie, $cookies)) {
+        unset($cookies[array_search($cookie, $cookies)]);
+      }
+    }
+  }
+
+  // If there is new cookies add it to unhandled list.
+  if ($diff = array_diff($cookies, $unhandled_cookies_saved)) {
+    variable_set('os2web_eu_cookie_compliance_unhandled_cookies', array_merge($diff, $unhandled_cookies_saved));
+    // Add info for notification if email specified.
+    if (!empty($popup_settings['notification_email'])) {
+      $notification_unhandled_cookie = variable_get('os2web_eu_cookie_compliance_notification_unhandled_cookie', array());
+      variable_set('os2web_eu_cookie_compliance_notification_unhandled_cookie', array_merge($notification_unhandled_cookie, $diff));
+    }
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function os2web_eu_cookie_compliance_cron() {
+  $popup_settings = eu_cookie_compliance_get_settings();
+
+  $to = empty($popup_settings['notification_email']) ? NULL : $popup_settings['notification_email'];
+  if (empty($to)) {
+    return;
+  }
+
+  $notification_unhandled_js = variable_get('os2web_eu_cookie_compliance_notification_unhandled_js', array());
+  $notification_unhandled_cookie = variable_get('os2web_eu_cookie_compliance_notification_unhandled_cookie', array());
+  if (empty($notification_unhandled_js) && empty($notification_unhandled_cookie)) {
+    return;
+  }
+
+  $params['body'] = array(t('New unhandled EU Cookie compliance sensitive info has been found on @url.', array(
+    '@url' => url('<front>', array('absolute' => TRUE)),
+  )));
+  if ($notification_unhandled_js) {
+    $params['body'][] = 'JS:' . PHP_EOL . implode(PHP_EOL, $notification_unhandled_js);
+  }
+
+  if ($notification_unhandled_cookie) {
+    $params['body'][] = 'Cookies:' . PHP_EOL . implode(PHP_EOL, $notification_unhandled_cookie);
+  }
+  $from = variable_get('site_mail');
+  $language = language_default();
+  $message = drupal_mail('os2web_eu_cookie_compliance', 'notification_unhandled', $to, $language, $params, $from);
+  // Reset variables after sending.
+  if (!empty($message['result'])) {
+    variable_set('os2web_eu_cookie_compliance_notification_unhandled_js', array());
+    variable_set('os2web_eu_cookie_compliance_notification_unhandled_cookie', array());
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function os2web_eu_cookie_compliance_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['language']->language,
+  );
+
+  switch ($key) {
+    case 'notification_unhandled':
+      $message['subject'] = t('New unhandled cookie or JS file has been found on @name', array(
+        '@name' => variable_get('site_name'),
+      ), $options);
+      $message['body'] = $params['body'];
+      break;
+  }
+}
+
+/**
+ * Helper function to remove category from disabled script or cookie line.
+ *
+ * @param $script
+ */
+function _os2web_eu_cookie_compliance_remove_category(&$script) {
+  // Remove 'category:' if present.
+  $parts = explode(':', $script);
+  // Deal with absolute links with category.
+  if (!empty($parts[2]) && strpos($parts[2], '//') === 0) {
+    array_shift($parts);
+    $script = implode(':', $parts);
+  }
+  // Deal with relative links.
+  else if (!empty($parts[1]) && strpos($parts[1], '//') !== 0) {
+    $script = end($parts);
+  }
+  // Parse the string and drop the parameter that is a behavior name.
+  if (strpos($script, '|') !== FALSE) {
+    @list($script, $attach_name) = explode('|', $script);
   }
 }

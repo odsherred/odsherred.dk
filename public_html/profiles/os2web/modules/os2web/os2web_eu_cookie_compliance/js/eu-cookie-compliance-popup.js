@@ -1,7 +1,16 @@
 (function ($) {
   'use strict';
+
+  var os2webEuCookieComplianceBlockCookies;
+  var _euccCurrentStatus;
+  var unhandledCookiesUpdateInProgress;
+
   Drupal.behaviors.os2web_eu_cookie_compliance_popup = {
     attach: function (context, settings) {
+      if (typeof Drupal.settings.eu_cookie_compliance === 'undefined') {
+        return;
+      }
+
       if (Drupal.settings.eu_cookie_compliance.popup_position != 'popup') {
         return;
       }
@@ -39,6 +48,15 @@
       if (Drupal.settings.eu_cookie_compliance.method === 'categories') {
         attachOnlyRequiredEvents();
       }
+
+      _euccCurrentStatus = Drupal.eu_cookie_compliance.getCurrentStatus();
+      if (settings.eu_cookie_compliance.automatic_cookies_removal &&
+        ((settings.eu_cookie_compliance.method === 'opt_in' && (_euccCurrentStatus === null || !Drupal.eu_cookie_compliance.hasAgreed()))
+          || (settings.eu_cookie_compliance.method === 'opt_out' && !Drupal.eu_cookie_compliance.hasAgreed() && _euccCurrentStatus !== null)
+          || (Drupal.settings.eu_cookie_compliance.method === 'categories'))
+      ) {
+        os2webEuCookieComplianceBlockCookies = setInterval(updateUnhandledCookies, 2000);
+      }
     }
   }
 
@@ -50,7 +68,6 @@
         requiredCategories.push(cat);
       }
     }
-    console.log(requiredCategories);
     var nextStatus = 1;
     Drupal.eu_cookie_compliance.setAcceptedCategories(requiredCategories);
     // Load scripts for all categories. If no categories selected, none
@@ -78,4 +95,31 @@
       .removeClass('eu-cookie-compliance-popup-closed');
   };
 
+  // Checks existing browser cookies and sends info to drupal.
+  var updateUnhandledCookies = function () {
+    if (unhandledCookiesUpdateInProgress) {
+      return;
+    }
+
+    // Load all cookies from jQuery.
+    var cookies = $.cookie();
+    var newCookies = [];
+    for (var i in cookies) {
+      var handled = Drupal.eu_cookie_compliance.isAllowed(i) || Drupal.settings.os2web_eu_cookie_compliance.unhandled_cookies.indexOf(i) != -1;
+      if (!handled) {
+        newCookies.push(i);
+      }
+    }
+
+    if (newCookies.length) {
+      unhandledCookiesUpdateInProgress = true;
+      $.post('/os2web-eu-cookie-compliance/cookie-list-update', { cookies: newCookies })
+        .done(function() {
+          unhandledCookiesUpdateInProgress = false;
+          for (var i in newCookies) {
+            Drupal.settings.os2web_eu_cookie_compliance.unhandled_cookies.push(i);
+          }
+        });
+    }
+  }
 })(jQuery);
