@@ -224,12 +224,14 @@ function os2web_eu_cookie_compliance_form_submit($form, &$form_state) {
   }
   $values['eu_cookie_compliance']['allowed_cookies'] = implode(PHP_EOL, $allowed_cookies);
 
+  // Remove JS file from unhandled if it has been added do disabled.
   $unhandled_js_saved = variable_get('os2web_eu_cookie_compliance_unhandled_js', array());
   $disabled_javascripts = $values['eu_cookie_compliance']['disabled_javascripts'];
   $disabled_javascripts = _eu_cookie_compliance_explode_multiple_lines($disabled_javascripts, FALSE);
   foreach ($disabled_javascripts as $script) {
     _os2web_eu_cookie_compliance_remove_category($script);
-    if ($key = array_search($script, $unhandled_js_saved)) {
+    $key = array_search($script, $unhandled_js_saved);
+    if ($key !== FALSE) {
       unset($unhandled_js_saved[$key]);
     }
   }
@@ -237,6 +239,23 @@ function os2web_eu_cookie_compliance_form_submit($form, &$form_state) {
   // Update unhandled files list there were removed lines.
   if (array_diff(variable_get('os2web_eu_cookie_compliance_unhandled_js', array()), $unhandled_js_saved)) {
     variable_set('os2web_eu_cookie_compliance_unhandled_js', $unhandled_js_saved);
+  }
+
+  // Remove Cookie from unhandled if it has been added do allowed list.
+  $unhandled_cookie_saved = variable_get('os2web_eu_cookie_compliance_unhandled_cookies', array());
+  $allowed_cookies = $values['eu_cookie_compliance']['allowed_cookies'];
+  $allowed_cookies = _eu_cookie_compliance_explode_multiple_lines($allowed_cookies, FALSE);
+  foreach ($allowed_cookies as $cookie) {
+    _os2web_eu_cookie_compliance_remove_category($cookie);
+    $key = array_search($cookie, $unhandled_cookie_saved);
+    if ($key !== FALSE) {
+      unset($unhandled_cookie_saved[$key]);
+    }
+  }
+
+  // Update unhandled cookie list there were removed lines.
+  if (array_diff(variable_get('os2web_eu_cookie_compliance_unhandled_cookies', array()), $unhandled_cookie_saved)) {
+    variable_set('os2web_eu_cookie_compliance_unhandled_cookies', $unhandled_cookie_saved);
   }
 }
 
@@ -297,7 +316,7 @@ function os2web_eu_cookie_compliance_theme() {
 }
 
 /**
- * Implements hook__module_implements_alter().
+ * Implements hook_theme().
  */
 function os2web_eu_cookie_compliance_module_implements_alter(&$module_list, $context){
   if (strpos($context, "js_alter") === 0) {
