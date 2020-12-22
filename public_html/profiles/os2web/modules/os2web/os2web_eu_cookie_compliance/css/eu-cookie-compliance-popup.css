@@ -92,6 +92,7 @@ body.eu-cookie-compliance-popup-open {
     background: transparent !important;
     top: auto !important;
     bottom: 0;
+    position: fixed;
 }
 
 .eu-cookie-compliance-popup-closed #sliding-popup.sliding-popup-popup {
