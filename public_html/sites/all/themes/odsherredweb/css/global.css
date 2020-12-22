@@ -609,6 +609,8 @@ aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facet
     display: block;
 }
 
-.eu-cookie-compliance-popup-closed .sliding-popup-popup .eu-cookie-withdraw-tab {
+body.eu-cookie-compliance-popup-closed .sliding-popup-popup .eu-cookie-withdraw-tab {
     top: 60%;
+    font-size: 15px;
+    padding: 5px 10px;
 }
