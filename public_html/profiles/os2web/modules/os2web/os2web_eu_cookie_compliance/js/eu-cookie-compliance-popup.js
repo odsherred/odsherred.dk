@@ -68,7 +68,7 @@
         requiredCategories.push(cat);
       }
     }
-    var nextStatus = 1;
+    var nextStatus = 2;
     Drupal.eu_cookie_compliance.setAcceptedCategories(requiredCategories);
     // Load scripts for all categories. If no categories selected, none
     // will be loaded.
@@ -77,7 +77,7 @@
       // No categories selected is the same as declining all cookies.
       nextStatus = 0;
     }
-    Drupal.eu_cookie_compliance.changeStatus(nextStatus);
+    Drupal.eu_cookie_compliance.setStatus(nextStatus);
     closePopup();
   }
 
