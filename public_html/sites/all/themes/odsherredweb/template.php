@@ -50,11 +50,15 @@ function odsherredweb_preprocess_html(&$variables) {
   // Load jQuery UI
   drupal_add_library('system', 'ui');
 
+  // If GDPR Consent is not given we should no set statistic cookies.
   if (empty($_COOKIE['cookie-agreed']) && !empty($variables['page']['page_bottom']['inject_html'])) {
     $markup = &$variables['page']['page_bottom']['inject_html']['#markup'];
     if (
       strpos($markup, 'piwik') !== FALSE
       || strpos($markup, 'siteimprove') !== FALSE
+      // Adding keywords to remove GA scripts
+      || strpos($markup, 'googleanalytics') !== FALSE
+      || strpos($markup, 'nalytics') !== FALSE
     ) {
       $markup = '';
     }
