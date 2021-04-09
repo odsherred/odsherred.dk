@@ -49,6 +49,16 @@ function odsherredweb_preprocess_html(&$variables) {
 
   // Load jQuery UI
   drupal_add_library('system', 'ui');
+
+  if (empty($_COOKIE['cookie-agreed']) && !empty($variables['page']['page_bottom']['inject_html'])) {
+    $markup = &$variables['page']['page_bottom']['inject_html']['#markup'];
+    if (
+      strpos($markup, 'piwik') !== FALSE
+      || strpos($markup, 'siteimprove') !== FALSE
+    ) {
+      $markup = '';
+    }
+  }
 }
 
 /**
