@@ -1,3 +1,6 @@
 [submodule "public_html/profiles/os2web/modules/bellcom_borgerdk"]
 	path = public_html/profiles/os2web/modules/bellcom_borgerdk
 	url = git@github.com:bellcom/bellcom_borgerdk.git
+[submodule "os2web_eu_cookie_compliance"]
+	path = public_html/profiles/os2web/modules/os2web/os2web_eu_cookie_compliance
+	url = git@github.com:bellcom/os2web_eu_cookie_compliance.git
