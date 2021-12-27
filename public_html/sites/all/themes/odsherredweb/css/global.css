@@ -413,7 +413,7 @@ a.overlayclass {
     list-style: none;
 }
 
-.page-selvbetjeninger .selvbetjening .views-field-field-os2web-contact-field-info ul li {
+.page-selvbetjeninger .selvbetjening .item-list .views-field-field-os2web-contact-field-info ul li {
   list-style: disc;
   display: list-item;
   margin-left: 20px;
