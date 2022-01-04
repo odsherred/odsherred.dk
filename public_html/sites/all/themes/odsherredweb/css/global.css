@@ -413,6 +413,12 @@ a.overlayclass {
     list-style: none;
 }
 
+.page-selvbetjeninger .selvbetjening .item-list .views-field-field-os2web-contact-field-info ul li {
+  list-style: disc;
+  display: list-item;
+  margin-left: 20px;
+}
+
 .page-selvbetjeninger .selvbetjening .item-list,
 .page-selvbetjeninger .selvbetjening-alfabetisk .item-list {
     position: relative;
@@ -604,4 +610,10 @@ aside.grid-3.region.region-sidebar-first#region-sidebar-first .block.block-facet
 .page-node-898393 .pane-citizen-proposals, /* the node id on odsherred.dk */
 .page-node-898342 .pane-citizen-proposals { /* the node id on test.odsherred.dk */
     display: block;
+}
+
+body.eu-cookie-compliance-popup-closed .sliding-popup-popup .eu-cookie-withdraw-tab {
+    top: 60%;
+    font-size: 15px;
+    padding: 5px 10px;
 }
