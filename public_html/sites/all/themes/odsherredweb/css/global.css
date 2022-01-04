@@ -401,7 +401,7 @@ a.overlayclass {
 }
 
 .region.region-page-top p {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 /* global */
 .page-selvbetjeninger .selvbetjening {
@@ -547,9 +547,6 @@ a.overlayclass {
     text-decoration: underline;
 }
 
-.page-odsherred-kommune-kontakter .page-selvbetjeninger .selvbetjening .item-list.open ul {
-  background-color: #f8f7f5;
-}
 .page-odsherred-kommune-kontakter .page-selvbetjeninger .selvbetjening .item-list.open ul li {
   margin-bottom: 10px;
 }
